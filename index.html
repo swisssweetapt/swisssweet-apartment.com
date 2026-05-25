@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Swiss Sweet Apartment — San Pietro, Albanie</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --turquoise: #7ECECE;
+    --turquoise-light: #A8E4E4;
+    --turquoise-pale: #E4F7F7;
+    --turquoise-dark: #2A7A7A;
+    --turquoise-deep: #1E5858;
+    --coral: #FF6B47;
+    --coral-dark: #E05530;
+    --white: #FFFFFF;
+    --off-white: #F7FDFD;
+    --text: #1A2E2E;
+    --text-muted: #4A7070;
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --sans: 'DM Sans', sans-serif;
+    --card-media-h: 260px;
+  }
+
+  /* LANGUAGE & CURRENCY SWITCHER */
+  .lang-bar { display: flex; align-items: center; gap: 0.5rem; }
+  .lang-btn, .curr-btn { background: none; border: 1px solid rgba(255,255,255,0.3); color: rgba(255,255,255,0.7); padding: 0.25rem 0.6rem; border-radius: 4px; font-size: 0.72rem; font-family: var(--sans); cursor: pointer; transition: all 0.2s; letter-spacing: 0.05em; }
+  .lang-btn:hover, .curr-btn:hover, .lang-btn.active, .curr-btn.active { background: rgba(255,255,255,0.15); color: white; border-color: white; }
+  .lang-sep { color: rgba(255,255,255,0.3); font-size: 0.7rem; }
+
+  /* AIRBNB STYLE PRICE CALCULATOR */
+  .price-calculator { background: white; border: 1px solid #ddd; border-radius: 12px; padding: 0; max-width: 580px; margin: 0 auto 2rem; box-shadow: 0 6px 32px rgba(0,0,0,0.12); overflow: hidden; }
+  .price-cal-header { background: var(--turquoise-dark); color: white; padding: 1.2rem 1.5rem; display: flex; justify-content: space-between; align-items: center; }
+  .price-cal-from { font-size: 0.75rem; color: rgba(255,255,255,0.7); text-transform: uppercase; letter-spacing: 0.1em; }
+  .price-cal-amount { font-family: var(--serif); font-size: 2rem; font-weight: 300; color: white; }
+  .price-cal-amount span { font-size: 1rem; opacity: 0.7; }
+  .price-cal-badge { background: var(--coral); color: white; padding: 0.4rem 0.8rem; border-radius: 20px; font-size: 0.75rem; font-weight: 500; }
+  .price-cal-dates { display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid #eee; }
+  .price-cal-date { padding: 1rem 1.5rem; border-right: 1px solid #eee; cursor: pointer; transition: background 0.2s; }
+  .price-cal-date:last-child { border-right: none; }
+  .price-cal-date:hover { background: #f7f7f7; }
+  .price-cal-date label { display: block; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text); margin-bottom: 0.3rem; }
+  .price-cal-date input { border: none; outline: none; font-size: 0.95rem; color: var(--text-muted); font-family: var(--sans); background: transparent; width: 100%; cursor: pointer; }
+  .price-cal-guests { padding: 1rem 1.5rem; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center; }
+  .price-cal-guests label { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text); }
+  .price-cal-guests select { border: none; outline: none; font-size: 0.95rem; color: var(--text-muted); font-family: var(--sans); background: transparent; cursor: pointer; }
+  .price-breakdown { padding: 1.2rem 1.5rem; border-bottom: 1px solid #eee; display: none; }
+  .price-breakdown.show { display: block; }
+  .price-line { display: flex; justify-content: space-between; font-size: 0.9rem; color: var(--text); padding: 0.4rem 0; }
+  .price-line.total { font-weight: 500; border-top: 1px solid #eee; padding-top: 0.8rem; margin-top: 0.4rem; font-size: 1rem; }
+  .price-line.discount { color: #008A05; }
+  .price-currency-toggle { display: flex; gap: 0.5rem; padding: 0.8rem 1.5rem; border-bottom: 1px solid #eee; }
+  .curr-toggle-btn { background: none; border: 1px solid #ddd; color: var(--text-muted); padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.78rem; font-family: var(--sans); cursor: pointer; transition: all 0.2s; }
+  .curr-toggle-btn.active { background: var(--turquoise-dark); color: white; border-color: var(--turquoise-dark); }
+  .price-cal-btn { margin: 1.2rem 1.5rem; background: var(--coral); color: white; border: none; padding: 1rem; border-radius: 8px; font-size: 0.95rem; font-weight: 500; cursor: pointer; width: calc(100% - 3rem); transition: background 0.2s; font-family: var(--sans); }
+  .price-cal-btn:hover { background: var(--coral-dark); }
+  .price-note { padding: 0 1.5rem 1.2rem; font-size: 0.78rem; color: var(--text-muted); text-align: center; }
+  [data-lang] { display: none; }
+  [data-lang].active { display: inline; }
+  [data-lang-block] { display: none; }
+  [data-lang-block].active { display: inline; }
+
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--sans); background: var(--white); color: var(--text); font-size: 16px; line-height: 1.6; overflow-x: hidden; }
+
+  /* NAV */
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 2.5rem; background: rgba(42,122,122,0.96); backdrop-filter: blur(12px); }
+  .nav-logo { font-family: var(--serif); font-size: 1.4rem; font-weight: 300; color: var(--white); letter-spacing: 0.04em; }
+  .nav-logo span { color: var(--coral); font-style: italic; }
+  .nav-links { display: flex; gap: 1.5rem; list-style: none; align-items: center; }
+  .nav-links a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.78rem; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--white); }
+  .nav-cta { background: var(--coral) !important; color: white !important; padding: 0.5rem 1.2rem; border-radius: 2px; }
+
+  /* AUDIO */
+  .audio-btn { background: none; border: 1px solid rgba(255,255,255,0.4); color: rgba(255,255,255,0.7); padding: 0.35rem 0.9rem; border-radius: 20px; font-size: 0.72rem; font-family: var(--sans); letter-spacing: 0.08em; cursor: pointer; transition: all 0.2s; display: flex; align-items: center; gap: 0.4rem; }
+  .audio-btn:hover { border-color: white; color: white; }
+  .audio-btn.playing { border-color: var(--turquoise-light); color: var(--turquoise-light); }
+  .audio-dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+  .audio-btn.playing .audio-dot { animation: audioPulse 1s ease-in-out infinite; }
+  @keyframes audioPulse { 0%,100%{opacity:1}50%{opacity:0.3} }
+
+  /* HERO */
+  .hero { height: 100vh; min-height: 600px; position: relative; display: flex; align-items: flex-end; padding: 0 2.5rem 5rem; overflow: hidden; }
+  .hero-bg { position: absolute; inset: 0; overflow: hidden; }
+  .hero-bg video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
+  .hero-bg::after { content: ''; position: absolute; inset: 0; z-index: 1; background: linear-gradient(to bottom, rgba(30,88,88,0.15) 0%, rgba(30,88,88,0.72) 100%); }
+  .hero-content { position: relative; z-index: 2; max-width: 680px; }
+  .hero-tag { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--turquoise-light); margin-bottom: 1rem; }
+  .hero h1 { font-family: var(--serif); font-size: clamp(2.8rem, 6vw, 5rem); font-weight: 300; line-height: 1.1; color: var(--white); margin-bottom: 1.2rem; }
+  .hero h1 em { font-style: italic; color: var(--coral); }
+  .hero-sub { font-size: 1rem; color: rgba(255,255,255,0.82); font-weight: 300; max-width: 440px; margin-bottom: 2rem; line-height: 1.7; }
+  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-coral { background: var(--coral); color: white; padding: 0.85rem 2rem; text-decoration: none; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; border-radius: 2px; transition: background 0.2s, transform 0.15s; display: inline-block; }
+  .btn-coral:hover { background: var(--coral-dark); transform: translateY(-1px); }
+  .btn-outline { border: 1px solid rgba(255,255,255,0.5); color: white; padding: 0.85rem 2rem; text-decoration: none; font-size: 0.85rem; font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase; border-radius: 2px; transition: border-color 0.2s, background 0.2s; display: inline-block; }
+  .btn-outline:hover { border-color: white; background: rgba(255,255,255,0.1); }
+  .hero-scroll { position: absolute; bottom: 2rem; right: 2.5rem; z-index: 2; display: flex; flex-direction: column; align-items: center; gap: 0.5rem; color: rgba(255,255,255,0.5); font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; }
+  .scroll-line { width: 1px; height: 40px; background: rgba(255,255,255,0.3); animation: scrollPulse 2s ease-in-out infinite; }
+  @keyframes scrollPulse { 0%,100%{opacity:0.3}50%{opacity:0.8} }
+
+  /* STATS */
+  .stats-bar { background: var(--turquoise-dark); display: grid; grid-template-columns: repeat(4, 1fr); }
+  .stat-item { padding: 1.8rem 2rem; border-right: 1px solid rgba(255,255,255,0.08); text-align: center; }
+  .stat-item:last-child { border-right: none; }
+  .stat-num { font-family: var(--serif); font-size: 2rem; font-weight: 300; color: var(--coral); line-height: 1; margin-bottom: 0.3rem; }
+  .stat-label { font-size: 0.72rem; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.55); }
+
+  /* SHARED */
+  .section-tag { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--coral); margin-bottom: 0.8rem; }
+  h2 { font-family: var(--serif); font-size: clamp(2rem, 4vw, 3rem); font-weight: 300; line-height: 1.2; color: var(--text); margin-bottom: 1.2rem; }
+  h2 em { font-style: italic; }
+  .section-lead { font-size: 1.05rem; color: var(--text-muted); max-width: 560px; font-weight: 300; line-height: 1.8; margin-bottom: 3rem; }
+
+  /* GALLERY */
+  .gallery-section { background: var(--white); padding: 5rem 0; }
+  .gallery-header { padding: 0 2.5rem; margin-bottom: 2.5rem; }
+  .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+  .gallery-item { overflow: hidden; background: var(--turquoise-pale); cursor: pointer; position: relative; }
+  .gallery-item img { width: 100%; height: 280px; object-fit: cover; display: block; transition: transform 0.6s ease; }
+  .gallery-item:hover img { transform: scale(1.04); }
+  .gallery-overlay { position: absolute; inset: 0; background: rgba(42,122,122,0); transition: background 0.3s; display: flex; align-items: center; justify-content: center; }
+  .gallery-overlay span { opacity: 0; color: white; font-size: 2rem; transition: opacity 0.3s; }
+  .gallery-item:hover .gallery-overlay { background: rgba(42,122,122,0.3); }
+  .gallery-item:hover .gallery-overlay span { opacity: 1; }
+
+  /* LIGHTBOX */
+  .lightbox { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.93); z-index: 1000; align-items: center; justify-content: center; }
+  .lightbox.active { display: flex; }
+  .lightbox-img { max-width: 88vw; max-height: 84vh; object-fit: contain; border-radius: 2px; }
+  .lightbox-close { position: absolute; top: 1.5rem; right: 2rem; color: white; font-size: 2rem; cursor: pointer; background: none; border: none; opacity: 0.7; transition: opacity 0.2s; }
+  .lightbox-close:hover { opacity: 1; }
+  .lightbox-prev, .lightbox-next { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: white; font-size: 1.8rem; width: 54px; height: 54px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.2s; }
+  .lightbox-prev { left: 1.5rem; }
+  .lightbox-next { right: 1.5rem; }
+  .lightbox-prev:hover, .lightbox-next:hover { background: rgba(255,107,71,0.6); }
+  .lightbox-counter { position: absolute; bottom: 1.5rem; left: 50%; transform: translateX(-50%); color: rgba(255,255,255,0.6); font-size: 0.85rem; letter-spacing: 0.1em; }
+
+  /* FEATURES */
+  .features-section { background: var(--turquoise); display: grid; grid-template-columns: 1fr 1fr; gap: 0; padding: 0; }
+  .features-text { padding: 6rem 3.5rem 6rem 2.5rem; display: flex; flex-direction: column; justify-content: center; }
+  .features-text h2 { color: var(--white); }
+  .features-text .section-lead { color: rgba(255,255,255,0.75); }
+  .features-image { overflow: hidden; min-height: 500px; }
+  .features-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .features-list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem 2rem; }
+  .feature-item { display: flex; align-items: flex-start; gap: 0.6rem; font-size: 0.9rem; color: var(--white); font-weight: 300; line-height: 1.4; }
+  .feature-icon { color: var(--coral); flex-shrink: 0; }
+
+  /* SUNSET BANNER */
+  .sunset-banner { position: relative; height: 420px; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+  .sunset-banner-bg { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(30,88,88,0.35), rgba(30,88,88,0.7)), url('Sunset1.jpeg') center 40%/cover no-repeat; }
+  .sunset-banner-content { position: relative; z-index: 2; text-align: center; }
+  .sunset-banner-content h2 { color: white; font-size: clamp(2.2rem, 5vw, 4rem); margin-bottom: 1rem; }
+  .sunset-banner-content p { font-size: 1.1rem; color: rgba(255,255,255,0.8); max-width: 500px; margin: 0 auto 2rem; font-weight: 300; }
+
+  /* ROOMS */
+  .rooms-section { background: var(--white); padding: 6rem 2.5rem; }
+  .rooms-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 3rem; }
+  .room-card { background: var(--off-white); overflow: hidden; border-radius: 2px; border: 1px solid var(--turquoise-light); transition: transform 0.3s, box-shadow 0.3s; }
+  .room-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(42,122,122,0.15); }
+  .room-media-wrap { width: 100%; height: var(--card-media-h); overflow: hidden; position: relative; background: var(--turquoise-pale); }
+  .room-media-wrap img, .room-media-wrap video { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s; }
+  .room-card:hover .room-media-wrap img { transform: scale(1.03); }
+  .room-info { padding: 1.6rem; }
+  .room-info h3 { font-family: var(--serif); font-size: 1.4rem; font-weight: 300; color: var(--turquoise-dark); margin-bottom: 0.5rem; }
+  .room-info p { font-size: 0.88rem; color: var(--text-muted); font-weight: 300; line-height: 1.6; }
+
+  /* VIDEOS */
+  .video-section { background: var(--turquoise-pale); padding: 6rem 2.5rem; }
+  .video-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; margin-top: 3rem; }
+  .video-card { background: var(--white); border-radius: 2px; overflow: hidden; border: 1px solid var(--turquoise-light); }
+  .video-card video { width: 100%; height: 280px; object-fit: cover; display: block; background: var(--turquoise-pale); }
+  .video-card-info { padding: 1.2rem 1.4rem; }
+  .video-card-info h4 { font-family: var(--serif); font-size: 1.2rem; font-weight: 300; color: var(--turquoise-dark); margin-bottom: 0.3rem; }
+  .video-card-info p { font-size: 0.85rem; color: var(--text-muted); font-weight: 300; }
+
+  /* LOCATION */
+  .location-section { background: var(--turquoise-dark); display: grid; grid-template-columns: 1fr 1fr; padding: 0; }
+  .location-text { padding: 6rem 3.5rem 6rem 2.5rem; }
+  .location-text h2 { color: var(--white); }
+  .location-text .section-lead { color: rgba(255,255,255,0.65); max-width: 100%; }
+  .distance-list { list-style: none; margin-top: 2rem; }
+  .distance-item { display: flex; justify-content: space-between; align-items: center; padding: 0.9rem 0; border-bottom: 1px solid rgba(255,255,255,0.12); font-size: 0.9rem; }
+  .distance-name { color: rgba(255,255,255,0.85); font-weight: 300; }
+  .distance-val { font-family: var(--serif); font-size: 1.1rem; color: var(--coral); font-style: italic; }
+  .location-map { min-height: 500px; position: relative; }
+  .location-map iframe { width: 100%; height: 100%; position: absolute; inset: 0; border: none; }
+
+  /* BOOKING */
+  .booking-section { background: var(--turquoise-pale); text-align: center; padding: 6rem 2.5rem; }
+  .booking-section h2 { margin: 0 auto 1rem; }
+  .booking-section .section-lead { margin: 0 auto 3rem; }
+  .booking-card { background: var(--white); border-radius: 4px; padding: 3rem; max-width: 600px; margin: 0 auto; display: flex; flex-direction: column; gap: 1.2rem; box-shadow: 0 8px 40px rgba(42,122,122,0.12); }
+  .booking-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .booking-field { display: flex; flex-direction: column; gap: 0.4rem; text-align: left; }
+  .booking-field label { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); }
+  .booking-field input, .booking-field select { background: var(--off-white); border: 1px solid var(--turquoise-light); padding: 0.75rem 1rem; font-size: 0.9rem; font-family: var(--sans); color: var(--text); border-radius: 2px; outline: none; transition: border-color 0.2s; }
+  .booking-field input:focus, .booking-field select:focus { border-color: var(--turquoise); }
+  .booking-submit { background: var(--coral); color: white; border: none; padding: 1rem 2rem; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; border-radius: 2px; transition: background 0.2s, transform 0.15s; font-family: var(--sans); width: 100%; }
+  .booking-submit:hover { background: var(--coral-dark); transform: translateY(-1px); }
+  .booking-note { font-size: 0.8rem; color: var(--text-muted); }
+  .booking-note a { color: var(--turquoise-dark); text-decoration: none; }
+
+  /* REVIEWS */
+  .reviews-section { background: var(--turquoise); padding: 6rem 2.5rem; text-align: center; }
+  .reviews-section h2 { color: var(--white); }
+  .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 3rem; }
+  .review-card { background: var(--white); padding: 2rem; border-radius: 2px; text-align: left; }
+  .review-stars { color: var(--coral); font-size: 0.85rem; margin-bottom: 0.8rem; }
+  .review-text { font-family: var(--serif); font-size: 1.05rem; font-style: italic; font-weight: 300; color: var(--text); line-height: 1.7; margin-bottom: 1rem; }
+  .review-author { font-size: 0.8rem; color: var(--text-muted); }
+
+  /* FOOTER */
+  footer { background: var(--turquoise-deep); color: rgba(255,255,255,0.5); padding: 4rem 2.5rem 2.5rem; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; }
+  .footer-brand .nav-logo { font-size: 1.6rem; display: block; margin-bottom: 1rem; }
+  .footer-brand p { font-size: 0.85rem; font-weight: 300; line-height: 1.7; max-width: 320px; color: rgba(255,255,255,0.45); }
+  footer h4 { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 1.2rem; }
+  footer ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+  footer ul a { color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.88rem; font-weight: 300; transition: color 0.2s; }
+  footer ul a:hover { color: var(--coral); }
+  .footer-bottom { grid-column: 1/-1; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 2rem; display: flex; justify-content: space-between; font-size: 0.78rem; color: rgba(255,255,255,0.25); }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    .stats-bar { grid-template-columns: 1fr 1fr; }
+    .features-section, .location-section { grid-template-columns: 1fr; }
+    .features-image { min-height: 300px; }
+    .rooms-grid, .reviews-grid, .video-grid { grid-template-columns: 1fr; }
+    .gallery-grid { grid-template-columns: 1fr 1fr; }
+    .gallery-grid .g1 { grid-column: 1/3; }
+    .gallery-grid .g2,.gallery-grid .g3,.gallery-grid .g4,.gallery-grid .g5,.gallery-grid .g6 { grid-column: span 1; }
+    .booking-row { grid-template-columns: 1fr; }
+    footer { grid-template-columns: 1fr; }
+    .hero { padding: 0 1.5rem 4rem; }
+    .location-map { min-height: 300px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <button class="lightbox-prev" onclick="changePhoto(-1)">‹</button>
+  <img class="lightbox-img" id="lightbox-img" src="" alt="">
+  <button class="lightbox-next" onclick="changePhoto(1)">›</button>
+  <div class="lightbox-counter" id="lightbox-counter"></div>
+</div>
+
+<!-- AUDIO -->
+<audio id="ambient-audio" loop>
+  <source src="saltwater-mirage.mp3" type="audio/mpeg">
+</audio>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Swiss<span>Sweet</span> Apartment</div>
+  <ul class="nav-links">
+    <li><a href="#gallery"><span data-lang="fr" class="active">Photos</span><span data-lang="en">Photos</span><span data-lang="de">Fotos</span><span data-lang="sq">Foto</span></a></li>
+    <li><a href="#espaces"><span data-lang="fr" class="active">L'appartement</span><span data-lang="en">The Apartment</span><span data-lang="de">Die Wohnung</span><span data-lang="sq">Apartamenti</span></a></li>
+    <li><a href="#videos">Vidéos</a></li>
+    <li><a href="#location"><span data-lang="fr" class="active">Localisation</span><span data-lang="en">Location</span><span data-lang="de">Lage</span><span data-lang="sq">Vendndodhja</span></a></li>
+    <li>
+      <button class="audio-btn" id="audioBtn" onclick="toggleAudio()">
+        <span class="audio-dot"></span>
+        <span data-lang="fr" class="active">Écoute si tu veux</span>
+        <span data-lang="en">Listen</span>
+        <span data-lang="de">Musik</span>
+        <span data-lang="sq">Dëgjo</span>
+      </button>
+    </li>
+    <li class="lang-bar">
+      <button class="lang-btn active" onclick="setLang('fr')">FR</button>
+      <span class="lang-sep">|</span>
+      <button class="lang-btn" onclick="setLang('en')">EN</button>
+      <span class="lang-sep">|</span>
+      <button class="lang-btn" onclick="setLang('de')">DE</button>
+      <span class="lang-sep">|</span>
+      <button class="lang-btn" onclick="setLang('sq')">AL</button>
+    </li>
+    <li><a href="#booking" class="nav-cta"><span data-lang="fr" class="active">Réserver</span><span data-lang="en">Book</span><span data-lang="de">Buchen</span><span data-lang="sq">Rezervo</span></a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg" style="position:absolute;inset:0;background:url('sunset3.jpeg') center/cover no-repeat;">
+  </div>
+  <div class="hero-content">
+    <p class="hero-tag">San Pietro Resort · Baie de Lalëz · Albanie</p>
+    <h1>
+      <span data-lang-block="fr" class="active">La mer à<br><em>100 mètres.</em><br>Le confort suisse.</span>
+      <span data-lang-block="en">The sea<br><em>100 meters away.</em><br>Swiss comfort.</span>
+      <span data-lang-block="de">Das Meer<br><em>100 Meter entfernt.</em><br>Schweizer Komfort.</span>
+      <span data-lang-block="sq">Deti<br><em>100 metra larg.</em><br>Rehati zvicerane.</span>
+    </h1>
+    <p class="hero-sub">
+      <span data-lang-block="fr" class="active">Un appartement de 97 m² conçu pour les familles, au cœur d'un complexe résidentiel calme et sécurisé sur la côte adriatique.</span>
+      <span data-lang-block="en">A 97 m² apartment designed for families, in the heart of a quiet and secure residential complex on the Adriatic coast.</span>
+      <span data-lang-block="de">Eine 97 m² große Wohnung für Familien, im Herzen eines ruhigen Wohnkomplexes an der Adriaküste.</span>
+      <span data-lang-block="sq">Një apartament 97 m² i projektuar për familjet, në zemër të një kompleksi rezidencial të qetë në bregdetin adriatik.</span>
+    </p>
+    <div class="hero-actions">
+      <a href="#booking" class="btn-coral">
+        <span data-lang="fr" class="active">Vérifier les disponibilités</span>
+        <span data-lang="en">Check availability</span>
+        <span data-lang="de">Verfügbarkeit prüfen</span>
+        <span data-lang="sq">Kontrolloni disponueshmërinë</span>
+      </a>
+      <a href="#gallery" class="btn-outline">
+        <span data-lang="fr" class="active">Voir les photos</span>
+        <span data-lang="en">See photos</span>
+        <span data-lang="de">Fotos ansehen</span>
+        <span data-lang="sq">Shiko fotot</span>
+      </a>
+    </div>
+  </div>
+  <div class="hero-scroll"><div class="scroll-line"></div><span>Scroll</span></div>
+</section>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stat-item"><div class="stat-num">97m²</div><div class="stat-label">Surface totale</div></div>
+  <div class="stat-item"><div class="stat-num">4+1</div><div class="stat-label">Couchages + bébé</div></div>
+  <div class="stat-item"><div class="stat-num">100m</div><div class="stat-label">De la plage</div></div>
+  <div class="stat-item"><div class="stat-num">45'</div><div class="stat-label">De l'aéroport</div></div>
+</div>
+
+<!-- GALLERY -->
+<div class="gallery-section" id="gallery">
+  <div class="gallery-header">
+    <p class="section-tag">Galerie</p>
+    <h2>L'appartement<br>& <em>la destination</em></h2>
+  </div>
+  <div class="gallery-grid">
+    <div class="gallery-item" onclick="openLightbox(0)"><img src="Salon.jpeg" alt="Salon turquoise"><div class="gallery-overlay"><span>⊕</span></div></div>
+    <div class="gallery-item" onclick="openLightbox(1)"><img src="Sdb.jpeg" alt="Salle de bain marbre"><div class="gallery-overlay"><span>⊕</span></div></div>
+    <div class="gallery-item" onclick="openLightbox(2)"><img src="chambre1.jpeg" alt="Chambre parentale"><div class="gallery-overlay"><span>⊕</span></div></div>
+    <div class="gallery-item" onclick="openLightbox(3)"><img src="Cuisine.jpeg" alt="Cuisine ouverte"><div class="gallery-overlay"><span>⊕</span></div></div>
+    <div class="gallery-item" onclick="openLightbox(4)"><img src="Balcon.jpg" alt="Balcon privé"><div class="gallery-overlay"><span>⊕</span></div></div>
+    <div class="gallery-item" onclick="openLightbox(5)"><img src="Vuejardinbalcon.jpeg" alt="Vue jardin balcon"><div class="gallery-overlay"><span>⊕</span></div></div>
+    <div class="gallery-item" onclick="openLightbox(6)"><img src="beachoceanview.jpg" alt="Plage"><div class="gallery-overlay"><span>⊕</span></div></div>
+    <div class="gallery-item" onclick="openLightbox(7)"><img src="sunset3.jpeg" alt="Promenade palmiers"><div class="gallery-overlay"><span>⊕</span></div></div>
+    <div class="gallery-item" onclick="openLightbox(8)"><img src="Sunset1.jpeg" alt="Coucher de soleil"><div class="gallery-overlay"><span>⊕</span></div></div>
+    <div class="gallery-item" onclick="openLightbox(9)"><img src="Sunset2.jpeg" alt="Coucher de soleil baie"><div class="gallery-overlay"><span>⊕</span></div></div>
+    <div class="gallery-item" onclick="openLightbox(10)"><img src="Spritz.jpeg" alt="Spritz plage"><div class="gallery-overlay"><span>⊕</span></div></div>
+    <div class="gallery-item" onclick="openLightbox(11)"><img src="restaurantdenuit.jpeg" alt="Restaurant nuit"><div class="gallery-overlay"><span>⊕</span></div></div>
+  </div>
+</div>
+
+<!-- FEATURES -->
+<div class="features-section" id="features">
+  <div class="features-text">
+    <p class="section-tag">L'appartement</p>
+    <h2>Tout le confort<br><em>pour votre famille</em></h2>
+    <p class="section-lead">Deux chambres, salle de bain en marbre, balcon avec barbecue intégré et cuisine ouverte entièrement équipée.</p>
+    <ul class="features-list">
+      <li class="feature-item"><span class="feature-icon">→</span>Lit queen size + lit bébé</li>
+      <li class="feature-item"><span class="feature-icon">→</span>2 lits simples 140cm</li>
+      <li class="feature-item"><span class="feature-icon">→</span>Salle de bain en marbre</li>
+      <li class="feature-item"><span class="feature-icon">→</span>Lave-linge & séchant</li>
+      <li class="feature-item"><span class="feature-icon">→</span>AC réversible partout</li>
+      <li class="feature-item"><span class="feature-icon">→</span>Moustiquaires toutes fenêtres</li>
+      <li class="feature-item"><span class="feature-icon">→</span>Netflix & Spotify inclus</li>
+      <li class="feature-item"><span class="feature-icon">→</span>Parking gratuit</li>
+      <li class="feature-item"><span class="feature-icon">→</span>Balcon & barbecue intégré</li>
+      <li class="feature-item"><span class="feature-icon">→</span>Îlot cuisine 4 places</li>
+      <li class="feature-item"><span class="feature-icon">→</span>Résidence sécurisée</li>
+      <li class="feature-item"><span class="feature-icon">→</span>Aire de jeux enfants</li>
+    </ul>
+  </div>
+  <div class="features-image">
+    <img src="Spritz.jpeg" alt="Lifestyle bord de mer">
+  </div>
+</div>
+
+<!-- SUNSET BANNER -->
+<div class="sunset-banner">
+  <div class="sunset-banner-bg"></div>
+  <div class="sunset-banner-content">
+    <p class="section-tag" style="text-align:center;color:var(--turquoise-light)">Lalëz Bay · Adriatique</p>
+    <h2>Des couchers de soleil<br><em>inoubliables</em></h2>
+    <p>Des kilomètres de sable fin, une mer calme et peu profonde, des restaurants au bord de l'eau.</p>
+    <a href="#booking" class="btn-coral">Réserver maintenant</a>
+  </div>
+</div>
+
+<!-- ESPACES -->
+<section class="rooms-section" id="espaces">
+  <p class="section-tag">Les espaces</p>
+  <h2>Chaque pièce<br><em>raconte une histoire</em></h2>
+  <div class="rooms-grid">
+
+    <div class="room-card">
+      <div class="room-media-wrap">
+        <img src="chambre1.jpeg" alt="Chambre parentale">
+      </div>
+      <div class="room-info">
+        <h3>Chambre parentale</h3>
+        <p>Grand lit queen size avec lit bébé intégré, commode faisant office de table à langer. Mur bleu profond, tables de nuit, ambiance océan pour les nuits en famille.</p>
+      </div>
+    </div>
+
+    <div class="room-card">
+      <div class="room-media-wrap">
+        <video controls preload="auto" poster="chambre2image.jpg" style="cursor:pointer">
+          <source src="chambre2.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="room-info">
+        <h3>Chambre Twin</h3>
+        <p>Deux lits de 140cm, grande armoire avec espace valises et cintres, mur rouge vif. Idéale pour deux enfants ou deux adultes indépendants.</p>
+      </div>
+    </div>
+
+    <div class="room-card">
+      <div class="room-media-wrap">
+        <img src="Sdb.jpeg" alt="Salle de bain marbre">
+      </div>
+      <div class="room-info">
+        <h3>Salle de bain marbre</h3>
+        <p>Du sol au plafond en marbre gris veiné, douche à l'italienne spacieuse avec pommeau de tête, lave-linge séchant intégré, sèche-serviettes chauffant et vue sur les pins parasols.</p>
+      </div>
+    </div>
+
+    <div class="room-card">
+      <div class="room-media-wrap">
+        <img src="Cuisine.jpeg" alt="Cuisine ouverte">
+      </div>
+      <div class="room-info">
+        <h3>Cuisine ouverte</h3>
+        <p>Cuisine moderne verte sauge avec îlot central, table haute 4 places, four, tous les équipements nécessaires et accès direct au balcon.</p>
+      </div>
+    </div>
+
+    <div class="room-card">
+      <div class="room-media-wrap">
+        <img src="Salon.jpeg" alt="Salon">
+      </div>
+      <div class="room-info">
+        <h3>Salon & séjour</h3>
+        <p>Grand canapé d'angle, TV avec Netflix, Spotify et chaînes internationales. Mur turquoise signature, plantes vertes et déco marine. Accès direct au balcon.</p>
+      </div>
+    </div>
+
+    <div class="room-card">
+      <div class="room-media-wrap">
+        <img src="Balcon.jpg" alt="Balcon privé" style="width:100%;height:100%;object-fit:cover;display:block">
+      </div>
+      <div class="room-info">
+        <h3>Balcon privé</h3>
+        <p>Fauteuil oeuf suspendu, table et 4 chaises, store électrique, barbecue intégré dans le mur en pierre. Vue sur les jardins verdoyants et les pins parasols méditerranéens.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- VIDEOS -->
+<section class="video-section" id="videos">
+  <p class="section-tag">Visites vidéo</p>
+  <h2>Découvrez<br><em>l'appartement en mouvement</em></h2>
+  <div class="video-grid">
+    <div class="video-card">
+      <video controls preload="auto" poster="beachoceanview.jpg">
+        <source src="beachbar.mp4" type="video/mp4">
+      </video>
+      <div class="video-card-info">
+        <h4>La plage & le beach bar</h4>
+        <p>À 100 mètres à pied — sable fin, mer turquoise, palmiers et bar de plage.</p>
+      </div>
+    </div>
+    <div class="video-card">
+      <video controls preload="auto" poster="Sunset2.jpeg">
+        <source src="vuemer.mp4" type="video/mp4">
+      </video>
+      <div class="video-card-info">
+        <h4>Vue sur la mer</h4>
+        <p>La baie de Lalëz et l'Adriatique depuis San Pietro Resort.</p>
+      </div>
+    </div>
+    <div class="video-card">
+      <video controls preload="auto" poster="Vuejardinbalcon.jpeg" type="video/mp4">
+        <source src="balconvue.mp4" type="video/mp4">
+      </video>
+      <div class="video-card-info">
+        <h4>Vue depuis le balcon</h4>
+        <p>Les jardins soignés et les pins parasols depuis votre balcon privé.</p>
+      </div>
+    </div>
+    <div class="video-card">
+      <video controls preload="auto" poster="Balcon.jpg">
+        <source src="oeufbalcon.mp4" type="video/mp4">
+      </video>
+      <div class="video-card-info">
+        <h4>Le balcon & le fauteuil oeuf</h4>
+        <p>Votre coin détente suspendu avec vue sur la résidence.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<div class="location-section" id="location">
+  <div class="location-text">
+    <p class="section-tag">Localisation</p>
+    <h2>Au cœur de la<br><em>Riviera Albanaise</em></h2>
+    <p class="section-lead">San Pietro Resort, Gjiri i Lalëzit — entre mer, gastronomie et culture.</p>
+    <ul class="distance-list">
+      <li class="distance-item"><span class="distance-name">🏖️ Plage de sable fin</span><span class="distance-val">100m à pied</span></li>
+      <li class="distance-item"><span class="distance-name">🍽️ Restaurants & supermarché</span><span class="distance-val">5 min à pied</span></li>
+      <li class="distance-item"><span class="distance-name">🏨 Meliá Durrës Resort</span><span class="distance-val">10 min à pied</span></li>
+      <li class="distance-item"><span class="distance-name">🍷 Duka Winery & Vineyard</span><span class="distance-val">15 min en voiture</span></li>
+      <li class="distance-item"><span class="distance-name">🏛️ Durrës</span><span class="distance-val">40 min en voiture</span></li>
+      <li class="distance-item"><span class="distance-name">✈️ Aéroport de Tirana</span><span class="distance-val">45 min en voiture</span></li>
+      <li class="distance-item"><span class="distance-name">🌆 Tirana</span><span class="distance-val">1h en voiture</span></li>
+    </ul>
+  </div>
+  <div class="location-map">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3000!2d19.5200795!3d41.5130478!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDHCsDMwJzQ3LjAiTiAxOcKwMzEnMTIuMyJF!5e1!3m2!1sfr!2sch!4v1" allowfullscreen="" loading="lazy"></iframe>
+  </div>
+</div>
+
+<!-- BOOKING -->
+<div style="height:320px;overflow:hidden;position:relative">
+  <img src="beachoceanview.jpg" alt="Plage" style="width:100%;height:100%;object-fit:cover;filter:brightness(0.75)">
+  <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center">
+    <p style="font-family:var(--serif);font-size:clamp(1.8rem,4vw,3rem);color:white;font-weight:300;font-style:italic;text-align:center;padding:1rem">
+      <span data-lang="fr" class="active">Votre prochaine escapade commence ici</span>
+      <span data-lang="en">Your next escape starts here</span>
+      <span data-lang="de">Ihr nächster Urlaub beginnt hier</span>
+      <span data-lang="sq">Pushimet tuaja fillojnë këtu</span>
+    </p>
+  </div>
+</div>
+<section class="booking-section" id="booking">
+  <p class="section-tag">
+    <span data-lang="fr" class="active">Réservation directe</span>
+    <span data-lang="en">Direct Booking</span>
+    <span data-lang="de">Direktbuchung</span>
+    <span data-lang="sq">Rezervim direkt</span>
+  </p>
+  <h2>
+    <span data-lang="fr" class="active">Réservez en direct,<br><em>sans commission</em></span>
+    <span data-lang="en">Book directly,<br><em>no commission</em></span>
+    <span data-lang="de">Direkt buchen,<br><em>ohne Provision</em></span>
+    <span data-lang="sq">Rezervoni drejtpërdrejt,<br><em>pa komision</em></span>
+  </h2>
+
+  <div class="booking-card" style="max-width:580px;margin:0 auto;background:white;border-radius:12px;box-shadow:0 6px 32px rgba(0,0,0,0.12);overflow:hidden;border:1px solid #ddd">
+
+    <!-- PRICE HEADER -->
+    <div style="background:var(--turquoise-dark);color:white;padding:1.2rem 1.5rem;display:flex;justify-content:space-between;align-items:center">
+      <div>
+        <div style="font-size:0.72rem;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.6);margin-bottom:0.3rem" id="cal-from-label">À partir de</div>
+        <div style="font-family:var(--serif);font-size:2rem;font-weight:300" id="cal-amount">195€ <span style="font-size:1rem;opacity:0.7">/ nuit</span></div>
+      </div>
+      <div style="background:var(--coral);padding:0.4rem 1rem;border-radius:20px;font-size:0.78rem;font-weight:500" id="cal-badge">Réservation directe</div>
+    </div>
+
+    <!-- DATES -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid #eee">
+      <div style="padding:1rem 1.5rem;border-right:1px solid #eee">
+        <label style="display:block;font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--text);margin-bottom:0.3rem" id="label-checkin">ARRIVÉE</label>
+        <input type="date" id="checkin" onchange="calcPrice()" style="border:none;outline:none;font-size:0.95rem;color:var(--text-muted);font-family:var(--sans);width:100%;background:transparent;cursor:pointer">
+      </div>
+      <div style="padding:1rem 1.5rem">
+        <label style="display:block;font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--text);margin-bottom:0.3rem" id="label-checkout">DÉPART</label>
+        <input type="date" id="checkout" onchange="calcPrice()" style="border:none;outline:none;font-size:0.95rem;color:var(--text-muted);font-family:var(--sans);width:100%;background:transparent;cursor:pointer">
+      </div>
+    </div>
+
+    <!-- GUESTS -->
+    <div style="padding:1rem 1.5rem;border-bottom:1px solid #eee;display:flex;justify-content:space-between;align-items:center">
+      <label style="font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--text)" id="label-guests">VOYAGEURS</label>
+      <select style="border:none;outline:none;font-size:0.95rem;color:var(--text-muted);font-family:var(--sans);background:transparent;cursor:pointer">
+        <option>1</option><option selected>2</option><option>3</option><option>4</option><option>5</option>
+      </select>
+    </div>
+
+    <!-- CURRENCY -->
+    <div style="padding:0.8rem 1.5rem;border-bottom:1px solid #eee;display:flex;gap:0.5rem">
+      <button class="curr-toggle-btn active" data-currency="EUR" onclick="setCurrency('EUR')">€ EUR</button>
+      <button class="curr-toggle-btn" data-currency="CHF" onclick="setCurrency('CHF')">CHF</button>
+      <button class="curr-toggle-btn" data-currency="LEK" onclick="setCurrency('LEK')">L LEK</button>
+    </div>
+
+    <!-- PRICE BREAKDOWN -->
+    <div id="price-breakdown-box" style="display:none;padding:1.2rem 1.5rem;border-bottom:1px solid #eee">
+      <div style="display:flex;justify-content:space-between;font-size:0.9rem;padding:0.4rem 0">
+        <span id="bd-nights-label">—</span><span id="bd-nights-val">—</span>
+      </div>
+      <div style="display:flex;justify-content:space-between;font-size:0.9rem;padding:0.4rem 0;color:#008A05">
+        <span id="bd-discount-label">—</span><span id="bd-discount-val">—</span>
+      </div>
+      <div style="display:flex;justify-content:space-between;font-size:0.9rem;padding:0.4rem 0">
+        <span id="bd-cleaning-label">Frais ménage & check-in</span><span id="bd-cleaning-val">—</span>
+      </div>
+      <div style="display:flex;justify-content:space-between;font-size:1rem;font-weight:600;padding:0.8rem 0 0.4rem;border-top:1px solid #eee;margin-top:0.4rem">
+        <span id="bd-total-label">Total</span><span id="bd-total-val">—</span>
+      </div>
+    </div>
+
+    <!-- EMAIL + MESSAGE -->
+    <div style="padding:1rem 1.5rem;border-bottom:1px solid #eee">
+      <input type="email" id="booking-email" placeholder="Votre email" style="width:100%;border:1px solid #ddd;border-radius:8px;padding:0.75rem 1rem;font-size:0.9rem;font-family:var(--sans);outline:none;margin-bottom:0.8rem;box-sizing:border-box">
+      <input type="text" id="booking-msg" placeholder="Message (optionnel)" style="width:100%;border:1px solid #ddd;border-radius:8px;padding:0.75rem 1rem;font-size:0.9rem;font-family:var(--sans);outline:none;box-sizing:border-box">
+    </div>
+
+    <!-- SUBMIT -->
+    <div style="padding:1.2rem 1.5rem">
+      <button onclick="submitBooking()" style="width:100%;background:var(--coral);color:white;border:none;padding:1rem;border-radius:8px;font-size:0.95rem;font-weight:500;cursor:pointer;font-family:var(--sans);transition:background 0.2s" onmouseover="this.style.background='#E05530'" onmouseout="this.style.background='var(--coral)'">
+        <span data-lang="fr" class="active">Envoyer une demande</span>
+        <span data-lang="en">Send booking request</span>
+        <span data-lang="de">Anfrage senden</span>
+        <span data-lang="sq">Dërgo kërkesën</span>
+      </button>
+    </div>
+
+    <p style="text-align:center;font-size:0.78rem;color:var(--text-muted);padding:0 1.5rem 1.2rem">
+      <span data-lang="fr" class="active">Min. 2 nuits · Tarif confirmé par email · </span>
+      <span data-lang="en">Min. 2 nights · Price confirmed by email · </span>
+      <span data-lang="de">Min. 2 Nächte · Preis per E-Mail bestätigt · </span>
+      <span data-lang="sq">Min. 2 netë · Çmimi konfirmuar me email · </span>
+      <a href="#" style="color:var(--turquoise-dark)">Airbnb</a> · <a href="#" style="color:var(--turquoise-dark)">Booking.com</a>
+    </p>
+
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews-section">
+  <p class="section-tag" style="color:var(--coral)">Avis voyageurs</p>
+  <h2>Ce que disent<br><em>nos hôtes</em></h2>
+  <div class="reviews-grid">
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"Un appartement impeccable, propre et très bien équipé. La plage est vraiment à deux pas. Parfait pour notre famille avec un bébé."</p>
+      <p class="review-author">— Marie & Thomas, France · Juillet 2024</p>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"La salle de bain en marbre m'a bluffée. L'appartement est encore plus beau que sur les photos. Le coucher de soleil… magique."</p>
+      <p class="review-author">— Sophie L., Belgique · Août 2024</p>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"Résidence très calme et sécurisée. Les enfants ont adoré l'aire de jeux et la mer peu profonde. On reviendra l'année prochaine !"</p>
+      <p class="review-author">— Karim & Yasmine, Suisse · Juillet 2024</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">
+    <span class="nav-logo">Swiss<span>Sweet</span> Apartment</span>
+    <p>Appartement de vacances de 97m² au sein du complexe San Pietro, à 100 mètres de la plage adriatique de Gjiri i Lalëzit, Albanie.</p>
+  </div>
+  <div>
+    <h4>Navigation</h4>
+    <ul>
+      <li><a href="#gallery">Photos</a></li>
+      <li><a href="#espaces">L'appartement</a></li>
+      <li><a href="#videos">Vidéos</a></li>
+      <li><a href="#location">Localisation</a></li>
+      <li><a href="#booking">Réserver</a></li>
+    </ul>
+  </div>
+  <div>
+    <h4>Contact & plateformes</h4>
+    <ul>
+      <li><a href="mailto:info@swisssweet-apartment.com">info@swisssweet-apartment.com</a></li>
+      <li><a href="#">Airbnb</a></li>
+      <li><a href="#">Booking.com</a></li>
+      <li><a href="#">Instagram</a></li>
+    </ul>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Swiss Sweet Apartment · San Pietro Resort, Durrës, Albanie</span>
+    <span>swisssweet-apartment.com</span>
+  </div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+
+  // ── LANGUAGE ──
+  let currentLang = 'fr';
+
+  function setLang(lang) {
+    currentLang = lang;
+    document.querySelectorAll('[data-lang]').forEach(el => {
+      el.classList.toggle('active', el.getAttribute('data-lang') === lang);
+    });
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      const t = btn.textContent.trim();
+      btn.classList.toggle('active',
+        (lang==='fr'&&t==='FR')||(lang==='en'&&t==='EN')||
+        (lang==='de'&&t==='DE')||(lang==='sq'&&t==='AL')
+      );
+    });
+    updateLabels();
+    calcPrice();
+  }
+  window.setLang = setLang;
+
+  const L = {
+    fr: {
+      from:'A partir de', night:'/ nuit', checkin:'ARRIVEE', checkout:'DEPART',
+      guests:'VOYAGEURS', total:'Total', badge:'Reservation directe',
+      nights: n => n+' nuit'+(n>1?'s':''),
+      avgNight: 'moy/nuit',
+      discount:'Reservation directe (-10%)',
+      cleaning:'Frais menage & check-in',
+      minNights:'Minimum 2 nuits requis'
+    },
+    en: {
+      from:'From', night:'/ night', checkin:'CHECK-IN', checkout:'CHECK-OUT',
+      guests:'GUESTS', total:'Total', badge:'Direct booking',
+      nights: n => n+' night'+(n>1?'s':''),
+      avgNight: 'avg/night',
+      discount:'Direct booking (-10%)',
+      cleaning:'Cleaning & check-in',
+      minNights:'Minimum 2 nights required'
+    },
+    de: {
+      from:'Ab', night:'/ Nacht', checkin:'ANREISE', checkout:'ABREISE',
+      guests:'GASTE', total:'Gesamt', badge:'Direktbuchung',
+      nights: n => n+' Nacht'+(n>1?'e':''),
+      avgNight: 'O/Nacht',
+      discount:'Direktbuchung (-10%)',
+      cleaning:'Reinigung & Check-in',
+      minNights:'Mindestens 2 Nachte'
+    },
+    sq: {
+      from:'Nga', night:'/ nate', checkin:'MBRRRITJA', checkout:'LARGIMI',
+      guests:'UDHETARET', total:'Totali', badge:'Rezervim direkt',
+      nights: n => n+' nate',
+      avgNight: 'mes./nate',
+      discount:'Rezervim direkt (-10%)',
+      cleaning:'Pastrim & check-in',
+      minNights:'Minimum 2 nete'
+    }
+  };
+
+  function updateLabels() {
+    const l = L[currentLang];
+    const set = (id, txt) => { const el = document.getElementById(id); if(el) el.textContent = txt; };
+    set('cal-from-label', l.from);
+    set('label-checkin', l.checkin);
+    set('label-checkout', l.checkout);
+    set('label-guests', l.guests);
+    set('cal-badge', l.badge);
+    set('bd-cleaning-label', l.cleaning);
+    set('bd-total-label', l.total);
+  }
+
+  // ── CURRENCY ──
+  let currentCurrency = 'EUR';
+  const rates = { EUR:1, CHF:0.97, LEK:111 };
+  const syms  = { EUR:'EUR ', CHF:'CHF ', LEK:'L ' };
+
+  function setCurrency(c) {
+    currentCurrency = c;
+    document.querySelectorAll('.curr-toggle-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.getAttribute('data-currency') === c);
+    });
+    calcPrice();
+  }
+  window.setCurrency = setCurrency;
+
+  function fmt(eur) {
+    const val = Math.round(eur * rates[currentCurrency]);
+    return syms[currentCurrency] + (currentCurrency==='LEK' ? val.toLocaleString('fr') : val);
+  }
+
+  // ── PRICING ──
+  function getNightRate(date) {
+    const m = date.getMonth()+1, d = date.getDate();
+    if (m===7) return 215;
+    if (m===8 && d<=22) return 210;
+    if (m===8 && d>22)  return 194;
+    if (m===6 && d>=7)  return 220;
+    if (m===6 && d<7)   return 180;
+    if (m===9 && d<=15) return 165;
+    if (m===9 && d>15)  return 130;
+    if (m===5) return 110;
+    return 80;
+  }
+
+  function calcPrice() {
+    const l = L[currentLang];
+    const cinEl  = document.getElementById('checkin');
+    const coutEl = document.getElementById('checkout');
+    const amtEl  = document.getElementById('cal-amount');
+    const boxEl  = document.getElementById('price-breakdown-box');
+    if (!cinEl || !coutEl || !amtEl || !boxEl) return;
+
+    // Reset
+    if (!cinEl.value || !coutEl.value) {
+      amtEl.innerHTML = fmt(195)+' <span style="font-size:1rem;opacity:0.7">'+l.night+'</span>';
+      boxEl.style.display = 'none';
+      return;
+    }
+
+    const start  = new Date(cinEl.value);
+    const end    = new Date(coutEl.value);
+    const nights = Math.round((end-start)/86400000);
+
+    if (nights < 2) {
+      amtEl.innerHTML = l.minNights;
+      boxEl.style.display = 'none';
+      return;
+    }
+
+    let subtotal = 0;
+    const cur = new Date(start);
+    for (let i=0; i<nights; i++) { subtotal += getNightRate(cur); cur.setDate(cur.getDate()+1); }
+
+    const discount  = Math.round(subtotal * 0.10);
+    const discounted = subtotal - discount;
+    const cleaning  = 35;
+    const total     = discounted + cleaning;
+    const perNight  = Math.round(discounted / nights);
+
+    amtEl.innerHTML = fmt(perNight)+' <span style="font-size:1rem;opacity:0.7">'+l.night+'</span>';
+
+    const set = (id, txt) => { const el=document.getElementById(id); if(el) el.textContent=txt; };
+    set('bd-nights-label',   l.nights(nights)+' x '+fmt(Math.round(subtotal/nights)));
+    set('bd-nights-val',     fmt(subtotal));
+    set('bd-discount-label', l.discount);
+    set('bd-discount-val',   '-'+fmt(discount));
+    set('bd-cleaning-val',   fmt(cleaning));
+    set('bd-total-val',      fmt(total));
+
+    boxEl.style.display = 'block';
+  }
+  window.calcPrice = calcPrice;
+
+  // ── LIGHTBOX ──
+  const photos = [
+    'Salon.jpeg','Sdb.jpeg','chambre1.jpeg','Cuisine.jpeg',
+    'Balcon.jpg','Vuejardinbalcon.jpeg','beachoceanview.jpg',
+    'sunset3.jpeg','Sunset1.jpeg','Sunset2.jpeg','Spritz.jpeg','restaurantdenuit.jpeg'
+  ];
+  let currentPhoto = 0;
+
+  window.openLightbox = function(i) {
+    currentPhoto = i;
+    document.getElementById('lightbox-img').src = photos[i];
+    document.getElementById('lightbox-counter').textContent = (i+1)+' / '+photos.length;
+    document.getElementById('lightbox').classList.add('active');
+    document.body.style.overflow = 'hidden';
+  };
+  window.closeLightbox = function() {
+    document.getElementById('lightbox').classList.remove('active');
+    document.body.style.overflow = '';
+  };
+  window.changePhoto = function(dir) {
+    currentPhoto = (currentPhoto+dir+photos.length)%photos.length;
+    document.getElementById('lightbox-img').src = photos[currentPhoto];
+    document.getElementById('lightbox-counter').textContent = (currentPhoto+1)+' / '+photos.length;
+  };
+  document.getElementById('lightbox').addEventListener('click', function(e) {
+    if (e.target===this) window.closeLightbox();
+  });
+  document.addEventListener('keydown', function(e) {
+    if (!document.getElementById('lightbox').classList.contains('active')) return;
+    if (e.key==='Escape') window.closeLightbox();
+    if (e.key==='ArrowLeft') window.changePhoto(-1);
+    if (e.key==='ArrowRight') window.changePhoto(1);
+  });
+
+  // ── AUDIO ──
+  window.toggleAudio = function() {
+    const audio = document.getElementById('ambient-audio');
+    const btn   = document.getElementById('audioBtn');
+    if (!audio) return;
+    if (audio.paused) {
+      audio.play().then(() => { if(btn) btn.classList.add('playing'); }).catch(()=>{});
+    } else {
+      audio.pause();
+      if(btn) btn.classList.remove('playing');
+    }
+  };
+
+  // ── BOOKING SUBMIT ──
+  window.submitBooking = function() {
+    const email = document.getElementById('booking-email');
+    const msg   = document.getElementById('booking-msg');
+    const cin   = document.getElementById('checkin');
+    const cout  = document.getElementById('checkout');
+    if (!email || !email.value) {
+      alert("Merci d'entrer votre email.");
+      return;
+    }
+    const subject = encodeURIComponent('Demande de reservation - Swiss Sweet Apartment');
+    const body = encodeURIComponent(
+      'Bonjour,
+
+Je souhaite reserver l appartement Swiss Sweet.
+
+'+
+      (cin&&cin.value   ? 'Arrivee : '+cin.value+'
+'  : '')+
+      (cout&&cout.value ? 'Depart  : '+cout.value+'
+' : '')+
+      '
+Mon email : '+email.value+
+      (msg&&msg.value   ? '
+
+Message : '+msg.value : '')
+    );
+    window.location.href = 'mailto:info@swisssweet-apartment.com?subject='+subject+'&body='+body;
+  };
+
+  // ── INIT ──
+  updateLabels();
+  setLang('fr');
+
+});
+</script>
+</body>
