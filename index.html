@@ -1,0 +1,1746 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Private holiday flat in San Pietro Resort, Lalzi Bay — Swiss Sweet Apartment</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="description" content="Swiss Sweet Apartment is a 97 m² private holiday flat in San Pietro Resort, Lalzi Bay, Albania, 5 minutes from the beach, with free parking and direct booking requests.">
+<link rel="canonical" href="https://swisssweet-apartment.com/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Swiss Sweet Apartment — San Pietro, Lalzi Bay">
+<meta property="og:description" content="Appartement de vacances familial à San Pietro Resort, Albanie. 97 m², 4 adultes + bébé, Wi-Fi haut débit, parking gratuit, plage à environ 5 minutes à pied.">
+<meta property="og:url" content="https://swisssweet-apartment.com/">
+<meta property="og:image" content="https://swisssweet-apartment.com/beachoceanview.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Swiss Sweet Apartment — San Pietro, Lalzi Bay">
+<meta name="twitter:description" content="Appartement de vacances familial à San Pietro Resort, Albanie, à environ 5 minutes à pied de la plage.">
+<meta name="twitter:image" content="https://swisssweet-apartment.com/beachoceanview.jpg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VacationRental",
+  "name": "Swiss Sweet Apartment",
+  "description": "Holiday apartment in San Pietro Resort, Lalzi Bay, Albania, approximately 5 minutes on foot from the beach.",
+  "url": "https://swisssweet-apartment.com/",
+  "image": "https://swisssweet-apartment.com/beachoceanview.jpg",
+  "email": "info@swisssweet-apartment.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "San Pietro Resort, Lalzi Bay",
+    "addressRegion": "Durrës",
+    "addressCountry": "AL"
+  },
+  "amenityFeature": [
+    {"@type":"LocationFeatureSpecification","name":"High-speed Wi-Fi","value":true},
+    {"@type":"LocationFeatureSpecification","name":"Free parking","value":true},
+    {"@type":"LocationFeatureSpecification","name":"Air conditioning","value":true},
+    {"@type":"LocationFeatureSpecification","name":"Washing machine with dryer function","value":true},
+    {"@type":"LocationFeatureSpecification","name":"Baby bed","value":true}
+  ],
+  "maximumAttendeeCapacity": 5,
+  "priceRange": "From 80 EUR per night"
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --turquoise: #7ECECE;
+    --turquoise-light: #A8E4E4;
+    --turquoise-pale: #E4F7F7;
+    --turquoise-dark: #2A7A7A;
+    --turquoise-deep: #1E5858;
+    --coral: #FF6B47;
+    --coral-dark: #E05530;
+    --white: #FFFFFF;
+    --off-white: #F7FDFD;
+    --text: #1A2E2E;
+    --text-muted: #4A7070;
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --sans: 'DM Sans', sans-serif;
+    --card-media-h: 260px;
+  }
+
+  /* LANGUAGE & CURRENCY SWITCHER */
+  .lang-bar { display: flex; align-items: center; gap: 0.5rem; }
+  .lang-btn, .curr-btn { background: none; border: 1px solid rgba(255,255,255,0.3); color: rgba(255,255,255,0.7); padding: 0.25rem 0.6rem; border-radius: 4px; font-size: 0.72rem; font-family: var(--sans); cursor: pointer; transition: all 0.2s; letter-spacing: 0.05em; }
+  .lang-btn:hover, .curr-btn:hover, .lang-btn.active, .curr-btn.active { background: rgba(255,255,255,0.15); color: white; border-color: white; }
+  .lang-sep { color: rgba(255,255,255,0.3); font-size: 0.7rem; }
+
+  /* AIRBNB STYLE PRICE CALCULATOR */
+  .price-calculator { background: white; border: 1px solid #ddd; border-radius: 12px; padding: 0; max-width: 580px; margin: 0 auto 2rem; box-shadow: 0 6px 32px rgba(0,0,0,0.12); overflow: hidden; }
+  .price-cal-header { background: var(--turquoise-dark); color: white; padding: 1.2rem 1.5rem; display: flex; justify-content: space-between; align-items: center; }
+  .price-cal-from { font-size: 0.75rem; color: rgba(255,255,255,0.7); text-transform: uppercase; letter-spacing: 0.1em; }
+  .price-cal-amount { font-family: var(--serif); font-size: 2rem; font-weight: 300; color: white; }
+  .price-cal-amount span { font-size: 1rem; opacity: 0.7; }
+  .price-cal-badge { background: var(--coral); color: white; padding: 0.4rem 0.8rem; border-radius: 20px; font-size: 0.75rem; font-weight: 500; }
+  .price-cal-dates { display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid #eee; }
+  .price-cal-date { padding: 1rem 1.5rem; border-right: 1px solid #eee; cursor: pointer; transition: background 0.2s; }
+  .price-cal-date:last-child { border-right: none; }
+  .price-cal-date:hover { background: #f7f7f7; }
+  .price-cal-date label { display: block; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text); margin-bottom: 0.3rem; }
+  .price-cal-date input { border: none; outline: none; font-size: 0.95rem; color: var(--text-muted); font-family: var(--sans); background: transparent; width: 100%; cursor: pointer; }
+  .price-cal-guests { padding: 1rem 1.5rem; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center; }
+  .price-cal-guests label { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text); }
+  .price-cal-guests select { border: none; outline: none; font-size: 0.95rem; color: var(--text-muted); font-family: var(--sans); background: transparent; cursor: pointer; }
+  .price-breakdown { padding: 1.2rem 1.5rem; border-bottom: 1px solid #eee; display: none; }
+  .price-breakdown.show { display: block; }
+  .price-line { display: flex; justify-content: space-between; font-size: 0.9rem; color: var(--text); padding: 0.4rem 0; }
+  .price-line.total { font-weight: 500; border-top: 1px solid #eee; padding-top: 0.8rem; margin-top: 0.4rem; font-size: 1rem; }
+  .price-line.discount { color: #008A05; }
+  .price-currency-toggle { display: flex; gap: 0.5rem; padding: 0.8rem 1.5rem; border-bottom: 1px solid #eee; }
+  .curr-toggle-btn { background: none; border: 1px solid #ddd; color: var(--text-muted); padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.78rem; font-family: var(--sans); cursor: pointer; transition: all 0.2s; }
+  .curr-toggle-btn.active { background: var(--turquoise-dark); color: white; border-color: var(--turquoise-dark); }
+  .price-cal-btn { margin: 1.2rem 1.5rem; background: var(--coral); color: white; border: none; padding: 1rem; border-radius: 8px; font-size: 0.95rem; font-weight: 500; cursor: pointer; width: calc(100% - 3rem); transition: background 0.2s; font-family: var(--sans); }
+  .price-cal-btn:hover { background: var(--coral-dark); }
+  .price-note { padding: 0 1.5rem 1.2rem; font-size: 0.78rem; color: var(--text-muted); text-align: center; }
+  [data-lang] { display: none; }
+  [data-lang].active { display: inline; }
+  [data-lang-block] { display: none; }
+  [data-lang-block].active { display: inline; }
+
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--sans); background: var(--white); color: var(--text); font-size: 16px; line-height: 1.6; overflow-x: hidden; }
+
+  /* NAV */
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: grid; grid-template-columns: auto 1fr auto; gap: 1.5rem; align-items: center; padding: 1rem 2.2rem; background: rgba(42,122,122,0.96); backdrop-filter: blur(12px); }
+  .nav-logo { font-family: var(--serif); font-size: 1.4rem; font-weight: 300; color: var(--white); letter-spacing: 0.04em; display:flex; align-items:center; gap:0.65rem; text-decoration:none; }
+  .nav-logo span { color: var(--coral); font-style: italic; }
+  .site-logo { width:34px; height:34px; border-radius:999px; object-fit:cover; box-shadow:0 8px 22px rgba(0,0,0,0.20); background:white; flex:0 0 auto; }
+  .nav-logo-text { display:inline-block; }
+  .nav-links { display: flex; gap: 1.05rem; list-style: none; align-items: center; justify-content:center; }
+  .nav-links a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.78rem; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--white); }
+  .nav-cta { background: var(--coral) !important; color: white !important; padding: 0.5rem 1.2rem; border-radius: 2px; }
+  .nav-tools { display:flex; align-items:center; justify-content:flex-end; gap:0.65rem; }
+  .nav-audio-group { display:flex; align-items:center; gap:0.35rem; }
+
+  /* AUDIO */
+  .audio-btn { background: none; border: 1px solid rgba(255,255,255,0.4); color: rgba(255,255,255,0.7); padding: 0.35rem 0.9rem; border-radius: 20px; font-size: 0.72rem; font-family: var(--sans); letter-spacing: 0.08em; cursor: pointer; transition: all 0.2s; display: flex; align-items: center; gap: 0.4rem; }
+  .audio-btn:hover { border-color: white; color: white; }
+  .audio-btn.playing { border-color: var(--turquoise-light); color: var(--turquoise-light); }
+  .audio-dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+  .audio-btn.playing .audio-dot { animation: audioPulse 1s ease-in-out infinite; }
+  @keyframes audioPulse { 0%,100%{opacity:1}50%{opacity:0.3} }
+
+  /* HERO */
+  .hero { height: 100vh; min-height: 600px; position: relative; display: flex; align-items: flex-end; padding: 0 2.5rem 5rem; overflow: hidden; }
+  .hero-bg { position: absolute; inset: 0; overflow: hidden; }
+  .hero-bg video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
+  .hero-bg::after { content: ''; position: absolute; inset: 0; z-index: 1; background: linear-gradient(to bottom, rgba(30,88,88,0.15) 0%, rgba(30,88,88,0.72) 100%); }
+  .hero-content { position: relative; z-index: 2; max-width: 680px; }
+  .hero-tag { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--turquoise-light); margin-bottom: 1rem; }
+  .hero h1 { font-family: var(--serif); font-size: clamp(2.8rem, 6vw, 5rem); font-weight: 300; line-height: 1.1; color: var(--white); margin-bottom: 1.2rem; }
+  .hero h1 em { font-style: italic; color: var(--coral); }
+  .hero-sub { font-size: 1rem; color: rgba(255,255,255,0.82); font-weight: 300; max-width: 440px; margin-bottom: 2rem; line-height: 1.7; }
+  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-coral { background: var(--coral); color: white; padding: 0.85rem 2rem; text-decoration: none; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; border-radius: 2px; transition: background 0.2s, transform 0.15s; display: inline-block; }
+  .btn-coral:hover { background: var(--coral-dark); transform: translateY(-1px); }
+  .btn-outline { border: 1px solid rgba(255,255,255,0.5); color: white; padding: 0.85rem 2rem; text-decoration: none; font-size: 0.85rem; font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase; border-radius: 2px; transition: border-color 0.2s, background 0.2s; display: inline-block; }
+  .btn-outline:hover { border-color: white; background: rgba(255,255,255,0.1); }
+  .hero-scroll { position: absolute; bottom: 2rem; right: 2.5rem; z-index: 2; display: flex; flex-direction: column; align-items: center; gap: 0.5rem; color: rgba(255,255,255,0.5); font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; }
+  .scroll-line { width: 1px; height: 40px; background: rgba(255,255,255,0.3); animation: scrollPulse 2s ease-in-out infinite; }
+  @keyframes scrollPulse { 0%,100%{opacity:0.3}50%{opacity:0.8} }
+
+  /* STATS */
+  .stats-bar { background: var(--turquoise-dark); display: grid; grid-template-columns: repeat(4, 1fr); }
+  .stat-item { padding: 1.8rem 2rem; border-right: 1px solid rgba(255,255,255,0.08); text-align: center; }
+  .stat-item:last-child { border-right: none; }
+  .stat-num { font-family: var(--serif); font-size: 2rem; font-weight: 300; color: var(--coral); line-height: 1; margin-bottom: 0.3rem; }
+  .stat-label { font-size: 0.72rem; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.55); }
+
+  /* SHARED */
+  .section-tag { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--coral); margin-bottom: 0.8rem; }
+  h2 { font-family: var(--serif); font-size: clamp(2rem, 4vw, 3rem); font-weight: 300; line-height: 1.2; color: var(--text); margin-bottom: 1.2rem; }
+  h2 em { font-style: italic; }
+  .section-lead { font-size: 1.05rem; color: var(--text-muted); max-width: 560px; font-weight: 300; line-height: 1.8; margin-bottom: 3rem; }
+
+  /* GALLERY */
+  .gallery-section { background: var(--white); padding: 5rem 0; }
+  .gallery-header { padding: 0 2.5rem; margin-bottom: 2.5rem; }
+  .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+  .gallery-item { overflow: hidden; background: var(--turquoise-pale); cursor: pointer; position: relative; }
+  .gallery-item img { width: 100%; height: 280px; object-fit: cover; display: block; transition: transform 0.6s ease; }
+  .gallery-item:hover img { transform: scale(1.04); }
+  .gallery-overlay { position: absolute; inset: 0; background: rgba(42,122,122,0); transition: background 0.3s; display: flex; align-items: center; justify-content: center; }
+  .gallery-overlay span { opacity: 0; color: white; font-size: 2rem; transition: opacity 0.3s; }
+  .gallery-item:hover .gallery-overlay { background: rgba(42,122,122,0.3); }
+  .gallery-item:hover .gallery-overlay span { opacity: 1; }
+  .mobile-gallery-more { display:none; }
+
+  /* LIGHTBOX */
+  .lightbox { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.93); z-index: 1000; align-items: center; justify-content: center; }
+  .lightbox.active { display: flex; }
+  .lightbox-img { max-width: 88vw; max-height: 84vh; object-fit: contain; border-radius: 2px; }
+  .lightbox-close { position: absolute; top: 1.5rem; right: 2rem; color: white; font-size: 2rem; cursor: pointer; background: none; border: none; opacity: 0.7; transition: opacity 0.2s; }
+  .lightbox-close:hover { opacity: 1; }
+  .lightbox-prev, .lightbox-next { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: white; font-size: 1.8rem; width: 54px; height: 54px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.2s; }
+  .lightbox-prev { left: 1.5rem; }
+  .lightbox-next { right: 1.5rem; }
+  .lightbox-prev:hover, .lightbox-next:hover { background: rgba(255,107,71,0.6); }
+  .lightbox-counter { position: absolute; bottom: 1.5rem; left: 50%; transform: translateX(-50%); color: rgba(255,255,255,0.6); font-size: 0.85rem; letter-spacing: 0.1em; }
+
+  /* FEATURES */
+  .features-section { background: var(--turquoise); display: grid; grid-template-columns: 1fr 1fr; gap: 0; padding: 0; }
+  .features-text { padding: 6rem 3.5rem 6rem 2.5rem; display: flex; flex-direction: column; justify-content: center; }
+  .features-text h2 { color: var(--white); }
+  .features-text .section-lead { color: rgba(255,255,255,0.75); }
+  .features-image { overflow: hidden; min-height: 500px; }
+  .features-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .features-list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem 2rem; }
+  .feature-item { display: flex; align-items: flex-start; gap: 0.6rem; font-size: 0.9rem; color: var(--white); font-weight: 300; line-height: 1.4; }
+  .feature-icon { color: var(--coral); flex-shrink: 0; }
+
+  /* SUNSET BANNER */
+  .sunset-banner { position: relative; height: 420px; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+  .sunset-banner-bg { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(30,88,88,0.35), rgba(30,88,88,0.7)), url('Sunset1.jpeg') center 40%/cover no-repeat; }
+  .sunset-banner-content { position: relative; z-index: 2; text-align: center; }
+  .sunset-banner-content h2 { color: white; font-size: clamp(2.2rem, 5vw, 4rem); margin-bottom: 1rem; }
+  .sunset-banner-content p { font-size: 1.1rem; color: rgba(255,255,255,0.8); max-width: 500px; margin: 0 auto 2rem; font-weight: 300; }
+
+  /* ROOMS */
+  .rooms-section { background: var(--white); padding: 6rem 2.5rem; }
+  .rooms-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 3rem; }
+  .room-card { background: var(--off-white); overflow: hidden; border-radius: 2px; border: 1px solid var(--turquoise-light); transition: transform 0.3s, box-shadow 0.3s; }
+  .room-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(42,122,122,0.15); }
+  .room-media-wrap { width: 100%; height: var(--card-media-h); overflow: hidden; position: relative; background: var(--turquoise-pale); }
+  .room-media-wrap img, .room-media-wrap video { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s; }
+  .room-card:hover .room-media-wrap img { transform: scale(1.03); }
+  .room-info { padding: 1.6rem; }
+  .room-info h3 { font-family: var(--serif); font-size: 1.4rem; font-weight: 300; color: var(--turquoise-dark); margin-bottom: 0.5rem; }
+  .room-info p { font-size: 0.88rem; color: var(--text-muted); font-weight: 300; line-height: 1.6; }
+
+  /* VIDEOS */
+  .video-section { background: var(--turquoise-pale); padding: 6rem 2.5rem; }
+  .video-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; margin-top: 3rem; }
+  .video-card { background: var(--white); border-radius: 2px; overflow: hidden; border: 1px solid var(--turquoise-light); }
+  .video-card video { width: 100%; height: 200px; object-fit: cover; display: block; background: var(--turquoise-pale); }
+  .video-card-info { padding: 1.2rem 1.4rem; }
+  .video-card-info h4 { font-family: var(--serif); font-size: 1.2rem; font-weight: 300; color: var(--turquoise-dark); margin-bottom: 0.3rem; }
+  .video-card-info p { font-size: 0.85rem; color: var(--text-muted); font-weight: 300; }
+
+  /* LOCATION */
+  .location-section { background: var(--turquoise-dark); display: grid; grid-template-columns: 1fr 1fr; padding: 0; }
+  .location-text { padding: 6rem 3.5rem 6rem 2.5rem; }
+  .location-text h2 { color: var(--white); }
+  .location-text .section-lead { color: rgba(255,255,255,0.65); max-width: 100%; }
+  .distance-list { list-style: none; margin-top: 2rem; }
+  .distance-item { display: flex; justify-content: space-between; align-items: center; padding: 0.9rem 0; border-bottom: 1px solid rgba(255,255,255,0.12); font-size: 0.9rem; }
+  .distance-name { color: rgba(255,255,255,0.85); font-weight: 300; }
+  .distance-val { font-family: var(--serif); font-size: 1.1rem; color: var(--coral); font-style: italic; }
+  .location-map { min-height: 500px; position: relative; }
+  .location-map iframe { width: 100%; height: 100%; position: absolute; inset: 0; border: none; }
+
+  /* BOOKING */
+  .booking-section { background: var(--turquoise-pale); text-align: center; padding: 6rem 2.5rem; }
+  .booking-section h2 { margin: 0 auto 1rem; }
+  .booking-section .section-lead { margin: 0 auto 3rem; }
+  .booking-card { background: var(--white); border-radius: 4px; padding: 3rem; max-width: 600px; margin: 0 auto; display: flex; flex-direction: column; gap: 1.2rem; box-shadow: 0 8px 40px rgba(42,122,122,0.12); }
+  .booking-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .booking-field { display: flex; flex-direction: column; gap: 0.4rem; text-align: left; }
+  .booking-field label { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); }
+  .booking-field input, .booking-field select { background: var(--off-white); border: 1px solid var(--turquoise-light); padding: 0.75rem 1rem; font-size: 0.9rem; font-family: var(--sans); color: var(--text); border-radius: 2px; outline: none; transition: border-color 0.2s; }
+  .booking-field input:focus, .booking-field select:focus { border-color: var(--turquoise); }
+  .booking-submit { background: var(--coral); color: white; border: none; padding: 1rem 2rem; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; border-radius: 2px; transition: background 0.2s, transform 0.15s; font-family: var(--sans); width: 100%; }
+  .booking-submit:hover { background: var(--coral-dark); transform: translateY(-1px); }
+  .booking-note { font-size: 0.8rem; color: var(--text-muted); }
+  .booking-note a { color: var(--turquoise-dark); text-decoration: none; }
+
+  /* REVIEWS */
+  .reviews-section { background: var(--turquoise); padding: 6rem 2.5rem; text-align: center; }
+  .reviews-section h2 { color: var(--white); }
+  .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 3rem; }
+  .review-card { background: var(--white); padding: 2rem; border-radius: 2px; text-align: left; }
+  .review-stars { color: var(--coral); font-size: 0.85rem; margin-bottom: 0.8rem; }
+  .review-text { font-family: var(--serif); font-size: 1.05rem; font-style: italic; font-weight: 300; color: var(--text); line-height: 1.7; margin-bottom: 1rem; }
+  .review-author { font-size: 0.8rem; color: var(--text-muted); }
+  .reviews-compact { background: var(--turquoise); padding: 4.5rem 2.5rem; text-align: center; }
+  .reviews-compact h2 { color: var(--white); }
+  .reviews-compact .section-lead { color: rgba(255,255,255,0.72); margin: 0 auto 1.8rem; }
+  .review-modal { display:none; position:fixed; inset:0; z-index:1200; background:rgba(0,0,0,0.72); align-items:center; justify-content:center; padding:1.5rem; }
+  .review-modal.active { display:flex; }
+  .review-modal-panel { background:var(--off-white); width:min(980px, 100%); max-height:88vh; overflow:auto; border-radius:22px; padding:2rem; position:relative; box-shadow:0 30px 80px rgba(0,0,0,0.35); }
+  .review-modal-close { position:absolute; top:1rem; right:1rem; width:40px; height:40px; border-radius:999px; border:none; background:var(--turquoise-dark); color:white; cursor:pointer; font-size:1.2rem; }
+  .review-modal-grid { display:grid; grid-template-columns:repeat(3, 1fr); gap:1.2rem; margin-top:1.5rem; }
+  .review-modal-grid .review-card { box-shadow:0 8px 26px rgba(42,122,122,0.08); }
+
+  /* FOOTER */
+  footer { background: var(--turquoise-deep); color: rgba(255,255,255,0.5); padding: 4rem 2.5rem 2.5rem; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; }
+  .footer-brand .nav-logo { font-size: 1.6rem; margin-bottom: 1rem; }
+  .footer-logo-row { display:flex; align-items:flex-start; gap:1.1rem; }
+  .footer-logo-mark { width:78px; height:78px; border-radius:999px; object-fit:cover; background:white; box-shadow:0 14px 34px rgba(0,0,0,0.25); flex:0 0 auto; }
+  .footer-brand p { font-size: 0.85rem; font-weight: 300; line-height: 1.7; max-width: 320px; color: rgba(255,255,255,0.45); }
+  footer h4 { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 1.2rem; }
+  footer ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+  footer ul a { color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.88rem; font-weight: 300; transition: color 0.2s; }
+  footer ul a:hover { color: var(--coral); }
+  .footer-bottom { grid-column: 1/-1; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 2rem; display: flex; justify-content: space-between; font-size: 0.78rem; color: rgba(255,255,255,0.25); }
+
+
+
+  /* HERO SEASON PROMO */
+  .season-promo { display:inline-flex; align-items:center; gap:0.55rem; background:rgba(255,107,71,0.95); color:white; padding:0.55rem 0.9rem; border-radius:999px; font-size:0.78rem; font-weight:500; letter-spacing:0.08em; text-transform:uppercase; box-shadow:0 12px 28px rgba(0,0,0,0.18); margin-bottom:1rem; }
+  .season-promo .promo-dot { width:7px; height:7px; border-radius:999px; background:white; box-shadow:0 0 0 4px rgba(255,255,255,0.22); }
+  .hero-deal-row { display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap; margin:0.4rem 0 1.4rem; }
+  .hero-price-badge { background:rgba(255,255,255,0.94); color:var(--turquoise-deep); padding:0.7rem 1rem; border-radius:999px; display:inline-flex; align-items:baseline; gap:0.25rem; box-shadow:0 14px 34px rgba(0,0,0,0.18); }
+  .hero-price-badge strong { font-family:var(--serif); font-size:1.7rem; font-weight:300; line-height:1; }
+  .hero-price-badge span { font-size:0.78rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.08em; }
+  .hero-discount-badge { background:linear-gradient(135deg,var(--coral),var(--coral-dark)); color:white; padding:0.65rem 0.95rem; border-radius:999px; font-size:0.8rem; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; box-shadow:0 14px 34px rgba(0,0,0,0.2); }
+  .hero-discount-badge::before { content:'✦'; margin-right:0.35rem; color:#FFE7D9; }
+
+
+  .payment-reassurance { margin:0.95rem 1.5rem 0; background:var(--turquoise-pale); border:1px solid rgba(42,122,122,0.16); color:var(--turquoise-deep); border-radius:10px; padding:0.85rem 1rem; font-size:0.84rem; line-height:1.55; text-align:center; }
+  .payment-reassurance span::before { content:'✓ '; color:var(--coral); font-weight:700; }
+
+  /* DIRECT BOOKING INFO */
+  .booking-info-grid { max-width:980px; margin:0 auto 2rem; display:grid; grid-template-columns:1fr 1fr; gap:1.2rem; align-items:stretch; }
+  .booking-info-grid .direct-save-box, .booking-info-grid .good-to-know-box { margin:0; height:100%; }
+  .direct-save-box { max-width:680px; margin:0 auto 2rem; background:white; border:1px solid rgba(42,122,122,0.14); border-radius:16px; padding:1.5rem; box-shadow:0 10px 34px rgba(42,122,122,0.10); text-align:left; }
+  .direct-save-title { font-family:var(--serif); font-size:1.55rem; font-weight:300; color:var(--turquoise-dark); margin-bottom:0.55rem; }
+  .direct-save-text { font-size:0.95rem; color:var(--text-muted); line-height:1.75; }
+  .direct-save-links { display:flex; gap:0.65rem; flex-wrap:wrap; margin-top:1rem; }
+  .platform-link { color:var(--turquoise-dark); border:1px solid var(--turquoise-light); text-decoration:none; border-radius:999px; padding:0.45rem 0.8rem; font-size:0.78rem; transition:all 0.2s; }
+  .platform-link:hover { background:var(--turquoise-pale); color:var(--coral-dark); }
+
+  /* GOOD TO KNOW */
+  .good-to-know-box { max-width:680px; margin:0 auto 2rem; background:linear-gradient(135deg, rgba(255,255,255,0.98), rgba(228,247,247,0.75)); border:1px solid rgba(42,122,122,0.16); border-radius:16px; padding:1.4rem 1.5rem; box-shadow:0 10px 34px rgba(42,122,122,0.09); text-align:left; }
+  .good-to-know-title { font-family:var(--serif); font-size:1.45rem; font-weight:300; color:var(--turquoise-dark); margin-bottom:0.85rem; }
+  .good-to-know-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:0.7rem; }
+  .good-to-know-item { display:flex; align-items:flex-start; gap:0.55rem; color:var(--text-muted); font-size:0.9rem; line-height:1.55; }
+  .good-to-know-item::before { content:'✓'; color:var(--coral); font-weight:700; margin-top:0.02rem; }
+
+  /* FAQ */
+  .faq-section { background:var(--off-white); padding:6rem 2.5rem; }
+  .faq-header { text-align:center; max-width:760px; margin:0 auto 3rem; }
+  .faq-header .section-lead { margin-left:auto; margin-right:auto; margin-bottom:0; }
+  .faq-list { max-width:980px; margin:0 auto; display:flex; flex-direction:column; gap:0.75rem; }
+  .faq-item { background:white; border:1px solid rgba(42,122,122,0.12); border-radius:16px; box-shadow:0 8px 28px rgba(42,122,122,0.07); overflow:hidden; }
+  .faq-item summary { cursor:pointer; list-style:none; padding:1.15rem 3.4rem 1.15rem 1.25rem; position:relative; color:var(--turquoise-deep); font-weight:500; }
+  .faq-item summary::-webkit-details-marker { display:none; }
+  .faq-item summary::after { content:'+'; position:absolute; right:1.25rem; top:50%; transform:translateY(-50%); color:var(--coral); font-size:1.45rem; font-weight:300; }
+  .faq-item[open] summary::after { content:'–'; }
+  .faq-item .faq-answer { padding:0 1.25rem 1.2rem; color:var(--text-muted); font-size:0.94rem; line-height:1.75; }
+  .faq-item .faq-answer p + p { margin-top:0.65rem; }
+
+  /* BLOG / LOCAL TIPS */
+  .blog-section { background:white; padding:6rem 2.5rem; }
+  .blog-header { max-width:760px; margin:0 auto 3rem; text-align:center; }
+  .blog-header .section-lead { margin-left:auto; margin-right:auto; margin-bottom:0; }
+  .blog-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; max-width:1100px; margin:0 auto; }
+  .blog-card { background:var(--off-white); border:1px solid var(--turquoise-light); border-radius:16px; padding:1.6rem; box-shadow:0 8px 30px rgba(42,122,122,0.08); min-height:220px; display:flex; flex-direction:column; justify-content:space-between; }
+  .blog-card h3 { font-family:var(--serif); font-size:1.45rem; font-weight:300; color:var(--turquoise-dark); line-height:1.25; margin-bottom:0.8rem; }
+  .blog-card p { color:var(--text-muted); font-size:0.9rem; line-height:1.65; }
+  .blog-status { display:inline-flex; align-self:flex-start; margin-top:1.25rem; background:var(--coral); color:white; border-radius:999px; padding:0.4rem 0.8rem; font-size:0.72rem; letter-spacing:0.08em; text-transform:uppercase; }
+
+  /* DESKTOP LANGUAGE DROPDOWN & MOBILE MENU */
+  .lang-dropdown { position: relative; }
+  .lang-current { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.35); color: white; padding: 0.45rem 0.75rem; border-radius: 999px; font-size: 0.72rem; font-family: var(--sans); cursor: pointer; letter-spacing: 0.08em; }
+  .lang-menu { position: absolute; top: calc(100% + 0.55rem); right: 0; background: var(--white); border: 1px solid rgba(42,122,122,0.16); border-radius: 12px; box-shadow: 0 14px 34px rgba(0,0,0,0.16); padding: 0.35rem; min-width: 92px; display: none; z-index: 130; }
+  .lang-dropdown:hover .lang-menu, .lang-dropdown:focus-within .lang-menu { display: flex; flex-direction: column; gap: 0.2rem; }
+  .lang-menu .lang-btn { color: var(--turquoise-deep); border: none; border-radius: 8px; text-align: left; padding: 0.45rem 0.6rem; background: transparent; }
+  .lang-menu .lang-btn:hover, .lang-menu .lang-btn.active { background: var(--turquoise-pale); color: var(--coral-dark); }
+  .mobile-menu-toggle { display:none; background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.35); color:white; border-radius:999px; padding:0.55rem 0.75rem; font-family:var(--sans); font-size:0.78rem; letter-spacing:0.08em; cursor:pointer; align-items:center; gap:0.5rem; }
+  .mobile-lang-quick { display:none; position:relative; }
+  .mobile-lang-quick summary { list-style:none; cursor:pointer; background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.35); color:white; border-radius:999px; padding:0.48rem 0.68rem; font-family:var(--sans); font-size:0.75rem; letter-spacing:0.06em; align-items:center; gap:0.35rem; white-space:nowrap; }
+  .mobile-lang-quick summary::-webkit-details-marker { display:none; }
+  .mobile-lang-quick-menu { position:absolute; top:calc(100% + 0.55rem); right:0; min-width:86px; background:var(--white); border:1px solid rgba(42,122,122,0.16); border-radius:12px; box-shadow:0 14px 34px rgba(0,0,0,0.18); padding:0.35rem; z-index:140; }
+  .mobile-lang-quick-menu .lang-btn { display:block; width:100%; color:var(--turquoise-deep); border:none; border-radius:8px; text-align:left; padding:0.45rem 0.6rem; background:transparent; }
+  .mobile-lang-quick-menu .lang-btn:hover, .mobile-lang-quick-menu .lang-btn.active { background:var(--turquoise-pale); color:var(--coral-dark); }
+  .hamburger-lines { display:inline-flex; flex-direction:column; gap:4px; }
+  .hamburger-lines span { display:block; width:18px; height:2px; background:white; border-radius:999px; }
+  .mobile-panel { display:none; position:fixed; top:70px; left:0; right:0; z-index:99; background:rgba(30,88,88,0.98); backdrop-filter:blur(14px); border-top:1px solid rgba(255,255,255,0.1); padding:1rem 1.5rem 1.4rem; box-shadow:0 18px 40px rgba(0,0,0,0.22); }
+  .mobile-panel.open { display:block; }
+  .mobile-panel a { display:block; color:white; text-decoration:none; padding:0.85rem 0; border-bottom:1px solid rgba(255,255,255,0.1); font-size:0.82rem; letter-spacing:0.1em; text-transform:uppercase; }
+  .mobile-panel a.mobile-book { margin-top:1rem; text-align:center; background:var(--coral); border-bottom:none; border-radius:999px; padding:0.85rem 1rem; }
+  .mobile-lang-row { display:flex; gap:0.45rem; flex-wrap:wrap; padding-top:1rem; }
+  .mobile-lang-row .lang-btn { color:rgba(255,255,255,0.8); border-color:rgba(255,255,255,0.28); }
+  .mobile-lang-row .lang-btn.active { color:white; background:rgba(255,255,255,0.16); border-color:white; }
+
+
+
+  /* FINAL HEADER / FOOTER POLISH */
+  nav { grid-template-columns: 1fr auto 1fr; gap: 1rem; }
+  .nav-logo { justify-self:start; white-space:nowrap; }
+  .nav-links { justify-self:center; white-space:nowrap; }
+  .nav-tools { justify-self:end; }
+  .nav-audio-group .audio-btn:first-child { max-width: 132px; overflow:hidden; }
+  .nav-audio-group #audio-title { max-width: 86px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; display:inline-block; }
+  .footer-brand { max-width: 620px; }
+  .footer-logo-row { display:grid; grid-template-columns:minmax(0,1fr) 150px; align-items:center; gap:2rem; }
+  .footer-logo-mark { width:150px; height:auto; border-radius:0; object-fit:contain; background:transparent; box-shadow:none; justify-self:end; }
+  .footer-brand .nav-logo { margin-bottom:1rem; display:block; }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; grid-template-columns:1fr auto auto; gap:0.55rem; }
+    .nav-links, .nav-tools { display: none; }
+    .mobile-lang-quick { display:block; }
+    .mobile-menu-toggle { display:inline-flex; }
+    .stats-bar { grid-template-columns: 1fr 1fr; }
+    .features-section, .location-section { grid-template-columns: 1fr; }
+    .features-image { min-height: 300px; }
+    .rooms-grid, .reviews-grid, .video-grid { grid-template-columns: 1fr; }
+    .gallery-grid { grid-template-columns: 1fr 1fr; }
+    .gallery-item.mobile-feature { display:block; }
+    .gallery-item.mobile-extra { display:none; }
+    .gallery-grid.mobile-expanded .gallery-item.mobile-extra { display:block; }
+    .gallery-item.mobile-order-1 { order:1; grid-column:1/3; }
+    .gallery-item.mobile-order-2 { order:2; grid-column:span 1; }
+    .gallery-item.mobile-order-3 { order:3; grid-column:span 1; }
+    .gallery-item.mobile-order-4 { order:4; grid-column:span 1; }
+    .gallery-item.mobile-order-5 { order:5; grid-column:span 1; }
+    .gallery-item.mobile-order-6 { order:6; grid-column:1/3; }
+    .gallery-item.mobile-extra { order:20; grid-column:span 1; }
+    .mobile-gallery-more { display:flex; justify-content:center; padding:1.2rem 1.5rem 0; }
+    .mobile-gallery-more button { border:none; background:var(--coral); color:white; padding:0.85rem 1.4rem; border-radius:999px; font-family:var(--sans); font-size:0.82rem; font-weight:500; letter-spacing:0.08em; text-transform:uppercase; cursor:pointer; }
+    .booking-row { grid-template-columns: 1fr; }
+    footer { grid-template-columns: 1fr; }
+
+    .hero-deal-row { gap:0.55rem; }
+    .hero-price-badge strong { font-size:1.45rem; }
+    .season-promo { font-size:0.7rem; }
+    .blog-grid { grid-template-columns:1fr; }
+    .review-modal-grid { grid-template-columns:1fr; }
+    .review-modal-panel { padding:1.4rem; }
+    .footer-logo-row { grid-template-columns:1fr; }
+    .footer-logo-mark { justify-self:start; width:120px; }
+    .good-to-know-grid { grid-template-columns:1fr; }
+    .faq-section, .blog-section { padding:4rem 1.5rem; }
+    .direct-save-links { justify-content:center; }
+
+    .hero { padding: 0 1.5rem 4rem; }
+    .location-map { min-height: 300px; }
+  }
+
+
+  /* MOBILE ACCORDIONS — desktop layout remains unchanged */
+  .mobile-accordion-toggle { display:none; }
+  .booking-request-note, .long-stay-note {
+    margin:0.95rem 1.5rem 0;
+    color:var(--text-muted);
+    font-size:0.86rem;
+    line-height:1.6;
+    text-align:center;
+  }
+  .long-stay-note { margin-top:0.65rem; font-style:italic; }
+
+  @media (max-width: 768px) {
+    .hero-bg::after {
+      background:linear-gradient(to bottom, rgba(30,88,88,0.30) 0%, rgba(30,88,88,0.84) 100%);
+    }
+    .hero-sub {
+      color:rgba(255,255,255,0.96);
+      font-weight:400;
+      text-shadow:0 1px 3px rgba(0,0,0,0.38);
+    }
+    .hero h1 { font-size:clamp(2.65rem, 12vw, 4rem); line-height:1.05; }
+
+    .mobile-accordion-toggle {
+      width:calc(100% - 3rem);
+      margin:0.8rem 1.5rem;
+      padding:1rem 1.15rem;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:1rem;
+      border:1px solid rgba(42,122,122,0.18);
+      border-radius:14px;
+      background:var(--white);
+      color:var(--turquoise-deep);
+      font-family:var(--serif);
+      font-size:1.55rem;
+      font-weight:300;
+      line-height:1.2;
+      text-align:left;
+      box-shadow:0 8px 24px rgba(42,122,122,0.08);
+      cursor:pointer;
+    }
+    .mobile-accordion-toggle::after {
+      content:'+';
+      color:var(--coral);
+      font-family:var(--sans);
+      font-size:1.6rem;
+      font-weight:300;
+      flex:0 0 auto;
+    }
+    .mobile-accordion-toggle[aria-expanded="true"]::after { content:'–'; }
+    .mobile-accordion-target.mobile-collapsed { display:none !important; }
+
+    .booking-info-grid { display:block; margin-bottom:1rem; }
+    .booking-info-grid .mobile-accordion-toggle { width:100%; margin:0.7rem 0; }
+    .booking-info-grid .direct-save-box,
+    .booking-info-grid .good-to-know-box { margin:0 0 0.8rem; }
+
+    .booking-section { padding:4rem 1rem; }
+    .booking-card { width:100%; }
+    .payment-reassurance { margin:0.9rem 1rem 0; padding:0.8rem; }
+    .booking-request-note, .long-stay-note { margin-left:1rem; margin-right:1rem; }
+    .booking-card a[href^="mailto:"] { overflow-wrap:anywhere; word-break:break-word; }
+  }
+
+
+  .faq-preview-section { background:var(--off-white); padding:4rem 2.5rem; }
+  .faq-preview-card { max-width:900px; margin:0 auto; background:white; border:1px solid rgba(42,122,122,0.12); border-radius:18px; padding:2rem; text-align:center; box-shadow:0 8px 28px rgba(42,122,122,0.07); }
+  .faq-preview-card h2 { margin-bottom:1.4rem; }
+  .faq-preview-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:0.7rem; margin:0 auto 1.5rem; text-align:left; }
+  .faq-preview-item { background:var(--turquoise-pale); border-radius:10px; padding:0.8rem 1rem; color:var(--text-muted); font-size:0.9rem; }
+  @media (max-width:768px){ .faq-preview-section{padding:1rem 0;} .faq-preview-card{margin:0 1.5rem;padding:1.2rem;} .faq-preview-grid{grid-template-columns:1fr;} }
+</style>
+</head>
+<body>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <button class="lightbox-prev" onclick="changePhoto(-1)">‹</button>
+  <img class="lightbox-img" id="lightbox-img" src="" alt="">
+  <button class="lightbox-next" onclick="changePhoto(1)">›</button>
+  <div class="lightbox-counter" id="lightbox-counter"></div>
+</div>
+
+<!-- AUDIO -->
+<audio id="ambient-audio" loop preload="none">
+  <source src="saltwater-mirage.mp3" type="audio/mpeg">
+</audio>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="index.html" aria-label="Swiss Sweet Apartment home"><span class="nav-logo-text">Swiss<span>Sweet</span> Apartment</span></a>
+  <details class="mobile-lang-quick">
+    <summary aria-label="Choose language">🌐 <span class="mobile-lang-code">EN</span></summary>
+    <div class="mobile-lang-quick-menu">
+      <button class="lang-btn" onclick="setLang('fr')">FR</button>
+      <button class="lang-btn active" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" onclick="setLang('de')">DE</button>
+      <button class="lang-btn" onclick="setLang('sq')">AL</button>
+      <button class="lang-btn" onclick="setLang('it')">IT</button>
+    </div>
+  </details>
+  <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Open menu" aria-controls="mobile-panel" aria-expanded="false">
+    <span class="hamburger-lines"><span></span><span></span><span></span></span>
+    Menu
+  </button>
+  <ul class="nav-links">
+    <li><a href="#espaces"><span data-lang="fr">L'appartement</span><span data-lang="en" class="active">The Apartment</span><span data-lang="de">Die Wohnung</span><span data-lang="sq">Apartamenti</span><span data-lang="it">L'appartamento</span></a></li>
+    <li><a href="#gallery"><span data-lang="fr">Photos</span><span data-lang="en" class="active">Photos</span><span data-lang="de">Fotos</span><span data-lang="sq">Foto</span><span data-lang="it">Foto</span></a></li>
+    <li><a href="#videos"><span data-lang="fr">Vidéos</span><span data-lang="en" class="active">Videos</span><span data-lang="de">Videos</span><span data-lang="sq">Video</span><span data-lang="it">Video</span></a></li>
+    <li><a href="#location"><span data-lang="fr">Localisation</span><span data-lang="en" class="active">Location</span><span data-lang="de">Lage</span><span data-lang="sq">Vendndodhja</span><span data-lang="it">Posizione</span></a></li>
+    <li><a href="faq.html" class="nav-cta"><span data-lang="fr">FAQ</span><span data-lang="en" class="active">FAQ</span><span data-lang="de">FAQ</span><span data-lang="sq">FAQ</span><span data-lang="it">FAQ</span></a></li>
+    <li><a href="#blog"><span data-lang="fr">Blog</span><span data-lang="en" class="active">Blog</span><span data-lang="de">Blog</span><span data-lang="sq">Blog</span><span data-lang="it">Blog</span></a></li>
+  </ul>
+  <div class="nav-tools">
+    <div class="nav-audio-group">
+      <button class="audio-btn" id="audioBtn" onclick="toggleAudio()" title="Play / Pause">
+        <span class="audio-dot"></span>
+        <span id="audio-title">Saltwater Mirage</span>
+      </button>
+      <button class="audio-btn" id="audioNext" onclick="nextTrack()" title="Next track" style="padding:0.35rem 0.6rem;font-size:0.8rem">⏭</button>
+    </div>
+    <div class="lang-dropdown">
+      <button class="lang-current" type="button" aria-label="Choose language">EN ▾</button>
+      <div class="lang-menu">
+        <button class="lang-btn" onclick="setLang('fr')">FR</button>
+        <button class="lang-btn active" onclick="setLang('en')">EN</button>
+        <button class="lang-btn" onclick="setLang('de')">DE</button>
+        <button class="lang-btn" onclick="setLang('sq')">AL</button>
+        <button class="lang-btn" onclick="setLang('it')">IT</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-panel" id="mobile-panel">
+  <a href="#espaces" onclick="closeMobileMenu()"><span data-lang="fr">L'appartement</span><span data-lang="en" class="active">The Apartment</span><span data-lang="de">Die Wohnung</span><span data-lang="sq">Apartamenti</span><span data-lang="it">L'appartamento</span></a>
+  <a href="#gallery" onclick="closeMobileMenu()"><span data-lang="fr">Photos</span><span data-lang="en" class="active">Photos</span><span data-lang="de">Fotos</span><span data-lang="sq">Foto</span><span data-lang="it">Foto</span></a>
+  <a href="#videos" onclick="closeMobileMenu()"><span data-lang="fr">Vidéos</span><span data-lang="en" class="active">Videos</span><span data-lang="de">Videos</span><span data-lang="sq">Video</span><span data-lang="it">Video</span></a>
+  <a href="#location" onclick="closeMobileMenu()"><span data-lang="fr">Localisation</span><span data-lang="en" class="active">Location</span><span data-lang="de">Lage</span><span data-lang="sq">Vendndodhja</span><span data-lang="it">Posizione</span></a>
+  <a href="faq.html" onclick="closeMobileMenu()">FAQ</a>
+  <a href="#blog" onclick="closeMobileMenu()">Blog</a>
+  <div class="mobile-lang-row">
+    <button class="lang-btn" onclick="setLang('fr'); closeMobileMenu();">FR</button>
+    <button class="lang-btn active" onclick="setLang('en'); closeMobileMenu();">EN</button>
+    <button class="lang-btn" onclick="setLang('de'); closeMobileMenu();">DE</button>
+    <button class="lang-btn" onclick="setLang('sq'); closeMobileMenu();">AL</button>
+    <button class="lang-btn" onclick="setLang('it'); closeMobileMenu();">IT</button>
+  </div>
+  <a href="#booking" class="mobile-book" onclick="closeMobileMenu()"><span data-lang="fr">Vérifier les disponibilités</span><span data-lang="en" class="active">Check availability</span><span data-lang="de">Verfügbarkeit prüfen</span><span data-lang="sq">Kontrolloni disponueshmërinë</span><span data-lang="it">Verifica disponibilità</span></a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg" style="position:absolute;inset:0;background:url('sunset3.jpeg') center/cover no-repeat;">
+  </div>
+  <div class="hero-content">
+    <div class="season-promo">
+      <span class="promo-dot"></span>
+      <span data-lang="fr">Été 2026 · Quelques semaines encore disponibles</span>
+      <span data-lang="en" class="active">Summer 2026 · Only a few weeks still available</span>
+      <span data-lang="de">Sommer 2026 · Nur noch wenige Wochen verfügbar</span>
+      <span data-lang="sq">Vera 2026 · Vetëm disa javë ende të lira</span>
+      <span data-lang="it">Estate 2026 · Solo poche settimane ancora disponibili</span>
+    </div>
+    <p class="hero-tag">San Pietro Resort · Lalzi Bay · Albania</p>
+    <h1>
+      <span data-lang-block="fr">Appartement de vacances privé à San Pietro Resort, Lalzi Bay</span>
+      <span data-lang-block="en" class="active">Private holiday flat in San Pietro Resort, Lalzi Bay</span>
+      <span data-lang-block="de">Private Ferienwohnung im San Pietro Resort, Lalzi Bay</span>
+      <span data-lang-block="sq">Apartament privat pushimi në San Pietro Resort, Lalzi Bay</span>
+      <span data-lang-block="it">Appartamento vacanze privato al San Pietro Resort, Lalzi Bay</span>
+    </h1>
+    <p class="hero-sub">
+      <span data-lang-block="fr">Un appartement de vacances de 97 m² pour familles, couples et groupes d’amis, à 5 minutes de la plage, avec balcon privé, cuisine entièrement équipée, parking gratuit et confort suisse au bord de l’Adriatique.</span>
+      <span data-lang-block="en" class="active">A 97 m² holiday apartment for families, couples and friends, 5 minutes from the beach, with private balcony, fully equipped kitchen, free parking and Swiss comfort by the Adriatic.</span>
+      <span data-lang-block="de">Eine 97 m² grosse Ferienwohnung für Familien, Paare und Freundesgruppen, 5 Minuten vom Strand entfernt, mit Privatbalkon, voll ausgestatteter Küche, kostenlosem Parkplatz und Schweizer Komfort an der Adria.</span>
+      <span data-lang-block="sq">Një apartament pushimi 97 m² për familje, çifte dhe grupe miqsh, 5 minuta nga plazhi, me ballkon privat, kuzhinë plotësisht të pajisur, parkim falas dhe rehati zvicerane pranë Adriatikut.</span>
+      <span data-lang-block="it">Un appartamento vacanze di 97 m² per famiglie, coppie e gruppi di amici, a 5 minuti dalla spiaggia, con balcone privato, cucina completamente attrezzata, parcheggio gratuito e comfort svizzero sull’Adriatico.</span>
+    </p>
+    <div class="hero-deal-row">
+      <div class="hero-price-badge"><span data-lang="fr">Dès</span><span data-lang="en" class="active">From</span><span data-lang="de">Ab</span><span data-lang="sq">Nga</span><span data-lang="it">Da</span><strong>80 EUR</strong><span data-lang="fr">/ nuit</span><span data-lang="en" class="active">/ night</span><span data-lang="de">/ Nacht</span><span data-lang="sq">/ natë</span><span data-lang="it">/ notte</span></div>
+      <div class="hero-discount-badge"><span data-lang="fr">-10% en direct</span><span data-lang="en" class="active">-10% direct</span><span data-lang="de">-10% direkt</span><span data-lang="sq">-10% direkt</span><span data-lang="it">-10% diretto</span></div>
+    </div>
+    <p class="hero-sub" style="margin-bottom:1.4rem">
+      <span data-lang-block="fr">Réservez avant qu'il ne soit trop tard et venez profiter de ce magnifique endroit.</span>
+      <span data-lang-block="en" class="active">Book before it is too late and come enjoy this beautiful place!</span>
+      <span data-lang-block="de">Buchen Sie, bevor es zu spät ist, und geniessen Sie diesen wunderschönen Ort.</span>
+      <span data-lang-block="sq">Rezervoni para se të jetë vonë dhe shijoni këtë vend të mrekullueshëm.</span>
+      <span data-lang-block="it">Prenotate prima che sia troppo tardi e venite a godervi questo magnifico posto.</span>
+    </p>
+    <div class="hero-actions">
+      <a href="#booking" class="btn-coral">
+        <span data-lang="fr">Vérifier les disponibilités</span>
+        <span data-lang="en" class="active">Check availability</span>
+        <span data-lang="de">Verfügbarkeit prüfen</span>
+        <span data-lang="sq">Kontrolloni disponueshmërinë</span><span data-lang="it">Verifica disponibilità</span>
+      </a>
+      <a href="#gallery" class="btn-outline">
+        <span data-lang="fr">Voir les photos</span>
+        <span data-lang="en" class="active">See photos</span>
+        <span data-lang="de">Fotos ansehen</span>
+        <span data-lang="sq">Shiko fotot</span><span data-lang="it">Vedi le foto</span>
+      </a>
+    </div>
+  </div>
+  <div class="hero-scroll"><div class="scroll-line"></div><span>Scroll</span></div>
+</section>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stat-item"><div class="stat-num">97m²</div><div class="stat-label"><span data-lang="fr">Surface totale</span><span data-lang="en" class="active">Total area</span><span data-lang="de">Gesamtfläche</span><span data-lang="sq">Siperfaqja totale</span><span data-lang="it">Superficie totale</span></div></div>
+  <div class="stat-item"><div class="stat-num"><span data-lang="fr">4 + lit bébé</span><span data-lang="en" class="active">4 + baby cot</span><span data-lang="de">4 + Babybett</span><span data-lang="sq">4 + djep</span><span data-lang="it">4 + lettino</span></div><div class="stat-label"><span data-lang="fr">Couchages</span><span data-lang="en" class="active">Sleeping places</span><span data-lang="de">Schlafplätze</span><span data-lang="sq">Vende gjumi</span><span data-lang="it">Posti letto</span></div></div>
+  <div class="stat-item"><div class="stat-num">5'</div><div class="stat-label"><span data-lang="fr">De la plage</span><span data-lang="en" class="active">From the beach</span><span data-lang="de">Vom Strand</span><span data-lang="sq">Nga plazhi</span><span data-lang="it">Dalla spiaggia</span></div></div>
+  <div class="stat-item"><div class="stat-num">45'</div><div class="stat-label"><span data-lang="fr">De l'aéroport</span><span data-lang="en" class="active">From airport</span><span data-lang="de">Vom Flughafen</span><span data-lang="sq">Nga aeroporti</span><span data-lang="it">Dall'aeroporto</span></div></div>
+</div>
+
+<!-- GALLERY -->
+<div class="gallery-section" id="gallery">
+  <div class="gallery-header">
+    <p class="section-tag">
+      <span data-lang="fr">Galerie</span>
+      <span data-lang="en" class="active">Gallery</span>
+      <span data-lang="de">Galerie</span>
+      <span data-lang="sq">Galeria</span>
+      <span data-lang="it">Galleria</span>
+    </p>
+    <h2>
+      <span data-lang="fr">L'appartement &amp; <em>la destination</em></span>
+      <span data-lang="en" class="active">The apartment &amp; <em>the destination</em></span>
+      <span data-lang="de">Die Wohnung &amp; <em>das Ziel</em></span>
+      <span data-lang="sq">Apartamenti &amp; <em>destinacioni</em></span><span data-lang="it">L'appartamento &amp; <em>la destinazione</em></span>
+    </h2>
+  </div>
+  <div class="gallery-grid">
+    <div class="gallery-item mobile-feature mobile-order-1" onclick="openLightbox(0)"><img src="Salon.jpeg" alt="Salon turquoise"><div class="gallery-overlay"><span>⊕</span></div></div>
+    <div class="gallery-item mobile-feature mobile-order-4" onclick="openLightbox(1)"><img src="Sdb.jpeg" alt="Salle de bain marbre"><div class="gallery-overlay"><span>⊕</span></div></div>
+    <div class="gallery-item mobile-feature mobile-order-2" onclick="openLightbox(2)"><img src="chambre1.jpeg" alt="Chambre parentale"><div class="gallery-overlay"><span>⊕</span></div></div>
+    <div class="gallery-item mobile-extra" onclick="openLightbox(3)"><img src="Cuisine.jpeg" alt="Cuisine ouverte"><div class="gallery-overlay"><span>⊕</span></div></div>
+    <div class="gallery-item mobile-feature mobile-order-3" onclick="openLightbox(4)"><img src="Balcon.jpg" alt="Balcon privé"><div class="gallery-overlay"><span>⊕</span></div></div>
+    <div class="gallery-item mobile-extra" onclick="openLightbox(5)"><img src="Vuejardinbalcon.jpeg" alt="Vue jardin balcon"><div class="gallery-overlay"><span>⊕</span></div></div>
+    <div class="gallery-item mobile-feature mobile-order-5" onclick="openLightbox(6)"><img src="beachoceanview.jpg" alt="Plage"><div class="gallery-overlay"><span>⊕</span></div></div>
+    <div class="gallery-item mobile-extra" onclick="openLightbox(7)"><img src="sunset3.jpeg" alt="Promenade palmiers"><div class="gallery-overlay"><span>⊕</span></div></div>
+    <div class="gallery-item mobile-extra" onclick="openLightbox(8)"><img src="Sunset1.jpeg" alt="Coucher de soleil"><div class="gallery-overlay"><span>⊕</span></div></div>
+    <div class="gallery-item mobile-feature mobile-order-6" onclick="openLightbox(9)"><img src="Sunset2.jpeg" alt="Coucher de soleil baie"><div class="gallery-overlay"><span>⊕</span></div></div>
+    <div class="gallery-item mobile-extra" onclick="openLightbox(10)"><img src="Spritz.jpeg" alt="Spritz plage"><div class="gallery-overlay"><span>⊕</span></div></div>
+    <div class="gallery-item mobile-extra" onclick="openLightbox(11)"><img src="restaurantdenuit.jpeg" alt="Restaurant nuit"><div class="gallery-overlay"><span>⊕</span></div></div>
+    <div class="gallery-item mobile-extra" onclick="openLightbox(12)"><img src="hut.jpeg" alt="Coucher de soleil sur la plage de Lalëz"><div class="gallery-overlay"><span>⊕</span></div></div>
+    <div class="gallery-item mobile-extra" onclick="openLightbox(13)"><img src="sdb2.jpeg" alt="Salle de bain en marbre avec lave-linge séchant"><div class="gallery-overlay"><span>⊕</span></div></div>
+    <div class="gallery-item mobile-extra" onclick="openLightbox(14)"><img src="heart.jpeg" alt="Allée vers la plage à San Pietro Resort"><div class="gallery-overlay"><span>⊕</span></div></div>
+    <div class="gallery-item mobile-extra" onclick="openLightbox(15)"><img src="seaview2.jpeg" alt="Vue mer et plage de Lalëz"><div class="gallery-overlay"><span>⊕</span></div></div>
+    <div class="gallery-item mobile-extra" onclick="openLightbox(16)"><img src="exterior.jpeg" alt="Extérieur de la résidence San Pietro"><div class="gallery-overlay"><span>⊕</span></div></div>
+    <div class="gallery-item mobile-extra" onclick="openLightbox(17)"><img src="eveningstreet.jpeg" alt="Résidence San Pietro en soirée"><div class="gallery-overlay"><span>⊕</span></div></div>
+    <div class="gallery-item mobile-extra" onclick="openLightbox(18)"><img src="sunsetorange.jpeg" alt="Coucher de soleil orange sur la mer"><div class="gallery-overlay"><span>⊕</span></div></div>
+  </div>
+  <div class="mobile-gallery-more" id="mobile-gallery-more">
+    <button type="button" onclick="showAllMobileGallery()">
+      <span data-lang="fr">Voir toutes les photos</span>
+      <span data-lang="en" class="active">View all photos</span>
+      <span data-lang="de">Alle Fotos ansehen</span>
+      <span data-lang="sq">Shiko të gjitha fotot</span>
+      <span data-lang="it">Vedi tutte le foto</span>
+    </button>
+  </div>
+</div>
+
+<!-- FEATURES -->
+<div class="features-section" id="features">
+  <div class="features-text">
+    <p class="section-tag">
+    <span data-lang="fr">L'appartement</span>
+    <span data-lang="en" class="active">The apartment</span>
+    <span data-lang="de">Die Wohnung</span>
+    <span data-lang="sq">Apartamenti</span>
+    <span data-lang="it">L'appartamento</span>
+  </p>
+    <h2>
+    <span data-lang="fr">Tout le confort<br><em>pour votre famille</em></span>
+    <span data-lang="en" class="active">All the comfort<br><em>for your family</em></span>
+    <span data-lang="de">Aller Komfort<br><em>für Ihre Familie</em></span>
+    <span data-lang="sq">I gjith komforti<br><em>per familjen tuaj</em></span><span data-lang="it">Tutto il comfort<br><em>per la vostra famiglia</em></span>
+  </h2>
+    <p class="section-lead">
+    <span data-lang="fr">Deux chambres, salle de bain en marbre, balcon avec barbecue intégré et cuisine ouverte entièrement équipée.</span>
+    <span data-lang="en" class="active">Two bedrooms, marble bathroom, balcony with built-in BBQ and fully equipped open kitchen.</span>
+    <span data-lang="de">Zwei Schlafzimmer, Marmorbad, Balkon mit eingebautem Grill und voll ausgestatteter offener Küche.</span>
+    <span data-lang="sq">Dy dhoma gjumi, banjo mermeri, ballkon me skarë dhe kuzhinë e hapur plotësisht e pajisur.</span><span data-lang="it">Due camere da letto, bagno in marmo, balcone con barbecue integrato e cucina aperta completamente attrezzata.</span>
+  </p>
+    <ul class="features-list">
+      <li class="feature-item"><span class="feature-icon">→</span><span data-lang="fr">Lit queen size + lit bébé</span><span data-lang="en" class="active">Queen bed + baby cot</span><span data-lang="de">Queen-Bett + Babybett</span><span data-lang="sq">Shtrat queen + djep</span><span data-lang="it">Letto queen + lettino neonato</span></li>
+      <li class="feature-item"><span class="feature-icon">→</span><span data-lang="fr">2 lits simples 140cm</span><span data-lang="en" class="active">2 single beds 140cm</span><span data-lang="de">2 Einzelbetten 140cm</span><span data-lang="sq">2 krevate 140cm</span><span data-lang="it">2 letti singoli 140cm</span></li>
+      <li class="feature-item"><span class="feature-icon">→</span><span data-lang="fr">Salle de bain en marbre</span><span data-lang="en" class="active">Marble bathroom</span><span data-lang="de">Marmor-Badezimmer</span><span data-lang="sq">Banjo mermeri</span><span data-lang="it">Bagno in marmo</span></li>
+      <li class="feature-item"><span class="feature-icon">→</span><span data-lang="fr">Lave-linge & séchant</span><span data-lang="en" class="active">Washer & dryer</span><span data-lang="de">Waschmaschine & Trockner</span><span data-lang="sq">Lavatrice & tharëse</span><span data-lang="it">Lavatrice & asciugatrice</span></li>
+      <li class="feature-item"><span class="feature-icon">→</span><span data-lang="fr">AC réversible partout</span><span data-lang="en" class="active">Reversible AC everywhere</span><span data-lang="de">Klimaanlage überall</span><span data-lang="sq">Kondicionim kudo</span><span data-lang="it">Aria condizionata ovunque</span></li>
+      <li class="feature-item"><span class="feature-icon">→</span><span data-lang="fr">Moustiquaires toutes fenêtres</span><span data-lang="en" class="active">Mosquito screens all windows</span><span data-lang="de">Mückengitter alle Fenster</span><span data-lang="sq">Rrjeta mushkonjash</span><span data-lang="it">Zanzariere tutte le finestre</span></li>
+      <li class="feature-item"><span class="feature-icon">→</span><span data-lang="fr">Netflix & Spotify inclus</span><span data-lang="en" class="active">Netflix & Spotify included</span><span data-lang="de">Netflix & Spotify inklusive</span><span data-lang="sq">Netflix & Spotify perfshire</span><span data-lang="it">Netflix & Spotify inclusi</span></li>
+      <li class="feature-item"><span class="feature-icon">→</span><span data-lang="fr">Parking gratuit</span><span data-lang="en" class="active">Free parking</span><span data-lang="de">Kostenloser Parkplatz</span><span data-lang="sq">Parkim falas</span><span data-lang="it">Parcheggio gratuito</span></li>
+      <li class="feature-item"><span class="feature-icon">→</span><span data-lang="fr">Balcon & barbecue intégré</span><span data-lang="en" class="active">Balcony & built-in BBQ</span><span data-lang="de">Balkon & eingebauter Grill</span><span data-lang="sq">Ballkon & skarë e integruar</span><span data-lang="it">Balcone & barbecue integrato</span></li>
+      <li class="feature-item"><span class="feature-icon">→</span><span data-lang="fr">Îlot cuisine 4 places</span><span data-lang="en" class="active">Kitchen island 4 seats</span><span data-lang="de">Kücheninsel 4 Sitzplätze</span><span data-lang="sq">Ishull kuzhine 4 vende</span><span data-lang="it">Isola cucina 4 posti</span></li>
+      <li class="feature-item"><span class="feature-icon">→</span><span data-lang="fr">Résidence sécurisée</span><span data-lang="en" class="active">Secure residence</span><span data-lang="de">Gesicherte Anlage</span><span data-lang="sq">Rezidencë e sigurt</span><span data-lang="it">Residence sicuro</span></li>
+      <li class="feature-item"><span class="feature-icon">→</span><span data-lang="fr">Aire de jeux enfants</span><span data-lang="en" class="active">Children's playground</span><span data-lang="de">Kinderspielplatz</span><span data-lang="sq">Shesh lojrash</span><span data-lang="it">Area giochi per bambini</span></li>
+    </ul>
+  </div>
+  <div class="features-image">
+    <img src="heart.jpeg" alt="Allée vers la plage de San Pietro Resort">
+  </div>
+</div>
+
+<!-- SUNSET BANNER -->
+<div class="sunset-banner">
+  <div class="sunset-banner-bg"></div>
+  <div class="sunset-banner-content">
+    <p class="section-tag" style="text-align:center;color:var(--turquoise-light)">Lalëz Bay · Adriatique</p>
+    <h2>
+    <span data-lang="fr">Des couchers de soleil<br><em>inoubliables</em></span>
+    <span data-lang="en" class="active">Unforgettable<br><em>sunsets</em></span>
+    <span data-lang="de">Unvergessliche<br><em>Sonnenuntergänge</em></span>
+    <span data-lang="sq">Perëndime dielli<br><em>te paharrueshme</em></span><span data-lang="it">Tramonti<br><em>indimenticabili</em></span>
+  </h2>
+  <p>
+    <span data-lang="fr">Des kilomètres de sable fin, une mer calme et peu profonde, des restaurants au bord de l'eau.</span>
+    <span data-lang="en" class="active">Miles of fine sand, a calm shallow sea, seafront restaurants.</span>
+    <span data-lang="de">Kilometerlanger Feinsand, ruhiges flaches Meer, Strandrestaurants.</span>
+    <span data-lang="sq">Kilometra rere te holla, det i qete dhe i ceket, restorante ne breg te detit.</span><span data-lang="it">Chilometri di sabbia fine, mare calmo e poco profondo, ristoranti sul lungomare.</span>
+  </p>
+    <a href="#booking" class="btn-coral">
+    <span data-lang="fr">Réserver maintenant</span>
+    <span data-lang="en" class="active">Book now</span>
+    <span data-lang="de">Jetzt buchen</span>
+    <span data-lang="sq">Rezervo tani</span><span data-lang="it">Prenota ora</span>
+  </a>
+  </div>
+</div>
+
+<!-- ESPACES -->
+<section class="rooms-section" id="espaces">
+  <p class="section-tag">
+    <span data-lang="fr">Les espaces</span>
+    <span data-lang="en" class="active">The spaces</span>
+    <span data-lang="de">Die Räume</span>
+    <span data-lang="sq">Hapësirat</span>
+    <span data-lang="it">Gli spazi</span>
+  </p>
+  <h2>
+    <span data-lang="fr">Chaque pièce<br><em>raconte une histoire</em></span>
+    <span data-lang="en" class="active">Every room<br><em>tells a story</em></span>
+    <span data-lang="de">Jedes Zimmer<br><em>erzählt eine Geschichte</em></span>
+    <span data-lang="sq">Cdo dhome<br><em>tregon nje histori</em></span><span data-lang="it">Ogni stanza<br><em>racconta una storia</em></span>
+  </h2>
+  <div class="rooms-grid">
+
+    <div class="room-card">
+      <div class="room-media-wrap">
+        <img src="chambre1.jpeg" alt="Chambre parentale">
+      </div>
+      <div class="room-info">
+        <h3><span data-lang="fr">Chambre parentale</span><span data-lang="en" class="active">Master bedroom</span><span data-lang="de">Elternschlafzimmer</span><span data-lang="sq">Dhoma kryesore</span><span data-lang="it">Camera dei genitori</span></h3>
+        <p>
+          <span data-lang="fr">Grand lit queen size avec lit bébé intégré, commode faisant office de table à langer. Mur bleu profond, tables de nuit, ambiance ocean.</span>
+          <span data-lang="en" class="active">Queen-size bed with integrated baby cot, dresser doubling as changing table. Deep blue wall, bedside tables, ocean ambiance.</span>
+          <span data-lang="de">Queen-Bett mit integriertem Babybett, Kommode als Wickeltisch. Tiefblaue Wand, Nachttische, Ozean-Ambiente.</span>
+          <span data-lang="sq">Shtrat queen me djep te integruar, komode si tavolinë ndërrimi. Mur blu i thelle, tavolina nate, ambient oceani.</span><span data-lang="it">Letto queen con culletta integrata, comò come fasciatoio. Parete blu profonda, comodini, atmosfera oceano.</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="room-card">
+      <div class="room-media-wrap">
+        <video controls preload="auto" poster="chambre2image.jpg" style="cursor:pointer">
+          <source src="chambre2.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="room-info">
+        <h3><span data-lang="fr">Chambre Twin</span><span data-lang="en" class="active">Twin bedroom</span><span data-lang="de">Zweibettzimmer</span><span data-lang="sq">Dhoma Twin</span><span data-lang="it">Camera Twin</span></h3>
+        <p>
+          <span data-lang="fr">Deux lits de 140cm, grande armoire avec espace valises et cintres, mur rouge vif. Idéale pour deux enfants ou deux adultes indépendants.</span>
+          <span data-lang="en" class="active">Two 140cm beds, large wardrobe with luggage space and hangers, vivid red wall. Perfect for two children or two independent adults.</span>
+          <span data-lang="de">Zwei 140cm-Betten, grosser Kleiderschrank mit Gepäckraum, leuchtend rote Wand. Ideal für zwei Kinder oder zwei Erwachsene.</span>
+          <span data-lang="sq">Dy krevate 140cm, dollap i madh me hapesire valixhesh, mur i kuq. Ideal per dy femije ose dy te rritur.</span><span data-lang="it">Due letti da 140cm, grande armadio con spazio valigie, parete rossa vivace. Ideale per due bambini o due adulti.</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="room-card">
+      <div class="room-media-wrap">
+        <img src="Sdb.jpeg" alt="Salle de bain marbre">
+      </div>
+      <div class="room-info">
+        <h3><span data-lang="fr">Salle de bain marbre</span><span data-lang="en" class="active">Marble bathroom</span><span data-lang="de">Marmor-Badezimmer</span><span data-lang="sq">Banjo mermeri</span><span data-lang="it">Bagno in marmo</span></h3>
+        <p>
+          <span data-lang="fr">Du sol au plafond en marbre gris veiné, douche à l'italienne spacieuse avec pommeau de tête, lave-linge séchant intégré, sèche-serviettes chauffant.</span>
+          <span data-lang="en" class="active">Floor-to-ceiling grey veined marble, spacious walk-in shower with overhead rainfall, integrated washer-dryer, heated towel rail.</span>
+          <span data-lang="de">Boden bis Decke in grauem Marmor, geräumige begehbare Dusche, integrierte Waschmaschine-Trockner, beheizter Handtuchhalter.</span>
+          <span data-lang="sq">Mermer gri nga dyshemeja deri ne tavan, dush i mrekullueshëm, lavatrice-tharëse e integruar, raft peshqiri me ngrohje.</span><span data-lang="it">Marmo grigio dal pavimento al soffitto, doccia a pioggia spaziosa, lavatrice-asciugatrice integrata, scaldasalviette riscaldato.</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="room-card">
+      <div class="room-media-wrap">
+        <img src="Cuisine.jpeg" alt="Cuisine ouverte">
+      </div>
+      <div class="room-info">
+        <h3><span data-lang="fr">Cuisine ouverte</span><span data-lang="en" class="active">Open kitchen</span><span data-lang="de">Offene Küche</span><span data-lang="sq">Kuzhine e hapur</span><span data-lang="it">Cucina aperta</span></h3>
+        <p>
+          <span data-lang="fr">Cuisine moderne verte sauge avec îlot central, table haute 4 places, four et tous les équipements nécessaires.</span>
+          <span data-lang="en" class="active">Modern sage green kitchen with central island, high table for 4, oven and all necessary equipment.</span>
+          <span data-lang="de">Moderne salbeigrüne Küche mit Kücheninsel, Stehtisch für 4, Backofen und vollständige Ausstattung.</span>
+          <span data-lang="sq">Kuzhinë moderne e gjelbër me ishull qendror, tavolinë e lartë per 4 vende, furrë dhe te gjitha pajisjet.</span><span data-lang="it">Cucina moderna verde salvia con isola centrale, tavolo alto per 4 persone, forno e tutti gli accessori necessari.</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="room-card">
+      <div class="room-media-wrap">
+        <img src="Salon.jpeg" alt="Salon">
+      </div>
+      <div class="room-info">
+        <h3><span data-lang="fr">Salon &amp; séjour</span><span data-lang="en" class="active">Living room</span><span data-lang="de">Wohnzimmer</span><span data-lang="sq">Dhoma e ndenjjes</span><span data-lang="it">Soggiorno</span></h3>
+        <p>
+          <span data-lang="fr">Grand canapé d'angle, TV avec Netflix, Spotify et chaînes internationales. Mur turquoise signature, plantes vertes et déco marine.</span>
+          <span data-lang="en" class="active">Large corner sofa, TV with Netflix, Spotify and international channels. Signature turquoise wall, plants and marine decor. Direct balcony access.</span>
+          <span data-lang="de">Grosses Ecksofa, TV mit Netflix, Spotify und internationalen Sendern. Turkisfarbene Wand, Pflanzen, maritimes Dekor. Balkonzugang.</span>
+          <span data-lang="sq">Divan i madh, TV me Netflix, Spotify dhe kanale nderkombetare. Mur turquoise, bimë dhe dekor detar. Akses direkt ne ballkon.</span><span data-lang="it">Grande divano angolare, TV con Netflix, Spotify e canali internazionali. Parete turchese, piante e decorazioni marine. Accesso diretto al balcone.</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="room-card">
+      <div class="room-media-wrap">
+        <img src="Balcon.jpg" alt="Balcon privé" style="width:100%;height:100%;object-fit:cover;display:block">
+      </div>
+      <div class="room-info">
+        <h3><span data-lang="fr">Balcon privé</span><span data-lang="en" class="active">Private balcony</span><span data-lang="de">Privater Balkon</span><span data-lang="sq">Ballkon privat</span><span data-lang="it">Balcone privato</span></h3>
+        <p>
+          <span data-lang="fr">Fauteuil œuf suspendu, table et 4 chaises, store électrique, barbecue intégré dans le mur en pierre. Vue sur les jardins et les pins parasols méditerranéens.</span>
+          <span data-lang="en" class="active">Hanging egg chair, table and 4 chairs, electric awning, stone wall built-in BBQ. View over lush gardens and Mediterranean umbrella pines.</span>
+          <span data-lang="de">Hangender Ei-Stuhl, Tisch und 4 Stühle, elektrische Markise, eingebauter Grill in Steinwand. Blick auf grüne Gärten und Mittelmeerpinien.</span>
+          <span data-lang="sq">Karrige veze varëse, tavolinë dhe 4 karrige, tendë elektrike, skarë e integruar ne mur guri. Pamje mbi kopshtet e gjelbra dhe pishën mesdhetare.</span><span data-lang="it">Poltrona uovo sospesa, tavolo e 4 sedie, tenda elettrica, barbecue integrato nel muro di pietra. Vista sui giardini verdeggianti e i pini marittimi mediterranei.</span>
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- VIDEOS -->
+<section class="video-section" id="videos">
+  <p class="section-tag">
+    <span data-lang="fr">Visites vidéo</span>
+    <span data-lang="en" class="active">Video tours</span>
+    <span data-lang="de">Videorundgange</span>
+    <span data-lang="sq">Turne vidéo</span>
+    <span data-lang="it">Tour vidéo</span>
+  </p>
+  <h2>
+    <span data-lang="fr">Découvrez<br><em>l'appartement en mouvement</em></span>
+    <span data-lang="en" class="active">Discover<br><em>the apartment in motion</em></span>
+    <span data-lang="de">Entdecken Sie<br><em>die Wohnung in Bewegung</em></span>
+    <span data-lang="sq">Zbuloni<br><em>apartamentin ne levizje</em></span><span data-lang="it">Scopri<br><em>l'appartamento in movimento</em></span>
+  </h2>
+  <div class="video-grid" style="grid-template-columns:repeat(2,1fr)">
+    
+    <div class="video-card">
+      <video controls preload="auto" poster="Spritz.jpeg">
+        <source src="beachbar.mp4" type="video/mp4">
+      </video>
+      <div class="video-card-info">
+        <h4><span data-lang="fr">Le beach bar</span><span data-lang="en" class="active">The beach bar</span><span data-lang="de">Die Beach Bar</span><span data-lang="sq">Bar plazhi</span><span data-lang="it">Il beach bar</span></h4>
+        <p><span data-lang="fr">Cocktails, musique et coucher de soleil au bord de l'eau.</span><span data-lang="en" class="active">Cocktails, music and sunset at the water's edge.</span><span data-lang="de">Cocktails, Musik und Sonnenuntergang am Wasser.</span><span data-lang="sq">Kokteje, muzike dhe perendim dielli ne breg te detit.</span><span data-lang="it">Cocktail, musica e tramonto in riva al mare.</span></p>
+      </div>
+    </div>
+    <div class="video-card">
+      <video controls preload="auto" poster="beachoceanview.jpg">
+        <source src="vuemer.mp4" type="video/mp4">
+      </video>
+      <div class="video-card-info">
+        <h4><span data-lang="fr">Vue sur mer</span><span data-lang="en" class="active">Sea view</span><span data-lang="de">Meerblick</span><span data-lang="sq">Pamje nga deti</span><span data-lang="it">Vista mare</span></h4>
+        <p><span data-lang="fr">La baie de Lalëz et l'Adriatique depuis la plage de sable fin.</span><span data-lang="en" class="active">Lalëz Bay and the Adriatic from the fine sandy beach.</span><span data-lang="de">Die Bucht von Lalëz und die Adria vom feinen Sandstrand aus.</span><span data-lang="sq">Gjiri i Lalëzit dhe Adriatiku nga plazhi me rërë të imët.</span><span data-lang="it">La baia di Lalëz e l'Adriatico dalla spiaggia di sabbia fine.</span></p>
+      </div>
+    </div>
+    <div class="video-card">
+      <video controls preload="auto" poster="Vuejardinbalcon.jpeg" type="video/mp4">
+        <source src="balconvue.mp4" type="video/mp4">
+      </video>
+      <div class="video-card-info">
+        <h4><span data-lang="fr">Vue depuis le balcon</span><span data-lang="en" class="active">View from the balcony</span><span data-lang="de">Blick vom Balkon</span><span data-lang="sq">Pamje nga ballkoni</span><span data-lang="it">Vista dal balcone</span></h4>
+        <p><span data-lang="fr">Les jardins soignés et les pins parasols depuis votre balcon privé.</span><span data-lang="en" class="active">Manicured gardens and umbrella pines from your private balcony.</span><span data-lang="de">Gepflegte Gärten und Mittelmeerpinien von Ihrem Privatbalkon.</span><span data-lang="sq">Kopshtet e kujdesura dhe pishat mesdhetare nga ballkoni juaj privat.</span><span data-lang="it">I giardini curati e i pini mediterranei dal vostro balcone privato.</span></p>
+      </div>
+    </div>
+    <div class="video-card">
+      <video controls preload="auto" poster="Balcon.jpg">
+        <source src="oeufbalcon.mp4" type="video/mp4">
+      </video>
+      <div class="video-card-info">
+        <h4><span data-lang="fr">Le balcon &amp; le fauteuil oeuf</span><span data-lang="en" class="active">The balcony &amp; egg chair</span><span data-lang="de">Balkon &amp; Ei-Sessel</span><span data-lang="sq">Ballkoni &amp; karrigja veze</span><span data-lang="it">Balcone &amp; poltrona uovo</span></h4>
+        <p><span data-lang="fr">Votre coin détente suspendu avec vue sur la residence.</span><span data-lang="en" class="active">Your suspended relaxation corner overlooking the residence.</span><span data-lang="de">Ihre schwebende Entspannungsecke mit Blick auf die Anlage.</span><span data-lang="sq">Kendi juaj i relaksimit te varur me pamje nga rezidenca.</span><span data-lang="it">Il vostro angolo relax sospeso con vista sulla residenza.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<div class="location-section" id="location">
+  <div class="location-text">
+    <p class="section-tag">
+      <span data-lang="fr">Localisation</span>
+      <span data-lang="en" class="active">Location</span>
+      <span data-lang="de">Lage</span>
+      <span data-lang="sq">Vendndodhja</span>
+      <span data-lang="it">Posizione</span>
+    </p>
+    <h2>
+      <span data-lang="fr">Au cœur de Lalzi Bay,<br><em>sur la côte adriatique albanaise</em></span>
+      <span data-lang="en" class="active">In the heart of Lalzi Bay,<br><em>on Albania’s Adriatic coast</em></span>
+      <span data-lang="de">Im Herzen von Lalzi Bay,<br><em>an der albanischen Adriaküste</em></span>
+      <span data-lang="sq">Në zemër të Gjirit të Lalëzit,<br><em>në bregdetin adriatik të Shqipërisë</em></span><span data-lang="it">Nel cuore di Lalzi Bay,<br><em>sulla costa adriatica albanese</em></span>
+    </h2>
+    <p class="section-lead">
+      <span data-lang="fr">San Pietro Resort, Lalzi Bay — entre mer, gastronomie et culture.</span>
+      <span data-lang="en" class="active">San Pietro Resort, Lalzi Bay — between sea, gastronomy and culture.</span>
+      <span data-lang="de">San Pietro Resort, Lalzi Bay — zwischen Meer, Gastronomie und Kultur.</span>
+      <span data-lang="sq">San Pietro Resort, Gjiri i Lalëzit — midis detit, gastronomisë dhe kulturës.</span><span data-lang="it">San Pietro Resort, Lalzi Bay — tra mare, gastronomia e cultura.</span>
+    </p>
+    <ul class="distance-list">
+      <li class="distance-item"><span class="distance-name">🏖️ <span data-lang="fr">Plage de sable fin</span><span data-lang="en" class="active">Sandy beach</span><span data-lang="de">Sandstrand</span><span data-lang="sq">Plazh ranor</span><span data-lang="it">Spiaggia di sabbia</span></span><span class="distance-val"><span data-lang="fr">env. 5 min à pied</span><span data-lang="en" class="active">approx. 5 min walk</span><span data-lang="de">ca. 5 Min. zu Fuss</span><span data-lang="sq">rreth 5 min ne kembe</span><span data-lang="it">circa 5 min a piedi</span></span></li>
+      <li class="distance-item"><span class="distance-name">🍽️ <span data-lang="fr">Restaurants &amp; supermarché</span><span data-lang="en" class="active">Restaurants &amp; supermarket</span><span data-lang="de">Restaurants &amp; Supermarkt</span><span data-lang="sq">Restorante &amp; supermarket</span><span data-lang="it">Ristoranti &amp; supermercato</span></span><span class="distance-val"><span data-lang="fr">5 min à pied</span><span data-lang="en" class="active">5 min walk</span><span data-lang="de">5 min zu Fuss</span><span data-lang="sq">5 min ne kembe</span><span data-lang="it">5 min a piedi</span></span></li>
+      <li class="distance-item"><span class="distance-name">🏨 Meliá Durrës Resort</span><span class="distance-val"><span data-lang="fr">10 min à pied</span><span data-lang="en" class="active">10 min walk</span><span data-lang="de">10 min zu Fuss</span><span data-lang="sq">10 min ne kembe</span><span data-lang="it">10 min a piedi</span></span></li>
+      <li class="distance-item"><span class="distance-name">🍷 Duka Winery & Vineyard</span><span class="distance-val"><span data-lang="fr">15 min en voiture</span><span data-lang="en" class="active">15 min by car</span><span data-lang="de">15 min mit dem Auto</span><span data-lang="sq">15 min me makine</span><span data-lang="it">15 min in auto</span></span></li>
+      <li class="distance-item"><span class="distance-name">🏛️ Durrës</span><span class="distance-val"><span data-lang="fr">40 min en voiture</span><span data-lang="en" class="active">40 min by car</span><span data-lang="de">40 min mit dem Auto</span><span data-lang="sq">40 min me makine</span><span data-lang="it">40 min in auto</span></span></li>
+      <li class="distance-item"><span class="distance-name">✈️ Aéroport de Tirana</span><span class="distance-val"><span data-lang="fr">45 min en voiture</span><span data-lang="en" class="active">45 min by car</span><span data-lang="de">45 min mit dem Auto</span><span data-lang="sq">45 min me makine</span><span data-lang="it">45 min in auto</span></span></li>
+      <li class="distance-item"><span class="distance-name">🌆 Tirana</span><span class="distance-val"><span data-lang="fr">1h en voiture</span><span data-lang="en" class="active">1h by car</span><span data-lang="de">1h mit dem Auto</span><span data-lang="sq">1h me makine</span><span data-lang="it">1h in auto</span></span></li>
+    </ul>
+    <div style="margin-top:1.6rem">
+      <a class="btn-outline" href="https://www.google.com/maps/place/Swiss+Sweet+Apartment/@41.5130549,19.5201713,17z/data=!3m1!4b1!4m6!3m5!1s0x134e2bd0e59b2105:0x5e655e12c85955d6!8m2!3d41.5130549!4d19.5201713!16s%2Fg%2F11z7sndcl9?entry=ttu&g_ep=EgoyMDI2MDYwMS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">
+        <span data-lang="fr">Voir sur Google Maps</span>
+        <span data-lang="en" class="active">View on Google Maps</span>
+        <span data-lang="de">Auf Google Maps ansehen</span>
+        <span data-lang="sq">Shiko në Google Maps</span>
+        <span data-lang="it">Vedi su Google Maps</span>
+      </a>
+    </div>
+  </div>
+  <div class="location-map">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1500!2d19.5200795!3d41.5130478!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDHCsDMwJzQ3LjAiTiAxOcKwMzEnMTIuMyJF!5e1!3m2!1sfr!2sch!4v1" allowfullscreen="" loading="lazy"></iframe>
+  </div>
+</div>
+
+<!-- BOOKING -->
+<div style="height:320px;overflow:hidden;position:relative">
+  <img src="beachoceanview.jpg" alt="Plage" style="width:100%;height:100%;object-fit:cover;filter:brightness(0.75)">
+  <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center">
+    <p style="font-family:var(--serif);font-size:clamp(1.8rem,4vw,3rem);color:white;font-weight:300;font-style:italic;text-align:center;padding:1rem">
+      <span data-lang="fr">Votre prochaine escapade commence ici</span>
+      <span data-lang="en" class="active">Your next escape starts here</span>
+      <span data-lang="de">Ihr nächster Urlaub beginnt hier</span>
+      <span data-lang="sq">Pushimet tuaja fillojnë këtu</span><span data-lang="it">La vostra prossima vacanza inizia qui</span>
+    </p>
+  </div>
+</div>
+<section class="booking-section" id="booking">
+  <p class="section-tag">
+    <span data-lang="fr">Réservation directe</span>
+    <span data-lang="en" class="active">Direct Booking</span>
+    <span data-lang="de">Direktbuchung</span>
+    <span data-lang="sq">Rezervim direkt</span>
+    <span data-lang="it">Prenotazione diretta</span>
+  </p>
+  <h2>
+    <span data-lang="fr">Réservez en direct,<br><em>sans commission</em></span>
+    <span data-lang="en" class="active">Book directly,<br><em>no commission</em></span>
+    <span data-lang="de">Direkt buchen,<br><em>ohne Provision</em></span>
+    <span data-lang="sq">Rezervoni drejtpërdrejt,<br><em>pa komision</em></span><span data-lang="it">Prenota direttamente,<br><em>senza commissioni</em></span>
+  </h2>
+
+  <div class="booking-info-grid">
+  <div class="direct-save-box">
+    <div class="direct-save-title">
+      <span data-lang="fr">Réserver directement = économiser</span>
+      <span data-lang="en" class="active">Book directly = save</span>
+      <span data-lang="de">Direkt buchen = sparen</span>
+      <span data-lang="sq">Rezervim direkt = kursim</span>
+      <span data-lang="it">Prenotare direttamente = risparmiare</span>
+    </div>
+    <p class="direct-save-text">
+      <span data-lang="fr">Profitez de notre tarif spécial été : 10 % de réduction sur les demandes directes. Vous évitez les frais de service des plateformes, bénéficiez d’une assistance locale pendant votre séjour et pouvez comparer nos annonces sur les principales plateformes.</span>
+      <span data-lang="en" class="active">Enjoy our special summer price: 10% off direct requests. You avoid platform service fees, benefit from local guest support during your stay, and can compare our listings on the main booking platforms.</span>
+      <span data-lang="de">Profitieren Sie von unserem speziellen Sommerpreis: 10 % Rabatt auf Direktanfragen. Sie vermeiden Plattformgebühren, profitieren während Ihres Aufenthalts von lokaler Gästebetreuung und können unsere Inserate auf den wichtigsten Plattformen vergleichen.</span>
+      <span data-lang="sq">Përfitoni nga çmimi ynë special i verës: 10% ulje për kërkesat direkte. Shmangni tarifat e shërbimit të platformave, përfitoni nga asistenca lokale gjatë qëndrimit dhe mund t’i krahasoni njoftimet tona në platformat kryesore.</span>
+      <span data-lang="it">Approfittate della nostra tariffa speciale estiva: 10% di sconto sulle richieste dirette. Evitate i costi di servizio delle piattaforme, beneficiate dell’assistenza locale durante il soggiorno e potete confrontare i nostri annunci sulle principali piattaforme.</span>
+    </p>
+    <div class="direct-save-links">
+      <a class="platform-link" href="https://www.airbnb.fr/rooms/1096118163660517988" target="_blank" rel="noopener noreferrer">Airbnb</a>
+      <a class="platform-link" href="https://www.booking.com/hotel/al/swiss-sweet-apartment-happy-rentals.fr.html" target="_blank" rel="noopener noreferrer">Booking.com</a>
+      <a class="platform-link" href="https://www.happy.rentals/fr/vacation-rental/10648-swiss-sweet-apartment-297" target="_blank" rel="noopener noreferrer">Happy Rentals</a>
+      <a class="platform-link" href="https://www.vrbo.com/sv-se/semesterhus/p11538460" target="_blank" rel="noopener noreferrer">Vrbo</a>
+    </div>
+  </div>
+
+  <div class="good-to-know-box">
+    <div class="good-to-know-title">
+      <span data-lang="fr">Bon à savoir avant de réserver</span>
+      <span data-lang="en" class="active">Good to know before booking</span>
+      <span data-lang="de">Gut zu wissen vor der Buchung</span>
+      <span data-lang="sq">Mirë të dihet para rezervimit</span>
+      <span data-lang="it">Da sapere prima di prenotare</span>
+    </div>
+    <div class="good-to-know-grid">
+      <div class="good-to-know-item"><span data-lang="fr">L’immeuble ne dispose pas d’ascenseur.</span><span data-lang="en" class="active">The building does not have an elevator.</span><span data-lang="de">Das Gebäude verfügt über keinen Lift.</span><span data-lang="sq">Ndërtesa nuk ka ashensor.</span><span data-lang="it">L’edificio non dispone di ascensore.</span></div>
+      <div class="good-to-know-item"><span data-lang="fr">L’accès aux installations du Meliá Resort n’est pas inclus.</span><span data-lang="en" class="active">Access to the Meliá Resort facilities is not included.</span><span data-lang="de">Der Zugang zu den Einrichtungen des Meliá Resort ist nicht inbegriffen.</span><span data-lang="sq">Hyrja në instalimet e Meliá Resort nuk përfshihet.</span><span data-lang="it">L’accesso alle strutture del Meliá Resort non è incluso.</span></div>
+      <div class="good-to-know-item"><span data-lang="fr">La plage se trouve à environ 5 minutes à pied.</span><span data-lang="en" class="active">The beach is approximately 5 minutes away on foot.</span><span data-lang="de">Der Strand ist ca. 5 Minuten zu Fuss entfernt.</span><span data-lang="sq">Plazhi është rreth 5 minuta në këmbë.</span><span data-lang="it">La spiaggia è a circa 5 minuti a piedi.</span></div>
+      <div class="good-to-know-item"><span data-lang="fr">Une voiture est recommandée pour explorer librement la région.</span><span data-lang="en" class="active">A car is recommended to explore the region freely.</span><span data-lang="de">Für Ausflüge in der Region ist ein Auto empfehlenswert.</span><span data-lang="sq">Makina rekomandohet për të eksploruar lirshëm rajonin.</span><span data-lang="it">Un’auto è consigliata per esplorare liberamente la regione.</span></div>
+    </div>
+  </div>
+  </div>
+
+  <div class="booking-card" style="max-width:860px;margin:0 auto;background:white;border-radius:12px;box-shadow:0 6px 32px rgba(0,0,0,0.12);overflow:hidden;border:1px solid #ddd">
+
+    <!-- PRICE HEADER -->
+    <div style="background:var(--turquoise-dark);color:white;padding:1.2rem 1.5rem;display:flex;justify-content:space-between;align-items:center">
+      <div>
+        <div style="font-size:0.72rem;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.6);margin-bottom:0.3rem" id="cal-from-label">From</div>
+        <div style="font-family:var(--serif);font-size:2rem;font-weight:300" id="cal-amount">80€ <span style="font-size:1rem;opacity:0.7">/ night</span></div>
+      </div>
+      <div style="background:var(--coral);padding:0.4rem 1rem;border-radius:20px;font-size:0.78rem;font-weight:500" id="cal-badge">Direct booking</div>
+    </div>
+
+    <!-- DATES -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid #eee">
+      <div style="padding:1rem 1.5rem;border-right:1px solid #eee">
+        <label style="display:block;font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--text);margin-bottom:0.3rem" id="label-checkin">ARRIVÉE</label>
+        <input type="date" id="checkin" onchange="calcPrice()" style="border:none;outline:none;font-size:0.95rem;color:var(--text-muted);font-family:var(--sans);width:100%;background:transparent;cursor:pointer">
+      </div>
+      <div style="padding:1rem 1.5rem">
+        <label style="display:block;font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--text);margin-bottom:0.3rem" id="label-checkout">DÉPART</label>
+        <input type="date" id="checkout" onchange="calcPrice()" style="border:none;outline:none;font-size:0.95rem;color:var(--text-muted);font-family:var(--sans);width:100%;background:transparent;cursor:pointer">
+      </div>
+    </div>
+
+    <!-- GUESTS -->
+    <div style="padding:1rem 1.5rem;border-bottom:1px solid #eee;display:flex;justify-content:space-between;align-items:center">
+      <label style="font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--text)" id="label-guests">VOYAGEURS</label>
+      <select id="guests-select" onchange="calcPrice()" style="border:none;outline:none;font-size:0.95rem;color:var(--text-muted);font-family:var(--sans);background:transparent;cursor:pointer">
+        <option>1</option><option selected>2</option><option>3</option><option>4</option>
+      </select>
+    </div>
+
+    <!-- CURRENCY -->
+    <div style="padding:0.8rem 1.5rem;border-bottom:1px solid #eee;display:flex;gap:0.5rem">
+      <button class="curr-toggle-btn active" data-currency="EUR" onclick="setCurrency('EUR')">€ EUR</button>
+      <button class="curr-toggle-btn" data-currency="CHF" onclick="setCurrency('CHF')">CHF</button>
+      <button class="curr-toggle-btn" data-currency="LEK" onclick="setCurrency('LEK')">L LEK</button>
+    </div>
+
+    <!-- PRICE BREAKDOWN -->
+    <div id="price-breakdown-box" style="display:none;padding:1.2rem 1.5rem;border-bottom:1px solid #eee">
+      <div style="display:flex;justify-content:space-between;font-size:0.9rem;padding:0.4rem 0">
+        <span id="bd-nights-label">—</span><span id="bd-nights-val">—</span>
+      </div>
+      <div style="display:flex;justify-content:space-between;font-size:0.9rem;padding:0.4rem 0;color:#008A05">
+        <span id="bd-discount-label">—</span><span id="bd-discount-val">—</span>
+      </div>
+      <div style="display:flex;justify-content:space-between;font-size:0.9rem;padding:0.4rem 0">
+        <span id="bd-cleaning-label">Frais ménage & check-in</span><span id="bd-cleaning-val">—</span>
+      </div>
+      <div style="display:flex;justify-content:space-between;font-size:1rem;font-weight:600;padding:0.8rem 0 0.4rem;border-top:1px solid #eee;margin-top:0.4rem">
+        <span id="bd-total-label">Total</span><span id="bd-total-val">—</span>
+      </div>
+    </div>
+
+    <!-- EMAIL + MESSAGE -->
+    <div style="padding:1rem 1.5rem;border-bottom:1px solid #eee">
+      <input type="email" id="booking-email" placeholder="Votre email" style="width:100%;border:1px solid #ddd;border-radius:8px;padding:0.75rem 1rem;font-size:0.9rem;font-family:var(--sans);outline:none;margin-bottom:0.8rem;box-sizing:border-box">
+      <input type="text" id="booking-msg" placeholder="Message (optionnel)" style="width:100%;border:1px solid #ddd;border-radius:8px;padding:0.75rem 1rem;font-size:0.9rem;font-family:var(--sans);outline:none;box-sizing:border-box">
+    </div>
+
+    <div class="payment-reassurance">
+      <span data-lang="fr">Aucun paiement n’est effectué sur ce site.</span>
+      <span data-lang="en" class="active">No payment is taken on this website.</span>
+      <span data-lang="de">Auf dieser Website wird keine Zahlung ausgelöst.</span>
+      <span data-lang="sq">Në këtë faqe nuk kryhet asnjë pagesë.</span>
+      <span data-lang="it">Nessun pagamento viene effettuato su questo sito.</span>
+    </div>
+
+    <div class="booking-request-note">
+      <span data-lang="fr">Il s’agit d’une demande de réservation, et non d’une réservation instantanée. Nous vous confirmerons les disponibilités, le prix final et les modalités de réservation par email.</span>
+      <span data-lang="en" class="active">This is a booking request, not an instant booking. We will confirm availability, final price and booking details by email.</span>
+      <span data-lang="de">Dies ist eine Buchungsanfrage und keine Sofortbuchung. Wir bestätigen Verfügbarkeit, Endpreis und Buchungsdetails per E-Mail.</span>
+      <span data-lang="sq">Kjo është një kërkesë rezervimi dhe jo një rezervim i menjëhershëm. Ne do t’ju konfirmojmë disponueshmërinë, çmimin përfundimtar dhe detajet e rezervimit me email.</span>
+      <span data-lang="it">Questa è una richiesta di prenotazione, non una prenotazione immediata. Confermeremo disponibilità, prezzo finale e dettagli della prenotazione via email.</span>
+    </div>
+
+    <div class="long-stay-note">
+      <span data-lang="fr">Vous prévoyez un séjour plus long ou souhaitez télétravailler au bord de la mer ? Contactez-nous pour une offre mensuelle sur mesure.</span>
+      <span data-lang="en" class="active">Planning a longer stay or working remotely by the sea? Contact us for a tailor-made monthly offer.</span>
+      <span data-lang="de">Planen Sie einen längeren Aufenthalt oder möchten Sie am Meer im Homeoffice arbeiten? Kontaktieren Sie uns für ein massgeschneidertes Monatsangebot.</span>
+      <span data-lang="sq">Po planifikoni një qëndrim më të gjatë ose të punoni në distancë pranë detit? Na kontaktoni për një ofertë mujore të personalizuar.</span>
+      <span data-lang="it">State pianificando un soggiorno più lungo o volete lavorare da remoto vicino al mare? Contattateci per un’offerta mensile su misura.</span>
+    </div>
+
+    <!-- SUBMIT -->
+    <div style="padding:0.8rem 1.5rem;text-align:center;background:#f7fdfd;border-top:1px solid #eee">
+      <p style="font-size:0.82rem;color:var(--text-muted);margin-bottom:0.4rem">
+        <span data-lang="fr">ou écrivez-nous directement à</span>
+        <span data-lang="en" class="active">or write us directly at</span>
+        <span data-lang="de">oder schreiben Sie uns direkt an</span>
+        <span data-lang="sq">ose shkruani drejtpërdrejt në</span><span data-lang="it">oppure scriveteci direttamente a</span>
+      </p>
+      <a href="mailto:info@swisssweet-apartment.com" style="color:var(--turquoise-dark);font-weight:500;font-size:0.9rem;text-decoration:none">info@swisssweet-apartment.com</a>
+    </div>
+    <div style="padding:1.2rem 1.5rem">
+      <button onclick="submitBooking()" id="submit-btn" style="width:100%;background:var(--coral);color:white;border:none;padding:1rem;border-radius:8px;font-size:0.95rem;font-weight:500;cursor:pointer;font-family:var(--sans);transition:background 0.2s" onmouseover="this.style.background='#E05530'" onmouseout="this.style.background='var(--coral)'">
+        <span data-lang="fr">Envoyer une demande</span>
+        <span data-lang="en" class="active">Send booking request</span>
+        <span data-lang="de">Anfrage senden</span>
+        <span data-lang="sq">Dërgo kërkesën</span>
+        <span data-lang="it">Invia richiesta</span>
+      </button>
+      <div id="form-success" style="display:none;background:#e8f8f0;border:1px solid #52c4bc;border-radius:8px;padding:1rem;margin-top:1rem;text-align:center">
+        <span data-lang="fr">✅ Demande envoyée avec succès. Nous allons vérifier les disponibilités et vous répondre par email avec les options disponibles et le prix final. Pensez aussi à vérifier votre dossier spam ou courrier indésirable, notamment avec les adresses Outlook ou Hotmail.</span>
+        <span data-lang="en" class="active">✅ Request sent successfully. We will check availability and reply by email with the available options and final price. Please also check your spam or junk folder, especially with Outlook or Hotmail addresses.</span>
+        <span data-lang="de">✅ Anfrage erfolgreich gesendet. Wir prüfen die Verfügbarkeit und antworten per E-Mail mit den verfügbaren Optionen und dem Endpreis. Bitte prüfen Sie auch Ihren Spam- oder Junk-Ordner, insbesondere bei Outlook- oder Hotmail-Adressen.</span>
+        <span data-lang="sq">✅ Kërkesa u dërgua me sukses. Ne do të kontrollojmë disponueshmërinë dhe do t’ju përgjigjemi me email me opsionet e disponueshme dhe çmimin përfundimtar. Ju lutemi kontrolloni edhe dosjen spam ose junk, sidomos për adresat Outlook ose Hotmail.</span>
+        <span data-lang="it">✅ Richiesta inviata con successo. Verificheremo la disponibilità e risponderemo via email con le opzioni disponibili e il prezzo finale. Controllate anche la cartella spam o posta indesiderata, soprattutto con indirizzi Outlook o Hotmail.</span>
+      </div>
+    </div>
+    <p style="text-align:center;font-size:0.78rem;color:var(--text-muted);padding:0 1.5rem 1.2rem">
+      <span data-lang="fr">Min. 2 nuits · Annulation gratuite jusqu’à 14 jours avant l’arrivée · </span>
+      <span data-lang="en" class="active">Min. 2 nights · Free cancellation up to 14 days before arrival · </span>
+      <span data-lang="de">Min. 2 Nächte · Kostenlose Stornierung bis 14 Tage vor Anreise · </span>
+      <span data-lang="sq">Min. 2 netë · Anulim falas deri 14 ditë para mbërritjes · </span><span data-lang="it">Min. 2 notti · Cancellazione gratuita fino a 14 giorni prima dell’arrivo · </span>
+      <a href="https://www.airbnb.fr/rooms/1096118163660517988" target="_blank" style="color:var(--turquoise-dark)">Airbnb</a> · <a href="https://www.booking.com/hotel/al/swiss-sweet-apartment-happy-rentals.fr.html" target="_blank" style="color:var(--turquoise-dark)">Booking.com</a> · <a href="https://www.happy.rentals/fr/vacation-rental/10648-swiss-sweet-apartment-297" target="_blank" style="color:var(--turquoise-dark)">Happy Rentals</a> · <a href="https://www.vrbo.com/sv-se/semesterhus/p11538460" target="_blank" style="color:var(--turquoise-dark)">Vrbo</a>
+    </p>
+
+  </div>
+</section>
+
+
+<!-- FAQ -->
+<section class="faq-preview-section" id="faq-preview">
+  <div class="faq-preview-card">
+    <p class="section-tag"><span data-lang="fr">FAQ</span><span data-lang="en" class="active">FAQ</span><span data-lang="de">FAQ</span><span data-lang="sq">FAQ</span><span data-lang="it">FAQ</span></p>
+    <h2><span data-lang="fr">Questions rapides avant de réserver</span><span data-lang="en" class="active">Quick questions before booking</span><span data-lang="de">Kurze Fragen vor der Buchung</span><span data-lang="sq">Pyetje të shpejta para rezervimit</span><span data-lang="it">Domande rapide prima di prenotare</span></h2>
+    <div class="faq-preview-grid">
+      <div class="faq-preview-item"><span data-lang="fr">Paiement sur ce site ? Non, demande uniquement.</span><span data-lang="en" class="active">Payment on this website? No, request only.</span><span data-lang="de">Zahlung auf dieser Website? Nein, nur Anfrage.</span><span data-lang="sq">Pagesë në këtë faqe? Jo, vetëm kërkesë.</span><span data-lang="it">Pagamento su questo sito? No, solo richiesta.</span></div>
+      <div class="faq-preview-item"><span data-lang="fr">Distance de la plage ? Environ 5 minutes à pied.</span><span data-lang="en" class="active">Beach distance? About 5 minutes on foot.</span><span data-lang="de">Strandentfernung? Ca. 5 Minuten zu Fuss.</span><span data-lang="sq">Distanca nga plazhi? Rreth 5 minuta në këmbë.</span><span data-lang="it">Distanza dalla spiaggia? Circa 5 minuti a piedi.</span></div>
+      <div class="faq-preview-item"><span data-lang="fr">Parking ? Gratuit dans la résidence.</span><span data-lang="en" class="active">Parking? Free within the residence.</span><span data-lang="de">Parkplatz? Kostenlos innerhalb der Anlage.</span><span data-lang="sq">Parkim? Falas brenda rezidencës.</span><span data-lang="it">Parcheggio? Gratuito nel residence.</span></div>
+      <div class="faq-preview-item"><span data-lang="fr">Meliá inclus ? Non, accès séparé.</span><span data-lang="en" class="active">Meliá included? No, separate access.</span><span data-lang="de">Meliá inklusive? Nein, separater Zugang.</span><span data-lang="sq">Meliá përfshihet? Jo, hyrje e veçantë.</span><span data-lang="it">Meliá incluso? No, accesso separato.</span></div>
+    </div>
+    <a class="btn-coral" href="faq.html"><span data-lang="fr">Voir la FAQ complète</span><span data-lang="en" class="active">View full FAQ</span><span data-lang="de">Vollständige FAQ ansehen</span><span data-lang="sq">Shiko FAQ të plotë</span><span data-lang="it">Vedi FAQ completa</span></a>
+  </div>
+</section>
+
+<!-- BLOG / LOCAL TIPS -->
+<section class="blog-section" id="blog">
+  <div class="blog-header">
+    <p class="section-tag"><span data-lang="fr">Blog & conseils locaux</span><span data-lang="en" class="active">Blog & local tips</span><span data-lang="de">Blog & lokale Tipps</span><span data-lang="sq">Blog & këshilla lokale</span><span data-lang="it">Blog & consigli locali</span></p>
+    <h2><span data-lang="fr">Nos expériences<br><em>à Lalzi Bay</em></span><span data-lang="en" class="active">Our experiences<br><em>in Lalzi Bay</em></span><span data-lang="de">Unsere Erfahrungen<br><em>in Lalzi Bay</em></span><span data-lang="sq">Përvojat tona<br><em>në Lalzi Bay</em></span><span data-lang="it">Le nostre esperienze<br><em>a Lalzi Bay</em></span></h2>
+    <p class="section-lead"><span data-lang="fr">Bientôt : nos conseils personnels pour profiter de la région, même sans parler albanais.</span><span data-lang="en" class="active">Coming soon: our personal tips to enjoy the region, even without speaking Albanian.</span><span data-lang="de">Demnächst: unsere persönlichen Tipps, um die Region auch ohne Albanischkenntnisse zu geniessen.</span><span data-lang="sq">Së shpejti: këshillat tona personale për të shijuar rajonin, edhe pa folur shqip.</span><span data-lang="it">Prossimamente: i nostri consigli personali per godersi la regione, anche senza parlare albanese.</span></p>
+  </div>
+  <div class="blog-grid">
+    <article class="blog-card"><div><h3><span data-lang="fr">Nos vacances 2024 à Lalzi Bay</span><span data-lang="en" class="active">Our 2024 holidays in Lalzi Bay</span><span data-lang="de">Unsere Ferien 2024 in Lalzi Bay</span><span data-lang="sq">Pushimet tona 2024 në Lalzi Bay</span><span data-lang="it">Le nostre vacanze 2024 a Lalzi Bay</span></h3><p><span data-lang="fr">Nos premières impressions, les plages, les restaurants et ce que nous aurions aimé savoir avant d’arriver.</span><span data-lang="en" class="active">Our first impressions, beaches, restaurants and what we wish we had known before arriving.</span><span data-lang="de">Unsere ersten Eindrücke, Strände, Restaurants und was wir gerne vor der Anreise gewusst hätten.</span><span data-lang="sq">Përshtypjet tona të para, plazhet, restorantet dhe çfarë do të donim të dinim para mbërritjes.</span><span data-lang="it">Le nostre prime impressioni, spiagge, ristoranti e ciò che avremmo voluto sapere prima di arrivare.</span></p></div><span class="blog-status"><span data-lang="fr">Bientôt</span><span data-lang="en" class="active">Coming soon</span><span data-lang="de">Demnächst</span><span data-lang="sq">Së shpejti</span><span data-lang="it">Prossimamente</span></span></article>
+    <article class="blog-card"><div><h3><span data-lang="fr">Nos vacances 2025 à San Pietro</span><span data-lang="en" class="active">Our 2025 holidays in San Pietro</span><span data-lang="de">Unsere Ferien 2025 in San Pietro</span><span data-lang="sq">Pushimet tona 2025 në San Pietro</span><span data-lang="it">Le nostre vacanze 2025 a San Pietro</span></h3><p><span data-lang="fr">Les meilleures adresses autour de la résidence, nos coups de cœur et les petites astuces pratiques.</span><span data-lang="en" class="active">The best places around the residence, our favourites and practical local tips.</span><span data-lang="de">Die besten Adressen rund um die Anlage, unsere Favoriten und praktische Tipps.</span><span data-lang="sq">Vendet më të mira rreth rezidencës, të preferuarat tona dhe këshilla praktike.</span><span data-lang="it">I migliori indirizzi intorno alla residenza, i nostri preferiti e consigli pratici.</span></p></div><span class="blog-status"><span data-lang="fr">Bientôt</span><span data-lang="en" class="active">Coming soon</span><span data-lang="de">Demnächst</span><span data-lang="sq">Së shpejti</span><span data-lang="it">Prossimamente</span></span></article>
+    <article class="blog-card"><div><h3><span data-lang="fr">Découvrir l’Albanie sans parler albanais</span><span data-lang="en" class="active">Discovering Albania without speaking Albanian</span><span data-lang="de">Albanien entdecken ohne Albanisch zu sprechen</span><span data-lang="sq">Të zbulosh Shqipërinë pa folur shqip</span><span data-lang="it">Scoprire l’Albania senza parlare albanese</span></h3><p><span data-lang="fr">Transports, restaurants, taxis, paiements et conseils simples pour profiter du séjour sans stress.</span><span data-lang="en" class="active">Transport, restaurants, taxis, payments and simple tips to enjoy your stay without stress.</span><span data-lang="de">Transport, Restaurants, Taxis, Zahlungen und einfache Tipps für einen entspannten Aufenthalt.</span><span data-lang="sq">Transporti, restorantet, taksitë, pagesat dhe këshilla të thjeshta për një qëndrim pa stres.</span><span data-lang="it">Trasporti, ristoranti, taxi, pagamenti e consigli semplici per godersi il soggiorno senza stress.</span></p></div><span class="blog-status"><span data-lang="fr">Bientôt</span><span data-lang="en" class="active">Coming soon</span><span data-lang="de">Demnächst</span><span data-lang="sq">Së shpejti</span><span data-lang="it">Prossimamente</span></span></article>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews-section" id="reviews">
+  <p class="section-tag" style="color:var(--coral)">
+    <span data-lang="fr">Avis voyageurs</span>
+    <span data-lang="en" class="active">Guest reviews</span>
+    <span data-lang="de">Gästebewertungen</span>
+    <span data-lang="sq">Vlerësimet e mysafirëve</span>
+    <span data-lang="it">Recensioni degli ospiti</span>
+  </p>
+  <h2>
+    <span data-lang="fr">Ce que disent<br><em>nos hôtes</em></span>
+    <span data-lang="en" class="active">What our<br><em>guests say</em></span>
+    <span data-lang="de">Was unsere<br><em>Gäste sagen</em></span>
+    <span data-lang="sq">Çfarë thonë<br><em>mysafirët tanë</em></span>
+    <span data-lang="it">Cosa dicono<br><em>i nostri ospiti</em></span>
+  </h2>
+  <div class="reviews-grid">
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"Un appartement impeccable, propre et très bien équipé. La plage est vraiment à deux pas. Parfait pour notre famille avec un bébé."</p>
+      <p class="review-author">— Marie & Thomas, France · Juillet 2024</p>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"La salle de bain en marbre m'a bluffée. L'appartement est encore plus beau que sur les photos. Le coucher de soleil… magique."</p>
+      <p class="review-author">— Sophie L., Belgique · Août 2024</p>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"Résidence très calme et sécurisée. Les enfants ont adoré l'aire de jeux et la mer peu profonde. On reviendra l'année prochaine !"</p>
+      <p class="review-author">— Karim & Yasmine, Suisse · Juillet 2024</p>
+    </div>
+  </div>
+  <div style="margin-top:2rem;text-align:center">
+    <a class="btn-coral" href="https://g.page/r/CdZVWcgSXmVeEBM/review" target="_blank" rel="noopener noreferrer">
+      <span data-lang="fr">Vous avez séjourné chez nous ? Laissez un avis Google</span>
+      <span data-lang="en" class="active">Stayed with us? Leave a Google review</span>
+      <span data-lang="de">Bei uns übernachtet? Google-Bewertung abgeben</span>
+      <span data-lang="sq">Keni qëndruar tek ne? Lini një vlerësim në Google</span>
+      <span data-lang="it">Avete soggiornato da noi? Lasciate una recensione Google</span>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">
+    <div class="footer-logo-row">
+      <div>
+        <span class="nav-logo"><span class="nav-logo-text">Swiss<span>Sweet</span> Apartment</span></span>
+    <p>
+      <span data-lang="fr">Appartement de vacances de 97m² au sein du complexe San Pietro, à environ 5 minutes à pied de la plage adriatique de Gjiri i Lalëzit, Albanie.</span>
+      <span data-lang="en" class="active">97m2 holiday apartment in San Pietro complex, about 5 minutes on foot from the Adriatic beach of Gjiri i Laezit, Albania.</span>
+      <span data-lang="de">97m2 Ferienwohnung im San Pietro Komplex, ca. 5 Minuten zu Fuss vom adriatischen Strand Gjiri i Laezit, Albanien.</span>
+      <span data-lang="sq">Apartament pushimesh 97m2 ne kompleksin San Pietro, rreth 5 minuta ne kembe nga plazhi adriatik i Gjirit te Laëzit, Shqiperi.</span><span data-lang="it">Appartamento vacanze di 97m² nel complesso San Pietro, a circa 5 minuti a piedi dalla spiaggia adriatica di Gjiri i Lalëzit, Albania.</span>
+    </p>
+      </div>
+      <img class="footer-logo-mark" src="swisssweet-logo-transparent.png" alt="Swiss Sweet Apartment logo">
+    </div>
+  </div>
+  <div>
+    <h4><span data-lang="fr">Navigation</span><span data-lang="en" class="active">Navigation</span><span data-lang="de">Navigation</span><span data-lang="sq">Navigim</span><span data-lang="it">Navigazione</span></h4>
+    <ul>
+      <li><a href="#gallery">Photos</a></li>
+      <li><a href="#espaces">L'appartement</a></li>
+      <li><a href="#videos">Vidéos</a></li>
+      <li><a href="#location">Localisation</a></li>
+      <li><a href="#booking">Réserver</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="#blog">Blog</a></li>
+    </ul>
+  </div>
+  <div>
+    <h4><span data-lang="fr">Contact &amp; plateformes</span><span data-lang="en" class="active">Contact &amp; platforms</span><span data-lang="de">Kontakt &amp; Plattformen</span><span data-lang="sq">Kontakt &amp; platforma</span><span data-lang="it">Contatti &amp; piattaforme</span></h4>
+    <ul>
+      <li><a href="mailto:info@swisssweet-apartment.com">info@swisssweet-apartment.com</a></li>
+      <li><a href="https://www.airbnb.fr/rooms/1096118163660517988" target="_blank">Airbnb</a></li>
+      <li><a href="https://www.booking.com/hotel/al/swiss-sweet-apartment-happy-rentals.fr.html" target="_blank">Booking.com</a></li>
+      <li><a href="https://www.happy.rentals/fr/vacation-rental/10648-swiss-sweet-apartment-297" target="_blank">Happy Rentals</a></li>
+      <li><a href="https://www.vrbo.com/sv-se/semesterhus/p11538460" target="_blank">Vrbo</a></li>
+      <li><span style="color:rgba(255,255,255,0.45);font-size:0.88rem;font-weight:300">Instagram · bientôt</span></li>
+    </ul>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Swiss Sweet Apartment · San Pietro Resort, Durrës, Albanie</span>
+    <span>swisssweet-apartment.com</span><span data-lang="en" class="active">All photos, videos and written content are protected. Reproduction or commercial use without prior written permission is prohibited.</span><span data-lang="fr">Toutes les photos, vidéos et contenus écrits sont protégés. Toute reproduction ou utilisation commerciale sans autorisation écrite préalable est interdite.</span>
+  </div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+
+  // Mobile-only accordion navigation. Desktop sections remain unchanged.
+  var accordionItems = [
+    { selector: '#features', labels: { fr:'Équipements de l’appartement', en:'Apartment features', de:'Ausstattung der Wohnung', sq:'Pajisjet e apartamentit', it:'Dotazioni dell’appartamento' } },
+    { selector: '#espaces', labels: { fr:'Pièces et espaces', en:'Rooms & spaces', de:'Zimmer & Räume', sq:'Dhomat & hapësirat', it:'Stanze & spazi' } },
+    { selector: '#videos', labels: { fr:'Visites vidéo', en:'Video tours', de:'Videorundgänge', sq:'Video ture', it:'Tour video' } },
+    { selector: '#location', labels: { fr:'Localisation et alentours', en:'Location & nearby places', de:'Lage & Umgebung', sq:'Vendndodhja & rrethina', it:'Posizione & dintorni' } },
+    { selector: '.direct-save-box', labels: { fr:'Pourquoi réserver en direct ?', en:'Why book direct?', de:'Warum direkt buchen?', sq:'Pse të rezervoni direkt?', it:'Perché prenotare direttamente?' } },
+    { selector: '.good-to-know-box', labels: { fr:'Bon à savoir', en:'Good to know', de:'Gut zu wissen', sq:'Mirë të dihet', it:'Da sapere' } },
+    { selector: '#faq-preview', labels: { fr:'Questions fréquentes', en:'Frequently asked questions', de:'Häufige Fragen', sq:'Pyetje të shpeshta', it:'Domande frequenti' } },
+    { selector: '#blog', labels: { fr:'Conseils locaux', en:'Local tips', de:'Lokale Tipps', sq:'Këshilla lokale', it:'Consigli locali' } },
+    { selector: '#reviews', labels: { fr:'Avis voyageurs', en:'Guest reviews', de:'Gästebewertungen', sq:'Vlerësimet e mysafirëve', it:'Recensioni degli ospiti' } }
+  ];
+
+  function buildAccordionLabel(labels) {
+    return ['fr','en','de','sq','it'].map(function(lang) {
+      return '<span data-lang="' + lang + '">' + labels[lang] + '</span>';
+    }).join('');
+  }
+
+  accordionItems.forEach(function(item, index) {
+    var target = document.querySelector(item.selector);
+    if (!target || target.dataset.mobileAccordionReady === 'true') { return; }
+    target.dataset.mobileAccordionReady = 'true';
+    target.classList.add('mobile-accordion-target', 'mobile-collapsed');
+    var toggle = document.createElement('button');
+    toggle.type = 'button';
+    toggle.className = 'mobile-accordion-toggle';
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.setAttribute('aria-controls', target.id || ('mobile-accordion-target-' + index));
+    if (!target.id) { target.id = 'mobile-accordion-target-' + index; }
+    toggle.innerHTML = buildAccordionLabel(item.labels);
+    target.parentNode.insertBefore(toggle, target);
+    toggle.addEventListener('click', function() {
+      var willOpen = target.classList.contains('mobile-collapsed');
+      document.querySelectorAll('.mobile-accordion-target').forEach(function(other) {
+        if (other !== target) { other.classList.add('mobile-collapsed'); }
+      });
+      document.querySelectorAll('.mobile-accordion-toggle').forEach(function(otherToggle) {
+        if (otherToggle !== toggle) { otherToggle.setAttribute('aria-expanded', 'false'); }
+      });
+      target.classList.toggle('mobile-collapsed', !willOpen);
+      toggle.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+    });
+  });
+
+  function openAccordionForHash(hash) {
+    if (!hash || window.innerWidth > 768) { return; }
+    var target = document.querySelector(hash);
+    if (!target) { return; }
+    var accordionTarget = target.classList.contains('mobile-accordion-target') ? target : target.closest('.mobile-accordion-target');
+    if (!accordionTarget) { return; }
+    var toggle = document.querySelector('.mobile-accordion-toggle[aria-controls="' + accordionTarget.id + '"]');
+    if (accordionTarget.classList.contains('mobile-collapsed') && toggle) { toggle.click(); }
+    if (toggle) { setTimeout(function(){ toggle.scrollIntoView({behavior:'smooth', block:'start'}); }, 50); }
+  }
+
+  document.querySelectorAll('a[href^="#"]').forEach(function(link) {
+    link.addEventListener('click', function() { openAccordionForHash(link.getAttribute('href')); });
+  });
+  window.addEventListener('hashchange', function() { openAccordionForHash(window.location.hash); });
+
+
+  var currentLang = 'fr';
+  var currentCurrency = 'EUR';
+
+  var L = {
+    'fr': {
+      from: 'A partir de', night: '/ nuit', checkin: 'ARRIVEE', checkout: 'DEPART',
+      guests: 'VOYAGEURS', total: 'Total', badge: 'Reservation directe',
+      nights: function(n) { return n + ' nuit' + (n > 1 ? 's' : ''); },
+      discount: 'Reservation directe (-10%)', cleaning: 'Frais menage + check-in',
+      minNights: 'Minimum 2 nuits', emailError: 'Merci d entrer votre email.',
+      sending: 'Envoi...', sent: 'Demande envoyee !', error: 'Erreur, reessayez.'
+    },
+    'en': {
+      from: 'From', night: '/ night', checkin: 'CHECK-IN', checkout: 'CHECK-OUT',
+      guests: 'GUESTS', total: 'Total', badge: 'Direct booking',
+      nights: function(n) { return n + ' night' + (n > 1 ? 's' : ''); },
+      discount: 'Direct booking (-10%)', cleaning: 'Cleaning + check-in',
+      minNights: 'Minimum 2 nights', emailError: 'Please enter your email.',
+      sending: 'Sending...', sent: 'Request sent!', error: 'Error, please retry.'
+    },
+    'de': {
+      from: 'Ab', night: '/ Nacht', checkin: 'ANREISE', checkout: 'ABREISE',
+      guests: 'GÄSTE', total: 'Gesamt', badge: 'Direktbuchung',
+      nights: function(n) { return n + ' Nacht' + (n > 1 ? 'e' : ''); },
+      discount: 'Direktbuchung (-10%)', cleaning: 'Reinigung + Check-in',
+      minNights: 'Mindestens 2 Nächte', emailError: 'Bitte E-Mail eingeben.',
+      sending: 'Wird gesendet...', sent: 'Anfrage gesendet!', error: 'Fehler, erneut versuchen.'
+    },
+    'sq': {
+      from: 'Nga', night: '/ nate', checkin: 'ARDHJA', checkout: 'LARGIMI',
+      guests: 'UDHETARET', total: 'Totali', badge: 'Rezervim direkt',
+      nights: function(n) { return n + ' nate'; },
+      discount: 'Rezervim direkt (-10%)', cleaning: 'Pastrim + check-in',
+      minNights: 'Minimum 2 nete', emailError: 'Shkruani emailin tuaj.',
+      sending: 'Duke derguar...', sent: 'Kerkesa u dergua!', error: 'Gabim, provoni perseri.'
+    },
+    'it': {
+      from: 'A partire da', night: '/ notte', checkin: 'ARRIVO', checkout: 'PARTENZA',
+      guests: 'OSPITI', total: 'Totale', badge: 'Prenotazione diretta',
+      nights: function(n) { return n + ' nott' + (n > 1 ? 'i' : 'e'); },
+      discount: 'Prenotazione diretta (-10%)', cleaning: 'Pulizie + check-in',
+      minNights: 'Minimo 2 notti', emailError: 'Inserisci la tua email.',
+      sending: 'Invio...', sent: 'Richiesta inviata!', error: 'Errore, riprova.'
+    }
+  };
+
+  var rates = { EUR: 1, CHF: 0.97, LEK: 111 };
+  var syms  = { EUR: 'EUR ', CHF: 'CHF ', LEK: 'L ' };
+
+  function fmt(eur) {
+    var val = Math.round(eur * rates[currentCurrency]);
+    if (currentCurrency === 'LEK') { return syms[currentCurrency] + val.toLocaleString(); }
+    return syms[currentCurrency] + val;
+  }
+
+  function setEl(id, txt) {
+    var el = document.getElementById(id);
+    if (el) { el.textContent = txt; }
+  }
+
+  function updateLabels() {
+    var l = L[currentLang];
+    setEl('cal-from-label',    l.from);
+    setEl('label-checkin',     l.checkin);
+    setEl('label-checkout',    l.checkout);
+    setEl('label-guests',      l.guests);
+    setEl('cal-badge',         l.badge);
+    setEl('bd-cleaning-label', l.cleaning);
+    setEl('bd-total-label',    l.total);
+  }
+
+  window.setLang = function (lang) {
+    currentLang = lang;
+    document.querySelectorAll('[data-lang]').forEach(function(el) {
+      el.classList.toggle('active', el.getAttribute('data-lang') === lang);
+    });
+    document.querySelectorAll('[data-lang-block]').forEach(function(el) {
+      el.classList.toggle('active', el.getAttribute('data-lang-block') === lang);
+    });
+    document.querySelectorAll('.lang-btn').forEach(function(btn) {
+      var t = btn.textContent.trim();
+      btn.classList.toggle('active',
+        (lang === 'fr' && t === 'FR') ||
+        (lang === 'en' && t === 'EN') ||
+        (lang === 'de' && t === 'DE') ||
+        (lang === 'sq' && t === 'AL') ||
+        (lang === 'it' && t === 'IT')
+      );
+    });
+    var currentBtn = document.querySelector('.lang-current');
+    if (currentBtn) { currentBtn.textContent = (lang === 'sq' ? 'AL' : lang.toUpperCase()) + ' ▾'; }
+    document.querySelectorAll('.mobile-lang-code').forEach(function(el) { el.textContent = (lang === 'sq' ? 'AL' : lang.toUpperCase()); });
+    document.querySelectorAll('.mobile-lang-quick').forEach(function(el) { el.removeAttribute('open'); });
+    var htmlEl = document.documentElement;
+    if (htmlEl) { htmlEl.setAttribute('lang', lang === 'sq' ? 'sq' : lang); }
+    updateLabels();
+    window.calcPrice();
+  };
+
+  window.setCurrency = function (currency) {
+    currentCurrency = currency;
+    document.querySelectorAll('.curr-toggle-btn').forEach(function(btn) {
+      btn.classList.toggle('active', btn.getAttribute('data-currency') === currency);
+    });
+    window.calcPrice();
+  };
+
+  function getNightRate(date) {
+    var m = date.getMonth() + 1;
+    var d = date.getDate();
+    if (m === 7) { return 215; }
+    if (m === 8 && d <= 22) { return 210; }
+    if (m === 8 && d > 22)  { return 194; }
+    if (m === 6 && d >= 7)  { return 220; }
+    if (m === 6 && d < 7)   { return 180; }
+    if (m === 9 && d <= 15) { return 165; }
+    if (m === 9 && d > 15)  { return 130; }
+    if (m === 5) { return 110; }
+    return 80;
+  }
+
+  window.calcPrice = function () {
+    var l      = L[currentLang];
+    var cinEl  = document.getElementById('checkin');
+    var coutEl = document.getElementById('checkout');
+    var amtEl  = document.getElementById('cal-amount');
+    var boxEl  = document.getElementById('price-breakdown-box');
+    if (!cinEl || !coutEl || !amtEl || !boxEl) { return; }
+    if (!cinEl.value || !coutEl.value) {
+      amtEl.innerHTML = fmt(80) + ' <span style="font-size:1rem;opacity:0.7">' + l.night + '</span>';
+      boxEl.style.display = 'none';
+      return;
+    }
+    var start  = new Date(cinEl.value + 'T00:00:00');
+    var end    = new Date(coutEl.value + 'T00:00:00');
+    if (end <= start) { amtEl.textContent = l.minNights; boxEl.style.display = 'none'; return; }
+    var nights = Math.round((end - start) / 86400000);
+    if (nights < 2)  { amtEl.textContent = l.minNights; boxEl.style.display = 'none'; return; }
+    var subtotal = 0;
+    var cur = new Date(start);
+    for (var i = 0; i < nights; i++) {
+      subtotal += getNightRate(cur);
+      cur.setDate(cur.getDate() + 1);
+    }
+    var discount   = Math.round(subtotal * 0.10);
+    var discounted = subtotal - discount;
+    var cleaning   = 35;
+    var total      = discounted + cleaning;
+    var perNight   = Math.round(discounted / nights);
+    amtEl.innerHTML = fmt(perNight) + ' <span style="font-size:1rem;opacity:0.7">' + l.night + '</span>';
+    setEl('bd-nights-label',   l.nights(nights) + ' x ' + fmt(Math.round(subtotal / nights)));
+    setEl('bd-nights-val',     fmt(subtotal));
+    setEl('bd-discount-label', l.discount);
+    setEl('bd-discount-val',   '-' + fmt(discount));
+    setEl('bd-cleaning-label', l.cleaning);
+    setEl('bd-cleaning-val',   fmt(cleaning));
+    setEl('bd-total-label',    l.total);
+    setEl('bd-total-val',      fmt(total));
+    boxEl.style.display = 'block';
+  };
+
+  var tracks = [
+    { file: 'saltwater-mirage.mp3', title: 'Saltwater Mirage' },
+    { file: 'sunsetcall.mp3',       title: 'Sunset Call' }
+  ];
+  var currentTrack = 0;
+
+  function getAudio() { return document.getElementById('ambient-audio'); }
+
+  function loadAndPlay(idx, play) {
+    var audio = getAudio();
+    var btn   = document.getElementById('audioBtn');
+    if (!audio) { return; }
+    audio.src = tracks[idx].file;
+    audio.load();
+    setEl('audio-title', tracks[idx].title);
+    if (play) {
+      audio.play()
+        .then(function() { if (btn) { btn.classList.add('playing'); } })
+        .catch(function(e) { console.log('Audio:', e); });
+    }
+  }
+
+  window.toggleAudio = function () {
+    var audio = getAudio();
+    var btn   = document.getElementById('audioBtn');
+    if (!audio) { return; }
+    if (audio.paused) {
+      if (!audio.src || audio.src === window.location.href) {
+        loadAndPlay(currentTrack, true);
+      } else {
+        audio.play()
+          .then(function() { if (btn) { btn.classList.add('playing'); } })
+          .catch(function(e) { console.log('Audio:', e); });
+      }
+    } else {
+      audio.pause();
+      if (btn) { btn.classList.remove('playing'); }
+    }
+  };
+
+  window.nextTrack = function () {
+    var audio      = getAudio();
+    var wasPlaying = audio && !audio.paused;
+    currentTrack   = (currentTrack + 1) % tracks.length;
+    loadAndPlay(currentTrack, wasPlaying);
+  };
+
+  var photos = [
+    'Salon.jpeg', 'Sdb.jpeg', 'chambre1.jpeg', 'Cuisine.jpeg',
+    'Balcon.jpg', 'Vuejardinbalcon.jpeg', 'beachoceanview.jpg',
+    'sunset3.jpeg', 'Sunset1.jpeg', 'Sunset2.jpeg', 'Spritz.jpeg', 'restaurantdenuit.jpeg',
+    'hut.jpeg', 'sdb2.jpeg', 'heart.jpeg', 'seaview2.jpeg',
+    'exterior.jpeg', 'eveningstreet.jpeg', 'sunsetorange.jpeg'
+  ];
+  var currentPhoto = 0;
+
+  window.showAllMobileGallery = function () {
+    var grid = document.querySelector('.gallery-grid');
+    var more = document.getElementById('mobile-gallery-more');
+    if (grid) { grid.classList.add('mobile-expanded'); }
+    if (more) { more.style.display = 'none'; }
+  };
+
+  window.openLightbox = function (i) {
+    currentPhoto = i;
+    var img     = document.getElementById('lightbox-img');
+    var counter = document.getElementById('lightbox-counter');
+    var lb      = document.getElementById('lightbox');
+    if (!img || !counter || !lb) { return; }
+    img.src = photos[i];
+    counter.textContent = (i + 1) + ' / ' + photos.length;
+    lb.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  };
+
+  window.closeLightbox = function () {
+    var lb = document.getElementById('lightbox');
+    if (!lb) { return; }
+    lb.classList.remove('active');
+    document.body.style.overflow = '';
+  };
+
+  window.changePhoto = function (dir) {
+    currentPhoto = (currentPhoto + dir + photos.length) % photos.length;
+    var img     = document.getElementById('lightbox-img');
+    var counter = document.getElementById('lightbox-counter');
+    if (!img || !counter) { return; }
+    img.src = photos[currentPhoto];
+    counter.textContent = (currentPhoto + 1) + ' / ' + photos.length;
+  };
+
+  var lb = document.getElementById('lightbox');
+  if (lb) {
+    lb.addEventListener('click', function(e) {
+      if (e.target === this) { window.closeLightbox(); }
+    });
+  }
+
+  document.addEventListener('keydown', function(e) {
+    var l = document.getElementById('lightbox');
+    if (!l || !l.classList.contains('active')) { return; }
+    if (e.key === 'Escape')     { window.closeLightbox(); }
+    var rm = document.getElementById('reviewModal');
+    if (rm && rm.classList.contains('active') && e.key === 'Escape') { window.closeReviewModal(); }
+    if (e.key === 'ArrowLeft')  { window.changePhoto(-1); }
+    if (e.key === 'ArrowRight') { window.changePhoto(1); }
+  });
+
+  window.submitBooking = function () {
+    var emailEl   = document.getElementById('booking-email');
+    var msgEl     = document.getElementById('booking-msg');
+    var cinEl     = document.getElementById('checkin');
+    var coutEl    = document.getElementById('checkout');
+    var guestsEl  = document.getElementById('guests-select');
+    var btnEl     = document.getElementById('submit-btn');
+    var successEl = document.getElementById('form-success');
+    var l = L[currentLang];
+
+    if (!emailEl || !emailEl.value || emailEl.value.indexOf('@') < 0) {
+      alert(l.emailError);
+      return;
+    }
+
+    var totalVal = '';
+    var totalEl  = document.getElementById('bd-total-val');
+    if (totalEl && totalEl.textContent && totalEl.textContent !== '-') {
+      totalVal = totalEl.textContent;
+    }
+
+    var lines = [];
+    lines.push('Arrivee  : ' + (cinEl   && cinEl.value   ? cinEl.value   : 'Non precisee'));
+    lines.push('Depart   : ' + (coutEl  && coutEl.value  ? coutEl.value  : 'Non precise'));
+    lines.push('Voyageurs: ' + (guestsEl ? guestsEl.value : 'Non precise'));
+    lines.push('Email    : ' + emailEl.value);
+    if (totalVal) { lines.push('Prix est.: ' + totalVal); }
+    if (msgEl && msgEl.value) { lines.push('Message  : ' + msgEl.value); }
+
+    if (btnEl) { btnEl.disabled = true; btnEl.textContent = l.sending; }
+
+    fetch('https://formsubmit.co/ajax/info@swisssweet-apartment.com', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({
+        _subject: 'Reservation - Swiss Sweet Apartment',
+        _template: 'table',
+        _captcha: 'false',
+        name: 'Swiss Sweet Website',
+        email: emailEl.value,
+        checkin: cinEl && cinEl.value ? cinEl.value : '',
+        checkout: coutEl && coutEl.value ? coutEl.value : '',
+        guests: guestsEl ? guestsEl.value : '',
+        total: totalVal || '',
+        message: lines.join('\n')
+      })
+    })
+    .then(function(r) {
+      if (!r.ok) { throw new Error('Form submission failed'); }
+      return r.json();
+    })
+    .then(function() {
+      if (btnEl) { btnEl.disabled = false; btnEl.innerHTML = '<span data-lang="fr">Envoyer une demande</span><span data-lang="en" class="active">Send booking request</span><span data-lang="de">Anfrage senden</span><span data-lang="sq">Dërgo kërkesën</span><span data-lang="it">Invia richiesta</span>'; }
+      if (successEl) { successEl.style.display = 'block'; }
+      if (cinEl)    { cinEl.value    = ''; }
+      if (coutEl)   { coutEl.value   = ''; }
+      if (emailEl)  { emailEl.value  = ''; }
+      if (msgEl)    { msgEl.value    = ''; }
+      window.setLang(currentLang);
+      window.calcPrice();
+    })
+    .catch(function() {
+      if (btnEl) { btnEl.disabled = false; btnEl.innerHTML = '<span data-lang="fr">Envoyer une demande</span><span data-lang="en" class="active">Send booking request</span><span data-lang="de">Anfrage senden</span><span data-lang="sq">Dërgo kërkesën</span><span data-lang="it">Invia richiesta</span>'; window.setLang(currentLang); }
+      alert(l.error + ' Vous pouvez aussi écrire directement à info@swisssweet-apartment.com.');
+    });
+  };
+
+
+  window.openReviewModal = function () {
+    var modal = document.getElementById('reviewModal');
+    if (!modal) { return; }
+    modal.classList.add('active');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  };
+
+  window.closeReviewModal = function () {
+    var modal = document.getElementById('reviewModal');
+    if (!modal) { return; }
+    modal.classList.remove('active');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  };
+
+  var reviewModal = document.getElementById('reviewModal');
+  if (reviewModal) {
+    reviewModal.addEventListener('click', function(e) {
+      if (e.target === this) { window.closeReviewModal(); }
+    });
+  }
+
+  document.querySelectorAll('a[href="#booking"]').forEach(function(link) {
+    link.addEventListener('click', function(e) {
+      var target = document.getElementById('booking');
+      if (!target) { return; }
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+
+  window.toggleMobileMenu = function () {
+    var panel = document.getElementById('mobile-panel');
+    var btn = document.querySelector('.mobile-menu-toggle');
+    if (!panel) { return; }
+    var isOpen = panel.classList.toggle('open');
+    if (btn) { btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false'); }
+  };
+
+  window.closeMobileMenu = function () {
+    var panel = document.getElementById('mobile-panel');
+    var btn = document.querySelector('.mobile-menu-toggle');
+    if (panel) { panel.classList.remove('open'); }
+    if (btn) { btn.setAttribute('aria-expanded', 'false'); }
+  };
+
+  document.addEventListener('click', function(e) {
+    var panel = document.getElementById('mobile-panel');
+    var btn = document.querySelector('.mobile-menu-toggle');
+    if (!panel || !panel.classList.contains('open')) { return; }
+    if (panel.contains(e.target) || (btn && btn.contains(e.target))) { return; }
+    window.closeMobileMenu();
+  });
+
+  window.addEventListener('resize', function() {
+    if (window.innerWidth > 768) { window.closeMobileMenu(); }
+  });
+
+  setEl('audio-title', tracks[0].title);
+  updateLabels();
+  window.setCurrency('EUR');
+  window.setLang('en');
+  window.calcPrice();
+
+});
+</script>
+</body>
+</html>
