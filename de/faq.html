@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FAQ | Swiss Sweet Apartment | San Pietro Resort, Lalzi Bay</title>
+<link href="../favicon.png" rel="icon" type="image/png"/>
+<link href="../apple-touch-icon.png" rel="apple-touch-icon"/>
+<meta content="Häufige Fragen zum Swiss Sweet Apartment, einer privaten Ferienwohnung im San Pietro Resort, Lalzi Bay, Albanien." name="description"/>
+<link href="https://swisssweet-apartment.com/de/faq.html" rel="canonical"/>
+<meta content="website" property="og:type"/>
+<meta content="Swiss Sweet Apartment — San Pietro Resort, Lalzi Bay" property="og:title"/>
+<meta content="97 m² grosse Ferienwohnung für Familien, Paare und Freundesgruppen, 5 Minuten vom Strand entfernt, mit kostenlosem Parkplatz und Schweizer Komfort an der Adria." property="og:description"/>
+<meta content="https://swisssweet-apartment.com/de/faq.html" property="og:url"/>
+<meta content="https://swisssweet-apartment.com/beachoceanview.jpg" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Swiss Sweet Apartment — San Pietro Resort, Lalzi Bay" name="twitter:title"/>
+<meta content="97 m² grosse Ferienwohnung für Familien, Paare und Freundesgruppen, 5 Minuten vom Strand entfernt, mit kostenlosem Parkplatz und Schweizer Komfort an der Adria." name="twitter:description"/>
+<meta content="https://swisssweet-apartment.com/beachoceanview.jpg" name="twitter:image"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&amp;family=DM+Sans:wght@300;400;500&amp;display=swap" rel="stylesheet"/>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --turquoise: #7ECECE;
+    --turquoise-light: #A8E4E4;
+    --turquoise-pale: #E4F7F7;
+    --turquoise-dark: #2A7A7A;
+    --turquoise-deep: #1E5858;
+    --coral: #FF6B47;
+    --coral-dark: #E05530;
+    --white: #FFFFFF;
+    --off-white: #F7FDFD;
+    --text: #1A2E2E;
+    --text-muted: #4A7070;
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --sans: 'DM Sans', sans-serif;
+    --card-media-h: 260px;
+  }
+
+  /* LANGUAGE & CURRENCY SWITCHER */
+  .lang-btn { text-decoration:none; display:inline-block; }
+  .lang-bar { display: flex; align-items: center; gap: 0.5rem; }
+  .lang-btn, .curr-btn { background: none; border: 1px solid rgba(255,255,255,0.3); color: rgba(255,255,255,0.7); padding: 0.25rem 0.6rem; border-radius: 4px; font-size: 0.72rem; font-family: var(--sans); cursor: pointer; transition: all 0.2s; letter-spacing: 0.05em; }
+  .lang-btn:hover, .curr-btn:hover, .lang-btn.active, .curr-btn.active { background: rgba(255,255,255,0.15); color: white; border-color: white; }
+  .lang-sep { color: rgba(255,255,255,0.3); font-size: 0.7rem; }
+
+  /* AIRBNB STYLE PRICE CALCULATOR */
+  .price-calculator { background: white; border: 1px solid #ddd; border-radius: 12px; padding: 0; max-width: 580px; margin: 0 auto 2rem; box-shadow: 0 6px 32px rgba(0,0,0,0.12); overflow: hidden; }
+  .price-cal-header { background: var(--turquoise-dark); color: white; padding: 1.2rem 1.5rem; display: flex; justify-content: space-between; align-items: center; }
+  .price-cal-from { font-size: 0.75rem; color: rgba(255,255,255,0.7); text-transform: uppercase; letter-spacing: 0.1em; }
+  .price-cal-amount { font-family: var(--serif); font-size: 2rem; font-weight: 300; color: white; }
+  .price-cal-amount span { font-size: 1rem; opacity: 0.7; }
+  .price-cal-badge { background: var(--coral); color: white; padding: 0.4rem 0.8rem; border-radius: 20px; font-size: 0.75rem; font-weight: 500; }
+  .price-cal-dates { display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid #eee; }
+  .price-cal-date { padding: 1rem 1.5rem; border-right: 1px solid #eee; cursor: pointer; transition: background 0.2s; }
+  .price-cal-date:last-child { border-right: none; }
+  .price-cal-date:hover { background: #f7f7f7; }
+  .price-cal-date label { display: block; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text); margin-bottom: 0.3rem; }
+  .price-cal-date input { border: none; outline: none; font-size: 0.95rem; color: var(--text-muted); font-family: var(--sans); background: transparent; width: 100%; cursor: pointer; }
+  .price-cal-guests { padding: 1rem 1.5rem; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center; }
+  .price-cal-guests label { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text); }
+  .price-cal-guests select { border: none; outline: none; font-size: 0.95rem; color: var(--text-muted); font-family: var(--sans); background: transparent; cursor: pointer; }
+  .price-breakdown { padding: 1.2rem 1.5rem; border-bottom: 1px solid #eee; display: none; }
+  .price-breakdown.show { display: block; }
+  .price-line { display: flex; justify-content: space-between; font-size: 0.9rem; color: var(--text); padding: 0.4rem 0; }
+  .price-line.total { font-weight: 500; border-top: 1px solid #eee; padding-top: 0.8rem; margin-top: 0.4rem; font-size: 1rem; }
+  .price-line.discount { color: #008A05; }
+  .price-currency-toggle { display: flex; gap: 0.5rem; padding: 0.8rem 1.5rem; border-bottom: 1px solid #eee; }
+  .curr-toggle-btn { background: none; border: 1px solid #ddd; color: var(--text-muted); padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.78rem; font-family: var(--sans); cursor: pointer; transition: all 0.2s; }
+  .curr-toggle-btn.active { background: var(--turquoise-dark); color: white; border-color: var(--turquoise-dark); }
+  .price-cal-btn { margin: 1.2rem 1.5rem; background: var(--coral); color: white; border: none; padding: 1rem; border-radius: 8px; font-size: 0.95rem; font-weight: 500; cursor: pointer; width: calc(100% - 3rem); transition: background 0.2s; font-family: var(--sans); }
+  .price-cal-btn:hover { background: var(--coral-dark); }
+  .price-note { padding: 0 1.5rem 1.2rem; font-size: 0.78rem; color: var(--text-muted); text-align: center; }
+
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--sans); background: var(--white); color: var(--text); font-size: 16px; line-height: 1.6; overflow-x: hidden; }
+
+  /* NAV */
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: grid; grid-template-columns: auto 1fr auto; gap: 1.5rem; align-items: center; padding: 1rem 2.2rem; background: rgba(42,122,122,0.96); backdrop-filter: blur(12px); }
+  .nav-logo { font-family: var(--serif); font-size: 1.4rem; font-weight: 300; color: var(--white); letter-spacing: 0.04em; display:flex; align-items:center; gap:0.65rem; text-decoration:none; }
+  .nav-logo span { color: var(--coral); font-style: italic; }
+  .site-logo { width:34px; height:34px; border-radius:999px; object-fit:cover; box-shadow:0 8px 22px rgba(0,0,0,0.20); background:white; flex:0 0 auto; }
+  .nav-logo-text { display:inline-block; }
+  .nav-links { display: flex; gap: 1.05rem; list-style: none; align-items: center; justify-content:center; }
+  .nav-links a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.78rem; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--white); }
+  .nav-cta { background: var(--coral) !important; color: white !important; padding: 0.5rem 1.2rem; border-radius: 2px; }
+  .nav-tools { display:flex; align-items:center; justify-content:flex-end; gap:0.65rem; }
+
+
+  /* HERO */
+  .hero { height: 100vh; min-height: 600px; position: relative; display: flex; align-items: flex-end; padding: 0 2.5rem 5rem; overflow: hidden; }
+  .hero-bg { position: absolute; inset: 0; overflow: hidden; }
+  .hero-bg video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
+  .hero-bg::after { content: ''; position: absolute; inset: 0; z-index: 1; background: linear-gradient(to bottom, rgba(30,88,88,0.15) 0%, rgba(30,88,88,0.72) 100%); }
+  .hero-content { position: relative; z-index: 2; max-width: 680px; }
+  .hero-tag { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--turquoise-light); margin-bottom: 1rem; }
+  .hero h1 { font-family: var(--serif); font-size: clamp(2.8rem, 6vw, 5rem); font-weight: 300; line-height: 1.1; color: var(--white); margin-bottom: 1.2rem; }
+  .hero h1 em { font-style: italic; color: var(--coral); }
+  .hero-sub { font-size: 1rem; color: rgba(255,255,255,0.82); font-weight: 300; max-width: 440px; margin-bottom: 2rem; line-height: 1.7; }
+  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-coral { background: var(--coral); color: white; padding: 0.85rem 2rem; text-decoration: none; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; border-radius: 2px; transition: background 0.2s, transform 0.15s; display: inline-block; }
+  .btn-coral:hover { background: var(--coral-dark); transform: translateY(-1px); }
+  .btn-outline { border: 1px solid rgba(255,255,255,0.5); color: white; padding: 0.85rem 2rem; text-decoration: none; font-size: 0.85rem; font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase; border-radius: 2px; transition: border-color 0.2s, background 0.2s; display: inline-block; }
+  .btn-outline:hover { border-color: white; background: rgba(255,255,255,0.1); }
+  .hero-scroll { position: absolute; bottom: 2rem; right: 2.5rem; z-index: 2; display: flex; flex-direction: column; align-items: center; gap: 0.5rem; color: rgba(255,255,255,0.5); font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; }
+  .scroll-line { width: 1px; height: 40px; background: rgba(255,255,255,0.3); animation: scrollPulse 2s ease-in-out infinite; }
+  @keyframes scrollPulse { 0%,100%{opacity:0.3}50%{opacity:0.8} }
+
+  /* STATS */
+  .stats-bar { background: var(--turquoise-dark); display: grid; grid-template-columns: repeat(4, 1fr); }
+  .stat-item { padding: 1.8rem 2rem; border-right: 1px solid rgba(255,255,255,0.08); text-align: center; }
+  .stat-item:last-child { border-right: none; }
+  .stat-num { font-family: var(--serif); font-size: 2rem; font-weight: 300; color: var(--coral); line-height: 1; margin-bottom: 0.3rem; }
+  .stat-label { font-size: 0.72rem; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.55); }
+
+  /* SHARED */
+  .section-tag { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--coral); margin-bottom: 0.8rem; }
+  h2 { font-family: var(--serif); font-size: clamp(2rem, 4vw, 3rem); font-weight: 300; line-height: 1.2; color: var(--text); margin-bottom: 1.2rem; }
+  h2 em { font-style: italic; }
+  .section-lead { font-size: 1.05rem; color: var(--text-muted); max-width: 560px; font-weight: 300; line-height: 1.8; margin-bottom: 3rem; }
+
+  /* GALLERY */
+  .gallery-section { background: var(--white); padding: 5rem 0; }
+  .gallery-header { padding: 0 2.5rem; margin-bottom: 2.5rem; }
+  .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+  .gallery-item { overflow: hidden; background: var(--turquoise-pale); cursor: pointer; position: relative; }
+  .gallery-item img { width: 100%; height: 280px; object-fit: cover; display: block; transition: transform 0.6s ease; }
+  .gallery-item:hover img { transform: scale(1.04); }
+  .gallery-overlay { position: absolute; inset: 0; background: rgba(42,122,122,0); transition: background 0.3s; display: flex; align-items: center; justify-content: center; }
+  .gallery-overlay span { opacity: 0; color: white; font-size: 2rem; transition: opacity 0.3s; }
+  .gallery-item:hover .gallery-overlay { background: rgba(42,122,122,0.3); }
+  .gallery-item:hover .gallery-overlay span { opacity: 1; }
+
+  /* LIGHTBOX */
+  .lightbox { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.93); z-index: 1000; align-items: center; justify-content: center; }
+  .lightbox.active { display: flex; }
+  .lightbox-img { max-width: 88vw; max-height: 84vh; object-fit: contain; border-radius: 2px; }
+  .lightbox-close { position: absolute; top: 1.5rem; right: 2rem; color: white; font-size: 2rem; cursor: pointer; background: none; border: none; opacity: 0.7; transition: opacity 0.2s; }
+  .lightbox-close:hover { opacity: 1; }
+  .lightbox-prev, .lightbox-next { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: white; font-size: 1.8rem; width: 54px; height: 54px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.2s; }
+  .lightbox-prev { left: 1.5rem; }
+  .lightbox-next { right: 1.5rem; }
+  .lightbox-prev:hover, .lightbox-next:hover { background: rgba(255,107,71,0.6); }
+  .lightbox-counter { position: absolute; bottom: 1.5rem; left: 50%; transform: translateX(-50%); color: rgba(255,255,255,0.6); font-size: 0.85rem; letter-spacing: 0.1em; }
+
+  /* FEATURES */
+  .features-section { background: var(--turquoise); display: grid; grid-template-columns: 1fr 1fr; gap: 0; padding: 0; }
+  .features-text { padding: 6rem 3.5rem 6rem 2.5rem; display: flex; flex-direction: column; justify-content: center; }
+  .features-text h2 { color: var(--white); }
+  .features-text .section-lead { color: rgba(255,255,255,0.75); }
+  .features-image { overflow: hidden; min-height: 500px; }
+  .features-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .features-list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem 2rem; }
+  .feature-item { display: flex; align-items: flex-start; gap: 0.6rem; font-size: 0.9rem; color: var(--white); font-weight: 300; line-height: 1.4; }
+  .feature-icon { color: var(--coral); flex-shrink: 0; }
+
+  /* SUNSET BANNER */
+  .sunset-banner { position: relative; height: 420px; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+  .sunset-banner-bg { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(30,88,88,0.35), rgba(30,88,88,0.7)), url('../Sunset1.jpeg') center 40%/cover no-repeat; }
+  .sunset-banner-content { position: relative; z-index: 2; text-align: center; }
+  .sunset-banner-content h2 { color: white; font-size: clamp(2.2rem, 5vw, 4rem); margin-bottom: 1rem; }
+  .sunset-banner-content p { font-size: 1.1rem; color: rgba(255,255,255,0.8); max-width: 500px; margin: 0 auto 2rem; font-weight: 300; }
+
+  /* ROOMS */
+  .rooms-section { background: var(--white); padding: 6rem 2.5rem; }
+  .rooms-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 3rem; }
+  .room-card { background: var(--off-white); overflow: hidden; border-radius: 2px; border: 1px solid var(--turquoise-light); transition: transform 0.3s, box-shadow 0.3s; }
+  .room-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(42,122,122,0.15); }
+  .room-media-wrap { width: 100%; height: var(--card-media-h); overflow: hidden; position: relative; background: var(--turquoise-pale); }
+  .room-media-wrap img, .room-media-wrap video { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s; }
+  .room-card:hover .room-media-wrap img { transform: scale(1.03); }
+  .room-info { padding: 1.6rem; }
+  .room-info h3 { font-family: var(--serif); font-size: 1.4rem; font-weight: 300; color: var(--turquoise-dark); margin-bottom: 0.5rem; }
+  .room-info p { font-size: 0.88rem; color: var(--text-muted); font-weight: 300; line-height: 1.6; }
+
+  /* VIDEOS */
+  .video-section { background: var(--turquoise-pale); padding: 6rem 2.5rem; }
+  .video-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; margin-top: 3rem; }
+  .video-card { background: var(--white); border-radius: 2px; overflow: hidden; border: 1px solid var(--turquoise-light); }
+  .video-card video { width: 100%; height: 200px; object-fit: cover; display: block; background: var(--turquoise-pale); }
+  .video-card-info { padding: 1.2rem 1.4rem; }
+  .video-card-info h4 { font-family: var(--serif); font-size: 1.2rem; font-weight: 300; color: var(--turquoise-dark); margin-bottom: 0.3rem; }
+  .video-card-info p { font-size: 0.85rem; color: var(--text-muted); font-weight: 300; }
+
+  /* LOCATION */
+  .location-section { background: var(--turquoise-dark); display: grid; grid-template-columns: 1fr 1fr; padding: 0; }
+  .location-text { padding: 6rem 3.5rem 6rem 2.5rem; }
+  .location-text h2 { color: var(--white); }
+  .location-text .section-lead { color: rgba(255,255,255,0.65); max-width: 100%; }
+  .distance-list { list-style: none; margin-top: 2rem; }
+  .distance-item { display: flex; justify-content: space-between; align-items: center; padding: 0.9rem 0; border-bottom: 1px solid rgba(255,255,255,0.12); font-size: 0.9rem; }
+  .distance-name { color: rgba(255,255,255,0.85); font-weight: 300; }
+  .distance-val { font-family: var(--serif); font-size: 1.1rem; color: var(--coral); font-style: italic; }
+  .location-map { min-height: 500px; position: relative; }
+  .location-map iframe { width: 100%; height: 100%; position: absolute; inset: 0; border: none; }
+
+  /* BOOKING */
+  .booking-section { background: var(--turquoise-pale); text-align: center; padding: 6rem 2.5rem; }
+  .booking-section h2 { margin: 0 auto 1rem; }
+  .booking-section .section-lead { margin: 0 auto 3rem; }
+  .booking-card { background: var(--white); border-radius: 4px; padding: 3rem; max-width: 600px; margin: 0 auto; display: flex; flex-direction: column; gap: 1.2rem; box-shadow: 0 8px 40px rgba(42,122,122,0.12); }
+  .booking-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .booking-field { display: flex; flex-direction: column; gap: 0.4rem; text-align: left; }
+  .booking-field label { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); }
+  .booking-field input, .booking-field select { background: var(--off-white); border: 1px solid var(--turquoise-light); padding: 0.75rem 1rem; font-size: 0.9rem; font-family: var(--sans); color: var(--text); border-radius: 2px; outline: none; transition: border-color 0.2s; }
+  .booking-field input:focus, .booking-field select:focus { border-color: var(--turquoise); }
+  .booking-submit { background: var(--coral); color: white; border: none; padding: 1rem 2rem; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; border-radius: 2px; transition: background 0.2s, transform 0.15s; font-family: var(--sans); width: 100%; }
+  .booking-submit:hover { background: var(--coral-dark); transform: translateY(-1px); }
+  .booking-note { font-size: 0.8rem; color: var(--text-muted); }
+  .booking-note a { color: var(--turquoise-dark); text-decoration: none; }
+
+  /* REVIEWS */
+  .reviews-section { background: var(--turquoise); padding: 6rem 2.5rem; text-align: center; }
+  .reviews-section h2 { color: var(--white); }
+  .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 3rem; }
+  .review-card { background: var(--white); padding: 2rem; border-radius: 2px; text-align: left; }
+  .review-stars { color: var(--coral); font-size: 0.85rem; margin-bottom: 0.8rem; }
+  .review-text { font-family: var(--serif); font-size: 1.05rem; font-style: italic; font-weight: 300; color: var(--text); line-height: 1.7; margin-bottom: 1rem; }
+  .review-author { font-size: 0.8rem; color: var(--text-muted); }
+  .reviews-compact { background: var(--turquoise); padding: 4.5rem 2.5rem; text-align: center; }
+  .reviews-compact h2 { color: var(--white); }
+  .reviews-compact .section-lead { color: rgba(255,255,255,0.72); margin: 0 auto 1.8rem; }
+  .review-modal { display:none; position:fixed; inset:0; z-index:1200; background:rgba(0,0,0,0.72); align-items:center; justify-content:center; padding:1.5rem; }
+  .review-modal.active { display:flex; }
+  .review-modal-panel { background:var(--off-white); width:min(980px, 100%); max-height:88vh; overflow:auto; border-radius:22px; padding:2rem; position:relative; box-shadow:0 30px 80px rgba(0,0,0,0.35); }
+  .review-modal-close { position:absolute; top:1rem; right:1rem; width:40px; height:40px; border-radius:999px; border:none; background:var(--turquoise-dark); color:white; cursor:pointer; font-size:1.2rem; }
+  .review-modal-grid { display:grid; grid-template-columns:repeat(3, 1fr); gap:1.2rem; margin-top:1.5rem; }
+  .review-modal-grid .review-card { box-shadow:0 8px 26px rgba(42,122,122,0.08); }
+
+  /* FOOTER */
+  footer { background: var(--turquoise-deep); color: rgba(255,255,255,0.5); padding: 4rem 2.5rem 2.5rem; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; }
+  .footer-brand .nav-logo { font-size: 1.6rem; margin-bottom: 1rem; }
+  .footer-logo-row { display:flex; align-items:flex-start; gap:1.1rem; }
+  .footer-logo-mark { width:78px; height:78px; border-radius:999px; object-fit:cover; background:white; box-shadow:0 14px 34px rgba(0,0,0,0.25); flex:0 0 auto; }
+  .footer-brand p { font-size: 0.85rem; font-weight: 300; line-height: 1.7; max-width: 320px; color: rgba(255,255,255,0.45); }
+  footer h4 { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 1.2rem; }
+  footer ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+  footer ul a { color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.88rem; font-weight: 300; transition: color 0.2s; }
+  footer ul a:hover { color: var(--coral); }
+  .footer-bottom { grid-column: 1/-1; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 2rem; display: flex; justify-content: space-between; font-size: 0.78rem; color: rgba(255,255,255,0.25); }
+
+
+
+  /* HERO SEASON PROMO */
+  .season-promo { display:inline-flex; align-items:center; gap:0.55rem; background:rgba(255,107,71,0.95); color:white; padding:0.55rem 0.9rem; border-radius:999px; font-size:0.78rem; font-weight:500; letter-spacing:0.08em; text-transform:uppercase; box-shadow:0 12px 28px rgba(0,0,0,0.18); margin-bottom:1rem; }
+  .season-promo .promo-dot { width:7px; height:7px; border-radius:999px; background:white; box-shadow:0 0 0 4px rgba(255,255,255,0.22); }
+  .hero-deal-row { display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap; margin:0.4rem 0 1.4rem; }
+  .hero-price-badge { background:rgba(255,255,255,0.94); color:var(--turquoise-deep); padding:0.7rem 1rem; border-radius:999px; display:inline-flex; align-items:baseline; gap:0.25rem; box-shadow:0 14px 34px rgba(0,0,0,0.18); }
+  .hero-price-badge strong { font-family:var(--serif); font-size:1.7rem; font-weight:300; line-height:1; }
+  .hero-price-badge span { font-size:0.78rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.08em; }
+  .hero-discount-badge { background:linear-gradient(135deg,var(--coral),var(--coral-dark)); color:white; padding:0.65rem 0.95rem; border-radius:999px; font-size:0.8rem; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; box-shadow:0 14px 34px rgba(0,0,0,0.2); }
+  .hero-discount-badge::before { content:'✦'; margin-right:0.35rem; color:#FFE7D9; }
+
+
+  .payment-reassurance { margin:0.95rem 1.5rem 0; background:var(--turquoise-pale); border:1px solid rgba(42,122,122,0.16); color:var(--turquoise-deep); border-radius:10px; padding:0.85rem 1rem; font-size:0.84rem; line-height:1.55; text-align:center; }
+  .payment-reassurance span::before { content:'✓ '; color:var(--coral); font-weight:700; }
+
+  /* DIRECT BOOKING INFO */
+  .booking-info-grid { max-width:980px; margin:0 auto 2rem; display:grid; grid-template-columns:1fr 1fr; gap:1.2rem; align-items:stretch; }
+  .booking-info-grid .direct-save-box, .booking-info-grid .good-to-know-box { margin:0; height:100%; }
+  .direct-save-box { max-width:680px; margin:0 auto 2rem; background:white; border:1px solid rgba(42,122,122,0.14); border-radius:16px; padding:1.5rem; box-shadow:0 10px 34px rgba(42,122,122,0.10); text-align:left; }
+  .direct-save-title { font-family:var(--serif); font-size:1.55rem; font-weight:300; color:var(--turquoise-dark); margin-bottom:0.55rem; }
+  .direct-save-text { font-size:0.95rem; color:var(--text-muted); line-height:1.75; }
+  .direct-save-links { display:flex; gap:0.65rem; flex-wrap:wrap; margin-top:1rem; }
+  .platform-link { color:var(--turquoise-dark); border:1px solid var(--turquoise-light); text-decoration:none; border-radius:999px; padding:0.45rem 0.8rem; font-size:0.78rem; transition:all 0.2s; }
+  .platform-link:hover { background:var(--turquoise-pale); color:var(--coral-dark); }
+
+  /* GOOD TO KNOW */
+  .good-to-know-box { max-width:680px; margin:0 auto 2rem; background:linear-gradient(135deg, rgba(255,255,255,0.98), rgba(228,247,247,0.75)); border:1px solid rgba(42,122,122,0.16); border-radius:16px; padding:1.4rem 1.5rem; box-shadow:0 10px 34px rgba(42,122,122,0.09); text-align:left; }
+  .good-to-know-title { font-family:var(--serif); font-size:1.45rem; font-weight:300; color:var(--turquoise-dark); margin-bottom:0.85rem; }
+  .good-to-know-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:0.7rem; }
+  .good-to-know-item { display:flex; align-items:flex-start; gap:0.55rem; color:var(--text-muted); font-size:0.9rem; line-height:1.55; }
+  .good-to-know-item::before { content:'✓'; color:var(--coral); font-weight:700; margin-top:0.02rem; }
+
+  /* FAQ */
+  .faq-section { background:var(--off-white); padding:6rem 2.5rem; }
+  .faq-header { text-align:center; max-width:760px; margin:0 auto 3rem; }
+  .faq-header .section-lead { margin-left:auto; margin-right:auto; margin-bottom:0; }
+  .faq-list { max-width:980px; margin:0 auto; display:flex; flex-direction:column; gap:0.75rem; }
+  .faq-item { background:white; border:1px solid rgba(42,122,122,0.12); border-radius:16px; box-shadow:0 8px 28px rgba(42,122,122,0.07); overflow:hidden; }
+  .faq-item summary { cursor:pointer; list-style:none; padding:1.15rem 3.4rem 1.15rem 1.25rem; position:relative; color:var(--turquoise-deep); font-weight:500; }
+  .faq-item summary::-webkit-details-marker { display:none; }
+  .faq-item summary::after { content:'+'; position:absolute; right:1.25rem; top:50%; transform:translateY(-50%); color:var(--coral); font-size:1.45rem; font-weight:300; }
+  .faq-item[open] summary::after { content:'–'; }
+  .faq-item .faq-answer { padding:0 1.25rem 1.2rem; color:var(--text-muted); font-size:0.94rem; line-height:1.75; }
+  .faq-item .faq-answer p + p { margin-top:0.65rem; }
+
+  /* BLOG / LOCAL TIPS */
+  .blog-section { background:white; padding:6rem 2.5rem; }
+  .blog-header { max-width:760px; margin:0 auto 3rem; text-align:center; }
+  .blog-header .section-lead { margin-left:auto; margin-right:auto; margin-bottom:0; }
+  .blog-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; max-width:1100px; margin:0 auto; }
+  .blog-card { background:var(--off-white); border:1px solid var(--turquoise-light); border-radius:16px; padding:1.6rem; box-shadow:0 8px 30px rgba(42,122,122,0.08); min-height:220px; display:flex; flex-direction:column; justify-content:space-between; }
+  .blog-card h3 { font-family:var(--serif); font-size:1.45rem; font-weight:300; color:var(--turquoise-dark); line-height:1.25; margin-bottom:0.8rem; }
+  .blog-card p { color:var(--text-muted); font-size:0.9rem; line-height:1.65; }
+  .blog-status { display:inline-flex; align-self:flex-start; margin-top:1.25rem; background:var(--coral); color:white; border-radius:999px; padding:0.4rem 0.8rem; font-size:0.72rem; letter-spacing:0.08em; text-transform:uppercase; }
+
+
+
+  /* COMPACT FAQ PREVIEW */
+  .faq-preview-section { background:var(--off-white); padding:3.2rem 2.5rem; }
+  .faq-preview-card { max-width:860px; margin:0 auto; background:white; border:1px solid rgba(42,122,122,0.12); border-radius:16px; padding:1.6rem; box-shadow:0 8px 28px rgba(42,122,122,0.07); text-align:center; }
+  .faq-preview-card h2 { margin-bottom:0.7rem; }
+  .faq-preview-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:0.7rem; margin:1.4rem 0; text-align:left; }
+  .faq-preview-item { background:var(--off-white); border:1px solid rgba(42,122,122,0.10); border-radius:12px; padding:0.85rem 1rem; font-size:0.9rem; color:var(--turquoise-deep); line-height:1.45; }
+  .booking-request-note { margin:0.85rem 1.5rem 0; color:var(--text-muted); font-size:0.83rem; line-height:1.55; text-align:center; }
+  @media (max-width: 768px) {
+    .faq-preview-section { padding:2.4rem 1.3rem; }
+    .faq-preview-card { padding:1.2rem; }
+    .faq-preview-grid { grid-template-columns:1fr; gap:0.55rem; }
+    body { font-size:16.5px; }
+    .hero-sub, .section-lead, .room-info p, .direct-save-text, .good-to-know-item, .faq-preview-item { color:#335F5F; }
+  }
+
+  /* DESKTOP LANGUAGE DROPDOWN & MOBILE MENU */
+  .lang-dropdown { position: relative; }
+  .lang-current { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.35); color: white; padding: 0.45rem 0.75rem; border-radius: 999px; font-size: 0.72rem; font-family: var(--sans); cursor: pointer; letter-spacing: 0.08em; }
+  .lang-menu { position: absolute; top: calc(100% + 0.28rem); right: 0; background: var(--white); border: 1px solid rgba(42,122,122,0.16); border-radius: 12px; box-shadow: 0 14px 34px rgba(0,0,0,0.16); padding: 0.35rem; min-width: 92px; display: none; z-index: 130; }
+  .lang-menu::before { content: ''; position: absolute; left: 0; right: 0; top: -0.32rem; height: 0.32rem; }
+  .lang-dropdown:hover .lang-menu, .lang-dropdown:focus-within .lang-menu, .lang-dropdown.open .lang-menu { display: flex; flex-direction: column; gap: 0.2rem; }
+  .lang-menu .lang-btn { color: var(--turquoise-deep); border: none; border-radius: 8px; text-align: left; padding: 0.45rem 0.6rem; background: transparent; }
+  .lang-menu .lang-btn:hover, .lang-menu .lang-btn.active { background: var(--turquoise-pale); color: var(--coral-dark); }
+  .mobile-menu-toggle { display:none; background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.35); color:white; border-radius:999px; padding:0.55rem 0.75rem; font-family:var(--sans); font-size:0.78rem; letter-spacing:0.08em; cursor:pointer; align-items:center; gap:0.5rem; }
+  .mobile-lang-quick { display:none; position:relative; }
+  .mobile-lang-quick summary { list-style:none; cursor:pointer; background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.35); color:white; border-radius:999px; padding:0.48rem 0.68rem; font-family:var(--sans); font-size:0.75rem; letter-spacing:0.06em; align-items:center; gap:0.35rem; white-space:nowrap; }
+  .mobile-lang-quick summary::-webkit-details-marker { display:none; }
+  .mobile-lang-quick-menu { position:absolute; top:calc(100% + 0.55rem); right:0; min-width:86px; background:var(--white); border:1px solid rgba(42,122,122,0.16); border-radius:12px; box-shadow:0 14px 34px rgba(0,0,0,0.18); padding:0.35rem; z-index:140; }
+  .mobile-lang-quick-menu .lang-btn { display:block; width:100%; color:var(--turquoise-deep); border:none; border-radius:8px; text-align:left; padding:0.45rem 0.6rem; background:transparent; }
+  .mobile-lang-quick-menu .lang-btn:hover, .mobile-lang-quick-menu .lang-btn.active { background:var(--turquoise-pale); color:var(--coral-dark); }
+  .hamburger-lines { display:inline-flex; flex-direction:column; gap:4px; }
+  .hamburger-lines span { display:block; width:18px; height:2px; background:white; border-radius:999px; }
+  .mobile-panel { display:none; position:fixed; top:70px; left:0; right:0; z-index:99; background:rgba(30,88,88,0.98); backdrop-filter:blur(14px); border-top:1px solid rgba(255,255,255,0.1); padding:1rem 1.5rem 1.4rem; box-shadow:0 18px 40px rgba(0,0,0,0.22); }
+  .mobile-panel.open { display:block; }
+  .mobile-panel a { display:block; color:white; text-decoration:none; padding:0.85rem 0; border-bottom:1px solid rgba(255,255,255,0.1); font-size:0.82rem; letter-spacing:0.1em; text-transform:uppercase; }
+  .mobile-panel a.mobile-book { margin-top:1rem; text-align:center; background:var(--coral); border-bottom:none; border-radius:999px; padding:0.85rem 1rem; }
+  .mobile-lang-row { display:flex; gap:0.45rem; flex-wrap:wrap; padding-top:1rem; }
+  .mobile-lang-row .lang-btn { color:rgba(255,255,255,0.8); border-color:rgba(255,255,255,0.28); }
+  .mobile-lang-row .lang-btn.active { color:white; background:rgba(255,255,255,0.16); border-color:white; }
+
+
+
+  /* FINAL HEADER / FOOTER POLISH */
+  nav { grid-template-columns: 1fr auto 1fr; gap: 1rem; }
+  .nav-logo { justify-self:start; white-space:nowrap; }
+  .nav-links { justify-self:center; white-space:nowrap; }
+  .nav-tools { justify-self:end; }
+  .footer-brand { max-width: 620px; }
+  .footer-logo-row { display:grid; grid-template-columns:minmax(0,1fr) 150px; align-items:center; gap:2rem; }
+  .footer-logo-mark { width:150px; height:auto; border-radius:0; object-fit:contain; background:transparent; box-shadow:none; justify-self:end; }
+  .footer-brand .nav-logo { margin-bottom:1rem; display:block; }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; grid-template-columns:1fr auto auto; gap:0.55rem; }
+    .nav-links, .nav-tools { display: none; }
+    .mobile-lang-quick { display:block; }
+    .mobile-menu-toggle { display:inline-flex; }
+    .stats-bar { grid-template-columns: 1fr 1fr; }
+    .features-section, .location-section { grid-template-columns: 1fr; }
+    .features-image { min-height: 300px; }
+    .rooms-grid, .reviews-grid, .video-grid { grid-template-columns: 1fr; }
+    .gallery-grid { grid-template-columns: 1fr 1fr; }
+    .gallery-grid .g1 { grid-column: 1/3; }
+    .gallery-grid .g2,.gallery-grid .g3,.gallery-grid .g4,.gallery-grid .g5,.gallery-grid .g6 { grid-column: span 1; }
+    .booking-row { grid-template-columns: 1fr; }
+    footer { grid-template-columns: 1fr; }
+
+    .hero-deal-row { gap:0.55rem; }
+    .hero-price-badge strong { font-size:1.45rem; }
+    .season-promo { font-size:0.7rem; }
+    .blog-grid { grid-template-columns:1fr; }
+    .review-modal-grid { grid-template-columns:1fr; }
+    .review-modal-panel { padding:1.4rem; }
+    .footer-logo-row { grid-template-columns:1fr; }
+    .footer-logo-mark { justify-self:start; width:120px; }
+    .good-to-know-grid { grid-template-columns:1fr; }
+    .faq-section, .blog-section { padding:4rem 1.5rem; }
+    .direct-save-links { justify-content:center; }
+
+    .hero { padding: 0 1.5rem 4rem; }
+    .location-map { min-height: 300px; }
+  }
+
+  .faq-header h1 { font-family: var(--serif); font-size: clamp(2rem, 4vw, 3rem); font-weight: 300; line-height: 1.2; color: var(--text); margin-bottom: 1.2rem; }
+  .faq-header h1 em { font-style: italic; }
+</style>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "de",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Wann sind Check-in und Check-out?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Die Anreise ist ab 15:00 Uhr möglich, die Abreise muss bis spätestens 10:00 Uhr erfolgen. Eine späte Anreise oder eine spätere Abreise ist auf Anfrage und je nach Verfügbarkeit möglich."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie viele Gäste können in der Wohnung übernachten?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Die Wohnung bietet Platz für bis zu 4 Erwachsene und 1 Baby / Kleinkind. Sie verfügt über ein Queen-Size-Bett und zwei Einzelbetten. Das Sofa im Wohnzimmer ist kein offizieller Schlafplatz und nicht in der Buchungskapazität enthalten."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ist die Wohnung für Kinder geeignet?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. Die Wohnung eignet sich für Familien mit Kindern. Ein Baby- / Kinderbett für Kinder bis ca. 4 Jahre steht im Elternschlafzimmer zur Verfügung. Ein Hochstuhl ist derzeit nicht vorhanden."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Sind Bettwäsche, Handtücher und Strandtücher inbegriffen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bettwäsche und Badetücher sind inbegriffen. Für jede in der Buchung angegebene Person wird ein Wäscheset bereitgestellt. Strandtücher werden nicht zur Verfügung gestellt."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Welche Ausstattung ist vorhanden?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Die Wohnung verfügt über eine ausgestattete Küche, eine Waschmaschine mit Trocknerfunktion, schnelles WLAN für Homeoffice, einen TV mit internationalen Sendern und kompatiblen Apps wie Netflix, Spotify oder Disney+ sowie Klimaanlage mit Kühl- und Heizfunktion in den Haupträumen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Gibt es Parkplätze und einen Lift?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Kostenlose Parkplätze befinden sich vor dem Gebäude und in der gesamten Anlage, je nach Verfügbarkeit. Das Gebäude verfügt über keinen Lift."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ist ein Auto notwendig?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ein Auto ist nicht zwingend notwendig, wenn Sie vor allem Strand, Wohnung, Anlage und Restaurants in der Nähe geniessen möchten. Für Ausflüge, grössere Einkäufe oder Besuche in Tirana, Durrës, Krujë oder anderen Orten in Albanien ist ein Auto jedoch empfehlenswert."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Welche Taxis oder Transportmöglichkeiten können wir nutzen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Für längere Fahrten, zum Beispiel Flughafen Tirana – Wohnung oder Wohnung – Tirana, können Sie Blue Taxi kontaktieren, 24/7 verfügbar: WhatsApp / Telefon +355 69 444 4445. Für Fahrten in der Region, zum Beispiel Insifa Beach, Duka Winery oder Durrës, können Sie das lokale Taxi kontaktieren: WhatsApp / Telefon +355 67 274 4053. Wir empfehlen, den Fahrpreis vor der Abfahrt direkt mit dem Fahrer zu bestätigen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Gibt es Einkaufsmöglichkeiten in der Nähe?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. Es gibt Geschäfte und kleine Lebensmittelgeschäfte etwa 3 Minuten zu Fuss oder 1 Minute mit dem Auto entfernt. Für grössere Einkäufe kann ein Auto oder Taxi sinnvoll sein."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Sind Haustiere, Partys und Rauchen erlaubt?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Haustiere sind auf vorherige Anfrage erlaubt. Partys, laute Veranstaltungen und Lärmbelästigungen sind nicht erlaubt. Rauchen in der Wohnung ist nicht gestattet; auf dem Balkon ist Rauchen nur mit Aschenbecher erlaubt."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie weit ist der Strand entfernt?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Der Strand von Lalëz ist je nach Weg und gewünschtem Strandabschnitt ca. 5 Min. zu Fuss von der Wohnung entfernt."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Sind Liegestühle, Sonnenschirme und Zugang zum Meliá inbegriffen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nein. Liegestühle, Sonnenschirme und Strandservices sind nicht in der Buchung enthalten. Die Einrichtungen des Meliá Resort, insbesondere Pool, Spa, Beach Club und die privaten Liegestühle des Hotels, sind ebenfalls nicht inbegriffen und können separaten Bedingungen oder Gebühren unterliegen. Zur Orientierung: Gemäss den letzten Informationen von Mai 2026 kosteten Liegestühle bei gewissen Beach Bars in der Umgebung ca. 10 EUR pro Tag und Liegestuhl. Dieser Preis ist nicht garantiert und kann je nach Anbieter, Saison und Lage ändern."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Welche Orte mögen Sie rund um die Wohnung besonders?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Für einen Strandtag mit Mittag- oder Abendessen am Wasser empfehlen wir Insifa Beach, Blu Blu Beach Bar, Cavalli Beach, Breeze by the Bay für Pizza sowie das Meliá Hotel. Für einen Drink oder Cocktail ist Beach AMAR & OMER eine sehr gute Option, ebenso wie die oben genannten Beach Bars. Am Abend gehören Insifa Beach für Seafood und Pasta sowie Duka Winery für ein Abendessen oder eine Degustation in besonderem Ambiente zu unseren Favoriten. Für beide Orte empfehlen wir Auto oder Taxi. Insifa Beach ist auch zu Fuss am Strand entlang erreichbar, rechnen Sie aber mit ca. 30 Minuten. Für einen kulturellen Ausflug ist Krujë eine sehr schöne Option. Für einen Stadtbesuch mit Restaurants und Bars sind Tirana und das Blloku-Quartier ideal. Bei den Restaurants mögen wir besonders Still Fish, Tartuf Shop und Ceren Ismet Shehu. Für einen Drink ist Millenium Garden eine gute Adresse. Für einen näheren Ausflug bieten sich Durrës und die Küste an."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Gibt es eine Kaution und wie sind die Stornierungsbedingungen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Es wird keine Kaution verlangt. Die Stornierung ist bis 14 Tage vor Anreise kostenlos. Schäden, beschädigte oder fehlende Gegenstände sowie übermässige Verschmutzung können jedoch nach dem Aufenthalt verrechnet werden. Je nach Fall kann eine Mindestpauschale von 50 EUR erhoben werden."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie buche ich direkt und welche Betreuung gibt es vor Ort?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sie können uns über das Kontaktformular der Website eine Anfrage senden. Anschliessend bestätigen wir Verfügbarkeit, Preis und Buchungsdetails. Eine lokale Gästebetreuung steht Ihnen während Ihres Aufenthalts für praktische oder dringende Anliegen zur Verfügung. Die Kontaktdaten der Betreuung vor Ort werden vor der Anreise übermittelt. Bitte nutzen Sie WhatsApp für praktische oder dringende Anfragen vor Ort."
+      }
+    }
+  ]
+}</script><link href="https://swisssweet-apartment.com/faq.html" hreflang="en" rel="alternate"/><link href="https://swisssweet-apartment.com/fr/faq.html" hreflang="fr" rel="alternate"/><link href="https://swisssweet-apartment.com/de/faq.html" hreflang="de" rel="alternate"/><link href="https://swisssweet-apartment.com/sq/faq.html" hreflang="sq" rel="alternate"/><link href="https://swisssweet-apartment.com/it/faq.html" hreflang="it" rel="alternate"/><link href="https://swisssweet-apartment.com/faq.html" hreflang="x-default" rel="alternate"/></head>
+<body><nav>
+<a aria-label="Startseite Swiss Sweet Apartment" class="nav-logo" href="/de/"><span class="nav-logo-text">Swiss<span>Sweet</span> Apartment</span></a>
+<details class="mobile-lang-quick">
+<summary aria-label="Sprache wählen">🌐 <span class="mobile-lang-code">DE</span></summary>
+<div class="mobile-lang-quick-menu"><a class="lang-btn" href="/faq.html">EN</a><a class="lang-btn" href="/fr/faq.html">FR</a><a class="lang-btn active" href="/de/faq.html">DE</a><a class="lang-btn" href="/sq/faq.html">AL</a><a class="lang-btn" href="/it/faq.html">IT</a></div>
+</details>
+<button aria-controls="mobile-panel" aria-expanded="false" aria-label="Menü öffnen" class="mobile-menu-toggle" onclick="toggleMobileMenu()" type="button">
+<span class="hamburger-lines"><span></span><span></span><span></span></span>
+    Menu
+  </button>
+<ul class="nav-links">
+<li><a href="/de/#espaces">Die Wohnung</a></li>
+<li><a href="/de/#gallery">Fotos</a></li>
+<li><a href="/de/#videos">Videos</a></li>
+<li><a href="/de/#location">Lage</a></li>
+<li><a class="nav-cta" href="faq.html">FAQ</a></li>
+<li><a href="/de/#blog">Blog</a></li>
+</ul>
+<div class="nav-tools">
+<div class="lang-dropdown">
+<button aria-label="Sprache wählen" class="lang-current" type="button">DE ▾</button>
+<div class="lang-menu"><a class="lang-btn" href="/faq.html">EN</a><a class="lang-btn" href="/fr/faq.html">FR</a><a class="lang-btn active" href="/de/faq.html">DE</a><a class="lang-btn" href="/sq/faq.html">AL</a><a class="lang-btn" href="/it/faq.html">IT</a></div>
+</div>
+</div>
+</nav><div class="mobile-panel" id="mobile-panel">
+<a href="/de/#espaces" onclick="closeMobileMenu()">Die Wohnung</a>
+<a href="/de/#gallery" onclick="closeMobileMenu()">Fotos</a>
+<a href="/de/#videos" onclick="closeMobileMenu()">Videos</a>
+<a href="/de/#location" onclick="closeMobileMenu()">Lage</a>
+<a href="faq.html" onclick="closeMobileMenu()">FAQ</a>
+<a href="/de/#blog" onclick="closeMobileMenu()">Blog</a>
+<div class="mobile-lang-row"><a class="lang-btn" href="/faq.html">EN</a><a class="lang-btn" href="/fr/faq.html">FR</a><a class="lang-btn active" href="/de/faq.html">DE</a><a class="lang-btn" href="/sq/faq.html">AL</a><a class="lang-btn" href="/it/faq.html">IT</a></div>
+<a class="mobile-book" href="/de/#booking" onclick="closeMobileMenu()">Verfügbarkeit prüfen</a>
+</div><main style="padding-top:88px;background:var(--off-white)"><section class="faq-section" id="faq">
+<div class="faq-header">
+<p class="section-tag">FAQ</p>
+<h1>Häufige Fragen<br/><em>vor der Buchung</em></h1>
+<p class="section-lead">Nützliche Antworten zur Vorbereitung Ihres Aufenthalts im Swiss Sweet Apartment.</p>
+</div>
+<div class="faq-list">
+<details class="faq-item"><summary>Wann sind Check-in und Check-out?</summary><div class="faq-answer"><p>Die Anreise ist ab 15:00 Uhr möglich, die Abreise muss bis spätestens 10:00 Uhr erfolgen. Eine späte Anreise oder eine spätere Abreise ist auf Anfrage und je nach Verfügbarkeit möglich.</p></div></details>
+<details class="faq-item"><summary>Wie viele Gäste können in der Wohnung übernachten?</summary><div class="faq-answer"><p>Die Wohnung bietet Platz für bis zu 4 Erwachsene und 1 Baby / Kleinkind. Sie verfügt über ein Queen-Size-Bett und zwei Einzelbetten. Das Sofa im Wohnzimmer ist kein offizieller Schlafplatz und nicht in der Buchungskapazität enthalten.</p></div></details>
+<details class="faq-item"><summary>Ist die Wohnung für Kinder geeignet?</summary><div class="faq-answer"><p>Ja. Die Wohnung eignet sich für Familien mit Kindern. Ein Baby- / Kinderbett für Kinder bis ca. 4 Jahre steht im Elternschlafzimmer zur Verfügung. Ein Hochstuhl ist derzeit nicht vorhanden.</p></div></details>
+<details class="faq-item"><summary>Sind Bettwäsche, Handtücher und Strandtücher inbegriffen?</summary><div class="faq-answer"><p>Bettwäsche und Badetücher sind inbegriffen. Für jede in der Buchung angegebene Person wird ein Wäscheset bereitgestellt. Strandtücher werden nicht zur Verfügung gestellt.</p></div></details>
+<details class="faq-item"><summary>Welche Ausstattung ist vorhanden?</summary><div class="faq-answer"><p>Die Wohnung verfügt über eine ausgestattete Küche, eine Waschmaschine mit Trocknerfunktion, schnelles WLAN für Homeoffice, einen TV mit internationalen Sendern und kompatiblen Apps wie Netflix, Spotify oder Disney+ sowie Klimaanlage mit Kühl- und Heizfunktion in den Haupträumen.</p></div></details>
+<details class="faq-item"><summary>Gibt es Parkplätze und einen Lift?</summary><div class="faq-answer"><p>Kostenlose Parkplätze befinden sich vor dem Gebäude und in der gesamten Anlage, je nach Verfügbarkeit. Das Gebäude verfügt über keinen Lift.</p></div></details>
+<details class="faq-item"><summary>Ist ein Auto notwendig?</summary><div class="faq-answer"><p>Ein Auto ist nicht zwingend notwendig, wenn Sie vor allem Strand, Wohnung, Anlage und Restaurants in der Nähe geniessen möchten. Für Ausflüge, grössere Einkäufe oder Besuche in Tirana, Durrës, Krujë oder anderen Orten in Albanien ist ein Auto jedoch empfehlenswert.</p></div></details>
+<details class="faq-item"><summary>Welche Taxis oder Transportmöglichkeiten können wir nutzen?</summary><div class="faq-answer"><p>Für längere Fahrten, zum Beispiel Flughafen Tirana – Wohnung oder Wohnung – Tirana, können Sie Blue Taxi kontaktieren, 24/7 verfügbar: WhatsApp / Telefon +355 69 444 4445. Für Fahrten in der Region, zum Beispiel Insifa Beach, Duka Winery oder Durrës, können Sie das lokale Taxi kontaktieren: WhatsApp / Telefon +355 67 274 4053. Wir empfehlen, den Fahrpreis vor der Abfahrt direkt mit dem Fahrer zu bestätigen.</p></div></details>
+<details class="faq-item"><summary>Gibt es Einkaufsmöglichkeiten in der Nähe?</summary><div class="faq-answer"><p>Ja. Es gibt Geschäfte und kleine Lebensmittelgeschäfte etwa 3 Minuten zu Fuss oder 1 Minute mit dem Auto entfernt. Für grössere Einkäufe kann ein Auto oder Taxi sinnvoll sein.</p></div></details>
+<details class="faq-item"><summary>Sind Haustiere, Partys und Rauchen erlaubt?</summary><div class="faq-answer"><p>Haustiere sind auf vorherige Anfrage erlaubt. Partys, laute Veranstaltungen und Lärmbelästigungen sind nicht erlaubt. Rauchen in der Wohnung ist nicht gestattet; auf dem Balkon ist Rauchen nur mit Aschenbecher erlaubt.</p></div></details>
+<details class="faq-item"><summary>Wie weit ist der Strand entfernt?</summary><div class="faq-answer"><p>Der Strand von Lalëz ist je nach Weg und gewünschtem Strandabschnitt ca. 5 Min. zu Fuss von der Wohnung entfernt.</p></div></details>
+<details class="faq-item"><summary>Sind Liegestühle, Sonnenschirme und Zugang zum Meliá inbegriffen?</summary><div class="faq-answer"><p>Nein. Liegestühle, Sonnenschirme und Strandservices sind nicht in der Buchung enthalten. Die Einrichtungen des Meliá Resort, insbesondere Pool, Spa, Beach Club und die privaten Liegestühle des Hotels, sind ebenfalls nicht inbegriffen und können separaten Bedingungen oder Gebühren unterliegen. Zur Orientierung: Gemäss den letzten Informationen von Mai 2026 kosteten Liegestühle bei gewissen Beach Bars in der Umgebung ca. 10 EUR pro Tag und Liegestuhl. Dieser Preis ist nicht garantiert und kann je nach Anbieter, Saison und Lage ändern.</p></div></details>
+<details class="faq-item"><summary>Welche Orte mögen Sie rund um die Wohnung besonders?</summary><div class="faq-answer"><p>Für einen Strandtag mit Mittag- oder Abendessen am Wasser empfehlen wir Insifa Beach, Blu Blu Beach Bar, Cavalli Beach, Breeze by the Bay für Pizza sowie das Meliá Hotel. Für einen Drink oder Cocktail ist Beach AMAR &amp; OMER eine sehr gute Option, ebenso wie die oben genannten Beach Bars. Am Abend gehören Insifa Beach für Seafood und Pasta sowie Duka Winery für ein Abendessen oder eine Degustation in besonderem Ambiente zu unseren Favoriten. Für beide Orte empfehlen wir Auto oder Taxi. Insifa Beach ist auch zu Fuss am Strand entlang erreichbar, rechnen Sie aber mit ca. 30 Minuten.</p><p>Für einen kulturellen Ausflug ist Krujë eine sehr schöne Option. Für einen Stadtbesuch mit Restaurants und Bars sind Tirana und das Blloku-Quartier ideal. Bei den Restaurants mögen wir besonders Still Fish, Tartuf Shop und Ceren Ismet Shehu. Für einen Drink ist Millenium Garden eine gute Adresse. Für einen näheren Ausflug bieten sich Durrës und die Küste an.</p></div></details>
+<details class="faq-item"><summary>Gibt es eine Kaution und wie sind die Stornierungsbedingungen?</summary><div class="faq-answer"><p>Es wird keine Kaution verlangt. Die Stornierung ist bis 14 Tage vor Anreise kostenlos. Schäden, beschädigte oder fehlende Gegenstände sowie übermässige Verschmutzung können jedoch nach dem Aufenthalt verrechnet werden. Je nach Fall kann eine Mindestpauschale von 50 EUR erhoben werden.</p></div></details>
+<details class="faq-item"><summary>Wie buche ich direkt und welche Betreuung gibt es vor Ort?</summary><div class="faq-answer"><p>Sie können uns über das Kontaktformular der Website eine Anfrage senden. Anschliessend bestätigen wir Verfügbarkeit, Preis und Buchungsdetails. Eine lokale Gästebetreuung steht Ihnen während Ihres Aufenthalts für praktische oder dringende Anliegen zur Verfügung. Die Kontaktdaten der Betreuung vor Ort werden vor der Anreise übermittelt. Bitte nutzen Sie WhatsApp für praktische oder dringende Anfragen vor Ort.</p></div></details>
+</div>
+</section></main><footer>
+<div class="footer-brand">
+<div class="footer-logo-row">
+<div>
+<span class="nav-logo"><span class="nav-logo-text">Swiss<span>Sweet</span> Apartment</span></span>
+<p>97 m² grosse Ferienwohnung im San Pietro Resort, ca. 5 Min. zu Fuss vom Adriastrand in Lalzi Bay, Albanien.</p>
+</div>
+<img alt="Logo Swiss Sweet Apartment" class="footer-logo-mark" src="../swisssweet-logo-transparent.png"/>
+</div>
+</div>
+<div>
+<h4>Navigation</h4>
+<ul>
+<li><a href="/de/#gallery">Fotos</a></li>
+<li><a href="/de/#espaces">Die Wohnung</a></li>
+<li><a href="/de/#videos">Videos</a></li>
+<li><a href="/de/#location">Lage</a></li>
+<li><a href="/de/#booking">Buchen</a></li>
+<li><a href="faq.html">FAQ</a></li>
+<li><a href="/de/#blog">Blog</a></li>
+</ul>
+</div>
+<div>
+<h4>Kontakt &amp; Plattformen</h4>
+<ul>
+<li><a href="mailto:info@swisssweet-apartment.com">info@swisssweet-apartment.com</a></li>
+<li><a href="https://www.airbnb.fr/rooms/1096118163660517988" rel="noopener noreferrer" target="_blank">Airbnb</a></li>
+<li><a href="https://www.booking.com/hotel/al/swiss-sweet-apartment-happy-rentals.fr.html" rel="noopener noreferrer" target="_blank">Booking.com</a></li>
+<li><a href="https://www.happy.rentals/fr/vacation-rental/10648-swiss-sweet-apartment-297" rel="noopener noreferrer" target="_blank">Happy Rentals</a></li>
+<li><a href="https://www.vrbo.com/sv-se/semesterhus/p11538460" rel="noopener noreferrer" target="_blank">Vrbo</a></li>
+<li><span style="color:rgba(255,255,255,0.45);font-size:0.88rem;font-weight:300"></span></li>
+</ul>
+</div>
+<div class="footer-bottom"><span>© 2026 Swiss Sweet Apartment · San Pietro Resort, Durrës, Albanien</span><span>swisssweet-apartment.com</span><span>Alle Fotos, Videos und Texte sind geschützt. Eine Vervielfältigung oder kommerzielle Nutzung ohne vorherige schriftliche Genehmigung ist untersagt.</span></div>
+</footer><script>
+document.addEventListener('DOMContentLoaded', function () {
+
+  var currentLang = 'de';
+  var currentCurrency = 'EUR';
+
+  var L = { 'de': { from: 'Ab', night: '/ Nacht', checkin: 'ANREISE', checkout: 'ABREISE', guests: 'GÄSTE', total: 'Gesamt', badge: 'Direktbuchung', nights: function(n) { return n + ' Nacht' + (n > 1 ? 'e' : ''); }, discount: 'Direktbuchung (-10%)', cleaning: 'Reinigung + Check-in', minNights: 'Mindestens 2 Nächte', emailError: 'Bitte geben Sie Ihre E-Mail-Adresse ein.', sending: 'Wird gesendet...', sent: 'Anfrage gesendet!', error: 'Fehler, bitte versuchen Sie es erneut.' } };
+
+  var rates = { EUR: 1, CHF: 0.97, LEK: 111 };
+  var syms  = { EUR: 'EUR ', CHF: 'CHF ', LEK: 'L ' };
+
+  function fmt(eur) {
+    var val = Math.round(eur * rates[currentCurrency]);
+    if (currentCurrency === 'LEK') { return syms[currentCurrency] + val.toLocaleString(); }
+    return syms[currentCurrency] + val;
+  }
+
+  function setEl(id, txt) {
+    var el = document.getElementById(id);
+    if (el) { el.textContent = txt; }
+  }
+
+  function updateLabels() {
+    var l = L[currentLang];
+    setEl('cal-from-label',    l.from);
+    setEl('label-checkin',     l.checkin);
+    setEl('label-checkout',    l.checkout);
+    setEl('label-guests',      l.guests);
+    setEl('cal-badge',         l.badge);
+    setEl('bd-cleaning-label', l.cleaning);
+    setEl('bd-total-label',    l.total);
+  }
+
+  var desktopLangDropdown = document.querySelector('.lang-dropdown');
+  var desktopLangCurrent = document.querySelector('.lang-current');
+  if (desktopLangDropdown && desktopLangCurrent) {
+    desktopLangCurrent.addEventListener('click', function (e) {
+      e.stopPropagation();
+      desktopLangDropdown.classList.toggle('open');
+    });
+    desktopLangDropdown.addEventListener('mouseleave', function () {
+      desktopLangDropdown.classList.remove('open');
+    });
+    document.addEventListener('click', function (e) {
+      if (!desktopLangDropdown.contains(e.target)) {
+        desktopLangDropdown.classList.remove('open');
+      }
+    });
+  }
+
+  window.setCurrency = function (currency) {
+    currentCurrency = currency;
+    document.querySelectorAll('.curr-toggle-btn').forEach(function(btn) {
+      btn.classList.toggle('active', btn.getAttribute('data-currency') === currency);
+    });
+    window.calcPrice();
+  };
+
+  function getNightRate(date) {
+    var m = date.getMonth() + 1;
+    var d = date.getDate();
+    if (m === 7) { return 215; }
+    if (m === 8 && d <= 22) { return 210; }
+    if (m === 8 && d > 22)  { return 194; }
+    if (m === 6 && d >= 7)  { return 220; }
+    if (m === 6 && d < 7)   { return 180; }
+    if (m === 9 && d <= 15) { return 165; }
+    if (m === 9 && d > 15)  { return 130; }
+    if (m === 5) { return 110; }
+    return 80;
+  }
+
+  window.calcPrice = function () {
+    var l      = L[currentLang];
+    var cinEl  = document.getElementById('checkin');
+    var coutEl = document.getElementById('checkout');
+    var amtEl  = document.getElementById('cal-amount');
+    var boxEl  = document.getElementById('price-breakdown-box');
+    if (!cinEl || !coutEl || !amtEl || !boxEl) { return; }
+    if (!cinEl.value || !coutEl.value) {
+      amtEl.innerHTML = fmt(80) + ' <span style="font-size:1rem;opacity:0.7">' + l.night + '</span>';
+      boxEl.style.display = 'none';
+      return;
+    }
+    var start  = new Date(cinEl.value + 'T00:00:00');
+    var end    = new Date(coutEl.value + 'T00:00:00');
+    if (end <= start) { amtEl.textContent = l.minNights; boxEl.style.display = 'none'; return; }
+    var nights = Math.round((end - start) / 86400000);
+    if (nights < 2)  { amtEl.textContent = l.minNights; boxEl.style.display = 'none'; return; }
+    var subtotal = 0;
+    var cur = new Date(start);
+    for (var i = 0; i < nights; i++) {
+      subtotal += getNightRate(cur);
+      cur.setDate(cur.getDate() + 1);
+    }
+    var discount   = Math.round(subtotal * 0.10);
+    var discounted = subtotal - discount;
+    var cleaning   = 35;
+    var total      = discounted + cleaning;
+    var perNight   = Math.round(discounted / nights);
+    amtEl.innerHTML = fmt(perNight) + ' <span style="font-size:1rem;opacity:0.7">' + l.night + '</span>';
+    setEl('bd-nights-label',   l.nights(nights) + ' x ' + fmt(Math.round(subtotal / nights)));
+    setEl('bd-nights-val',     fmt(subtotal));
+    setEl('bd-discount-label', l.discount);
+    setEl('bd-discount-val',   '-' + fmt(discount));
+    setEl('bd-cleaning-label', l.cleaning);
+    setEl('bd-cleaning-val',   fmt(cleaning));
+    setEl('bd-total-label',    l.total);
+    setEl('bd-total-val',      fmt(total));
+    boxEl.style.display = 'block';
+  };
+
+
+  var photos = [
+    '../Salon.jpeg', '../Sdb.jpeg', '../chambre1.jpeg', '../Cuisine.jpeg',
+    '../Balcon.jpg', '../Vuejardinbalcon.jpeg', '../beachoceanview.jpg',
+    '../sunset3.jpeg', '../Sunset1.jpeg', '../Sunset2.jpeg', '../Spritz.jpeg', '../restaurantdenuit.jpeg',
+    '../hut.jpeg', '../sdb2.jpeg', '../heart.jpeg', '../seaview2.jpeg',
+    '../exterior.jpeg', '../eveningstreet.jpeg', '../sunsetorange.jpeg'
+  ];
+  var currentPhoto = 0;
+
+  window.openLightbox = function (i) {
+    currentPhoto = i;
+    var img     = document.getElementById('lightbox-img');
+    var counter = document.getElementById('lightbox-counter');
+    var lb      = document.getElementById('lightbox');
+    if (!img || !counter || !lb) { return; }
+    img.src = photos[i];
+    counter.textContent = (i + 1) + ' / ' + photos.length;
+    lb.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  };
+
+  window.closeLightbox = function () {
+    var lb = document.getElementById('lightbox');
+    if (!lb) { return; }
+    lb.classList.remove('active');
+    document.body.style.overflow = '';
+  };
+
+  window.changePhoto = function (dir) {
+    currentPhoto = (currentPhoto + dir + photos.length) % photos.length;
+    var img     = document.getElementById('lightbox-img');
+    var counter = document.getElementById('lightbox-counter');
+    if (!img || !counter) { return; }
+    img.src = photos[currentPhoto];
+    counter.textContent = (currentPhoto + 1) + ' / ' + photos.length;
+  };
+
+  var lb = document.getElementById('lightbox');
+  if (lb) {
+    lb.addEventListener('click', function(e) {
+      if (e.target === this) { window.closeLightbox(); }
+    });
+  }
+
+  document.addEventListener('keydown', function(e) {
+    var l = document.getElementById('lightbox');
+    if (!l || !l.classList.contains('active')) { return; }
+    if (e.key === 'Escape')     { window.closeLightbox(); }
+    var rm = document.getElementById('reviewModal');
+    if (rm && rm.classList.contains('active') && e.key === 'Escape') { window.closeReviewModal(); }
+    if (e.key === 'ArrowLeft')  { window.changePhoto(-1); }
+    if (e.key === 'ArrowRight') { window.changePhoto(1); }
+  });
+
+  window.submitBooking = function () {
+    var emailEl   = document.getElementById('booking-email');
+    var msgEl     = document.getElementById('booking-msg');
+    var cinEl     = document.getElementById('checkin');
+    var coutEl    = document.getElementById('checkout');
+    var guestsEl  = document.getElementById('guests-select');
+    var btnEl     = document.getElementById('submit-btn');
+    var successEl = document.getElementById('form-success');
+    var l = L[currentLang];
+
+    if (!emailEl || !emailEl.value || emailEl.value.indexOf('@') < 0) {
+      alert(l.emailError);
+      return;
+    }
+
+    var totalVal = '';
+    var totalEl  = document.getElementById('bd-total-val');
+    if (totalEl && totalEl.textContent && totalEl.textContent !== '-') {
+      totalVal = totalEl.textContent;
+    }
+
+    var lines = [];
+    lines.push('Anreise : ' + (cinEl && cinEl.value ? cinEl.value : 'Nicht angegeben'));
+    lines.push('Abreise : ' + (coutEl && coutEl.value ? coutEl.value : 'Nicht angegeben'));
+    lines.push('Gäste : ' + (guestsEl ? guestsEl.value : 'Nicht angegeben'));
+    lines.push('Währung : ' + currentCurrency);
+    lines.push('Email    : ' + emailEl.value);
+    if (totalVal) { lines.push('Estimated price: ' + totalVal); }
+    if (msgEl && msgEl.value) { lines.push('Message  : ' + msgEl.value); }
+
+    if (btnEl) { btnEl.disabled = true; btnEl.textContent = l.sending; }
+
+    fetch('https://formsubmit.co/ajax/info@swisssweet-apartment.com', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({
+        _subject: 'Reservation - Swiss Sweet Apartment',
+        _template: 'table',
+        _captcha: 'false',
+        name: 'Swiss Sweet Website',
+        email: emailEl.value,
+        checkin: cinEl && cinEl.value ? cinEl.value : '',
+        checkout: coutEl && coutEl.value ? coutEl.value : '',
+        guests: guestsEl ? guestsEl.value : '',
+        total: totalVal || '',
+        message: lines.join('\n')
+      })
+    })
+    .then(function(r) {
+      if (!r.ok) { throw new Error('Form submission failed'); }
+      return r.json();
+    })
+    .then(function() {
+      if (btnEl) { btnEl.disabled = false; btnEl.textContent = 'Anfrage senden'; }
+      if (successEl) { successEl.style.display = 'block'; }
+      if (cinEl)    { cinEl.value    = ''; }
+      if (coutEl)   { coutEl.value   = ''; }
+      if (emailEl)  { emailEl.value  = ''; }
+      if (msgEl)    { msgEl.value    = ''; }
+      
+      window.calcPrice();
+    })
+    .catch(function() {
+      if (btnEl) { btnEl.disabled = false; btnEl.textContent = 'Anfrage senden';  }
+      alert(l.error + " Sie können uns auch direkt an info@swisssweet-apartment.com schreiben.");
+    });
+  };
+
+
+  window.openReviewModal = function () {
+    var modal = document.getElementById('reviewModal');
+    if (!modal) { return; }
+    modal.classList.add('active');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  };
+
+  window.closeReviewModal = function () {
+    var modal = document.getElementById('reviewModal');
+    if (!modal) { return; }
+    modal.classList.remove('active');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  };
+
+  var reviewModal = document.getElementById('reviewModal');
+  if (reviewModal) {
+    reviewModal.addEventListener('click', function(e) {
+      if (e.target === this) { window.closeReviewModal(); }
+    });
+  }
+
+  document.querySelectorAll('a[href="index.html#booking"]').forEach(function(link) {
+    link.addEventListener('click', function(e) {
+      var target = document.getElementById('booking');
+      if (!target) { return; }
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+
+  window.toggleMobileMenu = function () {
+    var panel = document.getElementById('mobile-panel');
+    var btn = document.querySelector('.mobile-menu-toggle');
+    if (!panel) { return; }
+    var isOpen = panel.classList.toggle('open');
+    if (btn) { btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false'); }
+  };
+
+  window.closeMobileMenu = function () {
+    var panel = document.getElementById('mobile-panel');
+    var btn = document.querySelector('.mobile-menu-toggle');
+    if (panel) { panel.classList.remove('open'); }
+    if (btn) { btn.setAttribute('aria-expanded', 'false'); }
+  };
+
+  document.addEventListener('click', function(e) {
+    var panel = document.getElementById('mobile-panel');
+    var btn = document.querySelector('.mobile-menu-toggle');
+    if (!panel || !panel.classList.contains('open')) { return; }
+    if (panel.contains(e.target) || (btn && btn.contains(e.target))) { return; }
+    window.closeMobileMenu();
+  });
+
+  window.addEventListener('resize', function() {
+    if (window.innerWidth > 768) { window.closeMobileMenu(); }
+  });
+
+  updateLabels();
+  window.setCurrency('EUR');
+  window.calcPrice();
+
+});
+</script></body>
+</html>
