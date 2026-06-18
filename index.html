@@ -21,21 +21,58 @@
 <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "VacationRental",
+  "@id": "https://swisssweet-apartment.com/#vacationrental",
   "name": "Swiss Sweet Apartment",
-  "description": "Private holiday flat in San Pietro Resort, Lalzi Bay / Lalzit Bay, Albania, approximately 5 minutes on foot from the beach.",
+  "description": "97 m² private holiday apartment with 2 bedrooms at San Pietro Resort, Lalzi Bay / Lalzit Bay, Albania, 5 minutes on foot from the beach.",
   "url": "https://swisssweet-apartment.com/",
   "image": "https://swisssweet-apartment.com/beachoceanview.jpg",
   "email": "info@swisssweet-apartment.com",
+  "inLanguage": "en",
+  "additionalType": "https://schema.org/Apartment",
   "address": {
     "@type": "PostalAddress",
-    "addressLocality": "San Pietro Resort, Lalzi Bay",
+    "streetAddress": "San Pietro Resort, Gjiri i Lalzit (Lalzi Bay)",
+    "addressLocality": "Durrës",
     "addressRegion": "Durrës",
     "addressCountry": "AL"
   },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 41.5130549,
+    "longitude": 19.5201713
+  },
+  "floorSize": {
+    "@type": "QuantitativeValue",
+    "value": 97,
+    "unitCode": "MTK",
+    "unitText": "m²"
+  },
+  "numberOfBedrooms": 2,
+  "numberOfRooms": 2,
+  "maximumAttendeeCapacity": 5,
+  "occupancy": {
+    "@type": "QuantitativeValue",
+    "maxValue": 5,
+    "unitText": "persons"
+  },
+  "petsAllowed": true,
+  "checkinTime": "15:00",
+  "checkoutTime": "10:00",
+  "priceRange": "From 80 EUR per night",
   "amenityFeature": [
     {
       "@type": "LocationFeatureSpecification",
-      "name": "High-speed Wi-Fi",
+      "name": "Private balcony",
+      "value": true
+    },
+    {
+      "@type": "LocationFeatureSpecification",
+      "name": "Built-in BBQ",
+      "value": true
+    },
+    {
+      "@type": "LocationFeatureSpecification",
+      "name": "Fully equipped kitchen",
       "value": true
     },
     {
@@ -50,32 +87,114 @@
     },
     {
       "@type": "LocationFeatureSpecification",
-      "name": "Washing machine with dryer function",
+      "name": "Heating",
       "value": true
     },
     {
       "@type": "LocationFeatureSpecification",
-      "name": "Baby bed",
+      "name": "Washer-dryer",
+      "value": true
+    },
+    {
+      "@type": "LocationFeatureSpecification",
+      "name": "Netflix",
+      "value": true
+    },
+    {
+      "@type": "LocationFeatureSpecification",
+      "name": "Spotify",
+      "value": true
+    },
+    {
+      "@type": "LocationFeatureSpecification",
+      "name": "Children playground",
+      "value": true
+    },
+    {
+      "@type": "LocationFeatureSpecification",
+      "name": "Secure residence",
       "value": true
     }
   ],
-  "maximumAttendeeCapacity": 5,
-  "priceRange": "From 80 EUR per night",
-  "inLanguage": "en",
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": 41.5130549,
-    "longitude": 19.5201713
+  "makesOffer": {
+    "@type": "Offer",
+    "name": "Direct booking request",
+    "priceSpecification": {
+      "@type": "UnitPriceSpecification",
+      "price": 80,
+      "priceCurrency": "EUR",
+      "unitText": "night"
+    },
+    "availability": "https://schema.org/InStock",
+    "url": "https://swisssweet-apartment.com/#booking"
   },
-  "numberOfRooms": 2,
-  "occupancy": {
-    "@type": "QuantitativeValue",
-    "maxValue": 5,
-    "unitText": "persons"
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": 4.7,
+    "bestRating": 5,
+    "worstRating": 1,
+    "ratingCount": 3,
+    "reviewCount": 3
   },
-  "petsAllowed": true,
-  "checkinTime": "15:00",
-  "checkoutTime": "10:00"
+  "review": [
+    {
+      "@type": "Review",
+      "name": "Google review",
+      "author": {
+        "@type": "Person",
+        "name": "Butrint"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Google"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": 5,
+        "bestRating": 5,
+        "worstRating": 1
+      },
+      "reviewBody": "J’ai passé un super séjour de 3 jours. L’appartement était bien équipé, propre et bien agencé. Le balcon est spacieux et agréable pour les dîners du soir et petits-déjeuners. Avec les places de parking, il était facile d’accès. Le calme de la résidence a permis un vrai repos. La plage est magnifique. Top."
+    },
+    {
+      "@type": "Review",
+      "name": "Happy Rentals review",
+      "author": {
+        "@type": "Person",
+        "name": "Arlinda"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Happy Rentals"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": 10,
+        "bestRating": 10,
+        "worstRating": 1
+      },
+      "reviewBody": "The house was very spacious and had all the amenities needed. The place was clean and my family and I really enjoyed it."
+    },
+    {
+      "@type": "Review",
+      "name": "Vrbo review",
+      "author": {
+        "@type": "Person",
+        "name": "Kateryna"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Vrbo"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": 8,
+        "bestRating": 10,
+        "worstRating": 1
+      },
+      "reviewBody": "Die Wohnung ist sauber und die Küche ist gut ausgestattet. Die Terrasse ist sehr schön. Die Wohnanlage ist sauber und grün."
+    }
+  ]
 }</script>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&amp;family=DM+Sans:wght@300;400;500&amp;display=swap" rel="stylesheet"/>
