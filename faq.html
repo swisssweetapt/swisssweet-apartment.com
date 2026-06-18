@@ -610,14 +610,13 @@ document.addEventListener('DOMContentLoaded', function () {
   var currentLang = 'en';
   var currentCurrency = 'EUR';
 
-  var L = { 'en': { from: 'From', night: '/ night', checkin: 'CHECK-IN', checkout: 'CHECK-OUT', guests: 'GUESTS', total: 'Total', badge: 'Direct booking', nights: function(n) { return n + ' night' + (n > 1 ? 's' : ''); }, discount: 'Direct booking (-10%)', cleaning: 'Cleaning + check-in', minNights: 'Minimum 2 nights', emailError: 'Please enter your email.', sending: 'Sending...', sent: 'Request sent!', error: 'Error, please retry.' } };
+  var L = { 'en': { from: 'From', night: '/ night', checkin: 'CHECK-IN', checkout: 'CHECK-OUT', guests: 'GUESTS', total: 'Total', badge: 'Direct booking', nights: function(n) { return n + ' night' + (n > 1 ? 's' : ''); }, discount: 'Save by booking direct', cleaning: 'Cleaning + check-in', minNights: 'Minimum 2 nights', emailError: 'Please enter your email.', sending: 'Sending...', sent: 'Request sent!', error: 'Error, please retry.' } };
 
-  var rates = { EUR: 1, CHF: 0.97, LEK: 111 };
-  var syms  = { EUR: 'EUR ', CHF: 'CHF ', LEK: 'L ' };
+  var rates = { EUR: 1, CHF: 0.97 };
+  var syms  = { EUR: 'EUR ', CHF: 'CHF ' };
 
   function fmt(eur) {
     var val = Math.round(eur * rates[currentCurrency]);
-    if (currentCurrency === 'LEK') { return syms[currentCurrency] + val.toLocaleString(); }
     return syms[currentCurrency] + val;
   }
 

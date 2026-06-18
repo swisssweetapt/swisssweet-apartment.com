@@ -12,7 +12,7 @@
 <meta content="website" property="og:type"/>
 <meta content="Swiss Sweet Apartment — San Pietro Resort, Lalzi Bay" property="og:title"/>
 <meta content="97 m² holiday apartment for families, couples and friends, 5 minutes from the beach, with free parking and Swiss comfort by the Adriatic." property="og:description"/>
-<meta content="https://swisssweetapt.github.io/" property="og:url"/>
+<meta content="https://swisssweet-apartment.com/" property="og:url"/>
 <meta content="https://swisssweet-apartment.com/beachoceanview.jpg" property="og:image"/>
 <meta content="summary_large_image" name="twitter:card"/>
 <meta content="Swiss Sweet Apartment — San Pietro Resort, Lalzi Bay" name="twitter:title"/>
@@ -23,7 +23,7 @@
   "@type": "VacationRental",
   "name": "Swiss Sweet Apartment",
   "description": "Private holiday flat in San Pietro Resort, Lalzi Bay / Lalzit Bay, Albania, approximately 5 minutes on foot from the beach.",
-  "url": "https://swisssweetapt.github.io/",
+  "url": "https://swisssweet-apartment.com/",
   "image": "https://swisssweet-apartment.com/beachoceanview.jpg",
   "email": "info@swisssweet-apartment.com",
   "address": {
@@ -704,7 +704,7 @@ A 97 m² holiday apartment for families, couples and friends, 5 minutes from the
 </p>
 <div class="hero-deal-row">
 <div class="hero-price-badge">From<strong>80 EUR</strong> / night</div>
-<div class="hero-discount-badge">-10% direct</div>
+<div class="hero-discount-badge">Save by booking direct</div>
 </div>
 <p class="hero-sub" style="margin-bottom:1.4rem">
 
@@ -1142,7 +1142,7 @@ Good to know before booking
 <!-- PRICE HEADER -->
 <div style="background:var(--turquoise-dark);color:white;padding:1.2rem 1.5rem;text-align:center">
 <div id="cal-from-label" style="font-size:0.72rem;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.6);margin-bottom:0.3rem">From</div>
-<div id="cal-amount" style="font-family:var(--serif);font-size:2rem;font-weight:300">80€ <span style="font-size:1rem;opacity:0.7">/ night</span></div>
+<div id="cal-amount" style="font-family:var(--serif);font-size:2rem;font-weight:300">80 EUR <span style="font-size:1rem;opacity:0.7">/ night</span></div>
 </div>
 <!-- DATES -->
 <div style="display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid #eee">
@@ -1155,33 +1155,20 @@ Good to know before booking
 <input id="checkout" onchange="calcPrice()" style="border:none;outline:none;font-size:0.95rem;color:var(--text-muted);font-family:var(--sans);width:100%;background:transparent;cursor:pointer" type="date"/>
 </div>
 </div>
-<!-- GUESTS + CURRENCY -->
+<!-- GUESTS -->
 <div style="padding:1rem 1.5rem;border-bottom:1px solid #eee;display:grid;grid-template-columns:1fr 1fr;gap:1rem;align-items:center">
   <div style="display:flex;justify-content:space-between;align-items:center;border-right:1px solid #eee;padding-right:1rem">
     <label id="label-guests" style="font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--text)">GUESTS</label>
-    <select id="guests-select" onchange="calcPrice()" style="border:none;outline:none;font-size:0.95rem;color:var(--text-muted);font-family:var(--sans);background:transparent;cursor:pointer">
-<option>1</option><option selected="">2</option><option>3</option><option>4</option><option>5</option>
-</select>
+    <select id="guests-select" style="border:none;outline:none;font-size:0.95rem;color:var(--text-muted);font-family:var(--sans);background:transparent;cursor:pointer">
+      <option>1</option><option selected>2</option><option>3</option><option>4</option><option>5</option>
+    </select>
   </div>
-  <div style="display:flex;justify-content:flex-end;gap:0.5rem">
-    <button class="curr-toggle-btn active" data-currency="EUR" onclick="setCurrency('EUR')" type="button">€ EUR</button>
-<button class="curr-toggle-btn" data-currency="CHF" onclick="setCurrency('CHF')" type="button">CHF</button>
+  <div style="display:flex;justify-content:space-between;align-items:center">
+    <label id="label-currency" style="font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--text);margin-right:0.8rem">PREFERRED CURRENCY</label>
+    <select id="currency-select" name="preferred_currency" style="border:none;outline:none;font-size:0.95rem;color:var(--text-muted);font-family:var(--sans);background:transparent;cursor:pointer">
+      <option selected>EUR</option><option>CHF</option>
+    </select>
   </div>
-</div>
-<!-- PRICE BREAKDOWN -->
-<div id="price-breakdown-box" style="display:none;padding:1.2rem 1.5rem;border-bottom:1px solid #eee">
-<div style="display:flex;justify-content:space-between;font-size:0.9rem;padding:0.4rem 0">
-<span id="bd-nights-label">—</span><span id="bd-nights-val">—</span>
-</div>
-<div style="display:flex;justify-content:space-between;font-size:0.9rem;padding:0.4rem 0;color:#008A05">
-<span id="bd-discount-label">—</span><span id="bd-discount-val">—</span>
-</div>
-<div style="display:flex;justify-content:space-between;font-size:0.9rem;padding:0.4rem 0">
-<span id="bd-cleaning-label">Cleaning + check-in</span><span id="bd-cleaning-val">—</span>
-</div>
-<div style="display:flex;justify-content:space-between;font-size:1rem;font-weight:600;padding:0.8rem 0 0.4rem;border-top:1px solid #eee;margin-top:0.4rem">
-<span id="bd-total-label">Total</span><span id="bd-total-val">—</span>
-</div>
 </div>
 <!-- EMAIL + MESSAGE -->
 <div style="padding:1rem 1.5rem;border-bottom:1px solid #eee">
@@ -1289,15 +1276,16 @@ document.addEventListener('DOMContentLoaded', function () {
   var currentLang = 'en';
   var currentCurrency = 'EUR';
 
-  var L = { 'en': { from: 'From', night: '/ night', checkin: 'CHECK-IN', checkout: 'CHECK-OUT', guests: 'GUESTS', total: 'Total', badge: 'Direct booking', nights: function(n) { return n + ' night' + (n > 1 ? 's' : ''); }, discount: 'Direct booking (-10%)', cleaning: 'Cleaning + check-in', minNights: 'Minimum 2 nights', emailError: 'Please enter your email.', sending: 'Sending...', sent: 'Request sent!', error: 'Error, please retry.' } };
-
-  var rates = { EUR: 1, CHF: 0.97 };
-  var syms  = { EUR: 'EUR ', CHF: 'CHF ' };
-
-  function fmt(eur) {
-    var val = Math.round(eur * rates[currentCurrency]);
-    return syms[currentCurrency] + val;
-  }
+  var L = { 'en': {
+    from: "From",
+    night: "/ night",
+    checkin: "CHECK-IN",
+    checkout: "CHECK-OUT",
+    guests: "GUESTS",
+    emailError: "Please enter your email address.",
+    sending: "Sending...",
+    error: "Error, please try again."
+  } };
 
   function setEl(id, txt) {
     var el = document.getElementById(id);
@@ -1306,13 +1294,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function updateLabels() {
     var l = L[currentLang];
-    setEl('cal-from-label',    l.from);
-    setEl('label-checkin',     l.checkin);
-    setEl('label-checkout',    l.checkout);
-    setEl('label-guests',      l.guests);
-    setEl('cal-badge',         l.badge);
-    setEl('bd-cleaning-label', l.cleaning);
-    setEl('bd-total-label',    l.total);
+    setEl('cal-from-label', l.from);
+    setEl('label-checkin', l.checkin);
+    setEl('label-checkout', l.checkout);
+    setEl('label-guests', l.guests);
   }
 
   var desktopLangDropdown = document.querySelector('.lang-dropdown');
@@ -1332,66 +1317,12 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  window.setCurrency = function (currency) {
-    currentCurrency = currency;
-    document.querySelectorAll('.curr-toggle-btn').forEach(function(btn) {
-      btn.classList.toggle('active', btn.getAttribute('data-currency') === currency);
-    });
-    window.calcPrice();
-  };
-
-  function getNightRate(date) {
-    var m = date.getMonth() + 1;
-    var d = date.getDate();
-    if (m === 7) { return 215; }
-    if (m === 8 && d <= 22) { return 210; }
-    if (m === 8 && d > 22)  { return 194; }
-    if (m === 6 && d >= 7)  { return 220; }
-    if (m === 6 && d < 7)   { return 180; }
-    if (m === 9 && d <= 15) { return 165; }
-    if (m === 9 && d > 15)  { return 130; }
-    if (m === 5) { return 110; }
-    return 80;
-  }
-
   window.calcPrice = function () {
-    var l      = L[currentLang];
-    var cinEl  = document.getElementById('checkin');
-    var coutEl = document.getElementById('checkout');
-    var amtEl  = document.getElementById('cal-amount');
-    var boxEl  = document.getElementById('price-breakdown-box');
-    if (!cinEl || !coutEl || !amtEl || !boxEl) { return; }
-    if (!cinEl.value || !coutEl.value) {
-      amtEl.innerHTML = fmt(80) + ' <span style="font-size:1rem;opacity:0.7">' + l.night + '</span>';
-      boxEl.style.display = 'none';
-      return;
+    var l = L[currentLang];
+    var amtEl = document.getElementById('cal-amount');
+    if (amtEl) {
+      amtEl.innerHTML = '80 EUR <span style="font-size:1rem;opacity:0.7">' + l.night + '</span>';
     }
-    var start  = new Date(cinEl.value + 'T00:00:00');
-    var end    = new Date(coutEl.value + 'T00:00:00');
-    if (end <= start) { amtEl.textContent = l.minNights; boxEl.style.display = 'none'; return; }
-    var nights = Math.round((end - start) / 86400000);
-    if (nights < 2)  { amtEl.textContent = l.minNights; boxEl.style.display = 'none'; return; }
-    var subtotal = 0;
-    var cur = new Date(start);
-    for (var i = 0; i < nights; i++) {
-      subtotal += getNightRate(cur);
-      cur.setDate(cur.getDate() + 1);
-    }
-    var discount   = Math.round(subtotal * 0.10);
-    var discounted = subtotal - discount;
-    var cleaning   = 35;
-    var total      = discounted + cleaning;
-    var perNight   = Math.round(discounted / nights);
-    amtEl.innerHTML = fmt(perNight) + ' <span style="font-size:1rem;opacity:0.7">' + l.night + '</span>';
-    setEl('bd-nights-label',   l.nights(nights) + ' x ' + fmt(Math.round(subtotal / nights)));
-    setEl('bd-nights-val',     fmt(subtotal));
-    setEl('bd-discount-label', l.discount);
-    setEl('bd-discount-val',   '-' + fmt(discount));
-    setEl('bd-cleaning-label', l.cleaning);
-    setEl('bd-cleaning-val',   fmt(cleaning));
-    setEl('bd-total-label',    l.total);
-    setEl('bd-total-val',      fmt(total));
-    boxEl.style.display = 'block';
   };
 
   var tracks = [
@@ -1531,6 +1462,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var cinEl     = document.getElementById('checkin');
     var coutEl    = document.getElementById('checkout');
     var guestsEl  = document.getElementById('guests-select');
+    var currencyEl = document.getElementById('currency-select');
     var btnEl     = document.getElementById('submit-btn');
     var successEl = document.getElementById('form-success');
     var l = L[currentLang];
@@ -1541,18 +1473,13 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     var totalVal = '';
-    var totalEl  = document.getElementById('bd-total-val');
-    if (totalEl && totalEl.textContent && totalEl.textContent !== '-') {
-      totalVal = totalEl.textContent;
-    }
 
     var lines = [];
     lines.push('Arrival : ' + (cinEl && cinEl.value ? cinEl.value : 'Not specified'));
     lines.push('Departure : ' + (coutEl && coutEl.value ? coutEl.value : 'Not specified'));
     lines.push('Guests : ' + (guestsEl ? guestsEl.value : 'Not specified'));
-    lines.push('Currency : ' + currentCurrency);
+    lines.push('Preferred currency : ' + (currencyEl ? currencyEl.value : 'EUR'));
     lines.push('Email    : ' + emailEl.value);
-    if (totalVal) { lines.push('Estimated price : ' + totalVal); }
     if (msgEl && msgEl.value) { lines.push('Message  : ' + msgEl.value); }
 
     if (btnEl) { btnEl.disabled = true; btnEl.textContent = l.sending; }
@@ -1569,7 +1496,7 @@ document.addEventListener('DOMContentLoaded', function () {
         checkin: cinEl && cinEl.value ? cinEl.value : '',
         checkout: coutEl && coutEl.value ? coutEl.value : '',
         guests: guestsEl ? guestsEl.value : '',
-        total: totalVal || '',
+        preferred_currency: currencyEl ? currencyEl.value : 'EUR',
         message: lines.join('\n')
       })
     })
@@ -1655,7 +1582,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
   setEl('audio-title', tracks[0].title);
   updateLabels();
-  window.setCurrency('EUR');
   window.calcPrice();
 
 });

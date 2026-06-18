@@ -610,14 +610,13 @@ document.addEventListener('DOMContentLoaded', function () {
   var currentLang = 'sq';
   var currentCurrency = 'EUR';
 
-  var L = { 'sq': { from: 'Nga', night: '/ natë', checkin: 'MBËRRITJA', checkout: 'LARGIMI', guests: 'MYSAFIRËT', total: 'Totali', badge: 'Rezervim i drejtpërdrejtë', nights: function(n) { return n + ' netë'; }, discount: 'Rezervim i drejtpërdrejtë (-10%)', cleaning: 'Pastrimi + mbërritje', minNights: 'Minimumi 2 netë', emailError: 'Ju lutemi shkruani adresën tuaj të emailit.', sending: 'Po dërgohet...', sent: 'Kërkesa u dërgua!', error: 'Gabim, ju lutemi provoni përsëri.' } };
+  var L = { 'sq': { from: 'Nga', night: '/ natë', checkin: 'MBËRRITJA', checkout: 'LARGIMI', guests: 'MYSAFIRËT', total: 'Totali', badge: 'Rezervim i drejtpërdrejtë', nights: function(n) { return n + ' netë'; }, discount: 'Kurseni duke rezervuar direkt', cleaning: 'Pastrimi + mbërritje', minNights: 'Minimumi 2 netë', emailError: 'Ju lutemi shkruani adresën tuaj të emailit.', sending: 'Po dërgohet...', sent: 'Kërkesa u dërgua!', error: 'Gabim, ju lutemi provoni përsëri.' } };
 
-  var rates = { EUR: 1, CHF: 0.97, LEK: 111 };
-  var syms  = { EUR: 'EUR ', CHF: 'CHF ', LEK: 'L ' };
+  var rates = { EUR: 1, CHF: 0.97 };
+  var syms  = { EUR: 'EUR ', CHF: 'CHF ' };
 
   function fmt(eur) {
     var val = Math.round(eur * rates[currentCurrency]);
-    if (currentCurrency === 'LEK') { return syms[currentCurrency] + val.toLocaleString(); }
     return syms[currentCurrency] + val;
   }
 

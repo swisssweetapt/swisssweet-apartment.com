@@ -610,14 +610,13 @@ document.addEventListener('DOMContentLoaded', function () {
   var currentLang = 'it';
   var currentCurrency = 'EUR';
 
-  var L = { 'it': { from: 'A partire da', night: '/ notte', checkin: 'ARRIVO', checkout: 'PARTENZA', guests: 'OSPITI', total: 'Totale', badge: 'Prenotazione diretta', nights: function(n) { return n + ' nott' + (n > 1 ? 'i' : 'e'); }, discount: 'Prenotazione diretta (-10%)', cleaning: 'Pulizie + check-in', minNights: 'Minimo 2 notti', emailError: 'Inserite il vostro indirizzo email.', sending: 'Invio...', sent: 'Richiesta inviata!', error: 'Errore, riprovate.' } };
+  var L = { 'it': { from: 'A partire da', night: '/ notte', checkin: 'ARRIVO', checkout: 'PARTENZA', guests: 'OSPITI', total: 'Totale', badge: 'Prenotazione diretta', nights: function(n) { return n + ' nott' + (n > 1 ? 'i' : 'e'); }, discount: 'Risparmia prenotando diretto', cleaning: 'Pulizie + check-in', minNights: 'Minimo 2 notti', emailError: 'Inserite il vostro indirizzo email.', sending: 'Invio...', sent: 'Richiesta inviata!', error: 'Errore, riprovate.' } };
 
-  var rates = { EUR: 1, CHF: 0.97, LEK: 111 };
-  var syms  = { EUR: 'EUR ', CHF: 'CHF ', LEK: 'L ' };
+  var rates = { EUR: 1, CHF: 0.97 };
+  var syms  = { EUR: 'EUR ', CHF: 'CHF ' };
 
   function fmt(eur) {
     var val = Math.round(eur * rates[currentCurrency]);
-    if (currentCurrency === 'LEK') { return syms[currentCurrency] + val.toLocaleString(); }
     return syms[currentCurrency] + val;
   }
 
