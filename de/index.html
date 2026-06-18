@@ -317,18 +317,22 @@
 
 
 
-  /* HERO SEASON PROMO */
-  .season-promo { display:inline-flex; align-items:center; flex-wrap:wrap; max-width:100%; gap:0.55rem; background:rgba(255,107,71,0.95); color:white; padding:0.55rem 0.9rem; border-radius:999px; font-size:0.78rem; font-weight:500; line-height:1.3; letter-spacing:0.08em; text-transform:uppercase; box-shadow:0 12px 28px rgba(0,0,0,0.18); margin-bottom:1rem; }
-  .season-promo .promo-dot { width:7px; height:7px; border-radius:999px; background:white; box-shadow:0 0 0 4px rgba(255,255,255,0.22); }
-  .hero-deal-row { display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap; margin:0.4rem 0 1.4rem; }
+  /* HERO TRAVEL POSTCARDS */
+  .season-promo { display:none; }
+  .season-promo .promo-dot { display:none; }
+  .hero-deal-row { display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap; margin:0.4rem 0 0.9rem; }
   .hero-price-badge { background:rgba(255,255,255,0.94); color:var(--turquoise-deep); padding:0.7rem 1rem; border-radius:999px; display:inline-flex; align-items:baseline; gap:0.25rem; box-shadow:0 14px 34px rgba(0,0,0,0.18); }
   .hero-price-badge strong { font-family:var(--serif); font-size:1.7rem; font-weight:300; line-height:1; }
   .hero-price-badge span { font-size:0.78rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.08em; }
-  .hero-discount-badge { background:linear-gradient(135deg,var(--coral),var(--coral-dark)); color:white; padding:0.65rem 0.95rem; border-radius:999px; font-size:0.8rem; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; box-shadow:0 14px 34px rgba(0,0,0,0.2); }
-  .hero-discount-badge::before { content:'✦'; margin-right:0.35rem; color:#FFE7D9; }
+  .hero-postcards { display:flex; gap:0.75rem; flex-wrap:wrap; margin:0.1rem 0 1.35rem; align-items:stretch; }
+  .hero-postcard { position:relative; min-width:168px; max-width:210px; padding:0.72rem 0.88rem 0.8rem; color:var(--turquoise-deep); background:linear-gradient(135deg, rgba(255,248,233,0.98), rgba(243,226,196,0.96)) padding-box, repeating-linear-gradient(135deg, #123a5f 0 8px, #fbedd7 8px 14px, #c9533f 14px 22px, #fbedd7 22px 28px) border-box; border:4px solid transparent; border-radius:12px; box-shadow:0 14px 32px rgba(0,0,0,0.18); pointer-events:none; cursor:default; user-select:none; }
+  .hero-postcard::after { content:''; position:absolute; inset:8px; border:1px solid rgba(18,58,95,0.13); border-radius:7px; pointer-events:none; }
+  .hero-postcard-icon { position:relative; z-index:1; font-size:1.15rem; color:var(--coral-dark); line-height:1; margin-bottom:0.25rem; }
+  .hero-card-title { position:relative; z-index:1; font-size:0.78rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--turquoise-deep); line-height:1.25; }
+  .hero-card-text { position:relative; z-index:1; margin-top:0.18rem; font-family:var(--serif); font-size:0.98rem; font-style:italic; font-weight:300; line-height:1.15; color:#274f50; }
+  .hero-postcard:nth-child(2) .hero-postcard-icon { color:var(--turquoise-dark); }
 
-
-  .payment-reassurance { margin:0.95rem 1.5rem 0; background:var(--turquoise-pale); border:1px solid rgba(42,122,122,0.16); color:var(--turquoise-deep); border-radius:10px; padding:0.85rem 1rem; font-size:0.84rem; line-height:1.55; text-align:center; }
+.payment-reassurance { margin:0.95rem 1.5rem 0; background:var(--turquoise-pale); border:1px solid rgba(42,122,122,0.16); color:var(--turquoise-deep); border-radius:10px; padding:0.85rem 1rem; font-size:0.84rem; line-height:1.55; text-align:center; }
   .payment-reassurance span::before { content:'✓ '; color:var(--coral); font-weight:700; }
 
   /* DIRECT BOOKING INFO */
@@ -438,7 +442,10 @@
 
     .hero-deal-row { gap:0.55rem; }
     .hero-price-badge strong { font-size:1.45rem; }
-    .season-promo { font-size:0.7rem; }
+    .hero-postcards { gap:0.55rem; margin:0.15rem 0 1.1rem; }
+    .hero-postcard { min-width:138px; max-width:calc(50% - 0.4rem); padding:0.64rem 0.72rem 0.7rem; border-width:3px; }
+    .hero-card-title { font-size:0.68rem; }
+    .hero-card-text { font-size:0.9rem; }
     .blog-grid { grid-template-columns:1fr; }
     .review-modal-grid { grid-template-columns:1fr; }
     .review-modal-panel { padding:1.4rem; }
@@ -679,14 +686,6 @@
 <div class="hero-bg" style="position:absolute;inset:0;background:url('../sunset3.jpeg') center/cover no-repeat;">
 </div>
 <div class="hero-content">
-<div class="season-promo">
-<span class="promo-dot"></span>
-
-
-Sommer 2026 · Nur noch wenige Wochen verfügbar
-
-
-</div>
 <p class="hero-tag">San Pietro Resort · Lalzi Bay · Albanien</p>
 <h1>
 
@@ -704,15 +703,11 @@ Eine 97 m² grosse Ferienwohnung für Familien, Paare und Freundesgruppen, 5 Min
 </p>
 <div class="hero-deal-row">
 <div class="hero-price-badge">Ab<strong>80 EUR</strong>/ Nacht</div>
-<div class="hero-discount-badge">Direkt buchen und sparen</div>
 </div>
-<p class="hero-sub" style="margin-bottom:1.4rem">
-
-
-Buchen Sie, bevor es zu spät ist, und geniessen Sie diesen wunderschönen Ort.
-
-
-</p>
+<div class="hero-postcards" aria-label="Reisehinweise">
+<div class="hero-postcard"><div class="hero-postcard-icon">☀</div><div class="hero-card-title">Sommer 2026</div><div class="hero-card-text">Noch Termine frei</div></div>
+<div class="hero-postcard"><div class="hero-postcard-icon">✉</div><div class="hero-card-title">Ohne Vermittler buchen</div><div class="hero-card-text">und sparen</div></div>
+</div>
 <div class="hero-actions">
 <a class="btn-coral" href="#booking">
 
