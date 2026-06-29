@@ -4,18 +4,18 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Apartament pushimi në San Pietro Resort, Gjiri i Lalëzit | Swiss Sweet Apartment</title>
+<title>Apartament pushimi në San Pietro Resort, Gjiri i Lalzit | Swiss Sweet Apartment</title>
 <link href="../favicon.png" rel="icon" type="image/png"/>
 <link href="../apple-touch-icon.png" rel="apple-touch-icon"/>
-<meta content="Swiss Sweet Apartment është një apartament privat pushimi prej 97 m² në San Pietro Resort, Gjiri i Lalëzit, Shqipëri, 5 minuta nga plazhi, me parkim falas dhe kërkesë direkte rezervimi." name="description"/>
+<meta content="Swiss Sweet Apartment është një apartament privat pushimi prej 97 m² në San Pietro Resort, Gjiri i Lalzit, Shqipëri, 5 minuta nga plazhi, me parkim falas dhe kërkesë direkte rezervimi." name="description"/>
 <link href="https://swisssweet-apartment.com/sq/" rel="canonical"/>
 <meta content="website" property="og:type"/>
-<meta content="Swiss Sweet Apartment — San Pietro Resort, Gjiri i Lalëzit" property="og:title"/>
+<meta content="Swiss Sweet Apartment — San Pietro Resort, Gjiri i Lalzit" property="og:title"/>
 <meta content="Apartament pushimi prej 97 m² për familje, çifte dhe grupe miqsh, 5 minuta nga plazhi, me parkim falas dhe rehati zvicerane pranë Adriatikut." property="og:description"/>
 <meta content="https://swisssweet-apartment.com/sq/" property="og:url"/>
 <meta content="https://swisssweet-apartment.com/beachoceanview.jpg" property="og:image"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="Swiss Sweet Apartment — San Pietro Resort, Gjiri i Lalëzit" name="twitter:title"/>
+<meta content="Swiss Sweet Apartment — San Pietro Resort, Gjiri i Lalzit" name="twitter:title"/>
 <meta content="Apartament pushimi prej 97 m² për familje, çifte dhe grupe miqsh, 5 minuta nga plazhi, me parkim falas dhe rehati zvicerane pranë Adriatikut." name="twitter:description"/>
 <meta content="https://swisssweet-apartment.com/beachoceanview.jpg" name="twitter:image"/>
 <script type="application/ld+json">
@@ -163,11 +163,11 @@
   },
   "aggregateRating": {
     "@type": "AggregateRating",
-    "ratingValue": 4.7,
+    "ratingValue": 4.8,
     "bestRating": 5,
     "worstRating": 1,
-    "ratingCount": 3,
-    "reviewCount": 3
+    "ratingCount": 4,
+    "reviewCount": 4
   },
   "review": [
     {
@@ -193,18 +193,35 @@
       "@type": "Review",
       "author": {
         "@type": "Person",
-        "name": "Arlinda"
+        "name": "Premtim"
       },
       "publisher": {
         "@type": "Organization",
-        "name": "Happy Rentals"
+        "name": "Booking.com"
       },
-      "datePublished": "2024-07-18",
-      "reviewBody": "The house was very spacious and had all the amenities needed. The place was clean and my family and I really enjoyed it.",
+      "reviewBody": "Excellent stay. The neighborhood was very nice, everything was organized, and the apartment was quiet.",
       "reviewRating": {
         "@type": "Rating",
         "ratingValue": 10,
         "bestRating": 10,
+        "worstRating": 1
+      }
+    },
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Zena"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Google"
+      },
+      "reviewBody": "Wenn ich in Albanien bin, komme ich immer wieder gerne ins Swiss Sweet Apartment zurück. Die Wohnung ist sauber, geräumig und sehr gemütlich, mit einem schönen Badezimmer und einem tollen Balkon für das Frühstück am Morgen oder zum Lesen im Hängesessel. Die Umgebung im Resort ist ruhig, man kann angenehm Richtung Strand joggen, und ich fühle mich dort jedes Mal sehr wohl.",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": 5,
+        "bestRating": 5,
         "worstRating": 1
       }
     },
@@ -784,6 +801,963 @@
   @media (max-width: 720px) {
     .hero-long-stay-note { font-size:0.86rem; }
   }
+
+
+/* CLICKABLE BOOKING CALENDAR — Swiss Sweet Apartment */
+.booking-calendar-shell {
+  padding: 1.2rem 1.5rem 1.4rem;
+  border-bottom: 1px solid #eee;
+  background: linear-gradient(180deg, rgba(228,247,247,0.42), rgba(255,255,255,0.98));
+}
+
+.booking-calendar-intro {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 1rem;
+}
+
+.booking-calendar-intro h3 {
+  font-family: var(--serif);
+  font-size: clamp(1.7rem, 3vw, 2.25rem);
+  font-weight: 300;
+  line-height: 1.15;
+  color: var(--turquoise-dark);
+  margin-bottom: 0.45rem;
+}
+
+.booking-calendar-intro p {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  line-height: 1.65;
+}
+
+.booking-calendar-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.8rem;
+  margin: 0 auto 1rem;
+}
+
+.booking-calendar-toolbar button {
+  border: 1px solid rgba(42,122,122,0.22);
+  background: white;
+  color: var(--turquoise-deep);
+  border-radius: 999px;
+  padding: 0.52rem 0.85rem;
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.booking-calendar-toolbar button:hover {
+  border-color: var(--turquoise-dark);
+  background: var(--turquoise-pale);
+}
+
+.booking-calendar-toolbar-title {
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  text-align: center;
+}
+
+.booking-calendar-months {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.booking-month {
+  background: white;
+  border: 1px solid rgba(42,122,122,0.14);
+  border-radius: 14px;
+  padding: 1rem;
+  box-shadow: 0 8px 28px rgba(42,122,122,0.07);
+}
+
+.booking-month h4 {
+  font-family: var(--serif);
+  font-size: 1.55rem;
+  font-weight: 300;
+  color: var(--turquoise-dark);
+  margin-bottom: 0.75rem;
+  text-align: center;
+}
+
+.booking-weekdays,
+.booking-days {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 0.32rem;
+}
+
+.booking-weekdays span {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding-bottom: 0.28rem;
+}
+
+.booking-day {
+  position: relative;
+  min-height: 52px;
+  border: 1px solid rgba(42,122,122,0.13);
+  background: var(--off-white);
+  color: var(--text);
+  border-radius: 10px;
+  font-family: var(--sans);
+  font-size: 0.83rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.12s ease, border-color 0.12s ease, background 0.12s ease;
+}
+
+.booking-day:hover {
+  transform: translateY(-1px);
+  border-color: var(--turquoise-dark);
+  background: var(--turquoise-pale);
+}
+
+.booking-day.empty {
+  cursor: default;
+  background: transparent;
+  border-color: transparent;
+  pointer-events: none;
+}
+
+.booking-day.past {
+  cursor: not-allowed;
+  color: rgba(26,46,46,0.36);
+  background: #f1f4f4;
+  border-color: rgba(42,122,122,0.08);
+}
+
+.booking-day.booked {
+  cursor: not-allowed;
+  color: var(--turquoise-deep);
+  border-color: var(--turquoise-light);
+  background:
+    repeating-linear-gradient(
+      135deg,
+      rgba(42,122,122,0.13),
+      rgba(42,122,122,0.13) 7px,
+      rgba(255,255,255,0.72) 7px,
+      rgba(255,255,255,0.72) 14px
+    ),
+    var(--turquoise-pale);
+}
+
+.booking-day.booked::after {
+  content: "Booked";
+  position: absolute;
+  left: 0.15rem;
+  right: 0.15rem;
+  bottom: 0.18rem;
+  color: var(--turquoise-deep);
+  background: transparent;
+  font-size: 0.50rem;
+  font-weight: 800;
+  letter-spacing: 0.025em;
+  line-height: 1.15;
+  text-transform: uppercase;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.booking-day.selected-start,
+.booking-day.selected-end,
+.booking-day.in-range {
+  background: var(--coral);
+  border-color: var(--coral);
+  color: white;
+  box-shadow: 0 8px 18px rgba(255,107,71,0.22);
+}
+
+.booking-day.today:not(.selected-start):not(.selected-end)::before {
+  content: "";
+  position: absolute;
+  top: 0.35rem;
+  right: 0.35rem;
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: var(--coral);
+}
+
+.booking-calendar-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1rem;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+  color: var(--text-muted);
+  font-size: 0.78rem;
+}
+
+.booking-calendar-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.42rem;
+}
+
+.legend-box {
+  width: 17px;
+  height: 17px;
+  border-radius: 5px;
+  border: 1px solid rgba(42,122,122,0.18);
+  background: var(--off-white);
+}
+
+.legend-box.booked {
+  border-color: var(--turquoise-light);
+  background:
+    repeating-linear-gradient(135deg, rgba(42,122,122,0.18), rgba(42,122,122,0.18) 5px, white 5px, white 10px),
+    var(--turquoise-pale);
+}
+
+.legend-box.selected {
+  background: var(--coral);
+  border-color: var(--coral);
+}
+
+.legend-box.past {
+  background: #f1f4f4;
+  border-color: rgba(42,122,122,0.08);
+}
+
+.selected-stay-box {
+  margin: 1rem 1.5rem 0;
+  padding: 0.95rem 1rem;
+  border: 1px solid rgba(42,122,122,0.16);
+  border-radius: 12px;
+  background: white;
+  color: var(--turquoise-deep);
+  text-align: center;
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.selected-stay-box strong {
+  color: var(--turquoise-dark);
+}
+
+.booking-hidden-date-fields { display: none !important; visibility: hidden !important; height: 0 !important; overflow: hidden !important; }
+
+@media (max-width: 900px) {
+  .booking-calendar-months {
+    grid-template-columns: 1fr;
+  }
+
+  .booking-month:nth-child(2) {
+    display: none;
+  }
+
+  .booking-calendar-toolbar {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 520px) {
+  .booking-calendar-shell {
+    padding: 1rem 0.8rem 1.1rem;
+  }
+
+  .booking-month {
+    padding: 0.7rem;
+  }
+
+  .booking-weekdays,
+  .booking-days {
+    gap: 0.22rem;
+  }
+
+  .booking-day {
+    min-height: 43px;
+    border-radius: 8px;
+    font-size: 0.76rem;
+  }
+
+  .booking-day.booked::after {
+    content: "Booked";
+    left: 0.12rem;
+    right: 0.12rem;
+    bottom: 0.12rem;
+    color: var(--turquoise-deep);
+    background: transparent;
+    width: auto;
+    height: auto;
+    font-size: 0.42rem;
+  }
+}
+
+
+.booking-day.selected-start::after,
+.booking-day.selected-end::after,
+.booking-day.in-range::after {
+  content: none !important;
+}
+
+.booking-day.selected-start::before,
+.booking-day.selected-end::before,
+.booking-day.in-range::before {
+  content: none !important;
+}
+
+.booking-day.booked:hover,
+.booking-day.past:hover {
+  transform: none;
+}
+
+.booking-calendar-toolbar button:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  background: #f4f7f7;
+}
+
+.booking-calendar-toolbar button:disabled:hover {
+  border-color: rgba(42,122,122,0.22);
+  background: #f4f7f7;
+}
+
+@media (min-width: 980px) {
+  .booking-card {
+    position: sticky;
+    top: 1.5rem;
+    align-self: flex-start;
+  }
+}
+
+
+/* Main Booking stays in its normal section at the bottom */
+.booking-section .booking-card,
+#booking .booking-card {
+  position: static !important;
+  top: auto !important;
+}
+
+/* Floating Book dates — open at reading height, minimized at bottom-right */
+.floating-reservation {
+  position: fixed;
+  right: 22px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 998;
+}
+
+.floating-reservation .floating-question-panel {
+  display: block;
+  position: relative;
+  bottom: auto;
+  right: auto;
+  width: 390px;
+  max-width: calc(100vw - 44px);
+}
+
+.floating-reservation.is-minimized {
+  top: auto;
+  bottom: 86px;
+  transform: none;
+}
+
+.floating-reservation.is-minimized .floating-question-panel {
+  display: none;
+}
+
+.floating-reservation .floating-question-button {
+  display: none;
+}
+
+.floating-reservation.is-minimized .floating-question-button {
+  display: inline-flex;
+}
+
+.floating-reservation .floating-question-panel p {
+  margin: 0 0 0.75rem;
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
+.floating-mini-toolbar {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 0.45rem;
+  margin: 0.75rem 0 0.65rem;
+}
+
+.floating-mini-toolbar button {
+  border: 1px solid rgba(42,122,122,0.22);
+  background: white;
+  color: var(--turquoise-deep);
+  border-radius: 999px;
+  padding: 0.42rem 0.58rem;
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.floating-mini-toolbar button:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.floating-mini-status {
+  text-align: center;
+  color: var(--turquoise-deep);
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.floating-mini-month h4 {
+  font-family: var(--serif);
+  color: var(--turquoise-dark);
+  text-align: center;
+  font-size: 1.35rem;
+  font-weight: 300;
+  margin: 0.15rem 0 0.6rem;
+}
+
+.floating-mini-weekdays,
+.floating-mini-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.25rem;
+}
+
+.floating-mini-weekdays span {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.55rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding-bottom: 0.15rem;
+}
+
+.floating-mini-day {
+  min-height: 39px;
+  position: relative;
+  border: 1px solid rgba(42,122,122,0.16);
+  background: var(--off-white);
+  color: var(--text);
+  border-radius: 9px;
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.floating-mini-day:hover {
+  border-color: var(--turquoise-dark);
+  background: var(--turquoise-pale);
+}
+
+.floating-mini-day.empty {
+  cursor: default;
+  pointer-events: none;
+  background: transparent;
+  border-color: transparent;
+}
+
+.floating-mini-day.past {
+  cursor: not-allowed;
+  color: rgba(26,46,46,0.35);
+  background: #f1f4f4;
+  border-color: rgba(42,122,122,0.08);
+}
+
+.floating-mini-day.booked {
+  cursor: not-allowed;
+  color: var(--turquoise-deep);
+  border-color: var(--turquoise-light);
+  background:
+    repeating-linear-gradient(135deg, rgba(42,122,122,0.13), rgba(42,122,122,0.13) 6px, rgba(255,255,255,0.75) 6px, rgba(255,255,255,0.75) 12px),
+    var(--turquoise-pale);
+}
+
+.floating-mini-day.booked::after {
+  content: "Booked";
+  position: absolute;
+  left: 0.1rem;
+  right: 0.1rem;
+  bottom: 0.1rem;
+  color: var(--turquoise-deep);
+  background: transparent;
+  font-size: 0.40rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.floating-mini-day.selected-start,
+.floating-mini-day.selected-end,
+.floating-mini-day.in-range {
+  background: var(--coral);
+  border-color: var(--coral);
+  color: white;
+}
+
+.floating-mini-day.selected-start::after,
+.floating-mini-day.selected-end::after,
+.floating-mini-day.in-range::after {
+  content: none !important;
+}
+
+.floating-mini-summary {
+  margin: 0.75rem 0 0.75rem;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid rgba(42,122,122,0.16);
+  border-radius: 12px;
+  background: var(--off-white);
+  color: var(--turquoise-deep);
+  font-size: 0.78rem;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.floating-mini-error {
+  display: none;
+  margin-top: 0.55rem;
+  color: var(--coral-dark);
+  font-size: 0.72rem;
+  line-height: 1.35;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .floating-reservation {
+    display: none !important;
+  }
+}
+
+
+/* Floating mini calendar — month title between arrows */
+.floating-mini-toolbar {
+  grid-template-columns: 44px 1fr 44px !important;
+  margin: 0.85rem 0 0.75rem !important;
+}
+
+.floating-mini-status {
+  font-family: var(--serif) !important;
+  color: var(--turquoise-dark) !important;
+  font-size: 1.5rem !important;
+  font-weight: 300 !important;
+  line-height: 1.1 !important;
+}
+
+.floating-mini-month h4 {
+  display: none !important;
+}
+
+
+
+/* Floating mini calendar — minimized by default, light turquoise panel when opened */
+.floating-reservation {
+  position: fixed;
+  right: 22px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 998;
+}
+
+.floating-reservation.is-minimized {
+  top: auto;
+  bottom: 86px;
+  transform: none;
+}
+
+.floating-reservation.is-minimized .floating-question-panel {
+  display: none !important;
+}
+
+.floating-reservation .floating-question-button {
+  display: none;
+}
+
+.floating-reservation.is-minimized .floating-question-button {
+  display: inline-flex;
+  animation: selectDatesPulse 4.5s ease-in-out infinite;
+  box-shadow: 0 10px 28px rgba(255,107,71,0.22);
+}
+
+.floating-reservation.is-minimized .floating-question-button:hover {
+  animation: none;
+  transform: translateY(-1px);
+}
+
+@keyframes selectDatesPulse {
+  0%, 72%, 100% {
+    transform: scale(1);
+    box-shadow: 0 10px 28px rgba(255,107,71,0.22);
+  }
+  82% {
+    transform: scale(1.035);
+    box-shadow: 0 14px 34px rgba(255,107,71,0.38);
+  }
+  92% {
+    transform: scale(1);
+    box-shadow: 0 10px 28px rgba(255,107,71,0.22);
+  }
+}
+
+.floating-reservation .floating-question-panel {
+  background: linear-gradient(180deg, var(--turquoise-pale), #F8FCFC) !important;
+  border: 1px solid rgba(42,122,122,0.18) !important;
+  box-shadow: 0 18px 55px rgba(26,46,46,0.16) !important;
+  color: var(--turquoise-deep) !important;
+}
+
+.floating-reservation .floating-question-panel h3,
+.floating-reservation .floating-mini-status,
+.floating-reservation .floating-mini-month h4 {
+  color: var(--turquoise-dark) !important;
+}
+
+.floating-reservation .floating-question-panel p,
+.floating-reservation .floating-mini-weekdays span,
+.floating-reservation .floating-mini-summary,
+.floating-reservation .floating-question-close {
+  color: var(--turquoise-deep) !important;
+}
+
+.floating-reservation .floating-question-close {
+  opacity: 0.75;
+}
+
+.floating-reservation .floating-question-close:hover {
+  opacity: 1;
+}
+
+.floating-mini-day {
+  background: rgba(255,255,255,0.74) !important;
+  border-color: rgba(42,122,122,0.16) !important;
+  color: var(--text) !important;
+}
+
+.floating-mini-day:hover {
+  background: white !important;
+  border-color: var(--turquoise-dark) !important;
+}
+
+.floating-mini-day.past {
+  background: rgba(241,244,244,0.88) !important;
+  color: rgba(26,46,46,0.35) !important;
+  border-color: rgba(42,122,122,0.08) !important;
+}
+
+.floating-mini-day.booked {
+  color: var(--turquoise-deep) !important;
+  border-color: var(--turquoise-light) !important;
+  background:
+    repeating-linear-gradient(135deg, rgba(42,122,122,0.14), rgba(42,122,122,0.14) 6px, rgba(255,255,255,0.75) 6px, rgba(255,255,255,0.75) 12px),
+    var(--turquoise-pale) !important;
+}
+
+.floating-mini-day.booked::after {
+  color: var(--turquoise-deep) !important;
+}
+
+.floating-mini-day.selected-start,
+.floating-mini-day.selected-end,
+.floating-mini-day.in-range {
+  background: var(--coral) !important;
+  border-color: var(--coral) !important;
+  color: white !important;
+}
+
+.floating-mini-summary {
+  background: rgba(255,255,255,0.72) !important;
+  border-color: rgba(42,122,122,0.16) !important;
+  color: var(--turquoise-deep) !important;
+}
+
+.floating-mini-toolbar button {
+  background: rgba(255,255,255,0.72) !important;
+  border-color: rgba(42,122,122,0.18) !important;
+  color: var(--turquoise-deep) !important;
+}
+
+.floating-mini-toolbar button:hover {
+  background: white !important;
+  border-color: var(--turquoise-dark) !important;
+}
+
+.floating-mini-toolbar button:disabled {
+  opacity: 0.35;
+}
+
+.floating-question-submit {
+  background: var(--coral) !important;
+  color: white !important;
+  box-shadow: 0 10px 22px rgba(255,107,71,0.22);
+}
+
+.floating-mini-error {
+  color: var(--coral-dark) !important;
+}
+
+@media (max-width: 768px) {
+  .floating-reservation {
+    display: none !important;
+  }
+
+  .floating-reservation.is-minimized .floating-question-button {
+    animation: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .floating-reservation.is-minimized .floating-question-button {
+    animation: none;
+  }
+}
+
+
+/* Cleaner booking calendar toolbar on mobile */
+@media (max-width: 768px) {
+  .booking-calendar-toolbar {
+    display: grid !important;
+    grid-template-columns: 1fr auto !important;
+    gap: 0.75rem !important;
+    align-items: center !important;
+    justify-content: stretch !important;
+  }
+
+  .booking-calendar-toolbar-title {
+    text-align: left !important;
+    font-size: 0.9rem !important;
+    font-weight: 600 !important;
+  }
+
+  .booking-calendar-toolbar button {
+    justify-self: end !important;
+    white-space: nowrap !important;
+  }
+
+  #bookingCalPrev {
+    display: none !important;
+  }
+}
+
+
+
+/* Mobile calendar icon pill — icon only */
+.mobile-calendar-icon-button {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobile-calendar-icon-button {
+    display: inline-flex !important;
+    position: fixed !important;
+    right: 16px !important;
+    bottom: 90px !important;
+    z-index: 1200 !important;
+    width: 46px !important;
+    height: 46px !important;
+    padding: 0 !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border: none !important;
+    border-radius: 999px !important;
+    background: var(--coral) !important;
+    color: white !important;
+    box-shadow: 0 9px 24px rgba(255,107,71,0.26) !important;
+    cursor: pointer !important;
+  }
+
+  .mobile-calendar-icon-button svg {
+    width: 21px !important;
+    height: 21px !important;
+    display: block !important;
+  }
+
+  .mobile-calendar-icon-button:active {
+    transform: translateY(1px) !important;
+  }
+
+  .floating-reservation {
+    display: none !important;
+  }
+}
+
+
+/* Footer contact / platforms split */
+.footer-contact-block {
+  display: grid;
+  gap: 1.45rem;
+}
+
+.footer-contact-group h5 {
+  margin: 0 0 0.65rem;
+  color: rgba(255,255,255,0.78);
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.footer-contact-group ul {
+  display: grid;
+  gap: 0.72rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-contact-group a {
+  color: rgba(255,255,255,0.58);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-contact-group a:hover {
+  color: white;
+}
+
+
+
+/* Strong today marker inside floating mini calendar */
+.floating-mini-day.today:not(.selected-start):not(.selected-end):not(.in-range)::before {
+  content: "" !important;
+  position: absolute !important;
+  top: 0.25rem !important;
+  right: 0.25rem !important;
+  width: 8px !important;
+  height: 8px !important;
+  border-radius: 999px !important;
+  background: var(--coral) !important;
+  box-shadow: 0 0 0 2px rgba(255,255,255,0.75), 0 2px 8px rgba(255,107,71,0.45) !important;
+  z-index: 2 !important;
+}
+
+
+/* Final explicit web footer override */
+@media (min-width: 769px) {
+  body footer {
+    grid-template-columns: minmax(280px, 1.45fr) minmax(150px, 0.75fr) minmax(320px, 1.25fr) !important;
+  }
+}
+
+
+
+/* Reviews toggle */
+.review-extra[hidden] {
+  display: none !important;
+}
+
+.review-note {
+  margin-top: 0.7rem;
+  color: rgba(26, 53, 53, 0.52);
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.reviews-see-more {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1.5rem auto 0;
+  padding: 0.72rem 1.05rem;
+  border: 1px solid rgba(42,122,122,0.24);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--turquoise-deep);
+  font-family: var(--sans);
+  font-size: 0.86rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.reviews-see-more:hover {
+  background: var(--turquoise-pale);
+  border-color: rgba(42,122,122,0.42);
+  transform: translateY(-1px);
+}
+
+
+/* Review buttons layout */
+.reviews-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem;
+  margin: 1.6rem auto 0;
+  width: 100%;
+}
+
+.reviews-actions .reviews-see-more,
+.reviews-actions .google-review-button,
+.reviews-actions a {
+  margin: 0 !important;
+}
+
+@media (max-width: 640px) {
+  .reviews-actions {
+    gap: 0.72rem;
+    margin-top: 1.35rem;
+  }
+
+  .reviews-actions .reviews-see-more,
+  .reviews-actions .google-review-button {
+    width: min(100%, 260px);
+  }
+}
+
+/* Albanian review buttons layout */
+.reviews-actions {
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:center;
+  gap:0.85rem;
+  margin:1.6rem auto 0;
+  width:100%;
+}
+.reviews-actions .reviews-see-more,
+.reviews-actions .btn-coral,
+.reviews-actions a { margin:0 !important; }
+.reviews-see-more {
+  background:var(--white);
+  color:var(--turquoise-dark);
+  border:1px solid var(--turquoise-light);
+  padding:0.72rem 1.35rem;
+  border-radius:999px;
+  font-family:var(--sans);
+  font-size:0.74rem;
+  font-weight:500;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  cursor:pointer;
+  transition:all 0.18s;
+}
+.reviews-see-more:hover {
+  background:var(--turquoise-pale);
+  color:var(--coral-dark);
+}
+@media (max-width:640px) {
+  .reviews-actions { flex-direction:column; gap:0.7rem; }
+  .reviews-actions .reviews-see-more,
+  .reviews-actions .btn-coral { width:min(100%, 320px); text-align:center; }
+}
+
 </style>
 <link href="https://swisssweet-apartment.com/" hreflang="en" rel="alternate"/><link href="https://swisssweet-apartment.com/fr/" hreflang="fr" rel="alternate"/><link href="https://swisssweet-apartment.com/de/" hreflang="de" rel="alternate"/><link href="https://swisssweet-apartment.com/sq/" hreflang="sq" rel="alternate"/><link href="https://swisssweet-apartment.com/it/" hreflang="it" rel="alternate"/><link href="https://swisssweet-apartment.com/" hreflang="x-default" rel="alternate"/></head>
 <body>
@@ -813,7 +1787,7 @@
 <li><a href="#videos">Video</a></li>
 <li><a href="#location">Vendndodhja</a></li>
 <li><a href="#reviews">Vlerësime</a></li>
-<li><a href="#blog">Blog & Tips</a></li>
+<li><a href="#blog">Blog & këshilla</a></li>
 <li><a href="/sq/faq.html">FAQ</a></li>
 <li><a class="nav-cta" href="#booking">Rezervo</a></li>
 </ul>
@@ -830,7 +1804,7 @@
 <a href="#videos" onclick="closeMobileMenu()">Video</a>
 <a href="#location" onclick="closeMobileMenu()">Vendndodhja</a>
 <a href="#reviews" onclick="closeMobileMenu()">Vlerësime</a>
-<a href="#blog" onclick="closeMobileMenu()">Blog & Tips</a>
+<a href="#blog" onclick="closeMobileMenu()">Blog & këshilla</a>
 <a href="/sq/faq.html" onclick="closeMobileMenu()">FAQ</a>
 <div class="mobile-lang-row"><a class="lang-btn " href="/">EN</a><a class="lang-btn " href="/fr/">FR</a><a class="lang-btn " href="/de/">DE</a><a class="lang-btn active" href="/sq/">AL</a><a class="lang-btn " href="/it/">IT</a></div>
 <a class="mobile-book" href="#booking" onclick="closeMobileMenu()">Kontrollo disponueshmërinë</a>
@@ -840,12 +1814,12 @@
 <div class="hero-bg" style="position:absolute;inset:0;background:url('../sunset3.jpeg') center/cover no-repeat;">
 </div>
 <div class="hero-content">
-<p class="hero-tag">San Pietro Resort · Gjiri i Lalëzit · Shqipëri</p>
+<p class="hero-tag">San Pietro Resort · Gjiri i Lalzit · Shqipëri</p>
 <h1>
 
 
 
-Apartament privat pushimi në San Pietro Resort, Gjiri i Lalëzit
+Apartament privat pushimi në San Pietro Resort, Gjiri i Lalzit
 
 </h1>
 <p class="hero-sub">
@@ -933,7 +1907,7 @@ Dy dhoma gjumi, banjo mermeri, ballkon me skarë dhe kuzhinë e hapur plotësish
 <div class="sunset-banner">
 <div class="sunset-banner-bg"></div>
 <div class="sunset-banner-content">
-<p class="section-tag" style="text-align:center;color:var(--turquoise-light)">Gjiri i Lalëzit · Adriatik</p>
+<p class="section-tag" style="text-align:center;color:var(--turquoise-light)">Gjiri i Lalzit · Adriatik</p>
 <h2>
 
 
@@ -1121,7 +2095,7 @@ Zbuloni rrethinat<br/><em>në video</em>
 </video>
 <div class="video-card-info">
 <h4>Pamje nga deti</h4>
-<p>Gjiri i Lalëzit dhe Adriatiku nga plazhi me rërë të imët.</p>
+<p>Gjiri i Lalzit dhe Adriatiku nga plazhi me rërë të imët.</p>
 </div>
 </div>
 <div class="video-card">
@@ -1159,10 +2133,10 @@ Vendndodhja
 
 
 
-Në zemër të Gjirit të Lalëzit,<br/><em>në bregdetin adriatik të Shqipërisë</em>
+Në zemër të Gjirit të Lalzit,<br/><em>në bregdetin adriatik të Shqipërisë</em>
 </h2>
 <p class="section-lead">
-I vendosur në San Pietro Resort, në zonën e Gjirit të Lalëzit, pranë Durrësit.
+I vendosur në San Pietro Resort, në zonën e Gjirit të Lalzit, pranë Durrësit.
 </p>
 <ul class="distance-list">
 <li class="distance-item"><span class="distance-name">🏖️ Plazh ranor</span><span class="distance-val">rreth 5 min në këmbë</span></li>
@@ -1191,7 +2165,7 @@ Shiko në Google Maps
 <!-- REVIEWS -->
 <button aria-controls="reviews" aria-expanded="false" class="mobile-accordion-toggle" type="button"><span class="mobile-accordion-label">Vlerësime</span></button><section class="reviews-section mobile-accordion-target mobile-collapsed" id="reviews">
 <p class="section-tag" style="color:var(--coral)">Vlerësime nga mysafirët</p>
-<h2>Çfarë u pëlqeu<br/><em>mysafirëve</em></h2>
+<h2>Çfarë kanë vlerësuar<br/><em>mysafirët</em></h2>
 <div class="reviews-grid">
 <div class="review-card">
 <span class="review-source">Google</span>
@@ -1200,12 +2174,19 @@ Shiko në Google Maps
 <div class="review-author">Butrint</div>
 </div>
 <div class="review-card">
-<span class="review-source">Happy Rentals</span>
+<span class="review-source">Booking.com</span>
 <div class="review-rating">10/10</div>
-<p>“The house was very spacious and had all the amenities needed. The place was clean and my family and I really enjoyed it.”</p>
-<div class="review-author">Arlinda</div>
+<p>“Excellent stay. The neighborhood was very nice, everything was organized, and the apartment was quiet.”</p>
+<div class="review-excerpt">Pjesë nga një vlerësim i verifikuar</div>
+<div class="review-author">Premtim</div>
 </div>
 <div class="review-card">
+<span class="review-source">Google</span>
+<div class="review-rating">5/5</div>
+<p>“Wenn ich in Albanien bin, komme ich immer wieder gerne ins Swiss Sweet Apartment zurück. Die Wohnung ist sauber, geräumig und sehr gemütlich, mit einem schönen Badezimmer und einem tollen Balkon für das Frühstück am Morgen oder zum Lesen im Hängesessel. Die Umgebung im Resort ist ruhig, man kann angenehm Richtung Strand joggen, und ich fühle mich dort jedes Mal sehr wohl.”</p>
+<div class="review-author">Zena</div>
+</div>
+<div class="review-card review-extra" hidden>
 <span class="review-source">Vrbo</span>
 <div class="review-rating">8/10</div>
 <p>“Die Wohnung ist sauber und die Küche ist gut ausgestattet. Die Terrasse ist sehr schön. Die Wohnanlage ist sauber und grün.”</p>
@@ -1213,7 +2194,10 @@ Shiko në Google Maps
 <div class="review-author">Kateryna</div>
 </div>
 </div>
-<a class="btn-coral" href="https://g.page/r/CdZVWcgSXmVeEBM/review" rel="noopener noreferrer" target="_blank">Keni qëndruar te ne? Lini një vlerësim në Google</a>
+<div class="reviews-actions">
+  <button class="reviews-see-more" type="button" onclick="toggleReviews(this)" data-open="false">Shih më shumë vlerësime</button>
+  <a class="btn-coral" href="https://g.page/r/CdZVWcgSXmVeEBM/review" rel="noopener noreferrer" target="_blank">Keni qëndruar te ne? Lini një vlerësim në Google</a>
+</div>
 </section>
 <!-- BLOG / LOCAL TIPS -->
 <button aria-controls="blog" aria-expanded="false" class="mobile-accordion-toggle" type="button"><span class="mobile-accordion-label">Këshilla lokale</span></button><section class="blog-section mobile-accordion-target mobile-collapsed" id="blog">
@@ -1242,7 +2226,7 @@ Shiko në Google Maps
 
 <!-- BOOKING -->
 <div style="height:320px;overflow:hidden;position:relative">
-<img alt="Plazhi me rërë në Gjirin e Lalëzit" decoding="async" loading="lazy" src="../beachoceanview.jpg" style="width:100%;height:100%;object-fit:cover;filter:brightness(0.75)"/>
+<img alt="Plazhi me rërë në Gjirin e Lalzit" decoding="async" loading="lazy" src="../beachoceanview.jpg" style="width:100%;height:100%;object-fit:cover;filter:brightness(0.75)"/>
 <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center">
 <p style="font-family:var(--serif);font-size:clamp(1.8rem,4vw,3rem);color:white;font-weight:300;font-style:italic;text-align:center;padding:1rem">
 
@@ -1300,17 +2284,40 @@ Mirë të dihet para rezervimit
 <div id="cal-from-label" style="font-size:0.72rem;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.6);margin-bottom:0.3rem">Nga</div>
 <div id="cal-amount" style="font-family:var(--serif);font-size:2rem;font-weight:300">80 EUR <span style="font-size:1rem;opacity:0.7">/ natë</span></div>
 </div>
-<!-- DATES -->
-<div style="display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid #eee">
-<div style="padding:1rem 1.5rem;border-right:1px solid #eee">
-<label id="label-checkin" style="display:block;font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--text);margin-bottom:0.3rem">MBËRRITJA</label>
-<input id="checkin" style="border:none;outline:none;font-size:0.95rem;color:var(--text-muted);font-family:var(--sans);width:100%;background:transparent;cursor:pointer" type="date"/>
+<!-- CLICKABLE CALENDAR -->
+<div class="booking-calendar-shell">
+  <div class="booking-calendar-intro">
+    <h3>Zgjidhni qëndrimin tuaj</h3>
+    <p>
+      Zgjidhni datat e mbërritjes dhe largimit direkt në kalendar. Ne konfirmojmë personalisht disponueshmërinë, çmimin përfundimtar dhe detajet e rezervimit me email.
+    </p>
+  </div>
+
+  <div class="booking-calendar-toolbar">
+    <button type="button" id="bookingCalPrev">← Mbrapa</button>
+    <div class="booking-calendar-toolbar-title" id="bookingCalStatus">Zgjidhni datën e mbërritjes</div>
+    <button type="button" id="bookingCalNext">Tjetër →</button>
+  </div>
+
+  <div class="booking-calendar-months" id="bookingCalendarMonths"></div>
+
+  <div class="booking-calendar-legend">
+    <span><i class="legend-box"></i> E lirë</span>
+    <span><i class="legend-box booked"></i> E rezervuar</span>
+    <span><i class="legend-box selected"></i> Qëndrimi juaj</span>
+    <span><i class="legend-box past"></i> E kaluar</span>
+  </div>
 </div>
-<div style="padding:1rem 1.5rem">
-<label id="label-checkout" style="display:block;font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--text);margin-bottom:0.3rem">LARGIMI</label>
-<input id="checkout" style="border:none;outline:none;font-size:0.95rem;color:var(--text-muted);font-family:var(--sans);width:100%;background:transparent;cursor:pointer" type="date"/>
+
+<div class="selected-stay-box" id="selectedStayBox">
+  <strong>Qëndrimi juaj:</strong> zgjidhni datat e mbërritjes dhe largimit direkt në kalendar.
 </div>
-</div>
+<!-- /CLICKABLE CALENDAR -->
+
+<!-- DATES: hidden backend fields filled by the clickable calendar -->
+<input id="checkin" name="checkin" type="hidden" />
+<input id="checkout" name="checkout" type="hidden" />
+
 <!-- GUESTS -->
 <div style="padding:1rem 1.5rem;border-bottom:1px solid #eee;display:grid;grid-template-columns:1fr 1fr;gap:1rem;align-items:center">
   <div style="display:flex;justify-content:space-between;align-items:center;border-right:1px solid #eee;padding-right:1rem">
@@ -1367,7 +2374,7 @@ Min. 2 netë · Anulim falas deri 14 ditë para mbërritjes ·
 <div class="footer-logo-row">
 <div>
 <span class="nav-logo"><span class="nav-logo-text">Swiss<span>Sweet</span> Apartment</span></span>
-<p>Apartament pushimi 97 m² në San Pietro Resort, rreth 5 minuta në këmbë nga plazhi adriatik i Gjirit të Lalëzit, Shqipëri.</p>
+<p>Apartament pushimi 97 m² në San Pietro Resort, rreth 5 minuta në këmbë nga plazhi adriatik i Gjirit të Lalzit, Shqipëri.</p>
 </div>
 <img alt="Logoja e Swiss Sweet Apartment" class="footer-logo-mark" src="../swisssweet-logo-transparent.png"/>
 </div>
@@ -1386,13 +2393,17 @@ Min. 2 netë · Anulim falas deri 14 ditë para mbërritjes ·
 </div>
 <div>
 <h4>Kontakt &amp; platforma</h4>
-<ul>
+<h5 style="font-size:0.66rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.58);margin:0 0 0.55rem">Kontakt</h5>
+<ul style="margin-bottom:1.05rem">
 <li><a href="mailto:info@swisssweet-apartment.com">info@swisssweet-apartment.com</a></li>
+<li><a href="https://wa.me/41793960005" rel="noopener noreferrer" target="_blank">WhatsApp · +41 79 396 00 05</a></li>
+</ul>
+<h5 style="font-size:0.66rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.58);margin:0 0 0.55rem">Platforma</h5>
+<ul>
 <li><a href="https://www.airbnb.fr/rooms/1096118163660517988" rel="noopener noreferrer" target="_blank">Airbnb</a></li>
 <li><a href="https://www.booking.com/hotel/al/swiss-sweet-apartment-happy-rentals.fr.html" rel="noopener noreferrer" target="_blank">Booking.com</a></li>
 <li><a href="https://www.happy.rentals/fr/vacation-rental/10648-swiss-sweet-apartment-297" rel="noopener noreferrer" target="_blank">Happy Rentals</a></li>
 <li><a href="https://www.vrbo.com/sv-se/semesterhus/p11538460" rel="noopener noreferrer" target="_blank">Vrbo</a></li>
-<li><span style="color:rgba(255,255,255,0.45);font-size:0.88rem;font-weight:300"></span></li>
 </ul>
 </div>
 <div class="footer-bottom"><span>© 2026 Swiss Sweet Apartment · San Pietro Resort, Durrës, Shqipëri</span><span>swisssweet-apartment.com</span><span>Të gjitha fotot, videot dhe përmbajtjet e shkruara janë të mbrojtura. Riprodhimi ose përdorimi tregtar pa leje paraprake me shkrim ndalohet.</span></div>
@@ -1747,6 +2758,37 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 </script>
 
+
+<div class="floating-reservation is-minimized" id="floating-reservation">
+  <div class="floating-question-panel" aria-hidden="false">
+    <div class="floating-question-head">
+      <h3>Zgjidhni datat</h3>
+      <button class="floating-question-close" type="button" onclick="minimizeReservationBox()" aria-label="Minimizo">×</button>
+    </div>
+
+    <p>Zgjidhni datat e mbërritjes dhe largimit.</p>
+
+    <div class="floating-mini-toolbar">
+      <button type="button" id="floatingMiniPrev">←</button>
+      <div class="floating-mini-status" id="floatingMiniStatus">Qershor 2026</div>
+      <button type="button" id="floatingMiniNext">→</button>
+    </div>
+
+    <div class="floating-mini-month" id="floatingMiniMonth"></div>
+
+    <div class="floating-mini-summary" id="floatingMiniSummary">
+      Qëndrimi juaj: zgjidhni mbërritjen dhe largimin.
+    </div>
+
+    <button class="floating-question-submit" type="button" onclick="continueReservationFromFloating()">
+      Vazhdo rezervimin
+    </button>
+    <div class="floating-mini-error" id="floatingMiniError"></div>
+  </div>
+
+  <button class="floating-question-button" type="button" onclick="openReservationBox()">Zgjidh datat</button>
+</div>
+
 <div class="floating-question" id="floating-question">
   <div class="floating-question-panel" aria-hidden="true">
     <div class="floating-question-head">
@@ -1806,6 +2848,631 @@ document.addEventListener('DOMContentLoaded', function () {
   };
 })();
 </script>
+
+<script>
+(function () {
+  const ICS_LOCAL_URL = "/data/availability.ics";
+
+  const monthsEl = document.getElementById("bookingCalendarMonths");
+  const prevBtn = document.getElementById("bookingCalPrev");
+  const nextBtn = document.getElementById("bookingCalNext");
+  const statusEl = document.getElementById("bookingCalStatus");
+  const stayBox = document.getElementById("selectedStayBox");
+  const checkinInput = document.getElementById("checkin");
+  const checkoutInput = document.getElementById("checkout");
+
+  if (!monthsEl || !prevBtn || !nextBtn || !statusEl || !checkinInput || !checkoutInput) return;
+
+  const today = new Date();
+  today.setHours(0,0,0,0);
+
+  let visibleYear = today.getFullYear();
+  let visibleMonth = today.getMonth();
+  let bookedRanges = [];
+  let selectedStart = "";
+  let selectedEnd = "";
+
+  const demoRanges = [
+    { start: "2026-06-28", end: "2026-06-28" }
+  ];
+
+  function pad(n) {
+    return String(n).padStart(2, "0");
+  }
+
+  function toDateOnly(date) {
+    return `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())}`;
+  }
+
+  function fromDateOnly(dateString) {
+    return new Date(`${dateString}T00:00:00`);
+  }
+
+  function niceDate(dateString) {
+    if (!dateString) return "—";
+    return new Intl.DateTimeFormat("sq-AL", {
+      day: "numeric",
+      month: "short",
+      year: "numeric"
+    }).format(fromDateOnly(dateString));
+  }
+
+  function parseIcsDate(rawValue) {
+    if (!rawValue) return null;
+    const value = rawValue.trim();
+
+    if (/^\d{8}$/.test(value)) {
+      return `${value.slice(0, 4)}-${value.slice(4, 6)}-${value.slice(6, 8)}`;
+    }
+
+    if (/^\d{8}T/.test(value)) {
+      return `${value.slice(0, 4)}-${value.slice(4, 6)}-${value.slice(6, 8)}`;
+    }
+
+    return null;
+  }
+
+  function addDays(dateString, days) {
+    const date = fromDateOnly(dateString);
+    date.setDate(date.getDate() + days);
+    return toDateOnly(date);
+  }
+
+  function parseIcsEvents(icsText) {
+    const unfolded = icsText.replace(/\r?\n[ \t]/g, "");
+    const events = unfolded.split("BEGIN:VEVENT").slice(1);
+
+    return events
+      .map(function (eventText) {
+        const dtStartMatch = eventText.match(/DTSTART(?:;[^:]*)?:(\d{8}(?:T\d{6}Z?)?)/);
+        const dtEndMatch = eventText.match(/DTEND(?:;[^:]*)?:(\d{8}(?:T\d{6}Z?)?)/);
+
+        const start = dtStartMatch ? parseIcsDate(dtStartMatch[1]) : null;
+        const endRaw = dtEndMatch ? parseIcsDate(dtEndMatch[1]) : null;
+
+        if (!start) return null;
+
+        const end = endRaw ? addDays(endRaw, -1) : start;
+        return { start: start, end: end };
+      })
+      .filter(Boolean);
+  }
+
+  function isPast(dateString) {
+    return fromDateOnly(dateString) < today;
+  }
+
+  function isBooked(dateString) {
+    return bookedRanges.some(function (range) {
+      return dateString >= range.start && dateString <= range.end;
+    });
+  }
+
+  function isRangeBlocked(start, end) {
+    if (!start || !end) return false;
+
+    let cursor = fromDateOnly(start);
+    const endDate = fromDateOnly(end);
+
+    while (cursor < endDate) {
+      const ds = toDateOnly(cursor);
+      if (isPast(ds) || isBooked(ds)) return true;
+      cursor.setDate(cursor.getDate() + 1);
+    }
+    return false;
+  }
+
+
+  function isAtOrBeforeCurrentMonth(year, month) {
+    return year < today.getFullYear() || (year === today.getFullYear() && month <= today.getMonth());
+  }
+
+  function updatePrevButton() {
+    if (!prevBtn) return;
+    prevBtn.disabled = isAtOrBeforeCurrentMonth(visibleYear, visibleMonth);
+  }
+
+  function updateSelectedText() {
+    if (!selectedStart) {
+      statusEl.textContent = "Zgjidhni datën e mbërritjes";
+      stayBox.innerHTML = "<strong>Qëndrimi juaj:</strong> zgjidhni datat e mbërritjes dhe largimit direkt në kalendar.";
+      return;
+    }
+
+    if (!selectedEnd) {
+      statusEl.textContent = "Tani zgjidhni datën e largimit";
+      stayBox.innerHTML = "<strong>Mbërritja:</strong> " + niceDate(selectedStart) + " · <strong>Largimi:</strong> —";
+      return;
+    }
+
+    statusEl.textContent = "Datat janë zgjedhur";
+    stayBox.innerHTML = "<strong>Mbërritja:</strong> " + niceDate(selectedStart) + " · <strong>Largimi:</strong> " + niceDate(selectedEnd);
+  }
+
+  function setSelectedDates(start, end) {
+    selectedStart = start || "";
+    selectedEnd = end || "";
+
+    checkinInput.value = selectedStart;
+    checkoutInput.value = selectedEnd;
+
+    if (typeof window.calcPrice === "function") {
+      window.calcPrice();
+    }
+
+    updateSelectedText();
+    renderCalendars();
+  }
+
+
+  window.swissSweetSelectStay = function (start, end) {
+    if (!start || !end) {
+      return { ok: false, message: "Ju lutemi zgjidhni datat e mbërritjes dhe largimit." };
+    }
+
+    if (end <= start) {
+      return { ok: false, message: "Largimi duhet të jetë pas mbërritjes." };
+    }
+
+    if (isRangeBlocked(start, end)) {
+      return { ok: false, message: "Ju lutemi zgjidhni një qëndrim pa net të rezervuara ndërmjet datave." };
+    }
+
+    const startDate = fromDateOnly(start);
+    visibleYear = startDate.getFullYear();
+    visibleMonth = startDate.getMonth();
+
+    if (visibleYear < today.getFullYear() || (visibleYear === today.getFullYear() && visibleMonth < today.getMonth())) {
+      visibleYear = today.getFullYear();
+      visibleMonth = today.getMonth();
+    }
+
+    setSelectedDates(start, end);
+    return { ok: true };
+  };
+
+  function handleDateClick(dateString) {
+    if (isPast(dateString) || isBooked(dateString)) return;
+
+    if (!selectedStart || selectedEnd) {
+      setSelectedDates(dateString, "");
+      return;
+    }
+
+    if (dateString <= selectedStart) {
+      setSelectedDates(dateString, "");
+      return;
+    }
+
+    if (isRangeBlocked(selectedStart, dateString)) {
+      alert("Ju lutemi zgjidhni një qëndrim pa net të rezervuara ndërmjet datave.");
+      setSelectedDates(dateString, "");
+      return;
+    }
+
+    setSelectedDates(selectedStart, dateString);
+  }
+
+  function renderMonth(year, month) {
+    const monthWrap = document.createElement("div");
+    monthWrap.className = "booking-month";
+
+    const firstDay = new Date(year, month, 1);
+    const lastDay = new Date(year, month + 1, 0);
+    const daysInMonth = lastDay.getDate();
+
+    const title = document.createElement("h4");
+    title.textContent = new Intl.DateTimeFormat("sq-AL", {
+      month: "long",
+      year: "numeric"
+    }).format(firstDay);
+
+    const weekdays = document.createElement("div");
+    weekdays.className = "booking-weekdays";
+    weekdays.innerHTML = "<span>Hën</span><span>Mar</span><span>Mër</span><span>Enj</span><span>Pre</span><span>Sht</span><span>Die</span>";
+
+    const days = document.createElement("div");
+    days.className = "booking-days";
+
+    const offset = (firstDay.getDay() + 6) % 7;
+
+    for (let i = 0; i < offset; i++) {
+      const empty = document.createElement("button");
+      empty.type = "button";
+      empty.className = "booking-day empty";
+      empty.tabIndex = -1;
+      days.appendChild(empty);
+    }
+
+    for (let day = 1; day <= daysInMonth; day++) {
+      const date = new Date(year, month, day);
+      const dateString = toDateOnly(date);
+      const past = isPast(dateString);
+      const booked = isBooked(dateString);
+
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "booking-day";
+      btn.textContent = day;
+
+      if (past) btn.classList.add("past");
+      if (booked) btn.classList.add("booked");
+      if (dateString === toDateOnly(today)) btn.classList.add("today");
+
+      if (selectedStart && selectedEnd && dateString > selectedStart && dateString < selectedEnd) {
+        btn.classList.add("in-range");
+      }
+
+      if (dateString === selectedStart) btn.classList.add("selected-start");
+      if (dateString === selectedEnd) btn.classList.add("selected-end");
+
+      btn.setAttribute("aria-label", dateString + (booked ? " e rezervuar" : past ? " datë e kaluar" : " e lirë"));
+
+      if (past || booked) {
+        btn.disabled = true;
+      } else {
+        btn.addEventListener("click", function () {
+          handleDateClick(dateString);
+        });
+      }
+
+      days.appendChild(btn);
+    }
+
+    monthWrap.appendChild(title);
+    monthWrap.appendChild(weekdays);
+    monthWrap.appendChild(days);
+
+    return monthWrap;
+  }
+
+  function renderCalendars() {
+    updatePrevButton();
+    monthsEl.innerHTML = "";
+
+    monthsEl.appendChild(renderMonth(visibleYear, visibleMonth));
+
+    const second = new Date(visibleYear, visibleMonth + 1, 1);
+    monthsEl.appendChild(renderMonth(second.getFullYear(), second.getMonth()));
+  }
+
+  async function loadAvailability() {
+    try {
+      const response = await fetch(ICS_LOCAL_URL + "?v=" + Date.now(), { cache: "no-store" });
+      if (!response.ok) throw new Error("Availability file not found: " + response.status);
+
+      const icsText = await response.text();
+      bookedRanges = parseIcsEvents(icsText);
+    } catch (error) {
+      bookedRanges = demoRanges;
+    }
+
+    renderCalendars();
+    updateSelectedText();
+  }
+
+  prevBtn.addEventListener("click", function () {
+    if (isAtOrBeforeCurrentMonth(visibleYear, visibleMonth)) return;
+
+    visibleMonth -= 1;
+    if (visibleMonth < 0) {
+      visibleMonth = 11;
+      visibleYear -= 1;
+    }
+
+    if (visibleYear < today.getFullYear() || (visibleYear === today.getFullYear() && visibleMonth < today.getMonth())) {
+      visibleYear = today.getFullYear();
+      visibleMonth = today.getMonth();
+    }
+
+    renderCalendars();
+  });
+
+  nextBtn.addEventListener("click", function () {
+    visibleMonth += 1;
+    if (visibleMonth > 11) {
+      visibleMonth = 0;
+      visibleYear += 1;
+    }
+    renderCalendars();
+  });
+
+  renderCalendars();
+  loadAvailability();
+})();
+</script>
+
+
+<script>
+(function () {
+  const ICS_LOCAL_URL = "/data/availability.ics";
+  const box = document.getElementById("floating-reservation");
+  const monthEl = document.getElementById("floatingMiniMonth");
+  const prevBtn = document.getElementById("floatingMiniPrev");
+  const nextBtn = document.getElementById("floatingMiniNext");
+  const statusEl = document.getElementById("floatingMiniStatus");
+  const summaryEl = document.getElementById("floatingMiniSummary");
+  const errorEl = document.getElementById("floatingMiniError");
+
+  if (!box || !monthEl || !prevBtn || !nextBtn || !statusEl || !summaryEl) return;
+
+  const today = new Date();
+  today.setHours(0,0,0,0);
+
+  let visibleYear = today.getFullYear();
+  let visibleMonth = today.getMonth();
+  let bookedRanges = [];
+  let selectedStart = "";
+  let selectedEnd = "";
+
+  function pad(n) { return String(n).padStart(2, "0"); }
+  function toDateOnly(date) { return date.getFullYear() + "-" + pad(date.getMonth() + 1) + "-" + pad(date.getDate()); }
+  function fromDateOnly(dateString) { return new Date(dateString + "T00:00:00"); }
+  function addDays(dateString, days) {
+    const d = fromDateOnly(dateString);
+    d.setDate(d.getDate() + days);
+    return toDateOnly(d);
+  }
+  function niceDate(dateString) {
+    if (!dateString) return "—";
+    return new Intl.DateTimeFormat("sq-AL", { day: "numeric", month: "short", year: "numeric" }).format(fromDateOnly(dateString));
+  }
+  function parseIcsDate(rawValue) {
+    if (!rawValue) return null;
+    const value = rawValue.trim();
+    if (/^\d{8}$/.test(value)) return value.slice(0,4) + "-" + value.slice(4,6) + "-" + value.slice(6,8);
+    if (/^\d{8}T/.test(value)) return value.slice(0,4) + "-" + value.slice(4,6) + "-" + value.slice(6,8);
+    return null;
+  }
+  function parseIcsEvents(icsText) {
+    const unfolded = icsText.replace(/\r?\n[ \t]/g, "");
+    return unfolded.split("BEGIN:VEVENT").slice(1).map(function(eventText) {
+      const s = eventText.match(/DTSTART(?:;[^:]*)?:(\d{8}(?:T\d{6}Z?)?)/);
+      const e = eventText.match(/DTEND(?:;[^:]*)?:(\d{8}(?:T\d{6}Z?)?)/);
+      const start = s ? parseIcsDate(s[1]) : null;
+      const endRaw = e ? parseIcsDate(e[1]) : null;
+      if (!start) return null;
+      const end = endRaw ? addDays(endRaw, -1) : start;
+      return { start: start, end: end };
+    }).filter(Boolean);
+  }
+  function isPast(dateString) { return fromDateOnly(dateString) < today; }
+  function isBooked(dateString) {
+    return bookedRanges.some(function(range) {
+      return dateString >= range.start && dateString <= range.end;
+    });
+  }
+  function isRangeBlocked(start, end) {
+    let cursor = fromDateOnly(start);
+    const endDate = fromDateOnly(end);
+    while (cursor < endDate) {
+      const ds = toDateOnly(cursor);
+      if (isPast(ds) || isBooked(ds)) return true;
+      cursor.setDate(cursor.getDate() + 1);
+    }
+    return false;
+  }
+  function isCurrentMonthOrBefore(year, month) {
+    return year < today.getFullYear() || (year === today.getFullYear() && month <= today.getMonth());
+  }
+  function updateText() {
+    if (!selectedStart) {
+      
+      summaryEl.innerHTML = "Qëndrimi juaj: zgjidhni mbërritjen dhe largimin.";
+    } else if (!selectedEnd) {
+      
+      summaryEl.innerHTML = "<strong>Mbërritja:</strong> " + niceDate(selectedStart) + " · <strong>Largimi:</strong> —";
+    } else {
+      
+      summaryEl.innerHTML = "<strong>Mbërritja:</strong> " + niceDate(selectedStart) + " · <strong>Largimi:</strong> " + niceDate(selectedEnd);
+    }
+  }
+  function showError(message) {
+    if (!errorEl) return;
+    errorEl.textContent = message;
+    errorEl.style.display = "block";
+  }
+  function clearError() {
+    if (!errorEl) return;
+    errorEl.textContent = "";
+    errorEl.style.display = "none";
+  }
+  function selectDates(start, end) {
+    selectedStart = start || "";
+    selectedEnd = end || "";
+    updateText();
+    render();
+  }
+  function handleMiniDateClick(dateString) {
+    clearError();
+    if (isPast(dateString) || isBooked(dateString)) return;
+
+    if (!selectedStart || selectedEnd) {
+      selectDates(dateString, "");
+      return;
+    }
+
+    if (dateString <= selectedStart) {
+      selectDates(dateString, "");
+      return;
+    }
+
+    if (isRangeBlocked(selectedStart, dateString)) {
+      showError("Ju lutemi zgjidhni një qëndrim pa net të rezervuara ndërmjet datave.");
+      selectDates(dateString, "");
+      return;
+    }
+
+    selectDates(selectedStart, dateString);
+  }
+  function render() {
+    prevBtn.disabled = isCurrentMonthOrBefore(visibleYear, visibleMonth);
+    monthEl.innerHTML = "";
+
+    const firstDay = new Date(visibleYear, visibleMonth, 1);
+    const lastDay = new Date(visibleYear, visibleMonth + 1, 0);
+    const daysInMonth = lastDay.getDate();
+    const offset = (firstDay.getDay() + 6) % 7;
+
+    const title = document.createElement("h4");
+    title.textContent = new Intl.DateTimeFormat("sq-AL", { month: "long", year: "numeric" }).format(firstDay);
+    statusEl.textContent = title.textContent;
+
+    const weekdays = document.createElement("div");
+    weekdays.className = "floating-mini-weekdays";
+    weekdays.innerHTML = "<span>Hën</span><span>Mar</span><span>Mër</span><span>Enj</span><span>Pre</span><span>Sht</span><span>Die</span>";
+
+    const days = document.createElement("div");
+    days.className = "floating-mini-days";
+
+    for (let i = 0; i < offset; i++) {
+      const empty = document.createElement("button");
+      empty.type = "button";
+      empty.className = "floating-mini-day empty";
+      empty.tabIndex = -1;
+      days.appendChild(empty);
+    }
+
+    for (let day = 1; day <= daysInMonth; day++) {
+      const date = new Date(visibleYear, visibleMonth, day);
+      const ds = toDateOnly(date);
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "floating-mini-day";
+      btn.textContent = day;
+
+      if (isPast(ds)) btn.classList.add("past");
+      if (isBooked(ds)) btn.classList.add("booked");
+      if (ds === toDateOnly(today)) btn.classList.add("today");
+      if (ds === toDateOnly(today)) btn.classList.add("today");
+      if (selectedStart && selectedEnd && ds > selectedStart && ds < selectedEnd) btn.classList.add("in-range");
+      if (ds === selectedStart) btn.classList.add("selected-start");
+      if (ds === selectedEnd) btn.classList.add("selected-end");
+
+      if (isPast(ds) || isBooked(ds)) {
+        btn.disabled = true;
+      } else {
+        btn.addEventListener("click", function () { handleMiniDateClick(ds); });
+      }
+
+      days.appendChild(btn);
+    }
+
+    monthEl.appendChild(title);
+    monthEl.appendChild(weekdays);
+    monthEl.appendChild(days);
+  }
+  async function loadAvailability() {
+    try {
+      const response = await fetch(ICS_LOCAL_URL + "?v=" + Date.now(), { cache: "no-store" });
+      if (!response.ok) throw new Error("No availability file");
+      bookedRanges = parseIcsEvents(await response.text());
+    } catch (e) {
+      bookedRanges = [{ start: "2026-06-28", end: "2026-06-28" }];
+    }
+    updateText();
+    render();
+  }
+
+  prevBtn.addEventListener("click", function () {
+    if (isCurrentMonthOrBefore(visibleYear, visibleMonth)) return;
+    visibleMonth -= 1;
+    if (visibleMonth < 0) {
+      visibleMonth = 11;
+      visibleYear -= 1;
+    }
+    render();
+  });
+
+  nextBtn.addEventListener("click", function () {
+    visibleMonth += 1;
+    if (visibleMonth > 11) {
+      visibleMonth = 0;
+      visibleYear += 1;
+    }
+    render();
+  });
+
+  window.minimizeReservationBox = function () {
+    box.classList.add("is-minimized");
+  };
+
+  window.openReservationBox = function () {
+    box.classList.remove("is-minimized");
+  };
+
+  window.continueReservationFromFloating = function () {
+    clearError();
+
+    if (!selectedStart || !selectedEnd) {
+      showError("Ju lutemi zgjidhni datat e mbërritjes dhe largimit.");
+      return;
+    }
+
+    if (typeof window.swissSweetSelectStay === "function") {
+      const result = window.swissSweetSelectStay(selectedStart, selectedEnd);
+      if (!result || !result.ok) {
+        showError(result && result.message ? result.message : "Ju lutemi zgjidhni data të tjera.");
+        return;
+      }
+    } else {
+      const checkin = document.getElementById("checkin");
+      const checkout = document.getElementById("checkout");
+      if (checkin) checkin.value = selectedStart;
+      if (checkout) checkout.value = selectedEnd;
+    }
+
+    box.classList.add("is-minimized");
+
+    const booking = document.getElementById("booking");
+    if (booking) booking.scrollIntoView({ behavior: "smooth", block: "start" });
+
+    setTimeout(function () {
+      const guests = document.getElementById("guests-select");
+      if (guests) guests.focus();
+    }, 700);
+  };
+
+  loadAvailability();
+})();
+</script>
+
+
+
+
+<script>
+function scrollToBookingCalendar() {
+  const booking = document.getElementById("booking");
+  if (booking) {
+    booking.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+}
+</script>
+
+
+
+
+<button class="mobile-calendar-icon-button" type="button" onclick="scrollToBookingCalendar()" aria-label="Zgjidh datat">
+  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+    <path fill="currentColor" d="M7.25 2.25a.85.85 0 0 1 .85.85v1.15h7.8V3.1a.85.85 0 0 1 1.7 0v1.15h1.05A3.35 3.35 0 0 1 22 7.6v10.05A3.35 3.35 0 0 1 18.65 21H5.35A3.35 3.35 0 0 1 2 17.65V7.6a3.35 3.35 0 0 1 3.35-3.35H6.4V3.1a.85.85 0 0 1 .85-.85ZM3.7 9.25v8.4c0 .91.74 1.65 1.65 1.65h13.3c.91 0 1.65-.74 1.65-1.65v-8.4H3.7Zm1.65-3.3c-.91 0-1.65.74-1.65 1.65v.05h16.6V7.6c0-.91-.74-1.65-1.65-1.65H17.6v.85a.85.85 0 0 1-1.7 0v-.85H8.1v.85a.85.85 0 1 1-1.7 0v-.85H5.35Z"/>
+    <path fill="currentColor" d="M6.45 11.55h2.1v2.1h-2.1v-2.1Zm4.5 0h2.1v2.1h-2.1v-2.1Zm4.5 0h2.1v2.1h-2.1v-2.1Zm-9 4h2.1v2.1h-2.1v-2.1Zm4.5 0h2.1v2.1h-2.1v-2.1Z" opacity=".9"/>
+  </svg>
+</button>
+
+
+
+
+<script>
+function toggleReviews(button) {
+  const isOpen = button.getAttribute("data-open") === "true";
+  document.querySelectorAll(".review-extra").forEach(function(card) {
+    card.hidden = isOpen;
+  });
+  button.setAttribute("data-open", isOpen ? "false" : "true");
+  button.textContent = isOpen ? "Shih më shumë vlerësime" : "Shfaq më pak vlerësime";
+}
+</script>
+
 
 </body>
 </html>
