@@ -753,6 +753,10 @@
   .floating-question-submit { width: 100%; border: none; background: var(--coral); color: white; border-radius: 999px; padding: 0.82rem 1rem; font-size: 0.86rem; font-weight: 500; font-family: var(--sans); cursor:pointer; }
   .floating-question-submit:hover { background: var(--coral-dark); }
   .floating-question-status { display:none; margin-top:0.7rem; font-size:0.82rem; color:var(--turquoise-dark); text-align:center; }
+  .floating-whatsapp-link { display: inline-flex; text-decoration: none; }
+  .floating-whatsapp-button { background: #25D366; display: inline-flex; align-items: center; justify-content: center; width: 52px; height: 52px; padding: 0 !important; border-radius: 999px; }
+  .floating-whatsapp-button svg { margin: 0 !important; width: 24px; height: 24px; }
+  .floating-whatsapp-button:hover { background: #1DA851; }
   .review-source { display:inline-block; margin-bottom:0.9rem; padding:0.28rem 0.7rem; border-radius:999px; background:rgba(255,255,255,0.14); color:white; font-size:0.72rem; letter-spacing:0.06em; text-transform:uppercase; }
   .review-rating { color:var(--coral); font-size:0.9rem; margin-bottom:0.8rem; }
   .review-excerpt { font-size:0.76rem; color:rgba(255,255,255,0.58); margin-top:0.7rem; }
@@ -1548,25 +1552,23 @@
 @media (max-width: 768px) {
   .booking-calendar-toolbar {
     display: grid !important;
-    grid-template-columns: 1fr auto !important;
-    gap: 0.75rem !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 0.5rem 0.75rem !important;
     align-items: center !important;
-    justify-content: stretch !important;
   }
 
   .booking-calendar-toolbar-title {
-    text-align: left !important;
+    grid-column: 1 / -1 !important;
+    text-align: center !important;
     font-size: 0.9rem !important;
     font-weight: 600 !important;
+    margin-bottom: 0.15rem !important;
   }
 
   .booking-calendar-toolbar button {
-    justify-self: end !important;
+    width: 100% !important;
+    text-align: center !important;
     white-space: nowrap !important;
-  }
-
-  #bookingCalPrev {
-    display: none !important;
   }
 }
 
@@ -1609,6 +1611,21 @@
 
   .floating-reservation {
     display: none !important;
+  }
+
+  .floating-question {
+    right: 16px !important;
+    bottom: 24px !important;
+  }
+
+  .floating-whatsapp-button {
+    width: 46px !important;
+    height: 46px !important;
+  }
+
+  .floating-whatsapp-button svg {
+    width: 21px !important;
+    height: 21px !important;
   }
 }
 
@@ -2357,11 +2374,8 @@ Gut zu wissen vor der Buchung
 <input id="booking-email" placeholder="Ihre E-Mail-Adresse" style="width:100%;border:1px solid #ddd;border-radius:8px;padding:0.75rem 1rem;font-size:0.9rem;font-family:var(--sans);outline:none;margin-bottom:0.8rem;box-sizing:border-box" type="email"/>
 <input id="booking-msg" placeholder="Nachricht (optional)" style="width:100%;border:1px solid #ddd;border-radius:8px;padding:0.75rem 1rem;font-size:0.9rem;font-family:var(--sans);outline:none;box-sizing:border-box" type="text"/>
 </div>
-<div class="payment-reassurance">
-Auf dieser Website wird keine Online-Zahlung ausgelöst. Nach der Bestätigung senden wir Ihnen die Zahlungsinformationen direkt per E-Mail.<br/><span style="display:block;margin-top:0.55rem">Dies ist eine Buchungsanfrage, keine Sofortbuchung. Wir bestätigen Verfügbarkeit, Endpreis und Buchungsdetails per E-Mail.</span>
-</div>
 <!-- SUBMIT -->
-<div style="padding:1.2rem 1.5rem">
+<div style="padding:1.2rem 1.5rem 0">
 <button id="submit-btn" onclick="submitBooking()" onmouseout="this.style.background='var(--coral)'" onmouseover="this.style.background='#E05530'" style="width:100%;background:var(--coral);color:white;border:none;padding:1rem;border-radius:8px;font-size:0.95rem;font-weight:500;cursor:pointer;font-family:var(--sans);transition:background 0.2s" type="button">
 
 
@@ -2376,6 +2390,9 @@ Anfrage senden
 
 
 </div>
+</div>
+<div class="payment-reassurance" style="margin-top:0.95rem">
+Auf dieser Website wird keine Online-Zahlung ausgelöst. Nach der Bestätigung senden wir Ihnen die Zahlungsinformationen direkt per E-Mail.<br/><span style="display:block;margin-top:0.55rem">Dies ist eine Buchungsanfrage, keine Sofortbuchung. Wir bestätigen Verfügbarkeit, Endpreis und Buchungsdetails per E-Mail.</span>
 </div>
 <p style="text-align:center;font-size:0.78rem;color:var(--text-muted);padding:0 1.5rem 1.2rem">
 
@@ -2808,65 +2825,11 @@ document.addEventListener('DOMContentLoaded', function () {
   <button class="floating-question-button" type="button" onclick="openReservationBox()">Daten wählen</button>
 </div>
 
-<div class="floating-question" id="floating-question">
-  <div class="floating-question-panel" aria-hidden="true">
-    <div class="floating-question-head">
-      <h3>Ihre Frage</h3>
-      <button class="floating-question-close" type="button" onclick="toggleQuestionBox(false)" aria-label="Close">×</button>
-    </div>
-    <input id="question-name" type="text" placeholder="Name" />
-    <input id="question-email" type="email" placeholder="E-Mail" />
-    <textarea id="question-message" placeholder="Frage"></textarea>
-    <button class="floating-question-submit" type="button" onclick="submitQuestion()">Frage senden</button>
-    <div class="floating-question-status" id="question-status"></div>
-  </div>
-  <button class="floating-question-button" type="button" onclick="toggleQuestionBox()">Anfrage</button>
-</div>
-<script>
-(function() {
-  window.toggleQuestionBox = function(force) {
-    var box = document.getElementById('floating-question');
-    if (!box) return;
-    if (force === false) { box.classList.remove('open'); return; }
-    if (force === true) { box.classList.add('open'); return; }
-    box.classList.toggle('open');
-  };
-  window.submitQuestion = function() {
-    var nameEl = document.getElementById('question-name');
-    var emailEl = document.getElementById('question-email');
-    var msgEl = document.getElementById('question-message');
-    var statusEl = document.getElementById('question-status');
-    var email = emailEl && emailEl.value ? emailEl.value.trim() : '';
-    var msg = msgEl && msgEl.value ? msgEl.value.trim() : '';
-    if (!email || email.indexOf('@') < 0 || !msg) { alert("Bitte geben Sie eine gültige E-Mail-Adresse und Ihre Frage ein."); return; }
-    var payload = {
-      _subject: 'Question - Swiss Sweet Apartment',
-      _template: 'table',
-      _captcha: 'false',
-      name: nameEl && nameEl.value ? nameEl.value : 'Swiss Sweet Website question',
-      email: email,
-      question: msg
-    };
-    fetch('https://formsubmit.co/ajax/info@swisssweet-apartment.com', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify(payload)
-    })
-    .then(function(r) { if (!r.ok) throw new Error('Question submission failed'); return r.json(); })
-    .then(function() {
-      if (statusEl) { statusEl.style.display = 'block'; statusEl.textContent = "Frage gesendet. Wir antworten so rasch wie möglich per E-Mail."; }
-      if (nameEl) nameEl.value = '';
-      if (emailEl) emailEl.value = '';
-      if (msgEl) msgEl.value = '';
-    })
-    .catch(function() {
-      var subject = encodeURIComponent('Question - Swiss Sweet Apartment');
-      var body = encodeURIComponent('Name: ' + (nameEl && nameEl.value ? nameEl.value : '') + '\nEmail: ' + email + '\n\nQuestion:\n' + msg);
-      window.location.href = 'mailto:info@swisssweet-apartment.com?subject=' + subject + '&body=' + body;
-    });
-  };
-})();
-</script>
+<a class="floating-question floating-whatsapp-link" id="floating-question" href="https://wa.me/41793960005?text=Guten%20Tag%2C%20ich%20interessiere%20mich%20f%C3%BCr%20die%20Swiss%20Sweet%20Apartment%20%28San%20Pietro%20Resort%2C%20Lalzit%20Bay%29.%20K%C3%B6nnten%20Sie%20mir%20mehr%20Informationen%20geben%3F" target="_blank" rel="noopener noreferrer" aria-label="Kontakt über WhatsApp">
+  <button class="floating-question-button floating-whatsapp-button" type="button">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.48 1.32 5.01L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm0 18.13a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.36c0-4.54 3.7-8.24 8.24-8.24 4.54 0 8.23 3.7 8.23 8.24 0 4.54-3.69 8.22-8.23 8.22Zm4.52-6.16c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.13-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.04-.38-1.98-1.22-.73-.65-1.23-1.46-1.37-1.71-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.42-.14 0-.31-.01-.48-.01-.17 0-.43.06-.66.31-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.57.12.17 1.75 2.67 4.24 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.55.1.47-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.14-1.18-.06-.11-.23-.17-.48-.29Z"/></svg>
+  </button>
+</a>
 
 <script>
 (function () {
