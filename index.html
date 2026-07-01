@@ -1809,6 +1809,38 @@
   }
 }
 
+
+/* Always-visible mobile escape link — robust fallback on iPhone */
+.mobile-global-top-link {
+  display: none;
+}
+@media (max-width: 768px) {
+  .mobile-global-top-link {
+    position: fixed !important;
+    left: 16px !important;
+    bottom: 90px !important;
+    z-index: 1300 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-width: 46px !important;
+    height: 46px !important;
+    padding: 0 14px !important;
+    border-radius: 999px !important;
+    background: rgba(255,255,255,0.97) !important;
+    color: var(--teal) !important;
+    border: 1px solid rgba(33, 116, 126, 0.22) !important;
+    box-shadow: 0 9px 24px rgba(0,0,0,0.16) !important;
+    font-weight: 800 !important;
+    font-size: 0.92rem !important;
+    text-decoration: none !important;
+    -webkit-tap-highlight-color: transparent !important;
+  }
+  .mobile-global-top-link:active {
+    transform: translateY(1px) !important;
+  }
+}
+
 </style>
 
 
@@ -1820,6 +1852,7 @@
 <meta property="og:url" content="https://swisssweet-apartment.com/">
 </head>
 <body id="top">
+<a class="mobile-global-top-link" href="#top">← Top</a>
 <!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox">
 <button class="lightbox-close" onclick="closeLightbox()" type="button">✕</button>
@@ -3499,14 +3532,28 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
+
 <script>
 function scrollToBookingCalendar() {
   const booking = document.getElementById("booking");
-  if (booking) {
-    booking.scrollIntoView({ behavior: "smooth", block: "start" });
+  if (!booking) return;
+
+  const isMobile = window.matchMedia && window.matchMedia("(max-width: 768px)").matches;
+  const rect = booking.getBoundingClientRect();
+  const isInsideBooking = rect.top < window.innerHeight * 0.75 && rect.bottom > window.innerHeight * 0.25;
+
+  if (isMobile && isInsideBooking) {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    if (window.history && window.location.hash) {
+      history.replaceState(null, document.title, window.location.pathname + window.location.search);
+    }
+    return;
   }
+
+  booking.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 </script>
+
 
 
 
