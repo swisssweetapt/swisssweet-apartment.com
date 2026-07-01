@@ -1749,27 +1749,62 @@
 }
 
 
-.mobile-booking-back {
+@media (max-width: 768px) {
+  .mobile-booking-escape {
+    position: fixed;
+    left: 16px;
+    bottom: 18px;
+    z-index: 99999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 12px 16px;
+    border: 1px solid rgba(33, 116, 126, 0.22);
+    border-radius: 999px;
+    background: rgba(255,255,255,0.96);
+    color: var(--teal);
+    font-weight: 800;
+    font-size: 0.95rem;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .mobile-booking-escape.is-visible {
+    display: inline-flex;
+  }
+  .mobile-booking-escape:active {
+    transform: translateY(1px);
+  }
+}
+
+
+/* Robust mobile return link inside booking section — works without JavaScript */
+.mobile-booking-sticky-return {
   display: none;
 }
 @media (max-width: 768px) {
-  .mobile-booking-back {
+  .mobile-booking-sticky-return {
+    position: sticky;
+    top: 12px;
+    z-index: 50;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    margin: 0 0 18px;
-    padding: 14px 18px;
-    border: 1px solid rgba(33, 116, 126, 0.18);
+    margin: 0 auto 1rem;
+    padding: 12px 16px;
+    width: min(100%, 320px);
     border-radius: 999px;
-    background: #fff;
+    background: rgba(255,255,255,0.97);
     color: var(--teal);
-    font-weight: 700;
-    font-size: 0.96rem;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.07);
-    cursor: pointer;
+    border: 1px solid rgba(33, 116, 126, 0.22);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.14);
+    font-weight: 800;
+    font-size: 0.95rem;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
   }
-  .mobile-booking-back:active {
+  .mobile-booking-sticky-return:active {
     transform: translateY(1px);
   }
 }
@@ -1784,7 +1819,7 @@
 <link rel="canonical" href="https://swisssweet-apartment.com/">
 <meta property="og:url" content="https://swisssweet-apartment.com/">
 </head>
-<body>
+<body id="top">
 <!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox">
 <button class="lightbox-close" onclick="closeLightbox()" type="button">✕</button>
@@ -2258,7 +2293,8 @@ Your next escape starts here
 </div>
 </div>
 <section class="booking-section" id="booking">
-<button class="mobile-booking-back" type="button" onclick="window.scrollTo({top:0, behavior:'smooth'})">← Back to top</button>
+<a class="mobile-booking-sticky-return" href="#top">← Back to top</a>
+
 
 <p class="section-tag">
 
@@ -3495,6 +3531,8 @@ function toggleReviews(button) {
   button.textContent = isOpen ? "See more reviews" : "Show fewer reviews";
 }
 </script>
+
+
 
 </body>
 </html>
