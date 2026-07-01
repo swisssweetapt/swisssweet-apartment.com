@@ -1779,65 +1779,64 @@
 }
 
 
-/* Robust mobile return link inside booking section — works without JavaScript */
-.mobile-booking-sticky-return {
-  display: none;
+
+/* Mobile calendar navigation fix: keep Previous and Next visible */
+.booking-calendar-header,
+.calendar-nav,
+.booking-calendar-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.booking-calendar-header button,
+.calendar-nav button,
+.booking-calendar-nav button,
+.calendar-prev,
+.calendar-next,
+#calendarPrev,
+#calendarNext {
+  min-width: 112px;
+  white-space: nowrap;
+  flex: 0 0 auto;
 }
 @media (max-width: 768px) {
-  .mobile-booking-sticky-return {
-    position: sticky;
-    top: 12px;
-    z-index: 50;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 1rem;
-    padding: 12px 16px;
-    width: min(100%, 320px);
-    border-radius: 999px;
-    background: rgba(255,255,255,0.97);
-    color: var(--teal);
-    border: 1px solid rgba(33, 116, 126, 0.22);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.14);
-    font-weight: 800;
-    font-size: 0.95rem;
-    text-decoration: none;
-    -webkit-tap-highlight-color: transparent;
-  }
-  .mobile-booking-sticky-return:active {
-    transform: translateY(1px);
-  }
-}
-
-
-/* Always-visible mobile escape link — robust fallback on iPhone */
-.mobile-global-top-link {
-  display: none;
-}
-@media (max-width: 768px) {
-  .mobile-global-top-link {
-    position: fixed !important;
-    left: 16px !important;
-    bottom: 90px !important;
-    z-index: 1300 !important;
-    display: inline-flex !important;
+  .booking-calendar-header,
+  .calendar-nav,
+  .booking-calendar-nav {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 10px !important;
     align-items: center !important;
-    justify-content: center !important;
-    min-width: 46px !important;
-    height: 46px !important;
-    padding: 0 14px !important;
-    border-radius: 999px !important;
-    background: rgba(255,255,255,0.97) !important;
-    color: var(--teal) !important;
-    border: 1px solid rgba(33, 116, 126, 0.22) !important;
-    box-shadow: 0 9px 24px rgba(0,0,0,0.16) !important;
-    font-weight: 800 !important;
-    font-size: 0.92rem !important;
-    text-decoration: none !important;
-    -webkit-tap-highlight-color: transparent !important;
   }
-  .mobile-global-top-link:active {
-    transform: translateY(1px) !important;
+  .booking-calendar-header h3,
+  .booking-calendar-header .calendar-month,
+  .calendar-nav h3,
+  .calendar-nav .calendar-month,
+  .booking-calendar-nav h3,
+  .booking-calendar-nav .calendar-month {
+    grid-column: 1 / -1 !important;
+    text-align: center !important;
+    margin: 0 0 6px !important;
+  }
+  .booking-calendar-header button,
+  .calendar-nav button,
+  .booking-calendar-nav button,
+  .calendar-prev,
+  .calendar-next,
+  #calendarPrev,
+  #calendarNext {
+    display: inline-flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: static !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    justify-content: center !important;
+    align-items: center !important;
+    padding: 12px 10px !important;
+    border-radius: 999px !important;
+    white-space: nowrap !important;
   }
 }
 
@@ -1852,13 +1851,12 @@
 <meta property="og:url" content="https://swisssweet-apartment.com/">
 </head>
 <body id="top">
-<a class="mobile-global-top-link" href="#top">← Top</a>
 <!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox">
 <button class="lightbox-close" onclick="closeLightbox()" type="button">✕</button>
-<button class="lightbox-prev" onclick="changePhoto(-1)" type="button">‹</button>
+<button class="lightbox-prev" onclick="changePhoto(-1)" type="button">← Previous</button>
 <img alt="Expanded gallery image" class="lightbox-img" decoding="async" id="lightbox-img" loading="lazy" src=""/>
-<button class="lightbox-next" onclick="changePhoto(1)" type="button">›</button>
+<button class="lightbox-next" onclick="changePhoto(1)" type="button">Next →</button>
 <div class="lightbox-counter" id="lightbox-counter"></div>
 </div>
 <!-- AUDIO -->
@@ -2326,7 +2324,6 @@ Your next escape starts here
 </div>
 </div>
 <section class="booking-section" id="booking">
-<a class="mobile-booking-sticky-return" href="#top">← Back to top</a>
 
 
 <p class="section-tag">
@@ -3537,19 +3534,6 @@ document.addEventListener('DOMContentLoaded', function () {
 function scrollToBookingCalendar() {
   const booking = document.getElementById("booking");
   if (!booking) return;
-
-  const isMobile = window.matchMedia && window.matchMedia("(max-width: 768px)").matches;
-  const rect = booking.getBoundingClientRect();
-  const isInsideBooking = rect.top < window.innerHeight * 0.75 && rect.bottom > window.innerHeight * 0.25;
-
-  if (isMobile && isInsideBooking) {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-    if (window.history && window.location.hash) {
-      history.replaceState(null, document.title, window.location.pathname + window.location.search);
-    }
-    return;
-  }
-
   booking.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 </script>
