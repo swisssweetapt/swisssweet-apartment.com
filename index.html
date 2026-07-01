@@ -1556,25 +1556,23 @@
 @media (max-width: 768px) {
   .booking-calendar-toolbar {
     display: grid !important;
-    grid-template-columns: 1fr auto !important;
-    gap: 0.75rem !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 0.5rem 0.75rem !important;
     align-items: center !important;
-    justify-content: stretch !important;
   }
 
   .booking-calendar-toolbar-title {
-    text-align: left !important;
+    grid-column: 1 / -1 !important;
+    text-align: center !important;
     font-size: 0.9rem !important;
     font-weight: 600 !important;
+    margin-bottom: 0.15rem !important;
   }
 
   .booking-calendar-toolbar button {
-    justify-self: end !important;
+    width: 100% !important;
+    text-align: center !important;
     white-space: nowrap !important;
-  }
-
-  #bookingCalPrev {
-    display: none !important;
   }
 }
 
@@ -1779,66 +1777,6 @@
 }
 
 
-
-/* Mobile calendar navigation fix: keep Previous and Next visible */
-.booking-calendar-header,
-.calendar-nav,
-.booking-calendar-nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-}
-.booking-calendar-header button,
-.calendar-nav button,
-.booking-calendar-nav button,
-.calendar-prev,
-.calendar-next,
-#calendarPrev,
-#calendarNext {
-  min-width: 112px;
-  white-space: nowrap;
-  flex: 0 0 auto;
-}
-@media (max-width: 768px) {
-  .booking-calendar-header,
-  .calendar-nav,
-  .booking-calendar-nav {
-    display: grid !important;
-    grid-template-columns: 1fr 1fr !important;
-    gap: 10px !important;
-    align-items: center !important;
-  }
-  .booking-calendar-header h3,
-  .booking-calendar-header .calendar-month,
-  .calendar-nav h3,
-  .calendar-nav .calendar-month,
-  .booking-calendar-nav h3,
-  .booking-calendar-nav .calendar-month {
-    grid-column: 1 / -1 !important;
-    text-align: center !important;
-    margin: 0 0 6px !important;
-  }
-  .booking-calendar-header button,
-  .calendar-nav button,
-  .booking-calendar-nav button,
-  .calendar-prev,
-  .calendar-next,
-  #calendarPrev,
-  #calendarNext {
-    display: inline-flex !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    position: static !important;
-    width: 100% !important;
-    min-width: 0 !important;
-    justify-content: center !important;
-    align-items: center !important;
-    padding: 12px 10px !important;
-    border-radius: 999px !important;
-    white-space: nowrap !important;
-  }
-}
 
 </style>
 
@@ -2420,11 +2358,8 @@ Good to know before you book
 <input id="booking-email" placeholder="Your email" style="width:100%;border:1px solid #ddd;border-radius:8px;padding:0.75rem 1rem;font-size:0.9rem;font-family:var(--sans);outline:none;margin-bottom:0.8rem;box-sizing:border-box" type="email"/>
 <input id="booking-msg" placeholder="Message (optional)" style="width:100%;border:1px solid #ddd;border-radius:8px;padding:0.75rem 1rem;font-size:0.9rem;font-family:var(--sans);outline:none;box-sizing:border-box" type="text"/>
 </div>
-<div class="payment-reassurance">
-No online payment is taken on this website. Send us your request and we will reply personally with availability, final price and payment details.<br/><span style="display:block;margin-top:0.55rem">Your stay is confirmed only after our written confirmation by email.</span>
-</div>
 <!-- SUBMIT -->
-<div style="padding:1.2rem 1.5rem">
+<div style="padding:1.2rem 1.5rem 0">
 <button id="submit-btn" onclick="submitBooking()" onmouseout="this.style.background='var(--coral)'" onmouseover="this.style.background='#E05530'" style="width:100%;background:var(--coral);color:white;border:none;padding:1rem;border-radius:8px;font-size:0.95rem;font-weight:500;cursor:pointer;font-family:var(--sans);transition:background 0.2s" type="button">
 
 Send booking request
@@ -2439,6 +2374,9 @@ Send booking request
 
 
 </div>
+</div>
+<div class="payment-reassurance" style="margin-top:0.95rem">
+No online payment is taken on this website. Send us your request and we will reply personally with availability, final price and payment details.<br/><span style="display:block;margin-top:0.55rem">Your stay is confirmed only after our written confirmation by email.</span>
 </div>
 <p style="text-align:center;font-size:0.78rem;color:var(--text-muted);padding:0 1.5rem 1.2rem">
 
