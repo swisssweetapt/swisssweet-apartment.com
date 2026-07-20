@@ -2439,11 +2439,24 @@ Mirë të dihet para rezervimit
 Dërgo kërkesën
 
 </button>
+<div id="spam-warning-overlay" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.55);z-index:9999;align-items:center;justify-content:center;padding:1rem;">
+  <div style="background:#fff;border-radius:12px;max-width:420px;width:100%;padding:2rem 1.75rem;text-align:center;font-family:var(--sans);box-shadow:0 20px 60px rgba(0,0,0,0.3);">
+    <div style="font-size:1.1rem;font-weight:600;margin-bottom:0.75rem;color:#222;">Një gjë e shpejtë përpara se ta dërgoni 👋</div>
+    <div style="font-size:0.92rem;line-height:1.5;color:#555;margin-bottom:1.5rem;">
+      Përgjigja jonë ndonjëherë përfundon te mesazhet e padëshiruara (spam), sidomos me adresat Outlook ose Hotmail. Nëse nuk merrni përgjigje brenda 24 orësh, kontrolloni fillimisht atje. 🙂
+    </div>
+    <button id="spam-warning-ok" type="button" style="background:var(--coral);color:white;border:none;padding:0.85rem 2rem;border-radius:8px;font-size:0.95rem;font-weight:500;cursor:pointer;font-family:var(--sans);">Në rregull, dërgo kërkesën</button>
+  </div>
+</div>
 <div id="form-success" style="display:none;background:#e8f8f0;border:1px solid #52c4bc;border-radius:8px;padding:1rem;margin-top:1rem;text-align:center">
 
 
 
-✅ Kërkesa u dërgua me sukses. Ne do të kontrollojmë disponueshmërinë dhe do t’ju përgjigjemi me email me opsionet e disponueshme dhe çmimin përfundimtar. Ju lutemi kontrolloni edhe dosjen e mesazheve të padëshiruara, sidomos nëse përdorni adresë Outlook ose Hotmail.
+✅ Kërkesa u dërgua me sukses! Ne do të kontrollojmë disponueshmërinë dhe do t'ju përgjigjemi me email me opsionet e disponueshme dhe çmimin përfundimtar.
+
+Ju kujtojmë që përgjigja jonë mund të përfundojë te dosja e mesazheve të padëshiruara, sidomos me adresa Outlook ose Hotmail. 🙃
+
+Ne jemi një pronar i vogël, i pavarur, dhe marrim kohën për t'iu përgjigjur personalisht çdo mesazhi. Edhe një përgjigje e shkurtër nga ju vlerësohet gjithmonë. 😊
 
 </div>
 </div>
@@ -2719,6 +2732,44 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   window.submitBooking = function () {
+    var emailEl = document.getElementById('booking-email');
+    var l = L[currentLang];
+
+    if (!emailEl || !emailEl.value || emailEl.value.indexOf('@') < 0) {
+      alert(l.emailError);
+      return;
+    }
+
+    var overlayEl = document.getElementById('spam-warning-overlay');
+    if (overlayEl) {
+      overlayEl.style.display = 'flex';
+    } else {
+      window.doSubmitBooking();
+    }
+  };
+
+  var spamOkBtn = document.getElementById('spam-warning-ok');
+  if (spamOkBtn) {
+    spamOkBtn.addEventListener('click', function () {
+      var overlayEl = document.getElementById('spam-warning-overlay');
+      if (overlayEl) { overlayEl.style.display = 'none'; }
+      window.doSubmitBooking();
+    });
+  }
+
+  var spamOverlayEl = document.getElementById('spam-warning-overlay');
+  if (spamOverlayEl) {
+    spamOverlayEl.addEventListener('click', function (e) {
+      if (e.target === spamOverlayEl) { spamOverlayEl.style.display = 'none'; }
+    });
+  }
+
+  document.addEventListener('keydown', function (e) {
+    var swOverlay = document.getElementById('spam-warning-overlay');
+    if (swOverlay && swOverlay.style.display === 'flex' && e.key === 'Escape') { swOverlay.style.display = 'none'; }
+  });
+
+  window.doSubmitBooking = function () {
     var emailEl   = document.getElementById('booking-email');
     var msgEl     = document.getElementById('booking-msg');
     var cinEl     = document.getElementById('checkin');
