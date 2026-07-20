@@ -2386,11 +2386,23 @@ Anfrage senden
 
 
 </button>
+<div id="spam-warning-overlay" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.55);z-index:9999;align-items:center;justify-content:center;padding:1rem;">
+  <div style="background:#fff;border-radius:12px;max-width:420px;width:100%;padding:2rem 1.75rem;text-align:center;font-family:var(--sans);box-shadow:0 20px 60px rgba(0,0,0,0.3);">
+    <div style="font-size:1.1rem;font-weight:600;margin-bottom:0.75rem;color:#222;">Kurz bevor Sie senden 👋</div>
+    <div style="font-size:0.92rem;line-height:1.5;color:#555;margin-bottom:1.5rem;">
+      Unsere Antwort landet manchmal im Spam- oder Junk-Ordner, insbesondere bei Outlook- oder Hotmail-Adressen. Falls Sie innerhalb von 24 Stunden nichts von uns hören, schauen Sie bitte zuerst dort nach. 🙂
+    </div>
+    <button id="spam-warning-ok" type="button" style="background:var(--coral);color:white;border:none;padding:0.85rem 2rem;border-radius:8px;font-size:0.95rem;font-weight:500;cursor:pointer;font-family:var(--sans);">Alles klar, Anfrage senden</button>
+  </div>
+</div>
 <div id="form-success" style="display:none;background:#e8f8f0;border:1px solid #52c4bc;border-radius:8px;padding:1rem;margin-top:1rem;text-align:center">
 
 
-✅ Anfrage erfolgreich gesendet. Wir prüfen die Verfügbarkeit und antworten per E-Mail mit den verfügbaren Optionen und dem Endpreis. Bitte prüfen Sie auch Ihren Spam- oder Junk-Ordner, insbesondere bei Outlook- oder Hotmail-Adressen.
+✅ Anfrage erfolgreich gesendet! Wir prüfen die Verfügbarkeit und antworten per E-Mail mit den verfügbaren Optionen und dem Endpreis.
 
+Zur Erinnerung: Unsere Antwort kann im Spam- oder Junk-Ordner landen, insbesondere bei Outlook- oder Hotmail-Adressen. 🙃
+
+Wir sind ein kleiner, unabhängiger Gastgeber und nehmen uns die Zeit, jede Nachricht persönlich zu beantworten. Eine kurze Rückmeldung von Ihnen freut uns immer. 😊
 
 </div>
 </div>
@@ -2666,6 +2678,44 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   window.submitBooking = function () {
+    var emailEl = document.getElementById('booking-email');
+    var l = L[currentLang];
+
+    if (!emailEl || !emailEl.value || emailEl.value.indexOf('@') < 0) {
+      alert(l.emailError);
+      return;
+    }
+
+    var overlayEl = document.getElementById('spam-warning-overlay');
+    if (overlayEl) {
+      overlayEl.style.display = 'flex';
+    } else {
+      window.doSubmitBooking();
+    }
+  };
+
+  var spamOkBtn = document.getElementById('spam-warning-ok');
+  if (spamOkBtn) {
+    spamOkBtn.addEventListener('click', function () {
+      var overlayEl = document.getElementById('spam-warning-overlay');
+      if (overlayEl) { overlayEl.style.display = 'none'; }
+      window.doSubmitBooking();
+    });
+  }
+
+  var spamOverlayEl = document.getElementById('spam-warning-overlay');
+  if (spamOverlayEl) {
+    spamOverlayEl.addEventListener('click', function (e) {
+      if (e.target === spamOverlayEl) { spamOverlayEl.style.display = 'none'; }
+    });
+  }
+
+  document.addEventListener('keydown', function (e) {
+    var swOverlay = document.getElementById('spam-warning-overlay');
+    if (swOverlay && swOverlay.style.display === 'flex' && e.key === 'Escape') { swOverlay.style.display = 'none'; }
+  });
+
+  window.doSubmitBooking = function () {
     var emailEl   = document.getElementById('booking-email');
     var msgEl     = document.getElementById('booking-msg');
     var cinEl     = document.getElementById('checkin');
