@@ -2854,10 +2854,28 @@ document.addEventListener('DOMContentLoaded', function () {
     var l = L[currentLang];
 
     var totalVal = '';
+    var estimatedPriceLine = 'Not calculated (no dates selected)';
+    if (cinEl && coutEl && cinEl.value && coutEl.value) {
+      var s = new Date(cinEl.value + 'T00:00:00');
+      var e = new Date(coutEl.value + 'T00:00:00');
+      var n = Math.round((e - s) / 86400000);
+      if (n >= 1) {
+        var t = 0;
+        var c = new Date(s);
+        for (var i = 0; i < n; i++) {
+          var ds2 = c.getFullYear() + '-' + String(c.getMonth() + 1).padStart(2, '0') + '-' + String(c.getDate()).padStart(2, '0');
+          t += getNightRate(ds2);
+          c.setDate(c.getDate() + 1);
+        }
+        totalVal = t;
+        estimatedPriceLine = t + ' EUR for ' + n + (n === 1 ? ' night' : ' nights') + ' (' + Math.round(t / n) + ' EUR/night)';
+      }
+    }
 
     var lines = [];
     lines.push('Arrival : ' + (cinEl && cinEl.value ? cinEl.value : 'Not specified'));
     lines.push('Departure : ' + (coutEl && coutEl.value ? coutEl.value : 'Not specified'));
+    lines.push('Estimated price : ' + estimatedPriceLine);
     lines.push('Guests : ' + (guestsEl ? guestsEl.value : 'Not specified'));
     lines.push('Preferred currency : ' + (currencyEl ? currencyEl.value : 'EUR'));
     lines.push('Email    : ' + emailEl.value);
