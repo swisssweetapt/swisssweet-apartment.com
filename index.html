@@ -1919,7 +1919,7 @@
 </div>
 <div class="hero-offer-badge-desktop">
 <div class="offer-flash-row"><span class="offer-flash-dot"></span>Flash deal</div>
-<div class="offer-dates" id="offer-dates-desktop">28–29 July</div>
+<div class="offer-dates" id="offer-dates-desktop">28–30 (2 nights)</div>
 <div class="offer-price-row">
 <span class="offer-price-old" id="offer-price-old-desktop">110 EUR</span>
 <span class="offer-price-new" id="offer-price-desktop">90 EUR</span>
@@ -1945,7 +1945,7 @@ A 97 m² holiday apartment for families, couples and friends, 5 minutes from the
 </p>
 <div class="hero-postcards" aria-label="Travel notes">
 <div class="hero-postcard"><div class="hero-postcard-icon">☀</div><div class="hero-card-title">Summer 2026</div><div class="hero-card-text">Dates still available</div></div>
-<div class="hero-postcard offer-card"><div class="hero-postcard-icon">★</div><div class="hero-card-title" id="offer-title-mobile">28–29 July special</div><div class="hero-card-text" id="offer-price-mobile">100 EUR / night</div></div>
+<div class="hero-postcard offer-card"><div class="hero-postcard-icon">★</div><div class="hero-card-title" id="offer-title-mobile">28–30 (2 nights) special</div><div class="hero-card-text" id="offer-price-mobile">90 EUR / night</div></div>
 </div>
 <div class="hero-actions">
 <a class="btn-coral" href="#booking">
@@ -2631,37 +2631,27 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function getNightRate(dateStr) {
-    var cfg = window.PRICE_CONFIG || { basePrice: 110, specialOffer: { dates: [], price: 110 } };
+    var cfg = window.PRICE_CONFIG || { basePrice: 110, specialOffer: { dates: ['2026-07-28', '2026-07-29'], price: 90 } };
     return cfg.specialOffer.dates.indexOf(dateStr) !== -1 ? cfg.specialOffer.price : cfg.basePrice;
   }
 
   window.calcPrice = function () {
-    var l = L[currentLang];
     var amtEl = document.getElementById('cal-amount');
     var fromLabelEl = document.getElementById('cal-from-label');
     if (!amtEl) { return; }
-    var cfg = window.PRICE_CONFIG || { basePrice: 110 };
+    var cfg = window.PRICE_CONFIG || { basePrice: 110, lowSeasonPrice: 80 };
 
-    var cinEl = document.getElementById('checkin');
-    var coutEl = document.getElementById('checkout');
+    if (fromLabelEl) { fromLabelEl.style.display = 'none'; }
+    amtEl.style.fontSize = '1.15rem';
+    amtEl.innerHTML = 'Summer: ' + cfg.basePrice + ' EUR <span style="font-size:0.85rem;opacity:0.7">/ night</span><br/>Off season: ' + (cfg.lowSeasonPrice || 80) + ' EUR <span style="font-size:0.85rem;opacity:0.7">/ night</span>';
+  };
 
-    if (!cinEl || !coutEl || !cinEl.value || !coutEl.value) {
-      if (fromLabelEl) { fromLabelEl.style.display = 'none'; }
-      amtEl.style.fontSize = '1.15rem';
-      amtEl.innerHTML = 'Summer: ' + cfg.basePrice + ' EUR <span style="font-size:0.85rem;opacity:0.7">/ night</span><br/>Off season: ' + (cfg.lowSeasonPrice || 80) + ' EUR <span style="font-size:0.85rem;opacity:0.7">/ night</span>';
-      return;
-    }
-
-    var start = new Date(cinEl.value + 'T00:00:00');
-    var end = new Date(coutEl.value + 'T00:00:00');
+  window.computeStayTotal = function (checkinVal, checkoutVal) {
+    if (!checkinVal || !checkoutVal) { return null; }
+    var start = new Date(checkinVal + 'T00:00:00');
+    var end = new Date(checkoutVal + 'T00:00:00');
     var nights = Math.round((end - start) / 86400000);
-    if (nights < 1) {
-      if (fromLabelEl) { fromLabelEl.style.display = 'none'; }
-      amtEl.style.fontSize = '1.15rem';
-      amtEl.innerHTML = 'Summer: ' + cfg.basePrice + ' EUR <span style="font-size:0.85rem;opacity:0.7">/ night</span><br/>Off season: ' + (cfg.lowSeasonPrice || 80) + ' EUR <span style="font-size:0.85rem;opacity:0.7">/ night</span>';
-      return;
-    }
-
+    if (nights < 1) { return null; }
     var total = 0;
     var cursor = new Date(start);
     for (var i = 0; i < nights; i++) {
@@ -2669,11 +2659,7 @@ document.addEventListener('DOMContentLoaded', function () {
       total += getNightRate(ds);
       cursor.setDate(cursor.getDate() + 1);
     }
-
-    var perNight = Math.round(total / nights);
-    if (fromLabelEl) { fromLabelEl.style.display = 'block'; fromLabelEl.textContent = nights + (nights === 1 ? ' night' : ' nights') + ' total'; }
-    amtEl.style.fontSize = '2rem';
-    amtEl.innerHTML = total + ' EUR <span style="font-size:1rem;opacity:0.7">(' + perNight + '/night)</span>';
+    return { nights: nights, total: total, perNight: Math.round(total / nights) };
   };
 
   var tracks = [
@@ -3172,7 +3158,9 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     statusEl.textContent = "Your dates are selected";
-    stayBox.innerHTML = "<strong>Arrival:</strong> " + niceDate(selectedStart) + " · <strong>Departure:</strong> " + niceDate(selectedEnd);
+    var priceInfo = (typeof window.computeStayTotal === "function") ? window.computeStayTotal(selectedStart, selectedEnd) : null;
+    var priceHtml = priceInfo ? (" · <strong>" + priceInfo.nights + (priceInfo.nights === 1 ? " night" : " nights") + ":</strong> " + priceInfo.total + " EUR (" + priceInfo.perNight + "/night)") : "";
+    stayBox.innerHTML = "<strong>Arrival:</strong> " + niceDate(selectedStart) + " · <strong>Departure:</strong> " + niceDate(selectedEnd) + priceHtml;
   }
 
   function setSelectedDates(start, end) {
@@ -3463,8 +3451,9 @@ document.addEventListener('DOMContentLoaded', function () {
       
       summaryEl.innerHTML = "<strong>Arrival:</strong> " + niceDate(selectedStart) + " · <strong>Departure:</strong> —";
     } else {
-      
-      summaryEl.innerHTML = "<strong>Arrival:</strong> " + niceDate(selectedStart) + " · <strong>Departure:</strong> " + niceDate(selectedEnd);
+      var priceInfo = (typeof window.computeStayTotal === "function") ? window.computeStayTotal(selectedStart, selectedEnd) : null;
+      var priceHtml = priceInfo ? (" · <strong>" + priceInfo.nights + (priceInfo.nights === 1 ? " night" : " nights") + ":</strong> " + priceInfo.total + " EUR (" + priceInfo.perNight + "/night)") : "";
+      summaryEl.innerHTML = "<strong>Arrival:</strong> " + niceDate(selectedStart) + " · <strong>Departure:</strong> " + niceDate(selectedEnd) + priceHtml;
     }
   }
   function showError(message) {
