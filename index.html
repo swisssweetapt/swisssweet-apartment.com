@@ -2,7 +2,7 @@
 
 <html lang="en">
 <head>
-<script src="/assets/pricing-banner.js"></script>
+<script src="/assets/price-config.js"></script>
 
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-GRKXT8R00V"></script>
@@ -541,6 +541,15 @@
   .hero-card-title { position:relative; z-index:1; font-size:clamp(0.68rem, 1.05vw, 0.76rem); font-weight:700; letter-spacing:0.045em; text-transform:uppercase; color:var(--turquoise-deep); line-height:1.22; overflow-wrap:normal; hyphens:none; }
   .hero-card-text { position:relative; z-index:1; margin-top:0.2rem; font-family:var(--serif); font-size:clamp(0.9rem, 1.25vw, 0.98rem); font-style:italic; font-weight:300; line-height:1.18; color:#274f50; }
   .hero-postcard:nth-child(2) .hero-postcard-icon { color:var(--turquoise-dark); }
+  .hero-postcard.offer-card { display:none; }
+  .hero-offer-badge-desktop { display:flex; flex-direction:column; align-items:flex-start; gap:0.15rem; position:absolute; top:6.5rem; right:4rem; z-index:5; background:linear-gradient(135deg, var(--coral), #b8391a); color:#fff; padding:1.1rem 1.6rem; border-radius:16px; box-shadow:0 20px 46px rgba(0,0,0,0.32); transform:rotate(3deg); border:2px solid rgba(255,255,255,0.35); }
+  .hero-offer-badge-desktop .offer-eyebrow { font-size:0.72rem; font-weight:700; letter-spacing:0.09em; text-transform:uppercase; opacity:0.92; }
+  .hero-offer-badge-desktop .offer-dates { font-family:var(--serif); font-size:1.35rem; font-weight:300; margin:0.15rem 0 0.3rem; line-height:1.1; }
+  .hero-offer-badge-desktop .offer-price { font-size:1rem; font-weight:700; background:rgba(255,255,255,0.22); padding:0.2rem 0.65rem; border-radius:999px; }
+  @media (max-width: 900px) {
+    .hero-offer-badge-desktop { display:none; }
+    .hero-postcard.offer-card { display:block; }
+  }
 
 .payment-reassurance { margin:0.95rem 1.5rem 0; background:var(--turquoise-pale); border:1px solid rgba(42,122,122,0.16); color:var(--turquoise-deep); border-radius:10px; padding:0.85rem 1rem; font-size:0.84rem; line-height:1.55; text-align:center; }
   .payment-reassurance span::before { content:'✓ '; color:var(--coral); font-weight:700; }
@@ -1817,9 +1826,6 @@
 
 </head>
 <body id="top">
-<div id="price-promo-banner" style="background:#1f6f63;color:#fff;text-align:center;padding:0.65rem 1rem;font-size:0.88rem;line-height:1.4;">
-<strong>Special offer 28–29 July (2 nights):</strong> 100 EUR / night &nbsp;&middot;&nbsp; <a href="#booking" style="color:#fff;text-decoration:underline;">Book now</a> &nbsp;&middot;&nbsp; From 110 EUR / night
-</div>
 <!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox">
 <button class="lightbox-close" onclick="closeLightbox()" type="button">✕</button>
@@ -1866,11 +1872,16 @@
 <a href="#blog" onclick="closeMobileMenu()">Blog & Tips</a>
 <a href="/faq.html" onclick="closeMobileMenu()">FAQ</a>
 <div class="mobile-lang-row"><a class="lang-btn active" href="/">EN</a><a class="lang-btn " href="/fr/">FR</a><a class="lang-btn " href="/de/">DE</a><a class="lang-btn " href="/sq/">AL</a><a class="lang-btn " href="/it/">IT</a><a class="lang-btn " href="/pl/">PL</a></div>
-<a class="mobile-book" href="#booking" onclick="closeMobileMenu()">Check availability</a>
+<a class="mobile-book" href="#booking" onclick="closeMobileMenu()">Request booking</a>
 </div>
 <!-- HERO -->
 <section class="hero">
 <div class="hero-bg" style="position:absolute;inset:0;background:url('/sunset3.jpeg') center/cover no-repeat;">
+</div>
+<div class="hero-offer-badge-desktop">
+<div class="offer-eyebrow">Limited offer</div>
+<div class="offer-dates" id="offer-dates-desktop">28–29 July</div>
+<div class="offer-price" id="offer-price-desktop">100 EUR / night</div>
 </div>
 <div class="hero-content">
 <p class="hero-tag">San Pietro Resort · Lalzi Bay · Albania</p>
@@ -1890,12 +1901,12 @@ A 97 m² holiday apartment for families, couples and friends, 5 minutes from the
 </p>
 <div class="hero-postcards" aria-label="Travel notes">
 <div class="hero-postcard"><div class="hero-postcard-icon">☀</div><div class="hero-card-title">Summer 2026</div><div class="hero-card-text">Dates still available</div></div>
-<div class="hero-postcard"><div class="hero-postcard-icon">✉</div><div class="hero-card-title">Book without intermediaries</div><div class="hero-card-text">and save</div></div>
+<div class="hero-postcard offer-card"><div class="hero-postcard-icon">★</div><div class="hero-card-title" id="offer-title-mobile">28–29 July special</div><div class="hero-card-text" id="offer-price-mobile">100 EUR / night</div></div>
 </div>
 <div class="hero-actions">
 <a class="btn-coral" href="#booking">
 
-Check availability
+Request booking
 
 
 </a>
@@ -2331,8 +2342,8 @@ Good to know before you book
 <div class="booking-card" style="max-width:860px;margin:0 auto;background:white;border-radius:12px;box-shadow:0 6px 32px rgba(0,0,0,0.12);overflow:hidden;border:1px solid #ddd">
 <!-- PRICE HEADER -->
 <div style="background:var(--turquoise-dark);color:white;padding:1.2rem 1.5rem;text-align:center">
-<div id="cal-from-label" style="font-size:0.72rem;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.6);margin-bottom:0.3rem">From</div>
-<div id="cal-amount" style="font-family:var(--serif);font-size:2rem;font-weight:300">110 EUR <span style="font-size:1rem;opacity:0.7">/ night</span></div>
+<div id="cal-from-label" style="font-size:0.72rem;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.6);margin-bottom:0.3rem;display:none">From</div>
+<div id="cal-amount" style="font-family:var(--serif);font-size:1.15rem;font-weight:300;line-height:1.6">Summer: 110 EUR <span style="font-size:0.85rem;opacity:0.7">/ night</span><br/>Off season: 80 EUR <span style="font-size:0.85rem;opacity:0.7">/ night</span></div>
 </div>
 
 <!-- CLICKABLE CALENDAR -->
@@ -2554,12 +2565,64 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  function applyPriceConfigToBadges() {
+    var cfg = window.PRICE_CONFIG;
+    if (!cfg) { return; }
+
+    var dEl = document.getElementById('offer-dates-desktop');
+    var pEl = document.getElementById('offer-price-desktop');
+    var pmEl = document.getElementById('offer-price-mobile');
+    var tmEl = document.getElementById('offer-title-mobile');
+
+    if (dEl) { dEl.textContent = cfg.specialOffer.label; }
+    if (pEl) { pEl.textContent = cfg.specialOffer.price + ' EUR / night'; }
+    if (pmEl) { pmEl.textContent = cfg.specialOffer.price + ' EUR / night'; }
+    if (tmEl) { tmEl.textContent = cfg.specialOffer.label + ' special'; }
+  }
+
+  function getNightRate(dateStr) {
+    var cfg = window.PRICE_CONFIG || { basePrice: 110, specialOffer: { dates: [], price: 110 } };
+    return cfg.specialOffer.dates.indexOf(dateStr) !== -1 ? cfg.specialOffer.price : cfg.basePrice;
+  }
+
   window.calcPrice = function () {
     var l = L[currentLang];
     var amtEl = document.getElementById('cal-amount');
-    if (amtEl) {
-      amtEl.innerHTML = '110 EUR <span style="font-size:1rem;opacity:0.7">' + l.night + '</span>';
+    var fromLabelEl = document.getElementById('cal-from-label');
+    if (!amtEl) { return; }
+    var cfg = window.PRICE_CONFIG || { basePrice: 110 };
+
+    var cinEl = document.getElementById('checkin');
+    var coutEl = document.getElementById('checkout');
+
+    if (!cinEl || !coutEl || !cinEl.value || !coutEl.value) {
+      if (fromLabelEl) { fromLabelEl.style.display = 'none'; }
+      amtEl.style.fontSize = '1.15rem';
+      amtEl.innerHTML = 'Summer: ' + cfg.basePrice + ' EUR <span style="font-size:0.85rem;opacity:0.7">/ night</span><br/>Off season: ' + (cfg.lowSeasonPrice || 80) + ' EUR <span style="font-size:0.85rem;opacity:0.7">/ night</span>';
+      return;
     }
+
+    var start = new Date(cinEl.value + 'T00:00:00');
+    var end = new Date(coutEl.value + 'T00:00:00');
+    var nights = Math.round((end - start) / 86400000);
+    if (nights < 1) {
+      if (fromLabelEl) { fromLabelEl.style.display = 'none'; }
+      amtEl.style.fontSize = '1.15rem';
+      amtEl.innerHTML = 'Summer: ' + cfg.basePrice + ' EUR <span style="font-size:0.85rem;opacity:0.7">/ night</span><br/>Off season: ' + (cfg.lowSeasonPrice || 80) + ' EUR <span style="font-size:0.85rem;opacity:0.7">/ night</span>';
+      return;
+    }
+
+    var total = 0;
+    var cursor = new Date(start);
+    for (var i = 0; i < nights; i++) {
+      var ds = cursor.getFullYear() + '-' + String(cursor.getMonth() + 1).padStart(2, '0') + '-' + String(cursor.getDate()).padStart(2, '0');
+      total += getNightRate(ds);
+      cursor.setDate(cursor.getDate() + 1);
+    }
+
+    if (fromLabelEl) { fromLabelEl.style.display = 'block'; fromLabelEl.textContent = nights + (nights === 1 ? ' night' : ' nights') + ' total'; }
+    amtEl.style.fontSize = '2rem';
+    amtEl.innerHTML = total + ' EUR';
   };
 
   var tracks = [
@@ -2850,6 +2913,7 @@ document.addEventListener('DOMContentLoaded', function () {
   setEl('audio-title', tracks[0].title);
   updateLabels();
   window.calcPrice();
+  applyPriceConfigToBadges();
 
 });
 </script>
