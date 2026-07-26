@@ -40,9 +40,13 @@ window.SITE_PRICE_CONFIG = {
     var offerEnd = cfg.specialOffer.endDate ? new Date(cfg.specialOffer.endDate + 'T23:59:59') : null;
     var showSpecial = cfg.specialOffer.active && offerEnd && now <= offerEnd;
 
-    // --- Bannière en haut de page ---
-    var banner = document.createElement('div');
-    banner.id = 'price-promo-banner';
+    // --- Bannière en haut de page (met à jour la bannière statique si elle existe déjà dans le HTML, sinon en crée une) ---
+    var banner = document.getElementById('price-promo-banner');
+    var bannerExisted = !!banner;
+    if (!banner) {
+      banner = document.createElement('div');
+      banner.id = 'price-promo-banner';
+    }
     banner.style.cssText = 'background:#1f6f63;color:#fff;text-align:center;padding:0.65rem 1rem;font-size:0.88rem;line-height:1.4;position:relative;z-index:1000;font-family:inherit;';
     var label = cfg.specialOffer.label[lang] || cfg.specialOffer.label.en;
 
@@ -56,10 +60,12 @@ window.SITE_PRICE_CONFIG = {
         ' &nbsp;\u00b7&nbsp; <a href="#booking" style="color:#fff;text-decoration:underline;">' + t.cta + '</a>';
     }
 
-    if (document.body.firstChild) {
-      document.body.insertBefore(banner, document.body.firstChild);
-    } else {
-      document.body.appendChild(banner);
+    if (!bannerExisted) {
+      if (document.body.firstChild) {
+        document.body.insertBefore(banner, document.body.firstChild);
+      } else {
+        document.body.appendChild(banner);
+      }
     }
 
     // --- Mise à jour du prix affiché dans le calculateur (#cal-amount) ---
