@@ -1818,7 +1818,7 @@
 </head>
 <body id="top">
 <div id="price-promo-banner" style="background:#1f6f63;color:#fff;text-align:center;padding:0.65rem 1rem;font-size:0.88rem;line-height:1.4;">
-<strong>Special offer 28–30 July:</strong> 100 EUR / night &nbsp;&middot;&nbsp; <a href="#booking" style="color:#fff;text-decoration:underline;">Book now</a> &nbsp;&middot;&nbsp; From 110 EUR / night
+<strong>Special offer 28–29 July (2 nights):</strong> 100 EUR / night &nbsp;&middot;&nbsp; <a href="#booking" style="color:#fff;text-decoration:underline;">Book now</a> &nbsp;&middot;&nbsp; From 110 EUR / night
 </div>
 <!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox">
@@ -3079,14 +3079,18 @@ document.addEventListener('DOMContentLoaded', function () {
   };
 
   function handleDateClick(dateString) {
-    if (isPast(dateString) || isBooked(dateString)) return;
+    if (isPast(dateString)) return;
 
-    if (!selectedStart || selectedEnd) {
+    const selectingStart = !selectedStart || selectedEnd;
+
+    if (selectingStart) {
+      if (isBooked(dateString)) return;
       setSelectedDates(dateString, "");
       return;
     }
 
     if (dateString <= selectedStart) {
+      if (isBooked(dateString)) return;
       setSelectedDates(dateString, "");
       return;
     }
@@ -3155,7 +3159,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
       btn.setAttribute("aria-label", dateString + (booked ? " booked" : past ? " past date" : " available"));
 
-      if (past || booked) {
+      const selectingDeparture = !!(selectedStart && !selectedEnd);
+      const clickBlocked = past || (booked && !selectingDeparture);
+
+      if (clickBlocked) {
         btn.disabled = true;
       } else {
         btn.addEventListener("click", function () {
@@ -3332,14 +3339,18 @@ document.addEventListener('DOMContentLoaded', function () {
   }
   function handleMiniDateClick(dateString) {
     clearError();
-    if (isPast(dateString) || isBooked(dateString)) return;
+    if (isPast(dateString)) return;
 
-    if (!selectedStart || selectedEnd) {
+    const selectingStart = !selectedStart || selectedEnd;
+
+    if (selectingStart) {
+      if (isBooked(dateString)) return;
       selectDates(dateString, "");
       return;
     }
 
     if (dateString <= selectedStart) {
+      if (isBooked(dateString)) return;
       selectDates(dateString, "");
       return;
     }
@@ -3396,7 +3407,10 @@ document.addEventListener('DOMContentLoaded', function () {
       if (ds === selectedStart) btn.classList.add("selected-start");
       if (ds === selectedEnd) btn.classList.add("selected-end");
 
-      if (isPast(ds) || isBooked(ds)) {
+      const selectingDeparture = !!(selectedStart && !selectedEnd);
+      const clickBlocked = isPast(ds) || (isBooked(ds) && !selectingDeparture);
+
+      if (clickBlocked) {
         btn.disabled = true;
       } else {
         btn.addEventListener("click", function () { handleMiniDateClick(ds); });
