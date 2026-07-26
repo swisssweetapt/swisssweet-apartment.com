@@ -550,8 +550,9 @@
   @keyframes offerPulse { 0%,100% { opacity:1; transform:scale(1); } 50% { opacity:0.4; transform:scale(0.7); } }
   .hero-offer-badge-desktop .offer-dates { font-family:var(--serif); font-size:1.3rem; font-weight:300; margin:0.3rem 0 0.4rem; line-height:1.05; }
   .hero-offer-badge-desktop .offer-price-row { display:flex; align-items:baseline; gap:0.5rem; }
+  .hero-offer-badge-desktop .offer-total-row { font-size:0.78rem; opacity:0.9; margin-top:0.2rem; }
   .hero-offer-badge-desktop .offer-price-old { font-size:0.95rem; text-decoration:line-through; opacity:0.65; }
-  .hero-offer-badge-desktop .offer-price-new { font-family:var(--serif); font-size:1.55rem; font-weight:500; }
+  .hero-offer-badge-desktop .offer-price-new { font-family:var(--serif); font-size:1.9rem; font-weight:600; }
   .hero-offer-badge-desktop .offer-price-unit { font-size:0.68rem; opacity:0.8; align-self:flex-end; margin-bottom:0.2rem; }
   .hero-offer-badge-desktop .offer-save-tag { margin-top:0.5rem; align-self:flex-start; background:#FFD166; color:#5C3A00; font-size:0.66rem; font-weight:800; letter-spacing:0.03em; padding:0.22rem 0.6rem; border-radius:999px; }
   @media (max-width: 900px) {
@@ -1921,10 +1922,10 @@
 <div class="offer-flash-row"><span class="offer-flash-dot"></span>Flash deal</div>
 <div class="offer-dates" id="offer-dates-desktop">28–30 (2 nights)</div>
 <div class="offer-price-row">
-<span class="offer-price-old" id="offer-price-old-desktop">110 EUR</span>
-<span class="offer-price-new" id="offer-price-desktop">90 EUR</span>
-<span class="offer-price-unit">/ night</span>
+<span class="offer-price-old" id="offer-price-old-desktop">220 EUR</span>
+<span class="offer-price-new" id="offer-total-desktop">180 EUR</span>
 </div>
+<div class="offer-total-row" id="offer-price-desktop">only 90 EUR / night</div>
 <div class="offer-save-tag" id="offer-save-tag-desktop">Save 18%</div>
 </div>
 <div class="hero-content">
@@ -2617,16 +2618,21 @@ document.addEventListener('DOMContentLoaded', function () {
     var pEl = document.getElementById('offer-price-desktop');
     var pOldEl = document.getElementById('offer-price-old-desktop');
     var saveEl = document.getElementById('offer-save-tag-desktop');
+    var totalEl = document.getElementById('offer-total-desktop');
     var pmEl = document.getElementById('offer-price-mobile');
     var tmEl = document.getElementById('offer-title-mobile');
 
     var pct = Math.round((1 - (cfg.specialOffer.price / cfg.basePrice)) * 100);
+    var offerNights = cfg.specialOffer.dates.length;
+    var offerTotal = cfg.specialOffer.price * offerNights;
+    var offerFullPrice = cfg.basePrice * offerNights;
 
     if (dEl) { dEl.textContent = cfg.specialOffer.label; }
-    if (pEl) { pEl.textContent = cfg.specialOffer.price + ' EUR'; }
-    if (pOldEl) { pOldEl.textContent = cfg.basePrice + ' EUR'; }
+    if (pOldEl) { pOldEl.textContent = offerFullPrice + ' EUR'; }
+    if (totalEl) { totalEl.textContent = offerTotal + ' EUR'; }
+    if (pEl) { pEl.textContent = 'only ' + cfg.specialOffer.price + ' EUR / night'; }
     if (saveEl) { saveEl.textContent = 'Save ' + pct + '%'; }
-    if (pmEl) { pmEl.textContent = cfg.specialOffer.price + ' EUR / night (save ' + pct + '%)'; }
+    if (pmEl) { pmEl.textContent = cfg.specialOffer.price + ' EUR / night · ' + offerTotal + ' EUR total (save ' + pct + '%)'; }
     if (tmEl) { tmEl.textContent = cfg.specialOffer.label + ' flash deal'; }
   }
 
