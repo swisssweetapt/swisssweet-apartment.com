@@ -542,14 +542,23 @@
   .hero-card-text { position:relative; z-index:1; margin-top:0.2rem; font-family:var(--serif); font-size:clamp(0.9rem, 1.25vw, 0.98rem); font-style:italic; font-weight:300; line-height:1.18; color:#274f50; }
   .hero-postcard:nth-child(2) .hero-postcard-icon { color:var(--turquoise-dark); }
   .hero-postcard.offer-card { display:none; }
-  .hero-offer-badge-desktop { display:flex; flex-direction:column; align-items:flex-start; gap:0.15rem; position:absolute; top:6.5rem; right:4rem; z-index:5; background:linear-gradient(135deg, var(--coral), #b8391a); color:#fff; padding:1.1rem 1.6rem; border-radius:16px; box-shadow:0 20px 46px rgba(0,0,0,0.32); transform:rotate(3deg); border:2px solid rgba(255,255,255,0.35); }
-  .hero-offer-badge-desktop .offer-eyebrow { font-size:0.72rem; font-weight:700; letter-spacing:0.09em; text-transform:uppercase; opacity:0.92; }
-  .hero-offer-badge-desktop .offer-dates { font-family:var(--serif); font-size:1.35rem; font-weight:300; margin:0.15rem 0 0.3rem; line-height:1.1; }
-  .hero-offer-badge-desktop .offer-price { font-size:1rem; font-weight:700; background:rgba(255,255,255,0.22); padding:0.2rem 0.65rem; border-radius:999px; }
+  .hero-postcard.offer-card .hero-postcard-icon { color:#E0532E; }
+  .hero-postcard.offer-card .hero-card-title { color:#A22E13; }
+  .hero-offer-badge-desktop { display:flex; flex-direction:column; align-items:flex-start; gap:0.2rem; position:absolute; top:6rem; right:3.5rem; z-index:5; background:linear-gradient(155deg, #E0532E, #A22E13); color:#fff; padding:1.25rem 1.75rem; border-radius:18px; box-shadow:0 24px 54px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.12) inset; transform:rotate(-2deg); border:2px solid rgba(255,255,255,0.4); min-width:200px; }
+  .hero-offer-badge-desktop .offer-flash-row { display:flex; align-items:center; gap:0.35rem; font-size:0.68rem; font-weight:700; letter-spacing:0.09em; text-transform:uppercase; opacity:0.95; }
+  .hero-offer-badge-desktop .offer-flash-dot { width:6px; height:6px; border-radius:50%; background:#FFD166; box-shadow:0 0 8px 2px rgba(255,209,102,0.8); animation:offerPulse 1.4s ease-in-out infinite; }
+  @keyframes offerPulse { 0%,100% { opacity:1; transform:scale(1); } 50% { opacity:0.4; transform:scale(0.7); } }
+  .hero-offer-badge-desktop .offer-dates { font-family:var(--serif); font-size:1.3rem; font-weight:300; margin:0.3rem 0 0.4rem; line-height:1.05; }
+  .hero-offer-badge-desktop .offer-price-row { display:flex; align-items:baseline; gap:0.5rem; }
+  .hero-offer-badge-desktop .offer-price-old { font-size:0.95rem; text-decoration:line-through; opacity:0.65; }
+  .hero-offer-badge-desktop .offer-price-new { font-family:var(--serif); font-size:1.55rem; font-weight:500; }
+  .hero-offer-badge-desktop .offer-price-unit { font-size:0.68rem; opacity:0.8; align-self:flex-end; margin-bottom:0.2rem; }
+  .hero-offer-badge-desktop .offer-save-tag { margin-top:0.5rem; align-self:flex-start; background:#FFD166; color:#5C3A00; font-size:0.66rem; font-weight:800; letter-spacing:0.03em; padding:0.22rem 0.6rem; border-radius:999px; }
   @media (max-width: 900px) {
     .hero-offer-badge-desktop { display:none; }
     .hero-postcard.offer-card { display:block; }
   }
+
 
 .payment-reassurance { margin:0.95rem 1.5rem 0; background:var(--turquoise-pale); border:1px solid rgba(42,122,122,0.16); color:var(--turquoise-deep); border-radius:10px; padding:0.85rem 1rem; font-size:0.84rem; line-height:1.55; text-align:center; }
   .payment-reassurance span::before { content:'✓ '; color:var(--coral); font-weight:700; }
@@ -1018,6 +1027,24 @@
   text-align: center;
   white-space: nowrap;
   overflow: hidden;
+}
+
+.booking-day.half-booked {
+  cursor: pointer;
+  color: var(--turquoise-deep);
+  border-color: var(--coral);
+  background: linear-gradient(135deg, #ffffff 0%, #ffffff 46%, var(--turquoise-pale) 54%, var(--turquoise-pale) 100%);
+}
+
+.booking-day.half-booked::after {
+  content: "Check-out ok";
+  color: var(--coral-dark, #993C1D);
+  font-size: 0.44rem;
+}
+
+.booking-day.half-booked:hover {
+  border-color: var(--coral);
+  box-shadow: 0 6px 14px rgba(255,107,71,0.28);
 }
 
 .booking-day.selected-start,
@@ -1520,6 +1547,18 @@
   color: var(--turquoise-deep) !important;
 }
 
+.floating-mini-day.half-booked {
+  cursor: pointer !important;
+  border-color: var(--coral) !important;
+  background: linear-gradient(135deg, #ffffff 0%, #ffffff 46%, var(--turquoise-pale) 54%, var(--turquoise-pale) 100%) !important;
+}
+
+.floating-mini-day.half-booked::after {
+  content: "Check-out ok" !important;
+  color: var(--coral-dark, #993C1D) !important;
+  font-size: 0.36rem !important;
+}
+
 .floating-mini-day.selected-start,
 .floating-mini-day.selected-end,
 .floating-mini-day.in-range {
@@ -1879,9 +1918,14 @@
 <div class="hero-bg" style="position:absolute;inset:0;background:url('/sunset3.jpeg') center/cover no-repeat;">
 </div>
 <div class="hero-offer-badge-desktop">
-<div class="offer-eyebrow">Limited offer</div>
+<div class="offer-flash-row"><span class="offer-flash-dot"></span>Flash deal</div>
 <div class="offer-dates" id="offer-dates-desktop">28–29 July</div>
-<div class="offer-price" id="offer-price-desktop">100 EUR / night</div>
+<div class="offer-price-row">
+<span class="offer-price-old" id="offer-price-old-desktop">110 EUR</span>
+<span class="offer-price-new" id="offer-price-desktop">90 EUR</span>
+<span class="offer-price-unit">/ night</span>
+</div>
+<div class="offer-save-tag" id="offer-save-tag-desktop">Save 18%</div>
 </div>
 <div class="hero-content">
 <p class="hero-tag">San Pietro Resort · Lalzi Bay · Albania</p>
@@ -2571,13 +2615,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
     var dEl = document.getElementById('offer-dates-desktop');
     var pEl = document.getElementById('offer-price-desktop');
+    var pOldEl = document.getElementById('offer-price-old-desktop');
+    var saveEl = document.getElementById('offer-save-tag-desktop');
     var pmEl = document.getElementById('offer-price-mobile');
     var tmEl = document.getElementById('offer-title-mobile');
 
+    var pct = Math.round((1 - (cfg.specialOffer.price / cfg.basePrice)) * 100);
+
     if (dEl) { dEl.textContent = cfg.specialOffer.label; }
-    if (pEl) { pEl.textContent = cfg.specialOffer.price + ' EUR / night'; }
-    if (pmEl) { pmEl.textContent = cfg.specialOffer.price + ' EUR / night'; }
-    if (tmEl) { tmEl.textContent = cfg.specialOffer.label + ' special'; }
+    if (pEl) { pEl.textContent = cfg.specialOffer.price + ' EUR'; }
+    if (pOldEl) { pOldEl.textContent = cfg.basePrice + ' EUR'; }
+    if (saveEl) { saveEl.textContent = 'Save ' + pct + '%'; }
+    if (pmEl) { pmEl.textContent = cfg.specialOffer.price + ' EUR / night (save ' + pct + '%)'; }
+    if (tmEl) { tmEl.textContent = cfg.specialOffer.label + ' flash deal'; }
   }
 
   function getNightRate(dateStr) {
@@ -2620,9 +2670,10 @@ document.addEventListener('DOMContentLoaded', function () {
       cursor.setDate(cursor.getDate() + 1);
     }
 
+    var perNight = Math.round(total / nights);
     if (fromLabelEl) { fromLabelEl.style.display = 'block'; fromLabelEl.textContent = nights + (nights === 1 ? ' night' : ' nights') + ' total'; }
     amtEl.style.fontSize = '2rem';
-    amtEl.innerHTML = total + ' EUR';
+    amtEl.innerHTML = total + ' EUR <span style="font-size:1rem;opacity:0.7">(' + perNight + '/night)</span>';
   };
 
   var tracks = [
@@ -3059,6 +3110,12 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  function isCheckoutEligible(dateString) {
+    return bookedRanges.some(function (range) {
+      return range.start === dateString;
+    });
+  }
+
   function isRangeBlocked(start, end) {
     if (!start || !end) return false;
 
@@ -3204,6 +3261,7 @@ document.addEventListener('DOMContentLoaded', function () {
       const dateString = toDateOnly(date);
       const past = isPast(dateString);
       const booked = isBooked(dateString);
+      const checkoutEligible = isCheckoutEligible(dateString);
 
       const btn = document.createElement("button");
       btn.type = "button";
@@ -3221,10 +3279,13 @@ document.addEventListener('DOMContentLoaded', function () {
       if (dateString === selectedStart) btn.classList.add("selected-start");
       if (dateString === selectedEnd) btn.classList.add("selected-end");
 
-      btn.setAttribute("aria-label", dateString + (booked ? " booked" : past ? " past date" : " available"));
-
       const selectingDeparture = !!(selectedStart && !selectedEnd);
-      const clickBlocked = past || (booked && !selectingDeparture);
+      const halfBooked = booked && checkoutEligible && selectingDeparture;
+      if (halfBooked) btn.classList.add("half-booked");
+
+      btn.setAttribute("aria-label", dateString + (halfBooked ? " check-out only" : booked ? " booked" : past ? " past date" : " available"));
+
+      const clickBlocked = past || (booked && !halfBooked);
 
       if (clickBlocked) {
         btn.disabled = true;
@@ -3360,6 +3421,9 @@ document.addEventListener('DOMContentLoaded', function () {
       return dateString >= range.start && dateString <= range.end;
     });
   }
+  function isCheckoutEligible(dateString) {
+    return bookedRanges.some(function(range) { return range.start === dateString; });
+  }
   function isRangeBlocked(start, end) {
     let cursor = fromDateOnly(start);
     const endDate = fromDateOnly(end);
@@ -3463,16 +3527,19 @@ document.addEventListener('DOMContentLoaded', function () {
       btn.className = "floating-mini-day";
       btn.textContent = day;
 
+      const booked = isBooked(ds);
+      const selectingDeparture = !!(selectedStart && !selectedEnd);
+      const halfBooked = booked && isCheckoutEligible(ds) && selectingDeparture;
+
       if (isPast(ds)) btn.classList.add("past");
-      if (isBooked(ds)) btn.classList.add("booked");
-      if (ds === toDateOnly(today)) btn.classList.add("today");
+      if (booked) btn.classList.add("booked");
+      if (halfBooked) btn.classList.add("half-booked");
       if (ds === toDateOnly(today)) btn.classList.add("today");
       if (selectedStart && selectedEnd && ds > selectedStart && ds < selectedEnd) btn.classList.add("in-range");
       if (ds === selectedStart) btn.classList.add("selected-start");
       if (ds === selectedEnd) btn.classList.add("selected-end");
 
-      const selectingDeparture = !!(selectedStart && !selectedEnd);
-      const clickBlocked = isPast(ds) || (isBooked(ds) && !selectingDeparture);
+      const clickBlocked = isPast(ds) || (booked && !halfBooked);
 
       if (clickBlocked) {
         btn.disabled = true;
