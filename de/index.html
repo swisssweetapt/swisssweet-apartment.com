@@ -2,6 +2,7 @@
 
 <html lang="de">
 <head>
+<script src="/assets/price-config.js"></script>
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-GRKXT8R00V"></script>
 <script>
@@ -530,6 +531,24 @@
   .hero-card-title { position:relative; z-index:1; font-size:clamp(0.68rem, 1.05vw, 0.76rem); font-weight:700; letter-spacing:0.045em; text-transform:uppercase; color:var(--turquoise-deep); line-height:1.22; overflow-wrap:normal; hyphens:none; }
   .hero-card-text { position:relative; z-index:1; margin-top:0.2rem; font-family:var(--serif); font-size:clamp(0.9rem, 1.25vw, 0.98rem); font-style:italic; font-weight:300; line-height:1.18; color:#274f50; }
   .hero-postcard:nth-child(2) .hero-postcard-icon { color:var(--turquoise-dark); }
+  .hero-postcard.offer-card { display:none; }
+  .hero-postcard.offer-card .hero-postcard-icon { color:#E0532E; }
+  .hero-postcard.offer-card .hero-card-title { color:#A22E13; }
+  .hero-offer-badge-desktop { display:flex; flex-direction:column; align-items:flex-start; gap:0.2rem; position:absolute; top:6rem; right:3.5rem; z-index:5; background:linear-gradient(155deg, #E0532E, #A22E13); color:#fff; padding:1.25rem 1.75rem; border-radius:18px; box-shadow:0 24px 54px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.12) inset; transform:rotate(-2deg); border:2px solid rgba(255,255,255,0.4); min-width:200px; }
+  .hero-offer-badge-desktop .offer-flash-row { display:flex; align-items:center; gap:0.35rem; font-size:0.68rem; font-weight:700; letter-spacing:0.09em; text-transform:uppercase; opacity:0.95; }
+  .hero-offer-badge-desktop .offer-flash-dot { width:6px; height:6px; border-radius:50%; background:#FFD166; box-shadow:0 0 8px 2px rgba(255,209,102,0.8); animation:offerPulse 1.4s ease-in-out infinite; }
+  @keyframes offerPulse { 0%,100% { opacity:1; transform:scale(1); } 50% { opacity:0.4; transform:scale(0.7); } }
+  .hero-offer-badge-desktop .offer-dates { font-family:var(--serif); font-size:1.3rem; font-weight:300; margin:0.3rem 0 0.4rem; line-height:1.05; }
+  .hero-offer-badge-desktop .offer-price-row { display:flex; align-items:baseline; gap:0.5rem; }
+  .hero-offer-badge-desktop .offer-total-row { font-size:0.78rem; opacity:0.9; margin-top:0.2rem; }
+  .hero-offer-badge-desktop .offer-price-old { font-size:0.95rem; text-decoration:line-through; opacity:0.65; }
+  .hero-offer-badge-desktop .offer-price-new { font-family:var(--serif); font-size:1.9rem; font-weight:600; }
+  .hero-offer-badge-desktop .offer-save-tag { margin-top:0.5rem; align-self:flex-start; background:#FFD166; color:#5C3A00; font-size:0.66rem; font-weight:800; letter-spacing:0.03em; padding:0.22rem 0.6rem; border-radius:999px; }
+  @media (max-width: 900px) {
+    .hero-offer-badge-desktop { display:none; }
+    .hero-postcard.offer-card { display:block; }
+  }
+
 
 .payment-reassurance { margin:0.95rem 1.5rem 0; background:var(--turquoise-pale); border:1px solid rgba(42,122,122,0.16); color:var(--turquoise-deep); border-radius:10px; padding:0.85rem 1rem; font-size:0.84rem; line-height:1.55; text-align:center; }
   .payment-reassurance span::before { content:'✓ '; color:var(--coral); font-weight:700; }
@@ -999,6 +1018,24 @@
   text-align: center;
   white-space: nowrap;
   overflow: hidden;
+}
+
+.booking-day.half-booked {
+  cursor: pointer;
+  color: var(--turquoise-deep);
+  border-color: var(--coral);
+  background: linear-gradient(135deg, #ffffff 0%, #ffffff 46%, var(--turquoise-pale) 54%, var(--turquoise-pale) 100%);
+}
+
+.booking-day.half-booked::after {
+  content: "Check-out ok";
+  color: var(--coral-dark, #993C1D);
+  font-size: 0.44rem;
+}
+
+.booking-day.half-booked:hover {
+  border-color: var(--coral);
+  box-shadow: 0 6px 14px rgba(255,107,71,0.28);
 }
 
 .booking-day.selected-start,
@@ -1501,6 +1538,18 @@
   color: var(--turquoise-deep) !important;
 }
 
+.floating-mini-day.half-booked {
+  cursor: pointer !important;
+  border-color: var(--coral) !important;
+  background: linear-gradient(135deg, #ffffff 0%, #ffffff 46%, var(--turquoise-pale) 54%, var(--turquoise-pale) 100%) !important;
+}
+
+.floating-mini-day.half-booked::after {
+  content: "Check-out ok" !important;
+  color: var(--coral-dark, #993C1D) !important;
+  font-size: 0.36rem !important;
+}
+
 .floating-mini-day.selected-start,
 .floating-mini-day.selected-end,
 .floating-mini-day.in-range {
@@ -1852,11 +1901,21 @@
 <a href="#blog" onclick="closeMobileMenu()">Blog & Tipps</a>
 <a href="/de/faq.html" onclick="closeMobileMenu()">FAQ</a>
 <div class="mobile-lang-row"><a class="lang-btn " href="/">EN</a><a class="lang-btn " href="/fr/">FR</a><a class="lang-btn active" href="/de/">DE</a><a class="lang-btn " href="/sq/">AL</a><a class="lang-btn " href="/it/">IT</a><a class="lang-btn " href="/pl/">PL</a></div>
-<a class="mobile-book" href="#booking" onclick="closeMobileMenu()">Verfügbarkeit prüfen</a>
+<a class="mobile-book" href="#booking" onclick="closeMobileMenu()">Buchungsanfrage senden</a>
 </div>
 <!-- HERO -->
 <section class="hero">
 <div class="hero-bg" style="position:absolute;inset:0;background:url('../sunset3.jpeg') center/cover no-repeat;">
+</div>
+<div class="hero-offer-badge-desktop">
+<div class="offer-flash-row"><span class="offer-flash-dot"></span>Blitzangebot</div>
+<div class="offer-dates" id="offer-dates-desktop">28.–30. (2 Nächte)</div>
+<div class="offer-price-row">
+<span class="offer-price-old" id="offer-price-old-desktop">220 EUR</span>
+<span class="offer-price-new" id="offer-total-desktop">180 EUR</span>
+</div>
+<div class="offer-total-row" id="offer-price-desktop">nur 90 EUR / Nacht</div>
+<div class="offer-save-tag" id="offer-save-tag-desktop">-18%</div>
 </div>
 <div class="hero-content">
 <p class="hero-tag">San Pietro Resort · Lalzi Bay · Albanien</p>
@@ -1875,17 +1934,17 @@ Eine 97 m² grosse Ferienwohnung für Familien, Paare und Freundesgruppen, 5 Min
 
 </p>
 <div class="hero-deal-row">
-<div class="hero-price-badge">Ab<strong>80 EUR</strong>/ Nacht</div>
+<div class="hero-price-badge">Ab<strong>110 EUR</strong>/ Nacht</div>
 </div>
 <div class="hero-postcards" aria-label="Reisehinweise">
 <div class="hero-postcard"><div class="hero-postcard-icon">☀</div><div class="hero-card-title">Sommer 2026</div><div class="hero-card-text">Noch Termine frei</div></div>
-<div class="hero-postcard"><div class="hero-postcard-icon">✉</div><div class="hero-card-title">Ohne Vermittler buchen</div><div class="hero-card-text">und sparen</div></div>
+<div class="hero-postcard offer-card"><div class="hero-postcard-icon">★</div><div class="hero-card-title" id="offer-title-mobile">28.–30. (2 Nächte) Spezial</div><div class="hero-card-text" id="offer-price-mobile">90 EUR / Nacht</div></div>
 </div>
 <div class="hero-actions">
 <a class="btn-coral" href="#booking">
 
 
-Verfügbarkeit prüfen
+Buchungsanfrage senden
 
 </a>
 <a class="btn-outline" href="#gallery">
@@ -2321,7 +2380,7 @@ Gut zu wissen vor der Buchung
 <!-- PRICE HEADER -->
 <div style="background:var(--turquoise-dark);color:white;padding:1.2rem 1.5rem;text-align:center">
 <div id="cal-from-label" style="font-size:0.72rem;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.6);margin-bottom:0.3rem">Ab</div>
-<div id="cal-amount" style="font-family:var(--serif);font-size:2rem;font-weight:300">80 EUR <span style="font-size:1rem;opacity:0.7">/ Nacht</span></div>
+<div id="cal-amount" style="font-family:var(--serif);font-size:2rem;font-weight:300">110 EUR <span style="font-size:1rem;opacity:0.7">/ Nacht</span></div>
 </div>
 <!-- CLICKABLE CALENDAR -->
 <div class="booking-calendar-shell">
@@ -2538,12 +2597,62 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  function applyPriceConfigToBadges() {
+    var cfg = window.PRICE_CONFIG;
+    if (!cfg) { return; }
+
+    var dEl = document.getElementById('offer-dates-desktop');
+    var pEl = document.getElementById('offer-price-desktop');
+    var pOldEl = document.getElementById('offer-price-old-desktop');
+    var saveEl = document.getElementById('offer-save-tag-desktop');
+    var totalEl = document.getElementById('offer-total-desktop');
+    var pmEl = document.getElementById('offer-price-mobile');
+    var tmEl = document.getElementById('offer-title-mobile');
+
+    var pct = Math.round((1 - (cfg.specialOffer.price / cfg.basePrice)) * 100);
+    var offerNights = cfg.specialOffer.dates.length;
+    var offerTotal = cfg.specialOffer.price * offerNights;
+    var offerFullPrice = cfg.basePrice * offerNights;
+
+    if (dEl) { dEl.textContent = cfg.specialOffer.label; }
+    if (pOldEl) { pOldEl.textContent = offerFullPrice + ' EUR'; }
+    if (totalEl) { totalEl.textContent = offerTotal + ' EUR'; }
+    if (pEl) { pEl.textContent = 'nur ' + cfg.specialOffer.price + ' EUR / Nacht'; }
+    if (saveEl) { saveEl.textContent = '-' + pct + '%'; }
+    if (pmEl) { pmEl.textContent = cfg.specialOffer.price + ' EUR / Nacht · ' + offerTotal + ' EUR gesamt'; }
+    if (tmEl) { tmEl.textContent = cfg.specialOffer.label + ' Blitzangebot'; }
+  }
+
+  function getNightRate(dateStr) {
+    var cfg = window.PRICE_CONFIG || { basePrice: 110, specialOffer: { dates: ['2026-07-28', '2026-07-29'], price: 90 } };
+    return cfg.specialOffer.dates.indexOf(dateStr) !== -1 ? cfg.specialOffer.price : cfg.basePrice;
+  }
+
   window.calcPrice = function () {
-    var l = L[currentLang];
     var amtEl = document.getElementById('cal-amount');
-    if (amtEl) {
-      amtEl.innerHTML = '80 EUR <span style="font-size:1rem;opacity:0.7">' + l.night + '</span>';
+    var fromLabelEl = document.getElementById('cal-from-label');
+    if (!amtEl) { return; }
+    var cfg = window.PRICE_CONFIG || { basePrice: 110, lowSeasonPrice: 80 };
+
+    if (fromLabelEl) { fromLabelEl.style.display = 'none'; }
+    amtEl.style.fontSize = '1.15rem';
+    amtEl.innerHTML = 'Sommer: ' + cfg.basePrice + ' EUR <span style="font-size:0.85rem;opacity:0.7">/ Nacht</span><br/>Nebensaison: ' + (cfg.lowSeasonPrice || 80) + ' EUR <span style="font-size:0.85rem;opacity:0.7">/ Nacht</span>';
+  };
+
+  window.computeStayTotal = function (checkinVal, checkoutVal) {
+    if (!checkinVal || !checkoutVal) { return null; }
+    var start = new Date(checkinVal + 'T00:00:00');
+    var end = new Date(checkoutVal + 'T00:00:00');
+    var nights = Math.round((end - start) / 86400000);
+    if (nights < 1) { return null; }
+    var total = 0;
+    var cursor = new Date(start);
+    for (var i = 0; i < nights; i++) {
+      var ds = cursor.getFullYear() + '-' + String(cursor.getMonth() + 1).padStart(2, '0') + '-' + String(cursor.getDate()).padStart(2, '0');
+      total += getNightRate(ds);
+      cursor.setDate(cursor.getDate() + 1);
     }
+    return { nights: nights, total: total, perNight: Math.round(total / nights) };
   };
 
   var tracks = [
@@ -2732,9 +2841,28 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     var totalVal = '';
+    var estimatedPriceLine = 'Not calculated (no dates selected)';
+    if (cinEl && coutEl && cinEl.value && coutEl.value) {
+      var s = new Date(cinEl.value + 'T00:00:00');
+      var e = new Date(coutEl.value + 'T00:00:00');
+      var n = Math.round((e - s) / 86400000);
+      if (n >= 1) {
+        var t = 0;
+        var c = new Date(s);
+        for (var i = 0; i < n; i++) {
+          var ds2 = c.getFullYear() + '-' + String(c.getMonth() + 1).padStart(2, '0') + '-' + String(c.getDate()).padStart(2, '0');
+          t += getNightRate(ds2);
+          c.setDate(c.getDate() + 1);
+        }
+        totalVal = t;
+        estimatedPriceLine = t + ' EUR for ' + n + (n === 1 ? ' night' : ' nights') + ' (' + Math.round(t / n) + ' EUR/night)';
+      }
+    }
+
     var lines = [];
     lines.push('Arrival : ' + (cinEl && cinEl.value ? cinEl.value : 'Not specified'));
     lines.push('Departure : ' + (coutEl && coutEl.value ? coutEl.value : 'Not specified'));
+    lines.push('Estimated price : ' + estimatedPriceLine);
     lines.push('Guests : ' + (guestsEl ? guestsEl.value : 'Not specified'));
     lines.push('Gewünschte Währung : ' + (currencyEl ? currencyEl.value : 'EUR'));
     lines.push('Email : ' + emailEl.value);
@@ -2843,6 +2971,7 @@ document.addEventListener('DOMContentLoaded', function () {
   setEl('audio-title', tracks[0].title);
   updateLabels();
   window.calcPrice();
+  applyPriceConfigToBadges();
 
 });
 </script>
@@ -2983,6 +3112,12 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  function isCheckoutEligible(dateString) {
+    return bookedRanges.some(function (range) {
+      return range.start === dateString;
+    });
+  }
+
   function isRangeBlocked(start, end) {
     if (!start || !end) return false;
 
@@ -3021,7 +3156,9 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     statusEl.textContent = "Ihre Daten sind ausgewählt";
-    stayBox.innerHTML = "<strong>Anreise:</strong> " + niceDate(selectedStart) + " · <strong>Abreise:</strong> " + niceDate(selectedEnd);
+    var priceInfo = (typeof window.computeStayTotal === "function") ? window.computeStayTotal(selectedStart, selectedEnd) : null;
+    var priceHtml = priceInfo ? (" · <strong>" + priceInfo.nights + (priceInfo.nights === 1 ? " Nacht" : " Nächte") + ":</strong> " + priceInfo.total + " EUR (" + priceInfo.perNight + " EUR/Nacht)") : "";
+    stayBox.innerHTML = "<strong>Anreise:</strong> " + niceDate(selectedStart) + " · <strong>Abreise:</strong> " + niceDate(selectedEnd) + priceHtml;
   }
 
   function setSelectedDates(start, end) {
@@ -3067,14 +3204,18 @@ document.addEventListener('DOMContentLoaded', function () {
   };
 
   function handleDateClick(dateString) {
-    if (isPast(dateString) || isBooked(dateString)) return;
+    if (isPast(dateString)) return;
 
-    if (!selectedStart || selectedEnd) {
+    const selectingStart = !selectedStart || selectedEnd;
+
+    if (selectingStart) {
+      if (isBooked(dateString)) return;
       setSelectedDates(dateString, "");
       return;
     }
 
     if (dateString <= selectedStart) {
+      if (isBooked(dateString)) return;
       setSelectedDates(dateString, "");
       return;
     }
@@ -3124,6 +3265,7 @@ document.addEventListener('DOMContentLoaded', function () {
       const dateString = toDateOnly(date);
       const past = isPast(dateString);
       const booked = isBooked(dateString);
+      const checkoutEligible = isCheckoutEligible(dateString);
 
       const btn = document.createElement("button");
       btn.type = "button";
@@ -3141,9 +3283,15 @@ document.addEventListener('DOMContentLoaded', function () {
       if (dateString === selectedStart) btn.classList.add("selected-start");
       if (dateString === selectedEnd) btn.classList.add("selected-end");
 
-      btn.setAttribute("aria-label", dateString + (booked ? " gebucht" : past ? " vergangen" : " frei"));
+      const selectingDeparture = !!(selectedStart && !selectedEnd);
+      const halfBooked = booked && checkoutEligible && selectingDeparture;
+      if (halfBooked) btn.classList.add("half-booked");
 
-      if (past || booked) {
+      btn.setAttribute("aria-label", dateString + (halfBooked ? " check-out only" : booked ? " gebucht" : past ? " vergangen" : " frei"));
+
+      const clickBlocked = past || (booked && !halfBooked);
+
+      if (clickBlocked) {
         btn.disabled = true;
       } else {
         btn.addEventListener("click", function () {
@@ -3277,6 +3425,9 @@ document.addEventListener('DOMContentLoaded', function () {
       return dateString >= range.start && dateString <= range.end;
     });
   }
+  function isCheckoutEligible(dateString) {
+    return bookedRanges.some(function(range) { return range.start === dateString; });
+  }
   function isRangeBlocked(start, end) {
     let cursor = fromDateOnly(start);
     const endDate = fromDateOnly(end);
@@ -3298,8 +3449,9 @@ document.addEventListener('DOMContentLoaded', function () {
       
       summaryEl.innerHTML = "<strong>Anreise:</strong> " + niceDate(selectedStart) + " · <strong>Abreise:</strong> —";
     } else {
-      
-      summaryEl.innerHTML = "<strong>Anreise:</strong> " + niceDate(selectedStart) + " · <strong>Abreise:</strong> " + niceDate(selectedEnd);
+      var priceInfo = (typeof window.computeStayTotal === "function") ? window.computeStayTotal(selectedStart, selectedEnd) : null;
+      var priceHtml = priceInfo ? (" · <strong>" + priceInfo.nights + (priceInfo.nights === 1 ? " Nacht" : " Nächte") + ":</strong> " + priceInfo.total + " EUR (" + priceInfo.perNight + " EUR/Nacht)") : "";
+      summaryEl.innerHTML = "<strong>Anreise:</strong> " + niceDate(selectedStart) + " · <strong>Abreise:</strong> " + niceDate(selectedEnd) + priceHtml;
     }
   }
   function showError(message) {
@@ -3320,14 +3472,18 @@ document.addEventListener('DOMContentLoaded', function () {
   }
   function handleMiniDateClick(dateString) {
     clearError();
-    if (isPast(dateString) || isBooked(dateString)) return;
+    if (isPast(dateString)) return;
 
-    if (!selectedStart || selectedEnd) {
+    const selectingStart = !selectedStart || selectedEnd;
+
+    if (selectingStart) {
+      if (isBooked(dateString)) return;
       selectDates(dateString, "");
       return;
     }
 
     if (dateString <= selectedStart) {
+      if (isBooked(dateString)) return;
       selectDates(dateString, "");
       return;
     }
@@ -3376,15 +3532,21 @@ document.addEventListener('DOMContentLoaded', function () {
       btn.className = "floating-mini-day";
       btn.textContent = day;
 
+      const booked = isBooked(ds);
+      const selectingDeparture = !!(selectedStart && !selectedEnd);
+      const halfBooked = booked && isCheckoutEligible(ds) && selectingDeparture;
+
       if (isPast(ds)) btn.classList.add("past");
-      if (isBooked(ds)) btn.classList.add("booked");
-      if (ds === toDateOnly(today)) btn.classList.add("today");
+      if (booked) btn.classList.add("booked");
+      if (halfBooked) btn.classList.add("half-booked");
       if (ds === toDateOnly(today)) btn.classList.add("today");
       if (selectedStart && selectedEnd && ds > selectedStart && ds < selectedEnd) btn.classList.add("in-range");
       if (ds === selectedStart) btn.classList.add("selected-start");
       if (ds === selectedEnd) btn.classList.add("selected-end");
 
-      if (isPast(ds) || isBooked(ds)) {
+      const clickBlocked = isPast(ds) || (booked && !halfBooked);
+
+      if (clickBlocked) {
         btn.disabled = true;
       } else {
         btn.addEventListener("click", function () { handleMiniDateClick(ds); });
