@@ -3166,6 +3166,12 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  function isCheckoutEligible(dateString) {
+    return bookedRanges.some(function (range) {
+      return range.start === dateString;
+    });
+  }
+
   function isRangeBlocked(start, end) {
     if (!start || !end) return false;
 
