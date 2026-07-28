@@ -1908,14 +1908,14 @@
 <div class="hero-bg" style="position:absolute;inset:0;background:url('../sunset3.jpeg') center/cover no-repeat;">
 </div>
 <div class="hero-offer-badge-desktop">
-<div class="offer-flash-row"><span class="offer-flash-dot"></span>Blitzangebot</div>
-<div class="offer-dates" id="offer-dates-desktop">28.–30. (2 Nächte)</div>
+<div class="offer-flash-row"><span class="offer-flash-dot"></span><span id="offer-eyebrow-desktop">Letzte Termine im August</span></div>
+<div class="offer-dates" id="offer-dates-desktop">9.–14.08 (5 Nächte)</div>
 <div class="offer-price-row">
-<span class="offer-price-old" id="offer-price-old-desktop">220 EUR</span>
-<span class="offer-price-new" id="offer-total-desktop">180 EUR</span>
+<span class="offer-price-old" id="offer-price-old-desktop" style="display:none">550 EUR</span>
+<span class="offer-price-new" id="offer-total-desktop">550 EUR</span>
 </div>
-<div class="offer-total-row" id="offer-price-desktop">nur 90 EUR / Nacht</div>
-<div class="offer-save-tag" id="offer-save-tag-desktop">-18%</div>
+<div class="offer-total-row" id="offer-price-desktop">110 EUR / Nacht</div>
+<div class="offer-save-tag" id="offer-save-tag-desktop" style="display:none">-18%</div>
 </div>
 <div class="hero-content">
 <p class="hero-tag">San Pietro Resort · Lalzi Bay · Albanien</p>
@@ -1938,7 +1938,7 @@ Eine 97 m² grosse Ferienwohnung für Familien, Paare und Freundesgruppen, 5 Min
 </div>
 <div class="hero-postcards" aria-label="Reisehinweise">
 <div class="hero-postcard"><div class="hero-postcard-icon">☀</div><div class="hero-card-title">Sommer 2026</div><div class="hero-card-text">Noch Termine frei</div></div>
-<div class="hero-postcard offer-card"><div class="hero-postcard-icon">★</div><div class="hero-card-title" id="offer-title-mobile">28.–30. (2 Nächte) Spezial</div><div class="hero-card-text" id="offer-price-mobile">90 EUR / Nacht</div></div>
+<div class="hero-postcard offer-card"><div class="hero-postcard-icon">★</div><div class="hero-card-title" id="offer-title-mobile">9.–14.08 (5 Nächte)</div><div class="hero-card-text" id="offer-price-mobile">110 EUR / Nacht</div></div>
 </div>
 <div class="hero-actions">
 <a class="btn-coral" href="#booking">
@@ -2606,21 +2606,25 @@ document.addEventListener('DOMContentLoaded', function () {
     var pOldEl = document.getElementById('offer-price-old-desktop');
     var saveEl = document.getElementById('offer-save-tag-desktop');
     var totalEl = document.getElementById('offer-total-desktop');
+    var eyebrowEl = document.getElementById('offer-eyebrow-desktop');
     var pmEl = document.getElementById('offer-price-mobile');
     var tmEl = document.getElementById('offer-title-mobile');
 
     var pct = Math.round((1 - (cfg.specialOffer.price / cfg.basePrice)) * 100);
+    var hasDiscount = pct > 0;
     var offerNights = cfg.specialOffer.dates.length;
     var offerTotal = cfg.specialOffer.price * offerNights;
     var offerFullPrice = cfg.basePrice * offerNights;
+    var fullLabel = cfg.specialOffer.label + ' (' + offerNights + (offerNights === 1 ? ' Nacht' : ' Nächte') + ')';
 
-    if (dEl) { dEl.textContent = cfg.specialOffer.label; }
-    if (pOldEl) { pOldEl.textContent = offerFullPrice + ' EUR'; }
+    if (dEl) { dEl.textContent = fullLabel; }
+    if (eyebrowEl) { eyebrowEl.textContent = hasDiscount ? 'Blitzangebot' : 'Letzte Termine im August'; }
+    if (pOldEl) { pOldEl.style.display = hasDiscount ? '' : 'none'; pOldEl.textContent = offerFullPrice + ' EUR'; }
     if (totalEl) { totalEl.textContent = offerTotal + ' EUR'; }
-    if (pEl) { pEl.textContent = 'nur ' + cfg.specialOffer.price + ' EUR / Nacht'; }
-    if (saveEl) { saveEl.textContent = '-' + pct + '%'; }
+    if (pEl) { pEl.textContent = (hasDiscount ? 'nur ' : '') + cfg.specialOffer.price + ' EUR / Nacht'; }
+    if (saveEl) { saveEl.style.display = hasDiscount ? '' : 'none'; saveEl.textContent = '-' + pct + '%'; }
     if (pmEl) { pmEl.textContent = cfg.specialOffer.price + ' EUR / Nacht · ' + offerTotal + ' EUR gesamt'; }
-    if (tmEl) { tmEl.textContent = cfg.specialOffer.label + ' Blitzangebot'; }
+    if (tmEl) { tmEl.textContent = fullLabel + (hasDiscount ? ' Blitzangebot' : ''); }
   }
 
   function getNightRate(dateStr) {
