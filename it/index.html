@@ -1953,14 +1953,14 @@
 <div class="hero-bg" style="position:absolute;inset:0;background:url('../sunset3.jpeg') center/cover no-repeat;">
 </div>
 <div class="hero-offer-badge-desktop">
-<div class="offer-flash-row"><span class="offer-flash-dot"></span>Offerta lampo</div>
-<div class="offer-dates" id="offer-dates-desktop">28–30 (2 notti)</div>
+<div class="offer-flash-row"><span class="offer-flash-dot"></span><span id="offer-eyebrow-desktop">Ultime date di agosto</span></div>
+<div class="offer-dates" id="offer-dates-desktop">9–14.08 (5 notti)</div>
 <div class="offer-price-row">
-<span class="offer-price-old" id="offer-price-old-desktop">220 EUR</span>
-<span class="offer-price-new" id="offer-total-desktop">180 EUR</span>
+<span class="offer-price-old" id="offer-price-old-desktop" style="display:none">550 EUR</span>
+<span class="offer-price-new" id="offer-total-desktop">550 EUR</span>
 </div>
-<div class="offer-total-row" id="offer-price-desktop">solo 90 EUR / notte</div>
-<div class="offer-save-tag" id="offer-save-tag-desktop">Risparmia 18%</div>
+<div class="offer-total-row" id="offer-price-desktop">110 EUR / notte</div>
+<div class="offer-save-tag" id="offer-save-tag-desktop" style="display:none">Risparmia 18%</div>
 </div>
 <div class="hero-content">
 <p class="hero-tag">San Pietro Resort · Lalzi Bay · Albania</p>
@@ -1983,7 +1983,7 @@ Un appartamento vacanze di 97 m² per famiglie, coppie e gruppi di amici, a 5 mi
 </div>
 <div class="hero-postcards" aria-label="Note di viaggio">
 <div class="hero-postcard"><div class="hero-postcard-icon">☀</div><div class="hero-card-title">Estate 2026</div><div class="hero-card-text">Date ancora disponibili</div></div>
-<div class="hero-postcard offer-card"><div class="hero-postcard-icon">★</div><div class="hero-card-title" id="offer-title-mobile">28–30 (2 notti) speciale</div><div class="hero-card-text" id="offer-price-mobile">90 EUR / notte</div></div>
+<div class="hero-postcard offer-card"><div class="hero-postcard-icon">★</div><div class="hero-card-title" id="offer-title-mobile">9–14.08 (5 notti)</div><div class="hero-card-text" id="offer-price-mobile">110 EUR / notte</div></div>
 </div>
 <div class="hero-actions">
 <a class="btn-coral" href="#booking">
@@ -2660,21 +2660,25 @@ document.addEventListener('DOMContentLoaded', function () {
     var pOldEl = document.getElementById('offer-price-old-desktop');
     var saveEl = document.getElementById('offer-save-tag-desktop');
     var totalEl = document.getElementById('offer-total-desktop');
+    var eyebrowEl = document.getElementById('offer-eyebrow-desktop');
     var pmEl = document.getElementById('offer-price-mobile');
     var tmEl = document.getElementById('offer-title-mobile');
 
     var pct = Math.round((1 - (cfg.specialOffer.price / cfg.basePrice)) * 100);
+    var hasDiscount = pct > 0;
     var offerNights = cfg.specialOffer.dates.length;
     var offerTotal = cfg.specialOffer.price * offerNights;
     var offerFullPrice = cfg.basePrice * offerNights;
+    var fullLabel = cfg.specialOffer.label + ' (' + offerNights + (offerNights === 1 ? ' notte' : ' notti') + ')';
 
-    if (dEl) { dEl.textContent = cfg.specialOffer.label; }
-    if (pOldEl) { pOldEl.textContent = offerFullPrice + ' EUR'; }
+    if (dEl) { dEl.textContent = fullLabel; }
+    if (eyebrowEl) { eyebrowEl.textContent = hasDiscount ? 'Offerta lampo' : 'Ultime date di agosto'; }
+    if (pOldEl) { pOldEl.style.display = hasDiscount ? '' : 'none'; pOldEl.textContent = offerFullPrice + ' EUR'; }
     if (totalEl) { totalEl.textContent = offerTotal + ' EUR'; }
-    if (pEl) { pEl.textContent = 'solo ' + cfg.specialOffer.price + ' EUR / notte'; }
-    if (saveEl) { saveEl.textContent = 'Risparmia ' + pct + '%'; }
+    if (pEl) { pEl.textContent = (hasDiscount ? 'solo ' : '') + cfg.specialOffer.price + ' EUR / notte'; }
+    if (saveEl) { saveEl.style.display = hasDiscount ? '' : 'none'; saveEl.textContent = 'Risparmia ' + pct + '%'; }
     if (pmEl) { pmEl.textContent = cfg.specialOffer.price + ' EUR / notte · ' + offerTotal + ' EUR totali'; }
-    if (tmEl) { tmEl.textContent = cfg.specialOffer.label + ' offerta lampo'; }
+    if (tmEl) { tmEl.textContent = fullLabel + (hasDiscount ? ' offerta lampo' : ''); }
   }
 
   function getNightRate(dateStr) {
