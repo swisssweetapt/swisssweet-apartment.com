@@ -1953,14 +1953,14 @@
 <div class="hero-bg" style="position:absolute;inset:0;background:url('../sunset3.jpeg') center/cover no-repeat;">
 </div>
 <div class="hero-offer-badge-desktop">
-<div class="offer-flash-row"><span class="offer-flash-dot"></span>Ofertë Flash</div>
-<div class="offer-dates" id="offer-dates-desktop">28–30 (2 net)</div>
+<div class="offer-flash-row"><span class="offer-flash-dot"></span><span id="offer-eyebrow-desktop">Datat e fundit të gushtit</span></div>
+<div class="offer-dates" id="offer-dates-desktop">9–14.08 (5 net)</div>
 <div class="offer-price-row">
-<span class="offer-price-old" id="offer-price-old-desktop">220 EUR</span>
-<span class="offer-price-new" id="offer-total-desktop">180 EUR</span>
+<span class="offer-price-old" id="offer-price-old-desktop" style="display:none">550 EUR</span>
+<span class="offer-price-new" id="offer-total-desktop">550 EUR</span>
 </div>
-<div class="offer-total-row" id="offer-price-desktop">vetëm 90 EUR / natë</div>
-<div class="offer-save-tag" id="offer-save-tag-desktop">Kurse 18%</div>
+<div class="offer-total-row" id="offer-price-desktop">110 EUR / natë</div>
+<div class="offer-save-tag" id="offer-save-tag-desktop" style="display:none">Kurse 18%</div>
 </div>
 <div class="hero-content">
 <p class="hero-tag">San Pietro Resort · Gjiri i Lalzit · Shqipëri</p>
@@ -1983,7 +1983,7 @@ Një apartament pushimi 97 m² për familje, çifte dhe grupe miqsh, 5 minuta ng
 </div>
 <div class="hero-postcards" aria-label="Shënime udhëtimi">
 <div class="hero-postcard"><div class="hero-postcard-icon">☀</div><div class="hero-card-title">Vera 2026</div><div class="hero-card-text">Data ende të lira</div></div>
-<div class="hero-postcard offer-card"><div class="hero-postcard-icon">★</div><div class="hero-card-title" id="offer-title-mobile">28–30 (2 net) speciale</div><div class="hero-card-text" id="offer-price-mobile">90 EUR / natë</div></div>
+<div class="hero-postcard offer-card"><div class="hero-postcard-icon">★</div><div class="hero-card-title" id="offer-title-mobile">9–14.08 (5 net)</div><div class="hero-card-text" id="offer-price-mobile">110 EUR / natë</div></div>
 </div>
 <div class="hero-actions">
 <a class="btn-coral" href="#booking">
@@ -2660,21 +2660,25 @@ document.addEventListener('DOMContentLoaded', function () {
     var pOldEl = document.getElementById('offer-price-old-desktop');
     var saveEl = document.getElementById('offer-save-tag-desktop');
     var totalEl = document.getElementById('offer-total-desktop');
+    var eyebrowEl = document.getElementById('offer-eyebrow-desktop');
     var pmEl = document.getElementById('offer-price-mobile');
     var tmEl = document.getElementById('offer-title-mobile');
 
     var pct = Math.round((1 - (cfg.specialOffer.price / cfg.basePrice)) * 100);
+    var hasDiscount = pct > 0;
     var offerNights = cfg.specialOffer.dates.length;
     var offerTotal = cfg.specialOffer.price * offerNights;
     var offerFullPrice = cfg.basePrice * offerNights;
+    var fullLabel = cfg.specialOffer.label + ' (' + offerNights + ' net)';
 
-    if (dEl) { dEl.textContent = cfg.specialOffer.label; }
-    if (pOldEl) { pOldEl.textContent = offerFullPrice + ' EUR'; }
+    if (dEl) { dEl.textContent = fullLabel; }
+    if (eyebrowEl) { eyebrowEl.textContent = hasDiscount ? 'Ofertë Flash' : 'Datat e fundit të gushtit'; }
+    if (pOldEl) { pOldEl.style.display = hasDiscount ? '' : 'none'; pOldEl.textContent = offerFullPrice + ' EUR'; }
     if (totalEl) { totalEl.textContent = offerTotal + ' EUR'; }
-    if (pEl) { pEl.textContent = 'vetëm ' + cfg.specialOffer.price + ' EUR / natë'; }
-    if (saveEl) { saveEl.textContent = 'Kurse ' + pct + '%'; }
+    if (pEl) { pEl.textContent = (hasDiscount ? 'vetëm ' : '') + cfg.specialOffer.price + ' EUR / natë'; }
+    if (saveEl) { saveEl.style.display = hasDiscount ? '' : 'none'; saveEl.textContent = 'Kurse ' + pct + '%'; }
     if (pmEl) { pmEl.textContent = cfg.specialOffer.price + ' EUR / natë · ' + offerTotal + ' EUR total'; }
-    if (tmEl) { tmEl.textContent = cfg.specialOffer.label + ' ofertë flash'; }
+    if (tmEl) { tmEl.textContent = fullLabel + (hasDiscount ? ' ofertë flash' : ''); }
   }
 
   function getNightRate(dateStr) {
