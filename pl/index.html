@@ -1917,14 +1917,14 @@
 <div class="hero-bg" style="position:absolute;inset:0;background:url('/sunset3.jpeg') center/cover no-repeat;">
 </div>
 <div class="hero-offer-badge-desktop">
-<div class="offer-flash-row"><span class="offer-flash-dot"></span>Oferta błyskawiczna</div>
-<div class="offer-dates" id="offer-dates-desktop">28–30 (2 noce)</div>
+<div class="offer-flash-row"><span class="offer-flash-dot"></span><span id="offer-eyebrow-desktop">Ostatnie terminy w sierpniu</span></div>
+<div class="offer-dates" id="offer-dates-desktop">9–14.08 (5 nocy)</div>
 <div class="offer-price-row">
-<span class="offer-price-old" id="offer-price-old-desktop">220 EUR</span>
-<span class="offer-price-new" id="offer-total-desktop">180 EUR</span>
+<span class="offer-price-old" id="offer-price-old-desktop" style="display:none">550 EUR</span>
+<span class="offer-price-new" id="offer-total-desktop">550 EUR</span>
 </div>
-<div class="offer-total-row" id="offer-price-desktop">tylko 90 EUR / noc</div>
-<div class="offer-save-tag" id="offer-save-tag-desktop">-18%</div>
+<div class="offer-total-row" id="offer-price-desktop">110 EUR / noc</div>
+<div class="offer-save-tag" id="offer-save-tag-desktop" style="display:none">-18%</div>
 </div>
 <div class="hero-content">
 <p class="hero-tag">San Pietro Resort · Lalzi Bay · Albania</p>
@@ -1944,7 +1944,7 @@ Apartment wakacyjny o powierzchni 97 m² dla rodzin, par i przyjaciół, około 
 </p>
 <div class="hero-postcards" aria-label="Notatki z podróży">
 <div class="hero-postcard"><div class="hero-postcard-icon">☀</div><div class="hero-card-title">Lato 2026</div><div class="hero-card-text">Terminy nadal dostępne</div></div>
-<div class="hero-postcard offer-card"><div class="hero-postcard-icon">★</div><div class="hero-card-title" id="offer-title-mobile">28–30 (2 noce) specjalna</div><div class="hero-card-text" id="offer-price-mobile">90 EUR / noc</div></div>
+<div class="hero-postcard offer-card"><div class="hero-postcard-icon">★</div><div class="hero-card-title" id="offer-title-mobile">9–14.08 (5 nocy)</div><div class="hero-card-text" id="offer-price-mobile">110 EUR / noc</div></div>
 </div>
 <div class="hero-actions">
 <a class="btn-coral" href="#booking">
@@ -2616,21 +2616,25 @@ document.addEventListener('DOMContentLoaded', function () {
     var pOldEl = document.getElementById('offer-price-old-desktop');
     var saveEl = document.getElementById('offer-save-tag-desktop');
     var totalEl = document.getElementById('offer-total-desktop');
+    var eyebrowEl = document.getElementById('offer-eyebrow-desktop');
     var pmEl = document.getElementById('offer-price-mobile');
     var tmEl = document.getElementById('offer-title-mobile');
 
     var pct = Math.round((1 - (cfg.specialOffer.price / cfg.basePrice)) * 100);
+    var hasDiscount = pct > 0;
     var offerNights = cfg.specialOffer.dates.length;
     var offerTotal = cfg.specialOffer.price * offerNights;
     var offerFullPrice = cfg.basePrice * offerNights;
+    var fullLabel = cfg.specialOffer.label + ' (' + offerNights + ' nocy)';
 
-    if (dEl) { dEl.textContent = cfg.specialOffer.label; }
-    if (pOldEl) { pOldEl.textContent = offerFullPrice + ' EUR'; }
+    if (dEl) { dEl.textContent = fullLabel; }
+    if (eyebrowEl) { eyebrowEl.textContent = hasDiscount ? 'Oferta błyskawiczna' : 'Ostatnie terminy w sierpniu'; }
+    if (pOldEl) { pOldEl.style.display = hasDiscount ? '' : 'none'; pOldEl.textContent = offerFullPrice + ' EUR'; }
     if (totalEl) { totalEl.textContent = offerTotal + ' EUR'; }
-    if (pEl) { pEl.textContent = 'tylko ' + cfg.specialOffer.price + ' EUR / noc'; }
-    if (saveEl) { saveEl.textContent = '-' + pct + '%'; }
+    if (pEl) { pEl.textContent = (hasDiscount ? 'tylko ' : '') + cfg.specialOffer.price + ' EUR / noc'; }
+    if (saveEl) { saveEl.style.display = hasDiscount ? '' : 'none'; saveEl.textContent = '-' + pct + '%'; }
     if (pmEl) { pmEl.textContent = cfg.specialOffer.price + ' EUR / noc · ' + offerTotal + ' EUR łącznie'; }
-    if (tmEl) { tmEl.textContent = cfg.specialOffer.label + ' oferta błyskawiczna'; }
+    if (tmEl) { tmEl.textContent = fullLabel + (hasDiscount ? ' oferta błyskawiczna' : ''); }
   }
 
   function getNightRate(dateStr) {
