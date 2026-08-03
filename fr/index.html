@@ -2739,19 +2739,22 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function getNightRate(dateStr) {
-    var cfg = window.PRICE_CONFIG || { basePrice: 110, specialOffer: { dates: ['2026-07-28', '2026-07-29'], price: 90 } };
-    return cfg.specialOffer.dates.indexOf(dateStr) !== -1 ? cfg.specialOffer.price : cfg.basePrice;
+    var cfg = window.PRICE_CONFIG || { basePrice: 110, specialOffer: { dates: [], price: 110 } };
+    if (cfg.specialOffer && cfg.specialOffer.dates.indexOf(dateStr) !== -1) { return cfg.specialOffer.price; }
+    if (cfg.onDemandFrom && dateStr >= cfg.onDemandFrom) { return null; }
+    if (cfg.fallSeason && dateStr >= cfg.fallSeason.start && dateStr <= cfg.fallSeason.end) { return cfg.fallSeason.price; }
+    return cfg.basePrice;
   }
 
   window.calcPrice = function () {
     var amtEl = document.getElementById('cal-amount');
     var fromLabelEl = document.getElementById('cal-from-label');
     if (!amtEl) { return; }
-    var cfg = window.PRICE_CONFIG || { basePrice: 110, lowSeasonPrice: 80 };
+    var cfg = window.PRICE_CONFIG || { basePrice: 110, fallSeason: { price: 90 } };
 
     if (fromLabelEl) { fromLabelEl.style.display = 'none'; }
-    amtEl.style.fontSize = '1.15rem';
-    amtEl.innerHTML = 'Été : ' + cfg.basePrice + ' EUR <span style="font-size:0.85rem;opacity:0.7">/ nuit</span><br/>Basse saison : ' + (cfg.lowSeasonPrice || 80) + ' EUR <span style="font-size:0.85rem;opacity:0.7">/ nuit</span>';
+    amtEl.style.fontSize = '1rem';
+    amtEl.innerHTML = 'Août 2026: ' + cfg.basePrice + ' EUR <span style="font-size:0.8rem;opacity:0.7">/ nuit</span><br/>Automne 2026: ' + ((cfg.fallSeason && cfg.fallSeason.price) || 90) + ' EUR <span style="font-size:0.8rem;opacity:0.7">/ nuit</span><br/>2027: <span style="font-size:0.82rem">prix sur demande</span>';
   };
 
   window.computeStayTotal = function (checkinVal, checkoutVal) {
@@ -2761,13 +2764,16 @@ document.addEventListener('DOMContentLoaded', function () {
     var nights = Math.round((end - start) / 86400000);
     if (nights < 1) { return null; }
     var total = 0;
+    var onDemand = false;
     var cursor = new Date(start);
     for (var i = 0; i < nights; i++) {
       var ds = cursor.getFullYear() + '-' + String(cursor.getMonth() + 1).padStart(2, '0') + '-' + String(cursor.getDate()).padStart(2, '0');
-      total += getNightRate(ds);
+      var rate = getNightRate(ds);
+      if (rate === null) { onDemand = true; } else { total += rate; }
       cursor.setDate(cursor.getDate() + 1);
     }
-    return { nights: nights, total: total, perNight: Math.round(total / nights) };
+    if (onDemand) { return { nights: nights, total: null, perNight: null, onDemand: true }; }
+    return { nights: nights, total: total, perNight: Math.round(total / nights), onDemand: false };
   };
 
   var tracks = [
@@ -3272,7 +3278,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
     statusEl.textContent = "Vos dates sont sélectionnées";
     var priceInfo = (typeof window.computeStayTotal === "function") ? window.computeStayTotal(selectedStart, selectedEnd) : null;
-    var priceHtml = priceInfo ? (" · <strong>" + priceInfo.nights + (priceInfo.nights === 1 ? " nuit" : " nuits") + " :</strong> " + priceInfo.total + " EUR (" + priceInfo.perNight + " EUR/nuit)") : "";
+    var priceHtml = "";
+    if (priceInfo) {
+      if (priceInfo.onDemand) {
+        priceHtml = " · <strong>" + priceInfo.nights + (priceInfo.nights === 1 ? " nuit" : " nuits") + " :</strong> prix sur demande";
+      } else {
+        priceHtml = " · <strong>" + priceInfo.nights + (priceInfo.nights === 1 ? " nuit" : " nuits") + " :</strong> " + priceInfo.total + " EUR " + "(" + priceInfo.perNight + " EUR/nuit)";
+      }
+    }
     stayBox.innerHTML = "<strong>Arrivée :</strong> " + niceDate(selectedStart) + " · <strong>Départ :</strong> " + niceDate(selectedEnd) + priceHtml;
   }
 
@@ -3565,7 +3578,14 @@ document.addEventListener('DOMContentLoaded', function () {
       summaryEl.innerHTML = "<strong>Arrivée :</strong> " + niceDate(selectedStart) + " · <strong>Départ :</strong> —";
     } else {
       var priceInfo = (typeof window.computeStayTotal === "function") ? window.computeStayTotal(selectedStart, selectedEnd) : null;
-      var priceHtml = priceInfo ? (" · <strong>" + priceInfo.nights + (priceInfo.nights === 1 ? " nuit" : " nuits") + " :</strong> " + priceInfo.total + " EUR (" + priceInfo.perNight + " EUR/nuit)") : "";
+      var priceHtml = "";
+      if (priceInfo) {
+        if (priceInfo.onDemand) {
+          priceHtml = " · <strong>" + priceInfo.nights + (priceInfo.nights === 1 ? " nuit" : " nuits") + " :</strong> prix sur demande";
+        } else {
+          priceHtml = " · <strong>" + priceInfo.nights + (priceInfo.nights === 1 ? " nuit" : " nuits") + " :</strong> " + priceInfo.total + " EUR " + "(" + priceInfo.perNight + " EUR/nuit)";
+        }
+      }
       summaryEl.innerHTML = "<strong>Arrivée :</strong> " + niceDate(selectedStart) + " · <strong>Départ :</strong> " + niceDate(selectedEnd) + priceHtml;
     }
   }
