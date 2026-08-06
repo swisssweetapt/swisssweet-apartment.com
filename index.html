@@ -597,7 +597,9 @@
   .hero-card-title { position:relative; z-index:1; font-size:clamp(0.68rem, 1.05vw, 0.76rem); font-weight:700; letter-spacing:0.045em; text-transform:uppercase; color:var(--turquoise-deep); line-height:1.22; overflow-wrap:normal; hyphens:none; }
   .hero-card-text { position:relative; z-index:1; margin-top:0.2rem; font-family:var(--serif); font-size:clamp(0.9rem, 1.25vw, 0.98rem); font-style:italic; font-weight:300; line-height:1.18; color:#274f50; }
   .hero-postcard:nth-child(2) .hero-postcard-icon { color:var(--turquoise-dark); }
-  .hero-postcard.offer-card { display:none; }
+  .hero-postcard.offer-card { display:none; pointer-events:auto; cursor:pointer; box-shadow:0 14px 32px rgba(0,0,0,0.18), 0 0 0 2px rgba(224,83,46,0.5); }
+  .hero-postcard.offer-card:active { transform:scale(0.97); }
+  .hero-postcard.offer-card .hero-card-text::after { content:" \2192"; font-weight:700; }
   .hero-postcard.offer-card .hero-postcard-icon { color:#E0532E; }
   .hero-postcard.offer-card .hero-card-title { color:#A22E13; }
   .hero-offer-badge-desktop { display:flex; flex-direction:column; align-items:flex-start; gap:0.2rem; position:absolute; top:6rem; right:3.5rem; z-index:5; background:linear-gradient(155deg, #E0532E, #A22E13); color:#fff; padding:1.25rem 1.75rem; border-radius:18px; box-shadow:0 24px 54px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.12) inset; transform:rotate(-2deg); border:2px solid rgba(255,255,255,0.4); min-width:200px; }
@@ -2000,6 +2002,7 @@ A 97 m² holiday apartment for families, couples and friends, 5 minutes from the
 </p>
 <div class="hero-postcards" aria-label="Travel notes">
 <div class="hero-postcard"><div class="hero-postcard-icon" style="font-size:2rem">🍁</div><div class="hero-card-title">Fall 2026</div><div class="hero-card-text">Dates still available</div></div>
+<a href="https://wa.me/41793960005?text=Hello%2C%20I%27m%20interested%20in%20a%20monthly%20rental%20at%20Swiss%20Sweet%20Apartment%20this%20fall.%20Could%20you%20tell%20me%20more%3F" target="_blank" rel="noopener noreferrer" class="hero-postcard offer-card" style="text-decoration:none;"><div class="hero-postcard-icon">🏡</div><div class="hero-card-title">Monthly rental</div><div class="hero-card-text">From €1000, all included</div></a>
 </div>
 <div class="hero-actions">
 <a class="btn-coral" href="#booking">
