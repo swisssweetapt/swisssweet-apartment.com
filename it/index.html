@@ -594,7 +594,9 @@
   .hero-card-title { position:relative; z-index:1; font-size:clamp(0.68rem, 1.05vw, 0.76rem); font-weight:700; letter-spacing:0.045em; text-transform:uppercase; color:var(--turquoise-deep); line-height:1.22; overflow-wrap:normal; hyphens:none; }
   .hero-card-text { position:relative; z-index:1; margin-top:0.2rem; font-family:var(--serif); font-size:clamp(0.9rem, 1.25vw, 0.98rem); font-style:italic; font-weight:300; line-height:1.18; color:#274f50; }
   .hero-postcard:nth-child(2) .hero-postcard-icon { color:var(--turquoise-dark); }
-  .hero-postcard.offer-card { display:none; }
+  .hero-postcard.offer-card { display:none; pointer-events:auto; cursor:pointer; box-shadow:0 14px 32px rgba(0,0,0,0.18), 0 0 0 2px rgba(224,83,46,0.5); }
+  .hero-postcard.offer-card:active { transform:scale(0.97); }
+  .hero-postcard.offer-card .hero-card-text::after { content:" \2192"; font-weight:700; }
   .hero-postcard.offer-card .hero-postcard-icon { color:#E0532E; }
   .hero-postcard.offer-card .hero-card-title { color:#A22E13; }
   .hero-offer-badge-desktop { display:flex; flex-direction:column; align-items:flex-start; gap:0.2rem; position:absolute; top:6rem; right:3.5rem; z-index:5; background:linear-gradient(155deg, #E0532E, #A22E13); color:#fff; padding:1.25rem 1.75rem; border-radius:18px; box-shadow:0 24px 54px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.12) inset; transform:rotate(-2deg); border:2px solid rgba(255,255,255,0.4); min-width:200px; }
@@ -2008,16 +2010,14 @@
 <section class="hero">
 <div class="hero-bg" style="position:absolute;inset:0;background:url('../sunset3.jpeg') center/cover no-repeat;">
 </div>
-<div class="hero-offer-badge-desktop">
-<div class="offer-flash-row"><span class="offer-flash-dot"></span><span id="offer-eyebrow-desktop">Ultime date di agosto</span></div>
-<div class="offer-dates" id="offer-dates-desktop">9–14.08 (5 notti)</div>
+<a href="https://wa.me/41793960005?text=Ciao%2C%20sono%20interessato%2Fa%20a%20un%20affitto%20mensile%20presso%20Swiss%20Sweet%20Apartment%20in%20autunno.%20Potreste%20darmi%20maggiori%20informazioni%3F" target="_blank" rel="noopener noreferrer" class="hero-offer-badge-desktop" style="text-decoration:none;cursor:pointer;">
+<div class="offer-flash-row"><span class="offer-flash-dot"></span>Offerta bassa stagione</div>
+<div class="offer-dates" style="font-family:var(--serif);font-size:1.3rem;font-weight:600;line-height:1.15;">Un mese intero<br/>al mare da</div>
 <div class="offer-price-row">
-<span class="offer-price-old" id="offer-price-old-desktop" style="display:none">550 EUR</span>
-<span class="offer-price-new" id="offer-total-desktop">550 EUR</span>
+<span class="offer-price-new">€1000</span><span class="offer-total-row" style="font-size:0.85rem;font-weight:400;">&nbsp;/ mese</span>
 </div>
-<div class="offer-total-row" id="offer-price-desktop">110 EUR / notte</div>
-<div class="offer-save-tag" id="offer-save-tag-desktop" style="display:none">Risparmia 18%</div>
-</div>
+<div class="offer-save-tag">Tutto incluso · Scrivici ora</div>
+</a>
 <div class="hero-content">
 <p class="hero-tag">San Pietro Resort · Lalzi Bay · Albania</p>
 <h1>
@@ -2038,8 +2038,8 @@ Un appartamento vacanze di 97 m² per famiglie, coppie e gruppi di amici, a 5 mi
 <div class="hero-price-badge">Da<strong>110 EUR</strong>/ notte</div>
 </div>
 <div class="hero-postcards" aria-label="Note di viaggio">
-<div class="hero-postcard"><div class="hero-postcard-icon">☀</div><div class="hero-card-title">Estate 2026</div><div class="hero-card-text">Date ancora disponibili</div></div>
-<div class="hero-postcard offer-card"><div class="hero-postcard-icon">★</div><div class="hero-card-title" id="offer-title-mobile">9–14.08 (5 notti)</div><div class="hero-card-text" id="offer-price-mobile">110 EUR / notte</div></div>
+<div class="hero-postcard"><div class="hero-postcard-icon" style="font-size:2rem">🍁</div><div class="hero-card-title">Autunno 2026</div><div class="hero-card-text">Date ancora disponibili</div></div>
+<a href="https://wa.me/41793960005?text=Ciao%2C%20sono%20interessato%2Fa%20a%20un%20affitto%20mensile%20presso%20Swiss%20Sweet%20Apartment%20in%20autunno.%20Potreste%20darmi%20maggiori%20informazioni%3F" target="_blank" rel="noopener noreferrer" class="hero-postcard offer-card" style="text-decoration:none;"><div class="hero-postcard-icon">🏡</div><div class="hero-card-title">Affitto mensile</div><div class="hero-card-text">Da €1000, tutto incluso</div></a>
 </div>
 <div class="hero-actions">
 <a class="btn-coral" href="#booking">
