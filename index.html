@@ -642,6 +642,15 @@
     .hero-postcard.offer-card { display:block; }
   }
 
+  .for-sale-badge-desktop { position:absolute; top:15rem; right:3.5rem; z-index:5; background:#F0E6D2; color:#0B4F4F; padding:1rem 1.25rem; border-radius:18px; box-shadow:0 20px 44px rgba(0,0,0,0.32); transform:rotate(-1deg); border:2px solid rgba(255,255,255,0.5); max-width:220px; text-decoration:none; display:block; }
+  .for-sale-badge-desktop .fs-eyebrow { font-size:0.66rem; letter-spacing:0.1em; text-transform:uppercase; opacity:0.75; margin-bottom:0.4rem; }
+  .for-sale-badge-desktop .fs-text { font-family:var(--serif); font-size:0.82rem; line-height:1.45; }
+  @media (max-width: 900px) { .for-sale-badge-desktop { display:none; } }
+
+  .for-sale-mobile-pill { display:none; position:fixed; top:8px; left:50%; transform:translateX(-50%); z-index:150; background:#F0E6D2; color:#0B4F4F; padding:0.5rem 0.9rem; border-radius:999px; box-shadow:0 8px 18px rgba(0,0,0,0.25); text-decoration:none; align-items:center; gap:0.5rem; white-space:nowrap; }
+  .for-sale-mobile-pill .fs-text { font-family:var(--serif); font-style:italic; font-size:0.78rem; }
+  @media (max-width: 768px) { .for-sale-mobile-pill { display:flex; } }
+
 
 .payment-reassurance { margin:0.95rem 1.5rem 0; background:var(--turquoise-pale); border:1px solid rgba(42,122,122,0.16); color:var(--turquoise-deep); border-radius:10px; padding:0.85rem 1rem; font-size:0.84rem; line-height:1.55; text-align:center; }
   .payment-reassurance span::before { content:'✓ '; color:var(--coral); font-weight:700; }
@@ -1958,6 +1967,9 @@
 </div>
 <!-- AUDIO -->
 <!-- NAV -->
+<a href="/apartment-for-sale-lalzi-bay-albania.html" class="for-sale-mobile-pill">
+<span class="fs-text">Our little paradise is for sale — check it out →</span>
+</a>
 <nav>
 <a aria-label="Swiss Sweet Apartment home" class="nav-logo" href="/"><span class="nav-logo-text">Swiss<span>Sweet</span> Apartment</span></a>
 <details class="mobile-lang-quick">
@@ -2008,6 +2020,10 @@
 <span class="offer-price-new">€90</span><span class="offer-total-row" style="font-size:0.85rem;font-weight:400;">&nbsp;/ night</span>
 </div>
 <div class="offer-save-tag">Full month option: €1200, all included</div>
+</a>
+<a href="/apartment-for-sale-lalzi-bay-albania.html" class="for-sale-badge-desktop">
+<div class="fs-eyebrow">Also for sale</div>
+<div class="fs-text">Looking for exclusivity and quality in one of Albania's most sought-after gated communities, just a five-minute walk from one of the country's finest sandy beaches? This very apartment is now for sale — discover your next chapter.</div>
 </a>
 <div class="hero-content">
 <p class="hero-tag">San Pietro Resort · Lalzi Bay · Albania</p>
